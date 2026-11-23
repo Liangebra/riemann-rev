@@ -259,3 +259,33 @@
 \expandafter\newcommand\csname LQ@centres\endcsname{\leanquoteline{0}{theorem exists\_centres \{R c : ℕ\} \{γ : Module.End ℤ\_[l] X\} \{u : ℤ\_[l]\} (hX : GenBy l R X) (hγ : Unip γ) (hu : IsLevel l u c) :}\leanquoteline{4}{∃ s : Fin R → ℤ\_[l], ∀ e m : ℕ,}\leanquoteline{6}{twLen γ u e m ≤ ∑ i, (((max m (jZero l R) + c : ℕ) : ℕ∞) + vl l (s i - e))}}
 \expandafter\newcommand\csname LQ@growth\endcsname{\leanquoteline{0}{theorem UpperTheory.V.PropA.growth :}\leanquoteline{4}{∀ (l : ℕ) [Fact l.Prime] (X : Type) [AddCommGroup X] [Module ℤ\_[l] X] (R : ℕ) (g : Module.End ℤ\_[l] X), GenBy l R X → Unip g → ∀ m : ℕ,}\leanquoteline{6}{cokLen (g \textasciicircum{} l \textasciicircum{} m - 1) ≤ cokLen (g \textasciicircum{} l \textasciicircum{} jZero l R - 1) + ((R * (m - jZero l R) : ℕ) : ℕ∞)}}
 \expandafter\newcommand\csname LQ@step0\endcsname{\leanquoteline{0}{theorem step0 (hμ : HasMuQ l L₀) \{γ : G L₀ Ω\} (hγ : IsGen l ⊤ γ) \{e : ℤ\} (he : e ≠ 0) (m : ℕ) (L₁ : Type) [Field L₁]}\leanquoteline{4}{[NumberField L₁] [Algebra L₀ L₁] (hL : IsLayer l m L₀ L₁) :}\leanquoteline{4}{shaInv L₁ l e = cokerLen (xTw l l (⊤ : Subgroup (G L₀ Ω)) e γ \textasciicircum{} l \textasciicircum{} m - 1)}}
+% the notations of the functions that the archive defines: one slot for each explicit argument
+\newcommand{\mz}[2]{m_0(#1,#2)}
+\newcommand{\tw}[4]{\tau(#1,#2;#3,#4)}
+\newcommand{\XDual}[4]{D_{#1}(#2;#3,#4)}
+\newcommand{\shaInv}[3]{\len\Sha^1_{#2}(#1,#3)}
+\newcommand{\VLen}[2]{\len H^2\bigl(#1,\Z_\ell(#2+1)\bigr)}
+\newcommand{\vl}[2]{v_{#1}(#2)}
+\newcommand{\vlb}[2]{v_{#1}\bigl(#2\bigr)}
+\newcommand{\vlB}[2]{v_{#1}\Bigl(#2\Bigr)}
+\newcommand{\cZero}[2]{a_{#1}(#2)}
+\newcommand{\layU}[4]{\Gal(#3/#2)_{#1,\,a_{#1}(#2)+#4}}
+\newcommand{\dTw}[4]{D_\infty(#1,#2,#3)(-#4)}
+\newcommand{\dTwOp}[4]{T_{#1,#2,#3;#4}}
+\newcommand{\xTw}[4]{X_\infty(#1,#2,#3)(#4)}
+\newcommand{\xTwOp}[4]{T^{\vee}_{#1,#2,#3;#4}}
+\newcommand{\ShaD}[5]{D_\infty(#1,#2,#3)(-#5)^{#4}}
+\newcommand{\Dinf}[3]{D_\infty(#1,#2,#3)}
+\newcommand{\GalG}[2]{\Gal(#2/#1)}
+\newcommand{\QZl}[1]{\Q_{#1}/\Z_{#1}}
+\newcommand{\ShaOf}[2]{\text{\normalfont Ш}^1(#1,#2)}
+\newcommand{\Un}[4]{\Gal(#2/#1)_{#3,#4}}
+\newcommand{\Xinf}[3]{X_\infty(#1,#2,#3)}
+\newcommand{\cycU}[2]{#2_{#1,\infty}}
+\newcommand{\cyc}[4]{\kappa_{#3}^{#2/#1}(#4)}
+\newcommand{\galOf}[3]{\Gal_{#1}(#3/#2)}
+\newcommand{\levU}[3]{#2_{#1,#3}}
+\newcommand{\princ}[2]{U_{#1}^{(#2)}}
+\newcommand{\qzG}[4]{\mathcal Q_{#3}^{#2/#1}(-#4)}
+\newcommand{\qzTw}[2]{\mathcal Q(#1)(-#2)}
+\newcommand{\xRank}[3]{\len D_\infty(#1,#2,#3)[#1]}

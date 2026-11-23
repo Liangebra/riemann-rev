@@ -1800,9 +1800,8 @@
      "from": "type"
     },
     {
-     "name": "∀ φ",
      "kind": "explicit",
-     "type": "D, (l : ℤ_[l]) • φ = 0 → x φ = 0",
+     "type": "(∀ φ : D, (l : ℤ_[l]) • φ = 0 → x φ = 0)",
      "from": "type"
     }
    ]
@@ -1897,9 +1896,8 @@
      "from": "type"
     },
     {
-     "name": "∀ φ",
      "kind": "explicit",
-     "type": "D, ∃ k : ℕ, ((g - 1) ^ k) φ = 0",
+     "type": "(∀ φ : D, ∃ k : ℕ, ((g - 1) ^ k) φ = 0)",
      "from": "type"
     }
    ]
@@ -3210,9 +3208,8 @@
    "kind": "theorem",
    "binders": [
     {
-     "name": "∃ CK",
      "kind": "explicit",
-     "type": "ℝ, LemmaK CK",
+     "type": "(∃ CK : ℝ, LemmaK CK)",
      "from": "type"
     },
     {

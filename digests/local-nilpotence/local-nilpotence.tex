@@ -7,12 +7,15 @@
 %  One part of a unit of the Lean archive behind L. Alpöge's announced proof of RH, rewritten as ordinary
 %  mathematics. The prose is hand-written. Lean names, line ranges and counts come from data.tex; the quoted
 %  Lean statements are copied from the archive by the script. The note was written from the reading project's
-%  structured proofs; the Lean files of the unit were not opened (§ "Notes on the formal text").
+%  structured proofs; the Lean files of the unit were not opened (§ "Notes on the formal text"). For the edition
+%  under the signature rule the definitions were read in the Lean source, the proofs were not.
 %
 %  Rules of the text: standard terminology; every symbol is explained where it first appears and listed again
-%  in the notation at the end; no letter has two meanings. Letters follow the first note of the series: the
-%  cyclotomic character is kappa (the archive's cycZ), U_n are the principal units; the archive's closed normal
-%  subgroup U is H here, its levU l U n is H_n and its cycU l U is H_infinity.
+%  in the notation at the end; no letter has two meanings. The signature rule: a function that the archive
+%  defines is written with every explicit argument of its Lean definition, in every place, through the macros
+%  that the build writes into data.tex from digests/notation.json and accounts.json (the text never defines
+%  them); every hypothesis of a theorem stands inside its statement. The archive's closed normal subgroup U is
+%  H here, and its U in the module of characters is C.
 %
 %  Layout: the reading edition of the guide (11 pt Libertinus on a 140 mm measure); preamble as in the first note.
 % ---------------------------------------------------------------------------------------------
@@ -90,8 +93,6 @@
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\F}{\mathbb{F}}
-\newcommand{\Qbar}{\overline{\Q}_\ell}
-\newcommand{\QZ}{\Q_\ell/\Z_\ell}
 \newcommand{\len}{\operatorname{len}}
 \newcommand{\cok}{\operatorname{cok}}
 \newcommand{\End}{\operatorname{End}}
@@ -100,7 +101,6 @@
 \newcommand{\diag}{\operatorname{diag}}
 \newcommand{\kw}[1]{\emph{#1}}
 \newcommand{\m}[1]{\mbox{$#1$}}        % a short formula that must not be broken across lines
-\newcommand{\flog}{\lfloor\log_\ell Z\rfloor}
 \newcommand{\head}[1]{\par\addvspace{17pt plus 4pt minus 2pt}\Needspace{6\baselineskip}%
   \noindent{\fontsize{13.2}{16}\selectfont\bfseries\color{ink}#1}\par\nopagebreak\vspace{-1pt}}
 \newcommand{\sect}[2]{\refstepcounter{section}\label{#2}\par\addvspace{19pt plus 4pt minus 2pt}\Needspace{7\baselineskip}%
@@ -136,8 +136,11 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \theoremstyle{uprightx}
 \newtheorem{definition}[theorem]{Definition}
+\newtheorem{setting}[theorem]{Setting}
 \newtheorem{remark}[theorem]{Remark}
 \newtheorem{example}[theorem]{Example}
+% the ambient objects of the definitions, said once (implicit and instance arguments of the archive; no hypothesis)
+\newenvironment{conventions}{\par\addvspace{5pt}\noindent\textbf{Conventions.}\enspace\ignorespaces}{\par\addvspace{3pt}}
 \renewcommand{\qedsymbol}{{\setlength{\fboxsep}{0pt}\setlength{\fboxrule}{0.5pt}\fbox{\rule{0pt}{0.46em}\hspace{0.46em}}}}
 \makeatletter
 \renewenvironment{proof}[1][Proof]{\par\pushQED{\qed}\normalfont\topsep0pt\partopsep0pt
@@ -146,14 +149,14 @@
 
 % where each declaration of the concordance is treated
 \cs{XDual}{Def.~\ref{d:char}} \cs{Dinf}{Def.~\ref{d:char}} \cs{Xinf}{Def.~\ref{d:char}}
-\cs{funRep}{§\ref{s:setting}, conjugation} \cs{conjCond}{Prop.~\ref{p:action}(c)} \cs{EqHom}{Prop.~\ref{p:action}(c)}
-\cs{Un}{§\ref{s:setting}, the groups} \cs{funRepMem}{Prop.~\ref{p:action}} \cs{memPrinc}{Lemma~\ref{l:four}(a)}
+\cs{funRep}{Def.~\ref{d:conj}} \cs{conjCond}{Def.~\ref{d:equiv}} \cs{EqHom}{Def.~\ref{d:equiv}}
+\cs{Un}{Def.~\ref{d:groups}} \cs{funRepMem}{Prop.~\ref{p:action}} \cs{memPrinc}{Lemma~\ref{l:four}(a)}
 \cs{powSucc}{Lemma~\ref{l:four}(b)} \cs{qzTors}{Lemma~\ref{l:four}(c)} \cs{princNhds}{Lemma~\ref{l:four}(d)}
-\cs{dinfNil}{Theorem A} \cs{G}{§\ref{s:setting}} \cs{QZ}{§\ref{s:setting}} \cs{cycZ}{§\ref{s:setting}}
-\cs{Dec}{Def.~\ref{d:char}} \cs{Ine}{Def.~\ref{d:char}} \cs{princ}{§\ref{s:setting}, the groups}
-\cs{levU}{§\ref{s:setting}, the groups} \cs{cycU}{§\ref{s:setting}, the groups} \cs{conjHom}{§\ref{s:setting}, conjugation}
-\cs{conjDec}{Prop.~\ref{p:action}, proof} \cs{conjIne}{Prop.~\ref{p:action}, proof} \cs{xUnip}{§\ref{s:use}}
-\cs{dualUnip}{§\ref{s:use}} \cs{shaDGen}{§\ref{s:use}}
+\cs{dinfNil}{Theorem A} \cs{G}{Def.~\ref{d:galois}} \cs{QZ}{Def.~\ref{d:galois}} \cs{cycZ}{Def.~\ref{d:galois}}
+\cs{Dec}{Def.~\ref{d:char}} \cs{Ine}{Def.~\ref{d:char}} \cs{princ}{Def.~\ref{d:groups}}
+\cs{levU}{Def.~\ref{d:groups}} \cs{cycU}{Def.~\ref{d:groups}} \cs{conjHom}{Def.~\ref{d:conj}}
+\cs{conjDec}{Prop.~\ref{p:action}, proof} \cs{conjIne}{Prop.~\ref{p:action}, proof} \cs{xUnip}{Cor.~\ref{c:unip}}
+\cs{dualUnip}{Prop.~\ref{p:dual}} \cs{shaDGen}{Prop.~\ref{p:inv}}
 
 \begin{document}
 \color{ink}
@@ -171,21 +174,25 @@ Riemann hypothesis announced by L.\,Alpöge, read back into mathematics\par}}
 \vspace{7pt}
 \thispagestyle{empty}
 
-\textbf{Summary.} Let $F$ be a number field with algebraic closure~$\Omega$, let $\ell$ be a prime, and let $\kappa$ be
-the $\ell$-adic cyclotomic character of \m{G=\Gal(\Omega/F)}. The group $G$ acts by conjugation on the characters of
-the kernel of~$\kappa$, with values in~$\QZ$. We show that every locally constant character~$\varphi$ is fixed by
-all~$g$ with \m{\kappa(g)\equiv1} modulo~$\ell^n$, for some~$n$, and that for every $\gamma$ with
-\m{\kappa(\gamma)\equiv1} modulo~$\ell$ a power of \m{\gamma-1} kills~$\varphi$; the exponent $\ell^nk_0$ suffices,
-where $\ell^{k_0}$ kills~$\varphi$. This is the \kw{local nilpotence} that the first note of this
-series~\cite{N1} used as an input. By duality it makes $\gamma$ unipotent modulo~$\ell$ on the Iwasawa module.
-The proof is a compactness argument in the profinite group~$G$ and one congruence between polynomials.
+\textbf{Summary.} Let $F$ be a number field with algebraic closure~$\Omega$, let $\ell$ be a prime, and let
+$\cyc{F}{\Omega}{\ell}{\cdot}$ be the $\ell$-adic cyclotomic character of the Galois group~$\GalG{F}{\Omega}$. This
+group acts by conjugation on the characters of the kernel of the cyclotomic character, with values
+in~$\QZl{\ell}$. We show that every locally constant character~$\varphi$ is fixed by all~$g$ with
+\m{\cyc{F}{\Omega}{\ell}{g}\equiv1} modulo~$\ell^n$, for some~$n$, and that for every $\gamma$ with
+\m{\cyc{F}{\Omega}{\ell}{\gamma}\equiv1} modulo~$\ell$ a power of the operator ``action of~$\gamma$, minus the
+identity'' kills~$\varphi$; the exponent $\ell^nk_0$ suffices, where $\ell^{k_0}$ kills~$\varphi$. This is the
+\kw{local nilpotence} that the first note of this series~\cite{N1} used as an input. By duality it makes the
+action of~$\gamma$ unipotent modulo~$\ell$ on the Iwasawa module. The proof is a compactness argument in the
+profinite group~$\GalG{F}{\Omega}$ and one congruence between polynomials.
 
 \statement{leancol}{\fontsize{9.6}{13.2}\selectfont\textbf{What this note is.} On 20 November 2026 L.\,Alpöge
 announced a proof of the Riemann hypothesis, with a Lean archive \cite{Al}. That is a claim, and nothing here asserts
 that the hypothesis is proved. The reading project divides the part of the archive that the final theorems use
 into units. This note treats one part of one unit, on Kummer theory: \UnitInNote{} of its \UnitMembers{}
 declarations, those that define the modules of characters and prove local nilpotence. The other \UnitElsewhere{}
-belong to notes to come (§\ref{s:notes}). Everything stated here is proved in full. Every statement was compared
+belong to notes to come (§\ref{s:notes}). Everything stated in §§\ref{s:intro}--\ref{s:proof} is proved in full;
+§\ref{s:use} states the two results of the archive that use the theorem, one derived here from a proposition
+of the first note, the other quoted without proof. Every statement was compared
 with its formal counterpart at commit \href{\PinUrl}{{\leanfont\Pin}} of the public mirror; Appendix~A is the
 concordance of \ConcDecls{} declarations. The note was written from the structured proofs of the reading project,
 without opening the Lean files of the unit (§\ref{s:notes}).}
@@ -193,135 +200,211 @@ without opening the Lean files of the unit (§\ref{s:notes}).}
 % ------------------------------------------------------------------------------------- 1
 \sect{The statement}{s:intro}
 In the first note~\cite{N1} the lengths of certain groups of Galois cohomology along the cyclotomic tower of a
-number field were expressed through one operator on one module, the Iwasawa module~$X_\infty$, and the estimates
-needed that this operator is unipotent modulo~$\ell$. The module $X_\infty$ is the dual of a discrete module
-$D_\infty$ of characters, and on a discrete module unipotence takes the form proved here: every element is killed
-by a power of \m{\gamma-1}. The first note stated this as its Input~1, with a sketch. This note proves it, in the
-generality of the archive. The notation is set up in §\ref{s:setting}.
+number field~$F$ were expressed through one operator on one module, the Iwasawa module
+\m{\Xinf{\ell}{\ell}{\GalG{F}{\Omega}}} of a prime~$\ell$ and an algebraic closure~$\Omega$ of~$F$, and the
+estimates needed that this operator is unipotent modulo~$\ell$. This module is the dual of a discrete module
+\m{\Dinf{\ell}{\ell}{\GalG{F}{\Omega}}} of characters, and on a discrete module unipotence takes the form proved
+here: every element is killed by a power of the operator minus the identity. The first note stated this as its
+Input~1, with a sketch. This note proves it, in the generality of the archive: there the second argument of the
+two modules is any integer \m{N\ge0}, and the third is any closed normal subgroup of~$\GalG{F}{\Omega}$. The
+notation is set up in §\ref{s:setting}.
 
-\statement{arith}{\phantomsection\label{t:A}\textbf{Theorem A} (local nilpotence).\enspace\emph{Let $H$ be a closed
-normal subgroup of~$G$, let \m{N\ge0} be an integer, and let $\varphi$ be an element of the module
-\m{D_\infty=D_N(H_\infty,\QZ)} of characters of \m{H_\infty=H\cap\ker\kappa}.}
-\begin{enumerate}[label=\textup{(\roman*)},topsep=3pt,itemsep=1pt]
-\item \emph{There is an integer \m{n\ge0} such that \m{g\varphi=\varphi} for every \m{g\in H_n}.}
-\item \emph{Some power of $\ell$ kills~$\varphi$. If \m{\ell^{k_0}\varphi=0} and $n$ is as in \textup{(i)}, then for
-every \m{\gamma\in H_1} and \m{k=\ell^nk_0}}
+\statement{arith}{\phantomsection\label{t:A}\textbf{Theorem A} (local nilpotence).\enspace\emph{Let $\ell$ be a prime
+number, $F$ a number field and $\Omega$ an algebraic closure of~$F$. Let $H$ be a closed normal subgroup
+of~$\GalG{F}{\Omega}$, let \m{N\ge0} be an integer, and let $\varphi$ be an element of the module
+$\Dinf{\ell}{N}{H}$ of characters of~$\cycU{\ell}{H}$. Write}
 \[
-(\gamma-1)^{k}\varphi=0\qquad\text{\emph{and}}\qquad\ell^{k}\varphi=0 .
+\pi=\funRep{\Z_\ell}{\QZl{\ell}}{\cycU{\ell}{H}}
+\]
+\emph{for the representation of $\GalG{F}{\Omega}$ by conjugation on the functions from $\cycU{\ell}{H}$
+to~$\QZl{\ell}$.}
+\begin{enumerate}[label=\textup{(\roman*)},topsep=3pt,itemsep=1pt]
+\item \emph{There is an integer \m{n\ge0} such that \m{\pi(g)\varphi=\varphi} for every
+\m{g\in\levU{\ell}{H}{n}}.}
+\item \emph{Some power of $\ell$ kills~$\varphi$. If \m{\ell^{k_0}\varphi=0} and $n$ is as in \textup{(i)}, then for
+every \m{\gamma\in\levU{\ell}{H}{1}} and \m{k=\ell^nk_0}}
+\[
+(\pi(\gamma)-1)^{k}\varphi=0\qquad\text{\emph{and}}\qquad\ell^{k}\varphi=0 .
 \]
 \end{enumerate}}
 \leanline{\lean{dinfNil}}
 
-Here $H_n$ is the group of all \m{g\in H} with \m{\kappa(g)\equiv1} modulo~$\ell^n$, and $g\varphi$ is the character
-\m{x\mapsto\varphi(g^{-1}xg)}. The archive states (ii) as the existence of one exponent~$k$ with the two
-properties; its proof gives the value above.
+Here $\GalG{F}{\Omega}$ is the Galois group of $\Omega$ over~$F$ with its usual topology,
+\m{\cyc{F}{\Omega}{\ell}{g}} is the value at~$g$ of its $\ell$-adic cyclotomic character, $\levU{\ell}{H}{n}$ is the
+group of all \m{g\in H} with \m{\cyc{F}{\Omega}{\ell}{g}\equiv1} modulo~$\ell^n$, and $\cycU{\ell}{H}$ is the
+group of all \m{g\in H} with \m{\cyc{F}{\Omega}{\ell}{g}=1}. The group $\QZl{\ell}$ is the quotient of the
+$\ell$-adic numbers by the $\ell$-adic integers, the module $\Dinf{\ell}{N}{H}$ is that of
+Definition~\ref{d:char}, and $\pi(g)\varphi$ is the character \m{x\mapsto\varphi(g^{-1}xg)}. The archive
+states (ii) in this form: for every~$\gamma$ there is an exponent~$k$ with the two properties. Its proof gives the
+value above, the same for all~$\gamma$.
 
 % ------------------------------------------------------------------------------------- 2
 \sect{Characters and conjugation}{s:setting}
-\subhead{Conventions.} Throughout, $\ell$ is a prime number, $\Z_\ell$ the ring of $\ell$-adic integers, $\Q_\ell$ its
-field of fractions, and $\QZ$ the quotient group, a module over~$\Z_\ell$. Let $F$ be a number field, $\Omega$ an
-algebraic closure of~$F$, and \m{G=\Gal(\Omega/F)} the group of automorphisms of $\Omega$ over~$F$, with its usual
-topology: the subgroups \m{\Gal(\Omega/E)}, for $E$ a finite extension of $F$ in~$\Omega$, are a basis of
-neighbourhoods of~$1$. The group $G$ is profinite: it is compact, and every neighbourhood of~$1$ contains an open
-normal subgroup \cite[Ch.\,I, §1]{NSW}. The \kw{$\ell$-adic cyclotomic character} is the continuous homomorphism
-\m{\kappa\colon G\to\Z_\ell^\times} to the group of units of~$\Z_\ell$ with \m{g(\zeta)=\zeta^{\kappa(g)}} for every
-root of unity $\zeta$ of $\ell$-power order in~$\Omega$.
+\begin{conventions}\phantomsection\label{c:conventions}%
+In the definitions of this note $\ell$ is a prime number, $\Z_\ell$ is the ring of $\ell$-adic integers and $\Q_\ell$
+its field of fractions; $F$ is a number field, and $\Omega$ is an algebraic closure of~$F$. A notation shows the
+prime and the two fields exactly where the formal definition has them as written arguments; elsewhere they are
+understood. A theorem names them again in its own statement.
+\end{conventions}
+
+\begin{definition}[the Galois group, the coefficients, the cyclotomic character]\label{d:galois}
+The \kw{Galois group} $\GalG{F}{\Omega}$ is the group of the automorphisms of the field~$\Omega$ that fix every
+element of~$F$. It carries its usual topology: the subgroups~$\GalG{E}{\Omega}$, for $E$ a finite extension of $F$
+in~$\Omega$, are a basis of neighbourhoods of~$1$.
+
+The group $\QZl{\ell}$ is the quotient of the additive group of~$\Q_\ell$ by~$\Z_\ell$. It is a module over~$\Z_\ell$.
+
+The \kw{$\ell$-adic cyclotomic character} of $\Omega$ over~$F$ is the homomorphism
+\m{g\mapsto\cyc{F}{\Omega}{\ell}{g}} from $\GalG{F}{\Omega}$ to the group $\Z_\ell^\times$ of units of~$\Z_\ell$ such
+that \m{g(\zeta)=\zeta^{\cyc{F}{\Omega}{\ell}{g}}} for every \m{g\in\GalG{F}{\Omega}} and every root of unity $\zeta$
+of $\ell$-power order in~$\Omega$. It is continuous.
+\end{definition}
 \leanline{\lean{G}\sep\lean{QZ}\sep\lean{cycZ}}
 
-\subhead{The groups.} For \m{n\ge1} let \m{U_n=1+\ell^n\Z_\ell}, and let \m{U_0=\Z_\ell^\times}; these are open
-subgroups of~$\Z_\ell^\times$. For a subgroup $H$ of~$G$ put
+The group $\GalG{F}{\Omega}$ is profinite: it is compact, and every neighbourhood of~$1$ contains an open normal
+subgroup \cite[Ch.\,I, §1]{NSW}.
+
+\begin{definition}[the groups]\label{d:groups}
+For an integer \m{n\ge1} let \m{\princ{\ell}{n}=1+\ell^n\Z_\ell}, and let \m{\princ{\ell}{0}=\Z_\ell^\times}; these are
+open subgroups of~$\Z_\ell^\times$. For a subgroup $H$ of~$\GalG{F}{\Omega}$ and an integer \m{n\ge0} put
 \[
-H_n=\{g\in H:\ \kappa(g)\in U_n\}\quad(n\ge0),\qquad H_\infty=H\cap\ker\kappa .
+\levU{\ell}{H}{n}=\bigl\{g\in H:\ \cyc{F}{\Omega}{\ell}{g}\in\princ{\ell}{n}\bigr\},\qquad
+\cycU{\ell}{H}=\bigl\{g\in H:\ \cyc{F}{\Omega}{\ell}{g}=1\bigr\}.
 \]
-So \m{H_0=H}, the groups $H_n$ decrease, and $H_\infty$ is their intersection. If $H$ is normal in~$G$, so are
-all of these. For \m{H=G} the group $G_n$ is the Galois group of $\Omega$ over the field generated over~$F$ by
-the roots of unity of order~$\ell^n$, and $G_\infty$ that of $\Omega$ over the field $F_\infty$ generated by all
-roots of unity of $\ell$-power order.
-\leanline{\lean{princ} (the group $U_n$)\sep\lean{levU} (the group $H_n$)\sep\lean{cycU} (the group
-$H_\infty$)\sep\lean{Un} (the group $G_n$)}
+For the whole group we also write \m{\Un{F}{\Omega}{\ell}{n}} for the group of all \m{g\in\GalG{F}{\Omega}} with
+\m{\cyc{F}{\Omega}{\ell}{g}\in\princ{\ell}{n}}; it is the first of the two groups for \m{H=\GalG{F}{\Omega}}.
+\end{definition}
+\leanline{\lean{princ}\sep\lean{levU}\sep\lean{cycU}\sep\lean{Un}}
 
-\begin{definition}\label{d:char}
-A \kw{valuation ring} of $\Omega$ is a subring $A$ such that \m{x\in A} or \m{x^{-1}\in A} for every non-zero
-\m{x\in\Omega}; its maximal ideal $\mathfrak m_A$ consists of the non-units of~$A$. The \kw{decomposition group}
-$G_A$ is the group of all \m{g\in G} with \m{g(A)=A}, and the \kw{inertia group} $I_A$ is the subgroup of those
-that act trivially on the residue field~\m{A/\mathfrak m_A}.
+So \m{\levU{\ell}{H}{0}=H}, the groups $\levU{\ell}{H}{n}$ decrease as $n$ grows, and $\cycU{\ell}{H}$, the
+intersection of $H$ with the kernel of the cyclotomic character, is their intersection. If $H$ is normal
+in~$\GalG{F}{\Omega}$, so are all of these. The group $\Un{F}{\Omega}{\ell}{n}$ is the Galois group of $\Omega$ over
+the field generated over~$F$ by the roots of unity of order~$\ell^n$, and $\cycU{\ell}{\GalG{F}{\Omega}}$ is that of
+$\Omega$ over the field $F_\infty$ generated by all roots of unity of $\ell$-power order.
 
-Let $C$ be a subgroup of~$G$, let \m{N\ge0} be an integer, and let $M$ be a module over a commutative ring~$R$.
-The module \m{D_N(C,M)} consists of the homomorphisms \m{\varphi\colon C\to M} that are locally constant, vanish
-on \m{C\cap I_A} for every valuation ring $A$ of~$\Omega$, and vanish on \m{C\cap G_A} for every valuation ring
-$A$ with \m{N\in\mathfrak m_A}. It is an $R$-module under pointwise operations. For a subgroup $H$ of~$G$ put
+\begin{definition}[characters]\label{d:char}
+A \kw{valuation ring} of $\Omega$ is a subring $A$ such that \m{z\in A} or \m{z^{-1}\in A} for every non-zero
+\m{z\in\Omega}; its maximal ideal $\mathfrak m_A$ consists of the non-units of~$A$. The \kw{decomposition group}
+$\Dec{A}$ is the group of all \m{g\in\GalG{F}{\Omega}} with \m{g(A)=A}, and the \kw{inertia group} $\Ine{A}$ is the
+subgroup of those that act trivially on the residue field~\m{A/\mathfrak m_A}.
+
+Let $C$ be a subgroup of~$\GalG{F}{\Omega}$, let \m{N\ge0} be an integer, and let $M$ be a module over a commutative
+ring~$R$. The module \m{\XDual{N}{C}{R}{M}} consists of the homomorphisms \m{\varphi\colon C\to M} that are locally
+constant, vanish on \m{C\cap\Ine{A}} for every valuation ring $A$ of~$\Omega$, and vanish on \m{C\cap\Dec{A}} for
+every valuation ring $A$ with \m{N\in\mathfrak m_A}. It is an $R$-module under pointwise operations. For a subgroup
+$H$ of~$\GalG{F}{\Omega}$ put
 \[
-D_\infty=D_N(H_\infty,\QZ),\qquad X_\infty=\Hom_{\Z_\ell}(D_\infty,\QZ).
+\Dinf{\ell}{N}{H}=\XDual{N}{\cycU{\ell}{H}}{\Z_\ell}{\QZl{\ell}},\qquad
+\Xinf{\ell}{N}{H}=\Hom_{\Z_\ell}\bigl(\Dinf{\ell}{N}{H},\QZl{\ell}\bigr).
 \]
 \end{definition}
 \leanline{\lean{Dec}\sep\lean{Ine}\sep\lean{XDual}\sep\lean{Dinf}\sep\lean{Xinf}}
 
-The elements of \m{D_N(C,M)} are the characters of~$C$ that are unramified at every place of~$\Omega$ and trivial
-on the decomposition groups of the places above the primes that divide~$N$. For \m{H=G} and \m{N=\ell} the modules
-$D_\infty$ and $X_\infty$ are those of the first note \cite[§7]{N1}, with \m{L=F}.
+The elements of \m{\XDual{N}{C}{R}{M}} are the characters of~$C$ that are unramified at every place of~$\Omega$ and
+trivial on the decomposition groups of the places above the primes that divide~$N$. For \m{H=\GalG{F}{\Omega}} and
+\m{N=\ell} the modules \m{\Dinf{\ell}{\ell}{\GalG{F}{\Omega}}} and \m{\Xinf{\ell}{\ell}{\GalG{F}{\Omega}}} are those of
+the first note \cite[§7]{N1}, with \m{L=F}.
 
-\subhead{Conjugation.} Let $C$ be a normal subgroup of~$G$. For \m{g\in G} and a function \m{\varphi\colon C\to M}
-put
+\begin{definition}[conjugation]\label{d:conj}
+Let $C$ be a normal subgroup of~$\GalG{F}{\Omega}$ and \m{g\in\GalG{F}{\Omega}}. \kw{Conjugation} by~$g$ is the
+homomorphism from $C$ to~$C$ that sends \m{x\in C} to~\m{g^{-1}xg}. Let $M$ be a module over a commutative ring~$R$.
+We write \m{\funRep{R}{M}{C}} for the following representation of the group $\GalG{F}{\Omega}$ on the $R$-module of
+all functions \m{C\to M}: the element~$g$ sends a function~$\varphi$ to the function
+\m{\funRep{R}{M}{C}(g)\varphi} with
 \[
-(g\varphi)(x)=\varphi(g^{-1}xg)\qquad(x\in C).
+\bigl(\funRep{R}{M}{C}(g)\varphi\bigr)(x)=\varphi(g^{-1}xg)\qquad(x\in C).
 \]
-This is an $R$-linear action of $G$ on the module of all functions \m{C\to M}: \m{(gh)\varphi=g(h\varphi)}.
+Each \m{\funRep{R}{M}{C}(g)} is $R$-linear, and for all \m{g,h\in\GalG{F}{\Omega}}
+\[
+\funRep{R}{M}{C}(gh)=\funRep{R}{M}{C}(g)\,\funRep{R}{M}{C}(h).
+\]
+\end{definition}
 \leanline{\lean{conjHom}\sep\lean{funRep}}
 
+The archive defines conjugation for a normal subgroup of any group; only the group $\GalG{F}{\Omega}$ occurs in
+this note.
+
+\begin{definition}[equivariant characters]\label{d:equiv}
+Let $C$ be a subgroup of~$\GalG{F}{\Omega}$ and let $M$ be a module over a commutative ring~$R$. For an
+automorphism~$\sigma$ of the field~$\Omega$ and an $R$-linear map \m{\theta\colon M\to M}, the module
+\m{\conjCond{C}{\sigma}{\theta}} consists of the functions \m{\varphi\colon C\to M} such that
+\[
+\varphi(x')=\theta\bigl(\varphi(x)\bigr)\qquad\text{for all }x,x'\in C\text{ with }x'\circ\sigma=\sigma\circ x .
+\]
+It is an $R$-module under pointwise operations. For an integer \m{N\ge0} and a representation~$\rho$ of
+$\GalG{F}{\Omega}$ on~$M$ by $R$-linear maps put
+\[
+\EqHom{N}{C}{\rho}=\XDual{N}{C}{R}{M}\ \cap\bigcap_{g\in\GalG{F}{\Omega}}\conjCond{C}{g}{\rho(g)} .
+\]
+\end{definition}
+\leanline{\lean{conjCond}\sep\lean{EqHom}}
+
+For an element $g$ of~$\GalG{F}{\Omega}$ in the place of~$\sigma$, the relation \m{x'\circ g=g\circ x} says that
+\m{x'=gxg^{-1}}. So a function~$\varphi$ lies in \m{\EqHom{N}{C}{\rho}} if and only if it lies in
+\m{\XDual{N}{C}{R}{M}} and
+\[
+\varphi(gxg^{-1})=\rho(g)\varphi(x)\qquad\text{for all }g\in\GalG{F}{\Omega}\text{ and all }x\in C\text{ with }gxg^{-1}\in C .
+\]
+
 \begin{proposition}\label{p:action}
-Let $C$ be a normal subgroup of~$G$, let \m{N\ge0}, and let $M$ be a module over a commutative ring~$R$.
+Let $F$ be a number field and $\Omega$ an algebraic closure of~$F$. Let $C$ be a normal subgroup
+of~$\GalG{F}{\Omega}$, let \m{N\ge0} be an integer, and let $M$ be a module over a commutative ring~$R$.
 \begin{enumerate}[label=\textup{(\alph*)},topsep=2pt,itemsep=2pt]
-\item If \m{\varphi\in D_N(C,M)} and \m{g\in G}, then \m{g\varphi\in D_N(C,M)}.
-\item If \m{\varphi\in D_N(C,M)} and \m{g\in C}, then \m{g\varphi=\varphi}.
-\item Let $\rho$ be a representation of $G$ on~$M$ by $R$-linear maps. An element $\varphi$ of \m{D_N(C,M)}
-satisfies \m{\varphi(gxg^{-1})=\rho(g)\varphi(x)} for all \m{g\in G} and \m{x\in C} if and only if
-\m{\rho(g)\bigl((g\varphi)(x)\bigr)=\varphi(x)} for all \m{g\in G} and \m{x\in C}.
+\item If \m{\varphi\in\XDual{N}{C}{R}{M}} and \m{g\in\GalG{F}{\Omega}}, then
+\m{\funRep{R}{M}{C}(g)\varphi\in\XDual{N}{C}{R}{M}}.
+\item If \m{\varphi\in\XDual{N}{C}{R}{M}} and \m{g\in C}, then \m{\funRep{R}{M}{C}(g)\varphi=\varphi}.
+\item Let $\rho$ be a representation of $\GalG{F}{\Omega}$ on~$M$ by $R$-linear maps. A function
+\m{\varphi\colon C\to M} lies in \m{\EqHom{N}{C}{\rho}} if and only if it lies in \m{\XDual{N}{C}{R}{M}} and
+\m{\rho(g)\bigl((\funRep{R}{M}{C}(g)\varphi)(x)\bigr)=\varphi(x)} for all \m{g\in\GalG{F}{\Omega}} and \m{x\in C}.
 \end{enumerate}
 \end{proposition}
 \begin{proof}
-(a) The map \m{x\mapsto g^{-1}xg} is a continuous homomorphism of $C$ to itself, so $g\varphi$ is a locally
-constant homomorphism. Let $A$ be a valuation ring of~$\Omega$. Then \m{g^{-1}(A)} is a valuation ring with maximal
-ideal \m{g^{-1}(\mathfrak m_A)}, and
+(a) The map \m{x\mapsto g^{-1}xg} is a continuous homomorphism of $C$ to itself, so
+\m{\funRep{R}{M}{C}(g)\varphi} is a locally constant homomorphism. Let $A$ be a valuation ring of~$\Omega$. Then
+\m{g^{-1}(A)} is a valuation ring with maximal ideal \m{g^{-1}(\mathfrak m_A)}, and
 \[
-g^{-1}G_Ag=G_{g^{-1}(A)},\qquad g^{-1}I_Ag=I_{g^{-1}(A)} .
+g^{-1}\Dec{A}g=\Dec{g^{-1}(A)},\qquad g^{-1}\Ine{A}g=\Ine{g^{-1}(A)} .
 \]
-So for \m{x\in C\cap I_A} the element \m{g^{-1}xg} lies in \m{C\cap I_{g^{-1}(A)}}, where $\varphi$ vanishes. If
+So for \m{x\in C\cap\Ine{A}} the element \m{g^{-1}xg} lies in \m{C\cap\Ine{g^{-1}(A)}}, where $\varphi$ vanishes. If
 \m{N\in\mathfrak m_A}, then \m{N=g^{-1}(N)} lies in \m{g^{-1}(\mathfrak m_A)}, and the same argument applies to the
 decomposition groups.
 
 (b) For \m{g\in C} the three factors of \m{g^{-1}xg} lie in~$C$, and
 \m{\varphi(g^{-1}xg)=-\varphi(g)+\varphi(x)+\varphi(g)=\varphi(x)}, because $M$ is commutative.
 
-(c) Put \m{y=g^{-1}xg}. The second condition reads \m{\rho(g)\varphi(y)=\varphi(gyg^{-1})}, and $y$ runs through $C$
-when $x$ does.
+(c) As $C$ is normal, the condition displayed after Definition~\ref{d:equiv} is a condition for all
+\m{g\in\GalG{F}{\Omega}} and all \m{x\in C}. Put \m{y=g^{-1}xg}. Then the condition of~(c) reads
+$\rho(g)\varphi(y)=\varphi(gyg^{-1})$, and $y$ runs through $C$ when $x$ does.
 \end{proof}
-\leanline{\lean{funRepMem}, with \lean{conjDec} and \lean{conjIne}\sep the first condition of (c):
-\lean{conjCond}, \lean{EqHom}}
+\leanline{\lean{funRepMem}, with \lean{conjDec} and \lean{conjIne} in the proof of (a)\sep the module of (c):
+\lean{EqHom}, defined through \lean{conjCond}}
 
-By (a) the group $G$ acts on \m{D_N(C,M)}, and by (b) the action factors through~$G/C$. For \m{C=H_\infty} this is
-the action on $D_\infty$ in Theorem~A, and it factors through \m{G/H_\infty}.
+By (a) the group $\GalG{F}{\Omega}$ acts on \m{\XDual{N}{C}{R}{M}}, and by (b) the action factors through the
+quotient of $\GalG{F}{\Omega}$ by~$C$. For \m{C=\cycU{\ell}{H}}, \m{R=\Z_\ell} and \m{M=\QZl{\ell}} this is the action
+on $\Dinf{\ell}{N}{H}$ in Theorem~A, and it factors through the quotient of $\GalG{F}{\Omega}$ by~$\cycU{\ell}{H}$.
 
 % ------------------------------------------------------------------------------------- 3
 \sect{Four facts about \texorpdfstring{$\ell$}{l}-adic numbers}{s:four}
 \begin{lemma}\label{l:four}
+Let $\ell$ be a prime number.
 \begin{enumerate}[label=\textup{(\alph*)},topsep=2pt,itemsep=2pt]
-\item A unit $u$ of~$\Z_\ell$ lies in the kernel of the reduction of units modulo~$\ell^m$ if and only if $\ell^m$
-divides \m{u-1}. So this kernel is~$U_m$.
+\item Let \m{m\ge0} be an integer. A unit $u$ of~$\Z_\ell$ lies in the kernel of the reduction of units
+modulo~$\ell^m$ if and only if $\ell^m$ divides \m{u-1}. So this kernel is~$\princ{\ell}{m}$.
 \item Let \m{v\in\Z_\ell} and \m{j\ge0}. If $\ell^{j+1}$ divides \m{v-1}, then $\ell^{j+2}$ divides \m{v^\ell-1}.
-\item Every element of~$\QZ$ is killed by a power of~$\ell$.
-\item Every neighbourhood of~$1$ in~$\Z_\ell^\times$ contains $U_n$ for some~$n$.
+\item Every element of~$\QZl{\ell}$ is killed by a power of~$\ell$.
+\item Every neighbourhood of~$1$ in~$\Z_\ell^\times$ contains $\princ{\ell}{n}$ for some~$n$.
 \end{enumerate}
 \end{lemma}
 \begin{proof}
 (a) The reduction of $u$ is~$1$ exactly when \m{u-1} lies in the kernel $\ell^m\Z_\ell$ of the reduction of~$\Z_\ell$.
 
-(b) Write \m{v-1=\ell^{j+1}c} with \m{c\in\Z_\ell}, and \m{v^\ell-1=(v-1)\,s} with \m{s=1+v+\dots+v^{\ell-1}}. Each
+(b) Write \m{v-1=\ell^{j+1}r} with \m{r\in\Z_\ell}, and \m{v^\ell-1=(v-1)\,s} with \m{s=1+v+\dots+v^{\ell-1}}. Each
 \m{v^i-1} is divisible by \m{v-1}, so \m{s-\ell=\sum_{i<\ell}(v^i-1)=(v-1)\,d} for some \m{d\in\Z_\ell}. Hence
 \[
-v^\ell-1=\ell^{j+1}c\,\bigl(\ell+\ell^{j+1}c\,d\bigr)=\ell^{j+2}\bigl(c+\ell^{j}c^2d\bigr).
+v^\ell-1=\ell^{j+1}r\,\bigl(\ell+\ell^{j+1}r\,d\bigr)=\ell^{j+2}\bigl(r+\ell^{j}r^2d\bigr).
 \]
 
-(c) An element of $\QZ$ is the class of some \m{x\in\Q_\ell}, and \m{\ell^mx\in\Z_\ell} for large~$m$.
+(c) An element of $\QZl{\ell}$ is the class of some \m{r\in\Q_\ell}, and \m{\ell^mr\in\Z_\ell} for large~$m$.
 
 (d) The topology of $\Z_\ell^\times$ is induced from~$\Z_\ell$, so a neighbourhood of~$1$ contains all units $u$
 with \m{u-1\in\ell^n\Z_\ell} for some~$n$.
@@ -335,52 +418,59 @@ v^{\ell^j}\equiv1\pmod{\ell^{j+1}}\qquad\text{for every }j\ge0 .
 
 % ------------------------------------------------------------------------------------- 4
 \sect{Proof of Theorem A}{s:proof}
-Write \m{C=H_\infty}. It is a normal subgroup of~$G$, and it is closed, because $H$ is closed and $\kappa$ is
-continuous. So $C$ is compact. The proof uses of $\varphi$ only that it is a locally constant homomorphism
-\m{C\to\QZ}.
+We are in the situation of Theorem~A. Write \m{C=\cycU{\ell}{H}}; then the representation of the theorem is
+\m{\pi=\funRep{\Z_\ell}{\QZl{\ell}}{C}}. The group $C$ is a normal subgroup of~$\GalG{F}{\Omega}$, and it is closed,
+because $H$ is closed and the cyclotomic character \m{g\mapsto\cyc{F}{\Omega}{\ell}{g}} is continuous. So $C$ is
+compact. The proof uses of $\varphi$ only that it is a locally constant homomorphism \m{C\to\QZl{\ell}}.
 
 \subhead{Proof of (i).} The kernel of~$\varphi$ is an open subgroup of~$C$, so it is the intersection of $C$ with
-an open subset of~$G$ that contains~$1$. This subset contains an open normal subgroup $W$ of~$G$. Thus
+an open subset of~$\GalG{F}{\Omega}$ that contains~$1$. This subset contains an open normal subgroup $W$
+of~$\GalG{F}{\Omega}$. Thus
 \begin{equation}\label{e:w}
 \varphi(x)=0\qquad\text{for all }x\in W\cap C .
 \end{equation}
-\emph{Every \m{c\in C} fixes~$\varphi$.} This is Proposition~\ref{p:action}(b); it uses only that $\varphi$ is a
-homomorphism.
+\emph{Every \m{c\in C} fixes~$\varphi$}, that is, \m{\pi(c)\varphi=\varphi}. This is Proposition~\ref{p:action}(b);
+it uses only that $\varphi$ is a homomorphism.
 
 \emph{Every \m{w\in W} fixes~$\varphi$.} Let \m{x\in C}. The element \m{w^{-1}xwx^{-1}} lies in~$C$, because $C$ is
 normal, and in~$W$, because it is the product of $w^{-1}$ and \m{xwx^{-1}} and $W$ is normal. By \eqref{e:w},
 \[
-(w\varphi)(x)=\varphi\bigl(w^{-1}xwx^{-1}\cdot x\bigr)=\varphi\bigl(w^{-1}xwx^{-1}\bigr)+\varphi(x)=\varphi(x).
+(\pi(w)\varphi)(x)=\varphi\bigl(w^{-1}xwx^{-1}\cdot x\bigr)=\varphi\bigl(w^{-1}xwx^{-1}\bigr)+\varphi(x)=\varphi(x).
 \]
-Since \m{(ab)\varphi=a(b\varphi)}, every element of the set
+Since \m{\pi(ab)\varphi=\pi(a)(\pi(b)\varphi)} for \m{a,b\in\GalG{F}{\Omega}}, every element $g$ of the set
 \[
 S=\{wc:\ w\in W,\ c\in C\}
 \]
-fixes~$\varphi$. The set $S$ is a union of cosets of the open subgroup~$W$, so it is open.
+fixes~$\varphi$: \m{\pi(g)\varphi=\varphi}. The set $S$ is a union of cosets of the open subgroup~$W$, so it is open.
 
-Let $K$ be the set of the elements of $H$ that are not in~$S$. It is closed in the compact group~$G$, hence compact,
-and its image $\kappa(K)$ is a compact, hence closed, subset of~$\Z_\ell^\times$. It does not contain~$1$: an
-element of $H$ with \m{\kappa=1} lies in $C$, and \m{C\subseteq S}. By Lemma~\ref{l:four}(d) there is $n$ such that
-$U_n$ does not meet~$\kappa(K)$. Let \m{g\in H_n}. Then \m{\kappa(g)\in U_n}, so \m{g\notin K}; as \m{g\in H}, this
-means \m{g\in S}, and $g$ fixes~$\varphi$.
+Let $K$ be the set of the elements of $H$ that are not in~$S$. It is closed in the compact
+group~$\GalG{F}{\Omega}$, hence compact, and the set \m{\cyc{F}{\Omega}{\ell}{K}} of the values
+\m{\cyc{F}{\Omega}{\ell}{g}}, \m{g\in K}, is a compact, hence closed, subset of~$\Z_\ell^\times$. It does not
+contain~$1$: an element $g$ of $H$ with \m{\cyc{F}{\Omega}{\ell}{g}=1} lies in $C$, and \m{C\subseteq S}. By
+Lemma~\ref{l:four}(d) there is $n$ such that $\princ{\ell}{n}$ does not meet~\m{\cyc{F}{\Omega}{\ell}{K}}. Let
+\m{g\in\levU{\ell}{H}{n}}. Then \m{\cyc{F}{\Omega}{\ell}{g}\in\princ{\ell}{n}}, so \m{g\notin K}; as \m{g\in H}, this
+means \m{g\in S}, and \m{\pi(g)\varphi=\varphi}.
 
 \subhead{Proof of (ii).} The function $\varphi$ is locally constant on a compact space, so it takes finitely many
 values. By Lemma~\ref{l:four}(c) each of them is killed by a power of~$\ell$. So \m{\ell^{k_0}\varphi=0} for some
 \m{k_0\ge0}.
 
-Let $n$ be as in~(i), put \m{q=\ell^n}, and let \m{\gamma\in H_1}. Then \m{\kappa(\gamma)\in1+\ell\Z_\ell}, and by
-\eqref{e:pow} with \m{j=n} the unit \m{\kappa(\gamma^q)=\kappa(\gamma)^{q}} lies in~$U_n$. So \m{\gamma^q\in H_n}, and
-by (i)
+Let $n$ be as in~(i), put \m{q=\ell^n}, and let \m{\gamma\in\levU{\ell}{H}{1}}. Then
+\m{\cyc{F}{\Omega}{\ell}{\gamma}\in1+\ell\Z_\ell}, and by \eqref{e:pow} with \m{j=n} the unit
+\m{\cyc{F}{\Omega}{\ell}{\gamma^q}=\cyc{F}{\Omega}{\ell}{\gamma}^{q}} lies in~$\princ{\ell}{n}$. So
+\m{\gamma^q\in\levU{\ell}{H}{n}}, and by (i), since \m{\pi(\gamma)^q=\pi(\gamma^q)},
 \begin{equation}\label{e:q}
-\gamma^q\varphi=\varphi .
+\pi(\gamma)^q\varphi=\varphi .
 \end{equation}
-Let $T$ be the endomorphism \m{\gamma-1} of the $\Z_\ell$-module of all functions \m{C\to\QZ}, and let $J$ be the
-set of polynomials \m{P\in\Z[Y]} with \m{P(T)\varphi=0}. It is an ideal of the polynomial ring~$\Z[Y]$. It contains
+Let $T$ be the endomorphism \m{\pi(\gamma)-1} of the $\Z_\ell$-module of all functions \m{C\to\QZl{\ell}}, and let
+$J$ be the set of polynomials \m{P\in\Z[Y]} with \m{P(T)\varphi=0}. It is an ideal of the polynomial ring~$\Z[Y]$.
+It contains
 \[
 (Y+1)^q-1\qquad\text{and}\qquad\ell^{k_0},
 \]
-the first by \eqref{e:q}, since \m{T+1=\gamma}, and the second by the choice of~$k_0$. Now $q$ is a power of~$\ell$,
-so \m{(Y+1)^q=Y^q+1} in the polynomial ring over the field with $\ell$ elements. Hence there is \m{Q\in\Z[Y]} with
+the first by \eqref{e:q}, since \m{T+1=\pi(\gamma)}, and the second by the choice of~$k_0$. Now $q$ is a power
+of~$\ell$, so \m{(Y+1)^q=Y^q+1} in the polynomial ring over the field with $\ell$ elements. Hence there is
+\m{Q\in\Z[Y]} with
 \[
 (Y+1)^q-Y^q-1=\ell\,Q ,\qquad\text{that is,}\qquad Y^q=\bigl((Y+1)^q-1\bigr)-\ell\,Q .
 \]
@@ -388,46 +478,102 @@ Modulo~$J$ this gives \m{Y^q\equiv-\ell Q}, and then
 \[
 Y^{qk_0}\equiv(-Q)^{k_0}\,\ell^{k_0}\equiv0\pmod J .
 \]
-So \m{T^{qk_0}\varphi=0}, which is \m{(\gamma-1)^k\varphi=0} for \m{k=qk_0=\ell^nk_0}. Finally \m{\ell^k\varphi=0}
-because \m{k\ge k_0}. \hfill\qedsymbol
+So \m{T^{qk_0}\varphi=0}, which is \m{(\pi(\gamma)-1)^k\varphi=0} for \m{k=qk_0=\ell^nk_0}. Finally
+\m{\ell^k\varphi=0}, as \m{k\ge k_0}. \hfill\qedsymbol
 
 \medskip
 The exponent does not depend on~$\gamma$. For \m{\ell=2} every unit of $\Z_2$ is congruent to~$1$ modulo~$2$, so
-\m{H_1=H} and (ii) holds for every \m{\gamma\in H}.
+\m{\levU{2}{H}{1}=H} and (ii) holds for every \m{\gamma\in H}.
 
 % ------------------------------------------------------------------------------------- 5
 \sect{Where the theorem is used}{s:use}
-\emph{Unipotence on the dual.} Let $H$ be a closed normal subgroup of~$G$ and \m{\gamma\in H_1}. By Theorem~A(ii)
-for~$\gamma^{-1}$, the operator \m{\gamma^{-1}-1} is locally nilpotent on~$D_\infty$: every element is killed by
-a power of it. If $X_\infty$ is finitely generated over~$\Z_\ell$, the proposition on dual modules of the first note
-\cite[Prop.\,7.1]{N1} shows that the action of $\gamma$ on~$X_\infty$, \m{(\gamma x)(\varphi)=x(\gamma^{-1}\varphi)},
-is unipotent modulo~$\ell$: some power of \m{\gamma-1} maps $X_\infty$ into~$\ell X_\infty$. For \m{H=G} and
-\m{N=\ell} this is how Input~1 of the first note enters the proof of its Theorem~D.
+The archive uses Theorem~A in two places outside the unit of this note. Both are stated here as the archive
+states them. The first is derived from Theorem~A(ii) and a proposition that the first note proves; the second
+uses Theorem~A(i) and is not proved here.
 
-\emph{Invariants.} Part (i) is used in the descent to a layer of the tower \cite[§8, Input~2b]{N1}. There one has a
-subgroup $V$ of~$G$ and an element \m{\eta\in V} such that $\kappa(V)$ lies in the closure of the set of powers
-of~$\kappa(\eta)$, and one needs that an element of $D_\infty$ fixed by~$\eta$ is fixed by~$V$, for the action
-twisted by a power of~$\kappa$. By (i) the element is fixed by~$G_n$ for some~$n$. This also holds for the twisted
-action when $n$ is at least the exponent~$k_0$ of~(ii), because a unit in~$U_n$ then acts trivially on an element
-killed by~$\ell^{k_0}$. And every element of $V$ is the product of a power of~$\eta$ and an element of~$G_n$.
-\leanline{\lean{xUnip}, by \lean{dualUnip}\sep\lean{shaDGen}}
+\subhead{Unipotence on the dual.} An endomorphism~$t$ of a module over~$\Z_\ell$ is \kw{unipotent modulo~$\ell$}
+if some power of \m{t-1} maps the module into its multiples by~$\ell$.
+
+\begin{proposition}[the dual module]\label{p:dual}
+Let $\ell$ be a prime number, let $B$ be a module over~$\Z_\ell$ and $f$ an endomorphism of~$B$. Let $t$ be an
+endomorphism of the $\Z_\ell$-module \m{\Hom_{\Z_\ell}(B,\QZl{\ell})} such that
+\m{(t\xi)(\beta)=\xi(f\beta)} for all \m{\xi\in\Hom_{\Z_\ell}(B,\QZl{\ell})} and all \m{\beta\in B}. Suppose that
+the module \m{\Hom_{\Z_\ell}(B,\QZl{\ell})} is finitely generated over~$\Z_\ell$, and that every element of~$B$ is
+killed by a power of \m{f-1}. Then $t$ is unipotent modulo~$\ell$.
+\end{proposition}
+\leanline{\lean{dualUnip}}
+
+This is the proposition on the dual module of the first note \cite[§7]{N1}, where it is proved.
+
+\begin{corollary}[unipotence on the dual]\label{c:unip}
+Let $\ell$ be a prime number, $F$ a number field and $\Omega$ an algebraic closure of~$F$. Let $H$ be a closed
+normal subgroup of~$\GalG{F}{\Omega}$ and \m{N\ge0} an integer such that the module $\Xinf{\ell}{N}{H}$ is
+finitely generated over~$\Z_\ell$, and write \m{\pi=\funRep{\Z_\ell}{\QZl{\ell}}{\cycU{\ell}{H}}}. Let
+\m{\gamma\in\levU{\ell}{H}{1}}, and let $t$ be the action of~$\gamma$ on~$\Xinf{\ell}{N}{H}$:
+\[
+(t\xi)(\varphi)=\xi\bigl(\pi(\gamma^{-1})\varphi\bigr)\qquad\text{for }\xi\in\Xinf{\ell}{N}{H},\ \varphi\in\Dinf{\ell}{N}{H}.
+\]
+Then $t$ is unipotent modulo~$\ell$.
+\end{corollary}
+\begin{proof}
+Put \m{B=\Dinf{\ell}{N}{H}}. By Proposition~\ref{p:action}(a) the operator \m{\pi(\gamma^{-1})} maps $B$ to itself;
+let $f$ be its restriction to~$B$. The element $\gamma^{-1}$ lies in~$\levU{\ell}{H}{1}$. By Theorem~A(ii)
+for~$\gamma^{-1}$, the operator \m{f-1} is locally nilpotent on~$B$: every element is killed by a power of it. The
+module \m{\Hom_{\Z_\ell}(B,\QZl{\ell})} is~$\Xinf{\ell}{N}{H}$, which is finitely generated over~$\Z_\ell$, and
+\m{(t\xi)(\beta)=\xi(f\beta)}. Proposition~\ref{p:dual} applies.
+\end{proof}
+\leanline{\lean{xUnip}, by \lean{dualUnip}}
+
+For \m{H=\GalG{F}{\Omega}} and \m{N=\ell} this is how Input~1 of the first note enters the proof of its Theorem~D.
+
+\subhead{Invariants.} Part (i) of Theorem~A is used in the descent to a layer of the tower
+\cite[§8, Input~2b]{N1}, through the following statement.
+
+\begin{proposition}[invariants]\label{p:inv}
+Let $\ell$ be a prime number, $F$ a number field and $\Omega$ an algebraic closure of~$F$. Let $H$ be a closed
+normal subgroup of~$\GalG{F}{\Omega}$, let \m{N\ge0} be an integer and $e$ an integer, and write
+\m{\pi=\funRep{\Z_\ell}{\QZl{\ell}}{\cycU{\ell}{H}}}. Let $V$ be a subgroup of~$\GalG{F}{\Omega}$ contained in~$H$,
+and let \m{\eta\in V} be such that every value \m{\cyc{F}{\Omega}{\ell}{g}}, \m{g\in V}, lies in the closure
+in~$\Z_\ell^\times$ of the set of the powers \m{\cyc{F}{\Omega}{\ell}{\eta}^{i}}, \m{i\in\Z}. Then for an element
+$\varphi$ of~$\Dinf{\ell}{N}{H}$ the following three conditions are equivalent:
+\begin{enumerate}[label=\textup{(\arabic*)},topsep=2pt,itemsep=2pt]
+\item \m{\cyc{F}{\Omega}{\ell}{g}^{-e}\,\pi(g)\varphi=\varphi} for every \m{g\in V};
+\item \m{\cyc{F}{\Omega}{\ell}{\eta}^{-e}\,\pi(\eta)\varphi=\varphi};
+\item \m{\cyc{F}{\Omega}{\ell}{\eta^{-1}}^{-e}\,\pi(\eta^{-1})\varphi=\varphi}.
+\end{enumerate}
+\end{proposition}
+\leanline{\lean{shaDGen}}
+
+The archive states this as two equalities of submodules of~$\Dinf{\ell}{N}{H}$: the elements with~(1) are the
+kernel of the operator \m{\cyc{F}{\Omega}{\ell}{\eta}^{-e}\,\pi(\eta)-1}, and they are the kernel of the same
+operator for~$\eta^{-1}$. For \m{H=\GalG{F}{\Omega}} it is the statement behind Input~2b of the first note. It
+belongs to another unit of the archive and is not proved in this note; we only say where Theorem~A enters. One
+needs that an element $\varphi$ of~$\Dinf{\ell}{N}{H}$ with~(2) has~(1): that an element fixed by~$\eta$ is fixed
+by~$V$, for the action twisted by a power of the cyclotomic character. By Theorem~A(i) the element is fixed
+by~$\levU{\ell}{H}{n}$ for some~$n$. This also holds for the twisted action when $n$ is at least the
+exponent~$k_0$ of Theorem~A(ii), because a unit in~$\princ{\ell}{n}$ then acts trivially on an element killed
+by~$\ell^{k_0}$. And every element of $V$ is the product of a power of~$\eta$ and an element
+of~$\levU{\ell}{H}{n}$. For \m{H=\GalG{F}{\Omega}} the group $\levU{\ell}{H}{n}$ is the group
+$\Un{F}{\Omega}{\ell}{n}$ of Definition~\ref{d:groups}.
 
 % ------------------------------------------------------------------------------------- 6
 \sect{Notes on the formal text}{s:notes}
 \begin{enumerate}[label=\textup{\arabic*.},leftmargin=1.6em,itemsep=5pt]
-\item \emph{The conditions at the places are not used.} The formal statement takes $\varphi$ in~$D_\infty$. Its
+\item \emph{The conditions at the places are not used.} The formal statement takes $\varphi$
+in~$\Dinf{\ell}{N}{H}$. Its
 proof unfolds this hypothesis once and keeps two of its four clauses: $\varphi$ is locally constant, and it is
 additive. The clauses on inertia and decomposition groups are not referred to again, and neither is the
-integer~$N$. So Theorem~A holds for every locally constant homomorphism \m{H_\infty\to\QZ}. The conditions matter
-for Proposition~\ref{p:action}(a), which makes $D_\infty$ a module with an action of~$G$.
-\item \emph{The exponent.} The formal statement asserts that some~$k$ has the two properties of~(ii). The proof
-constructs \m{k=\ell^nk_0}, the same for all~$\gamma$; this is the form stated above.
-\item \emph{Where the hypotheses on $H$ enter.} Closedness gives the compactness of $H_\infty$, used for the open
-subgroup~$W$ and for the finitely many values, and the compactness of the set~$K$. Normality makes $H_\infty$ normal,
-so that conjugation acts.
-\item \emph{The coefficients.} The module $\QZ$ enters through Lemma~\ref{l:four}(c) alone. The argument of
+integer~$N$. So Theorem~A holds for every locally constant homomorphism \m{\cycU{\ell}{H}\to\QZl{\ell}}. The
+conditions matter for Proposition~\ref{p:action}(a), which makes $\Dinf{\ell}{N}{H}$ a module with an action
+of~$\GalG{F}{\Omega}$.
+\item \emph{The exponent.} The formal statement asserts, for each~$\gamma$, that some~$k$ has the two properties
+of~(ii). The proof constructs \m{k=\ell^nk_0}, the same for all~$\gamma$; this is the form stated above.
+\item \emph{Where the hypotheses on $H$ enter.} Closedness gives the compactness of~$\cycU{\ell}{H}$, used for the
+open subgroup~$W$ and for the finitely many values, and the compactness of the set~$K$. Normality makes
+$\cycU{\ell}{H}$ normal, so that conjugation acts.
+\item \emph{The coefficients.} The module $\QZl{\ell}$ enters through Lemma~\ref{l:four}(c) alone. The argument of
 §\ref{s:proof} applies to locally constant homomorphisms into any module whose elements are killed by powers
-of~$\ell$. This remark is ours; the archive states the theorem for~$\QZ$.
+of~$\ell$. This remark is ours; the archive states the theorem for~$\QZl{\ell}$.
 \item \emph{The polynomial ideal} is the device of the formal proof, followed here step by step. The sketch in the
 first note used the same congruence, applied $k_0$ times to elements; the ideal does this bookkeeping once.
 \item \emph{The rest of the unit.} The unit of the archive that holds these declarations has \UnitMembers{}
@@ -446,10 +592,28 @@ The grouping is provisional. Each group is the subject of a note to come.
 glossary, and a structured proof of every theorem in which each step quotes the lines of the archive that it
 renders. A program compared the quotations with the archive, for all \UnitSteps{} steps of the \UnitProofs{}
 proofs of the unit, and found that no line of these proofs is left without a step. The proofs of this note were
-written from those structured proofs. The Lean files of the unit were not opened. The statement of item~1 rests
+written from those structured proofs. The Lean files of the unit were not opened then; for this edition the
+definitions were read there, and the proofs were not (see below). The statement of item~1 rests
 on the quoted lines of the structured proof of the theorem: the hypothesis on~$\varphi$ occurs in four of them
 and nowhere else. The statements quoted below were read from the archive by the build script, and they agree
 with the dossier's.
+
+\subhead{Changes in this edition.} The first edition fixed the prime, the number field and its algebraic closure
+once, at the head of §\ref{s:setting}, and then wrote the cyclotomic character with one letter, the Galois group
+with one letter, the groups of the tower with a single index, the module of characters without its ring of
+coefficients, the two modules at the top of the tower without any argument, and the action by conjugation as a
+product. That hid arguments of the formal definitions: the fields and the prime in the character and in the
+groups, the ring in the module of characters, the prime, the integer~$N$ and the subgroup in the modules at the
+top of the tower, and the representation in which an element acts. In this edition every function that the
+archive defines is written with all the explicit arguments of its formal definition, in every place; the
+arguments were read from the Lean text of each declaration. The definitions that stood in running text are
+numbered definitions now, so the items of §\ref{s:setting} are renumbered, and every theorem names the prime, the
+field and its closure in its own statement. Some things are stated that were only described before: the two
+modules of Definition~\ref{d:equiv}, through which Proposition~\ref{p:action}(c) is phrased as the archive
+phrases it; and in §\ref{s:use} the two uses of the theorem, with the proposition of the first note that the first
+of them needs. The second use is quoted without proof. Three letters were renamed, in Definition~\ref{d:char} and
+in the proof of Lemma~\ref{l:four}, so that none has two meanings. No statement and no proof of the first edition
+changed in content.
 
 % ------------------------------------------------------------------------------------- A
 \head{Appendix A. Concordance with the Lean archive}
@@ -467,10 +631,10 @@ are the declarations of the unit that this note treats.\par}
 
 \Needspace{8\baselineskip}
 \subhead{Three statements as they are written in the archive.} Theorem~A; here {\leanfont U} is the group~$H$,
-{\leanfont levU l U n} is~$H_n$, {\leanfont cycU l U} is~$H_\infty$, and {\leanfont funRep} is the action by
-conjugation:
+{\leanfont levU l U n} is~$\levU{\ell}{H}{n}$, {\leanfont cycU l U} is~$\cycU{\ell}{H}$, and {\leanfont funRep}
+with its three arguments is the representation~$\pi$:
 \quoted{dinfNil}
-The module of characters \m{D_N(C,M)}, where {\leanfont U} is the group~$C$:
+The module of characters \m{\XDual{N}{C}{R}{M}}, where {\leanfont U} is the group~$C$:
 \quoted{XDual}
 Proposition~\ref{p:action}:
 \quoted{funRepMem}
@@ -478,28 +642,37 @@ Proposition~\ref{p:action}:
 % ------------------------------------------------------------------------------------- notation
 \head{Notation}
 {\fontsize{9.6}{12.6}\selectfont\color{inksoft}\noindent The symbols of the text. A name in brackets is the one
-used in the archive.\par}
+used in the archive, with the explicit arguments of its definition there.\par}
 \vspace{4pt}
 \begingroup\fontsize{8.6}{10.9}\selectfont\raggedright
 \renewcommand{\leanfont}{\ttfamily\fontsize{7.6}{10}\selectfont\color{leancol}}
 \setlength{\columnsep}{9mm}\setlength{\parskip}{0pt}
 \begin{multicols}{2}
-\nt{$\ell$, $\Z_\ell$, $\Q_\ell$, $\QZ$}{a prime; the $\ell$-adic integers and numbers; their quotient group}
-\nt{$F$, $\Omega$, $E$, $F_\infty$}{a number field; an algebraic closure; a finite extension; $F$ with all roots of unity of $\ell$-power order}
-\nt{$G$, $G_n$, $G_\infty$}{\m{\Gal(\Omega/F)}; the groups $H_n$, $H_\infty$ for \m{H=G} [{\leanfont Un}]}
-\nt{$\kappa$, $\zeta$}{the $\ell$-adic cyclotomic character [{\leanfont cycZ}]; a root of unity}
-\nt{$U_n$}{the units \m{1+\ell^n\Z_\ell}, with \m{U_0=\Z_\ell^\times} [{\leanfont princ}]}
-\nt{$H$, $H_n$, $H_\infty$}{a subgroup of $G$; its elements with \m{\kappa\in U_n} [{\leanfont levU}]; \m{H\cap\ker\kappa} [{\leanfont cycU}]}
-\nt{$C$, $N$, $R$, $M$}{a subgroup of~$G$; an integer \m{\ge0}; a commutative ring; an $R$-module}
-\nt{$A$, $\mathfrak m_A$, $G_A$, $I_A$}{a valuation ring of~$\Omega$; its maximal ideal; decomposition and inertia groups}
-\nt{$D_N(C,M)$, $D_\infty$, $X_\infty$}{characters of $C$ (Definition~\ref{d:char}) [{\leanfont XDual}]; \m{D_N(H_\infty,\QZ)}; its dual}
-\nt{$\varphi$, $g\varphi$}{a character; its conjugate \m{x\mapsto\varphi(g^{-1}xg)}}
-\nt{$g$, $h$, $\gamma$, $\eta$, $x$, $y$, $c$, $w$, $a$, $b$}{elements of~$G$ (also: $c$, $d$ elements of $\Z_\ell$ in Lemma~\ref{l:four}; $x$ in $\Q_\ell$)}
-\nt{$\rho$}{a representation of $G$ on~$M$}
-\nt{$u$, $v$, $s$, $d$}{elements of~$\Z_\ell$; \m{s=1+v+\dots+v^{\ell-1}}}
-\nt{$W$, $S$, $K$, $V$}{an open normal subgroup; the set $WC$; the set \m{H\smallsetminus S}; a subgroup of $G$ (§\ref{s:use})}
-\nt{$n$, $m$, $j$, $i$, $k$, $k_0$, $q$}{integers; \m{\ell^{k_0}\varphi=0}; \m{q=\ell^n}}
-\nt{$T$, $J$, $P$, $Q$, $Y$}{the operator \m{\gamma-1}; the ideal of polynomials that kill~$\varphi$; polynomials; the indeterminate}
+\nt{$\ell$, $\Z_\ell$, $\Q_\ell$}{a prime number; the ring of $\ell$-adic integers; its field of fractions}
+\nt{$\QZl{\ell}$}{the quotient group of $\Q_\ell$ by~$\Z_\ell$ [\mbox{\leanfont QZ l}]}
+\nt{$F$, $\Omega$, $E$, $F_\infty$}{a number field; an algebraic closure of~$F$; a finite extension of~$F$; $F$ with all roots of unity of $\ell$-power order}
+\nt{$\GalG{F}{\Omega}$}{the Galois group of $\Omega$ over~$F$ [\mbox{\leanfont G F Ω}]}
+\nt{$\cyc{F}{\Omega}{\ell}{g}$}{the value at~$g$ of the $\ell$-adic cyclotomic character of $\Omega$ over~$F$ [\mbox{\leanfont cycZ F Ω l g}]; with a set in the last place, the set of the values on it}
+\nt{$\zeta$}{a root of unity}
+\nt{$\princ{\ell}{n}$}{the units \m{1+\ell^n\Z_\ell}, with \m{\princ{\ell}{0}=\Z_\ell^\times} [\mbox{\leanfont princ l a}]}
+\nt{$H$, $\levU{\ell}{H}{n}$, $\cycU{\ell}{H}$}{a subgroup of~$\GalG{F}{\Omega}$; its elements whose character value lies in~$\princ{\ell}{n}$ [\mbox{\leanfont levU l U n}]; its elements whose character value is~$1$ [\mbox{\leanfont cycU l U}]}
+\nt{$\Un{F}{\Omega}{\ell}{n}$}{the group $\levU{\ell}{H}{n}$ for the whole group \m{H=\GalG{F}{\Omega}} [\mbox{\leanfont Un F Ω l n}]}
+\nt{$C$, $N$, $R$, $M$}{a subgroup of~$\GalG{F}{\Omega}$; an integer \m{\ge0}; a commutative ring; an $R$-module}
+\nt{$A$, $\mathfrak m_A$, $z$}{a valuation ring of~$\Omega$; its maximal ideal; an element of~$\Omega$}
+\nt{$\Dec{A}$, $\Ine{A}$}{the decomposition group and the inertia group of~$A$ in~$\GalG{F}{\Omega}$ [\mbox{\leanfont Dec A}, \mbox{\leanfont Ine A}]}
+\nt{$\XDual{N}{C}{R}{M}$}{the characters of~$C$ with values in~$M$ (Definition~\ref{d:char}) [\mbox{\leanfont XDual N U R M}]}
+\nt{$\Dinf{\ell}{N}{H}$, $\Xinf{\ell}{N}{H}$}{the module \m{\XDual{N}{\cycU{\ell}{H}}{\Z_\ell}{\QZl{\ell}}} [\mbox{\leanfont Dinf l N U}]; its dual [\mbox{\leanfont Xinf l N U}]}
+\nt{$\funRep{R}{M}{C}$}{the functions \m{C\to M} with the action of~$\GalG{F}{\Omega}$ by conjugation (Definition~\ref{d:conj}) [\mbox{\leanfont funRep R M U}]}
+\nt{$\pi$}{the representation \m{\funRep{\Z_\ell}{\QZl{\ell}}{\cycU{\ell}{H}}} (Theorem~A)}
+\nt{$\conjCond{C}{\sigma}{\theta}$, $\EqHom{N}{C}{\rho}$}{modules of functions \m{C\to M} (Definition~\ref{d:equiv}) [\mbox{\leanfont conjCond U σ T}, \mbox{\leanfont EqHom N U ρ}]}
+\nt{$\sigma$, $\theta$, $\rho$}{an automorphism of the field~$\Omega$; an $R$-linear map \m{M\to M}; a representation of~$\GalG{F}{\Omega}$ on~$M$}
+\nt{$\varphi$}{a character, or any function on a subgroup}
+\nt{$g$, $h$, $\gamma$, $\eta$, $x$, $y$, $c$, $w$, $a$, $b$}{elements of~$\GalG{F}{\Omega}$}
+\nt{$u$, $v$, $s$, $d$, $r$}{$\ell$-adic numbers; \m{s=1+v+\dots+v^{\ell-1}}}
+\nt{$W$, $S$, $K$, $V$}{an open normal subgroup; the set $WC$; the set \m{H\smallsetminus S}; a subgroup of~$\GalG{F}{\Omega}$ (§\ref{s:use})}
+\nt{$n$, $m$, $j$, $i$, $k$, $k_0$, $q$, $e$}{integers; \m{\ell^{k_0}\varphi=0}; \m{q=\ell^n}; $e$ is the exponent of the twist in Proposition~\ref{p:inv}}
+\nt{$T$, $J$, $P$, $Q$, $Y$}{the operator \m{\pi(\gamma)-1}; the ideal of polynomials that kill~$\varphi$; polynomials; the indeterminate}
+\nt{$B$, $f$, $t$, $\xi$, $\beta$}{a module over~$\Z_\ell$; an endomorphism of~$B$; an endomorphism of the dual \m{\Hom_{\Z_\ell}(B,\QZl{\ell})}; an element of the dual; an element of~$B$}
 \nt{$L$}{the number field of the first note}
 \end{multicols}
 \endgroup

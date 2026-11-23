@@ -44,6 +44,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 from build_guide import check_notation, tex_escape, url_escape  # noqa: E402
+import signature_gate as sgate  # noqa: E402
 
 FIRST = "tower-bound"   # the first digest: its declarations, examples and outline are in this file
 DIGEST = FIRST
@@ -767,105 +768,58 @@ _FIRST = {"A": A, "DECLS": DECLS, "CLUSTER": CLUSTER, "QUOTED": QUOTED, "OUTLINE
 
 
 # The signature rule (owner, 23 November 2026). A note never changes the number of arguments of a function that the
-# archive defines, and never states a hypothesis of a theorem outside its statement. NOTATION registers, per key of
-# the concordance, how the note writes a definition that has explicit arguments in Lean:
-#   {"macro": name, "slots": [Lean names of the explicit arguments, in the order of the macro's slots], "symbol": the bare symbol}
-#       the note defines \newcommand{\name}[n]{…} and writes the function only through it;
-#   {"written": how it is written, "shows": [Lean names, all of them], "forbid": [patterns of a shorter way of writing it]}
-#       a notation without a macro of its own.
-# A definition with explicit arguments that has no entry is listed as open by every build, with the count.
-NOTATION: dict = {}
-_FIRST_NOTATION = {
-    "twLen": {"macro": "tw", "slots": ["γ", "u", "e", "m"], "symbol": "\\tau"},
-    "jZero": {"macro": "mz", "slots": ["l", "R"], "symbol": "m_0"},
-    "vl": {"written": "v_\\ell(x)", "shows": ["l", "x"], "forbid": [r"(?<![A-Za-z\\_])v(?:\\bigl|\\Bigl|\\big)?\("]},
-}
-DEF_KINDS = ("def", "abbrev", "structure", "class", "inductive", "opaque")
-
-
-def group_end(s: str, i: int) -> int:
-    """The index of the brace that closes the group opened at s[i] == '{'; -1 when there is none."""
-    depth, j = 0, i
-    while j < len(s):
-        if s[j] == "\\":
-            j += 2
-            continue
-        depth += (s[j] == "{") - (s[j] == "}")
-        if depth == 0:
-            return j
-        j += 1
-    return -1
+# archive defines, and never states a hypothesis of a theorem outside its statement or a Setting that the statement
+# cites. The gate is scripts/signature_gate.py (one file, taken from the tool with which these notes are checked).
+# It is given
+#   digests/<slug>/signatures.json   the arguments of every cited declaration (written from the archive)
+#   digests/notation.json            how a definition of the archive is written in all notes: by its Lean name,
+#                                    {"macro", "slots", "tex", "symbol", "also"} or {"none": the reason}; also the
+#                                    shared tables "letters", "words" and "ambient"
+#   digests/<slug>/accounts.json     what is special to one note: "conventions", "letters", "words", "ambient", and
+#                                    per key of the concordance "notation", "binders", "absorbed"
+# The notation macros are written into data.tex; the text of a note uses them and never defines them.
+def accounts_of(conc: dict) -> dict:
+    load = lambda f: json.loads(f.read_text(encoding="utf-8")) if f.exists() else {}       # noqa: E731
+    sigs = load(D / "signatures.json").get("declarations") or {}
+    acc = sgate.with_shared(load(D / "accounts.json"), load(ROOT / "digests" / "notation.json"),
+                            {k: v["name"] for k, v in conc["declarations"].items()},
+                            {k: v["kind"] for k, v in sigs.items()} or None)
+    acc["lettered"] = [[w, lab] for w, lab in LETTERED]
+    return acc
 
 
 def signature_gate(tex: str, conc: dict) -> tuple:
-    """The problems of a note under the signature rule, and the definitions that are not under the gate yet."""
+    """The problems of a note under the signature rule, the TeX of its notation macros, and a line for the report."""
     sfile = D / "signatures.json"
     if not sfile.exists():
-        return ["signatures.json is missing (python3 -B private/signature_audit.py)"], []
+        return ["signatures.json is missing (python3 -B private/signature_audit.py)"], [], ""
     sigs = json.loads(sfile.read_text(encoding="utf-8"))
     if sigs["archive_commit"] != conc["archive_commit"] or set(sigs["declarations"]) != set(conc["declarations"]):
-        return ["signatures.json was made for another concordance (python3 -B private/signature_audit.py)"], []
-    body = re.sub(r"(?<!\\)%.*", "", tex)
-    problems, opened = [], []
-    for k, v in sigs["declarations"].items():
-        names = [b.get("name") or b.get("type") for b in v["binders"] if b["kind"] == "explicit"]
-        if v["kind"] not in DEF_KINDS or not names:
-            continue
-        nt = NOTATION.get(k)
-        if nt is None:
-            opened.append(k)
-            continue
-        said = nt.get("slots") if "macro" in nt else nt.get("shows")
-        if sorted(said or []) != sorted(names):
-            problems.append(f"{k}: its notation shows the arguments {', '.join(said or []) or 'none'}; Lean's explicit arguments are "
-                            f"{', '.join(names)}: the number of arguments of a defined function is never changed")
-            continue
-        if "macro" in nt:
-            m = re.search(r"\\newcommand\{\\%s\}\[(\d)\]\{" % nt["macro"], body)
-            end = group_end(body, m.end() - 1) if m else -1
-            if not m or end < 0 or int(m.group(1)) != len(names):
-                problems.append(f"{k}: the note does not define \\{nt['macro']} with {len(names)} arguments")
-                continue
-            form = body[m.end():end]
-            if re.search(r"\\%s(?![A-Za-z])" % nt["macro"], form) or (nt.get("symbol") and nt["symbol"] not in form):
-                problems.append(f"{k}: the definition of \\{nt['macro']} calls itself or does not hold its symbol")
-                continue
-            hidden = [f"#{i + 1} ({said[i]})" for i in range(len(names)) if f"#{i + 1}" not in form]
-            if hidden:
-                problems.append(f"{k}: \\{nt['macro']} does not display its argument {', '.join(hidden)}")
-            rest = body[:m.start()] + body[end + 1:]
-            for u in re.finditer(r"\\%s(?![A-Za-z])" % nt["macro"], rest):
-                j, got = u.end(), 0
-                while got < len(names):
-                    j += len(rest[j:]) - len(rest[j:].lstrip())
-                    e = group_end(rest, j) if rest[j:j + 1] == "{" else -1
-                    if e < 0:
-                        break
-                    j, got = e + 1, got + 1
-                if got < len(names):
-                    problems.append(f"{k}: \\{nt['macro']} is written with {got} of its {len(names)} arguments (line {rest.count(chr(10), 0, u.start()) + 1} or near)")
-            raw = len(re.findall(re.escape(nt["symbol"]) + (r"(?![A-Za-z])" if nt["symbol"][-1:].isalpha() else ""), rest)) if nt.get("symbol") else 0
-            if raw:
-                problems.append(f"{k}: its symbol is written by hand in {raw} places, past \\{nt['macro']}, which shows every argument")
-        for pat in nt.get("forbid", []):
-            n = len(re.findall(pat, body))
-            if n:
-                problems.append(f"{k}: written in a shorter way than {nt['written']} in {n} places")
-    return problems, opened
+        return ["signatures.json was made for another concordance (python3 -B private/signature_audit.py)"], [], ""
+    acc = accounts_of(conc)
+    facts = {k: {"kind": v["kind"], "id": k, "binders": v["binders"]} for k, v in sigs["declarations"].items()}
+    problems, looks, macros, n = sgate.gate(acc, facts, tex)
+    tried, missed = sgate.broken_copies(acc, facts, tex) if not problems else (0, [])
+    problems += [f"the gate did not catch a copy of the note that breaks the rule on purpose: {x}" for x in missed]
+    line = (f"; signature rule: {n['notations']} notations in {n['uses']} uses, {n['arguments']} arguments of {n['stated']} stated "
+            f"declarations accounted for, {n['absorbed']} absorbed, {len(looks)} to look at"
+            + (f", the gate caught all {tried} copies broken on purpose" if tried and not missed else "")
+            + (f", {len(problems)} PROBLEMS" if problems else ""))
+    return problems, macros, line
 
 
 def configure(slug: str) -> None:
     """Point the builder at one digest: the first one from this file, any other from digests/<slug>/spec.py."""
-    global DIGEST, D, A, DECLS, CLUSTER, QUOTED, OUTLINE, LETTERED, ATLAS, EXAMPLES, ELSEWHERE, NOTATION
+    global DIGEST, D, A, DECLS, CLUSTER, QUOTED, OUTLINE, LETTERED, ATLAS, EXAMPLES, ELSEWHERE
     DIGEST, D = slug, ROOT / "digests" / slug
     if slug == FIRST:
         A, DECLS, CLUSTER, QUOTED, OUTLINE, LETTERED = (_FIRST[k] for k in ("A", "DECLS", "CLUSTER", "QUOTED", "OUTLINE", "LETTERED"))
-        ATLAS, EXAMPLES, ELSEWHERE, NOTATION = True, True, [], _FIRST_NOTATION
+        ATLAS, EXAMPLES, ELSEWHERE = True, True, []
     else:
         spec = runpy.run_path(str(D / "spec.py"))
         A, DECLS, OUTLINE = spec["DIRECTORY"], spec["DECLS"], spec["OUTLINE"]
         QUOTED, LETTERED, ELSEWHERE = spec.get("QUOTED", []), spec.get("LETTERED", []), spec.get("ELSEWHERE", [])
-        CLUSTER, ATLAS, EXAMPLES, NOTATION = [], False, False, spec.get("NOTATION", {})
+        CLUSTER, ATLAS, EXAMPLES = [], False, False
 
 
 def main() -> int:
@@ -911,10 +865,8 @@ def build() -> int:
                         + ", ".join(cov["missing"] + cov["different_lines"]))
     ex = examples() if EXAMPLES else None
     tex = (D / f"{DIGEST}.tex").read_text(encoding="utf-8")
-    wrong, opened = signature_gate(tex, conc)              # the signature rule: no argument of a defined function is dropped
+    wrong, macros, gate = signature_gate(tex, conc)        # the signature rule: no argument dropped, no hypothesis outside its statement
     problems += wrong
-    gate = ("; signature rule: %d notations checked" % len(NOTATION)
-            + (", %d definitions with explicit arguments not under the gate yet" % len(opened) if opened else ", none open"))
     if "--check" in args:
         said = ("" if not cov else ", %d of the %d used members of its unit unaccounted for" % (len(cov["missing"]), cov["used"])
                 if cov["missing"] else ", all %d used members of its unit among them" % cov["used"] if not cov["elsewhere"]
@@ -922,9 +874,15 @@ def build() -> int:
                 % (cov["in_note"], cov["used"], cov["elsewhere"]))
         print("digest: %s: concordance of %d declarations%s%s%s%s"
               % (DIGEST, len(conc["declarations"]), " compared with the archive" if src else " (archive not present)", said,
-                 ("; examples recomputed" if EXAMPLES else "") + gate, "" if not problems else " -- PROBLEMS: " + "; ".join(problems)))
+                 ("; examples recomputed" if EXAMPLES else "") + gate,
+                 "" if not problems or "--list" in args else " -- PROBLEMS: " + "; ".join(problems)))
+        if "--list" in args:                               # one problem per line, for the one who repairs
+            for x in problems:
+                print("  PROBLEM:", x)
         return 1 if problems else 0
-    (D / "data.tex").write_text(data_tex(conc, atlas, ex, model, cov), encoding="utf-8")
+    (D / "data.tex").write_text(data_tex(conc, atlas, ex, model, cov)
+                                + "% the notations of the functions that the archive defines: one slot for each explicit argument\n"
+                                + "\n".join(macros) + "\n", encoding="utf-8")
     if EXAMPLES:
         (D / "figure.tex").write_text(figure(ex), encoding="utf-8")
     used = set(re.findall(r"\\lean\{([^}]+)\}", tex))
@@ -958,6 +916,13 @@ def build() -> int:
         index = reader_index(conc, tex, (build / f"{DIGEST}.aux").read_text(encoding="utf-8"), cov, D / f"{DIGEST}.pdf")
     index["pages"] = pages
     (D / "reader.json").write_text(json.dumps(index, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    dests = collections.defaultdict(list)                  # two places with one destination: a link to the second opens the first
+    for it in index["items"]:
+        dests[it["dest"]].append(it["item"])
+    for dest, labs in sorted(dests.items()):
+        if len(labs) > 1:
+            problems.append(f"the places {', '.join(sorted(labs))} share one destination in the PDF ({dest}): write \\phantomsection "
+                            "immediately before the \\label that follows a heading")
     if PAGES is not None and pages != PAGES:
         problems.append(f"{pages} pages instead of {PAGES}")
     over = re.findall(r"Overfull \\hbox \(([\d.]+)pt too wide\)", log)

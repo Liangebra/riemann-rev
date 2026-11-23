@@ -70,3 +70,19 @@
 \expandafter\newcommand\csname LQ@dinfNil\endcsname{\leanquoteline{0}{theorem UpperTheory.V.Kum.dinfNil :}\leanquoteline{4}{∀ (F Ω : Type) [Field F] [NumberField F] [Field Ω] [Algebra F Ω] [IsAlgClosure F Ω] (l : ℕ) [Fact l.Prime] (N : ℕ) (U : Subgroup (G F Ω)) [U.Normal], IsClosed (U : Set (G F Ω)) → ∀ φ ∈ Dinf l N U, (∃ n, ∀ g ∈ levU l U n, funRep ℤ\_[l] (QZ l) (cycU l U) g φ = φ) ∧}\leanquoteline{4}{∀ γ ∈ levU l U 1, ∃ k : ℕ, (l : ℤ\_[l]) \textasciicircum{} k • φ = 0 ∧ ((funRep ℤ\_[l] (QZ l) (cycU l U) γ - 1) \textasciicircum{} k) φ = 0}}
 \expandafter\newcommand\csname LQ@XDual\endcsname{\leanquoteline{0}{def XDual (N : ℕ) (U : Subgroup (G F Ω)) (R M : Type) [CommRing R] [AddCommGroup M] [Module R M] : Submodule R (U → M) where}\leanquoteline{2}{carrier := \{φ | IsLocallyConstant φ ∧ (∀ a b, φ (a * b) = φ a + φ b) ∧}\leanquoteline{4}{(∀ (A : ValuationSubring Ω) (u : U), u.1 ∈ Ine (F := F) A → φ u = 0) ∧}\leanquoteline{4}{∀ A : ValuationSubring Ω, A.valuation (N : Ω) < 1 → ∀ u : U, u.1 ∈ Dec (F := F) A → φ u = 0\}}\leanquoteline{2}{zero\_mem' := ⟨IsLocallyConstant.const \_, by simp, by simp, by simp⟩}\leanquoteline{2}{add\_mem' \{a b\} ha hb := ⟨ha.1.add hb.1, fun x y => by simp only [Pi.add\_apply, ha.2.1, hb.2.1]; abel,}\leanquoteline{4}{fun A u h => by simp [ha.2.2.1 A u h, hb.2.2.1 A u h],}\leanquoteline{4}{fun A hA u h => by simp [ha.2.2.2 A hA u h, hb.2.2.2 A hA u h]⟩}\leanquoteline{2}{smul\_mem' c a ha := ⟨ha.1.comp (c • ·), fun x y => by simp [ha.2.1], fun A u h => by simp [ha.2.2.1 A u h],}\leanquoteline{4}{fun A hA u h => by simp [ha.2.2.2 A hA u h]⟩}}
 \expandafter\newcommand\csname LQ@funRepMem\endcsname{\leanquoteline{0}{theorem UpperTheory.V.Kum.funRepMem :}\leanquoteline{4}{∀ (F Ω : Type) [Field F] [NumberField F] [Field Ω] [Algebra F Ω] [IsAlgClosure F Ω] (N : ℕ) (U : Subgroup (G F Ω)) [U.Normal] (R M : Type) [CommRing R] [AddCommGroup M] [Module R M], (∀ g, ∀ φ ∈ XDual N U R M, funRep R M U g φ ∈ XDual N U R M) ∧ (∀ g ∈ U, ∀ φ ∈ XDual N U R M, funRep R M U g φ = φ) ∧}\leanquoteline{4}{∀ (ρ : Representation R (G F Ω) M) (φ : U → M), φ ∈ EqHom N U ρ ↔ φ ∈ XDual N U R M ∧ ∀ g u, ρ g (funRep R M U g φ u) = φ u}}
+% the notations of the functions that the archive defines: one slot for each explicit argument
+\newcommand{\XDual}[4]{D_{#1}(#2;#3,#4)}
+\newcommand{\Dinf}[3]{D_\infty(#1,#2,#3)}
+\newcommand{\Xinf}[3]{X_\infty(#1,#2,#3)}
+\newcommand{\funRep}[3]{\mathcal F_{#1}(#3,#2)}
+\newcommand{\conjCond}[3]{\mathcal C(#1;#2,#3)}
+\newcommand{\EqHom}[3]{\mathcal E_{#1}(#2;#3)}
+\newcommand{\Un}[4]{\Gal(#2/#1)_{#3,#4}}
+\newcommand{\GalG}[2]{\Gal(#2/#1)}
+\newcommand{\QZl}[1]{\Q_{#1}/\Z_{#1}}
+\newcommand{\cyc}[4]{\kappa_{#3}^{#2/#1}(#4)}
+\newcommand{\Dec}[1]{G_{#1}}
+\newcommand{\Ine}[1]{I_{#1}}
+\newcommand{\princ}[2]{U_{#1}^{(#2)}}
+\newcommand{\levU}[3]{#2_{#1,#3}}
+\newcommand{\cycU}[2]{#2_{#1,\infty}}

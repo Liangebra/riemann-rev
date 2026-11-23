@@ -3,12 +3,16 @@
  "digest": "local-nilpotence",
  "archive_commit": "40e56bab026552e089d7afcfeff08d2defb9c005",
  "pdf": "local-nilpotence.pdf",
- "pdf_sha256": "0d6916877cbe4167761a4cf8367c34767079f8da97775a6c9ce81018a54e765a",
- "pages": 8,
+ "pdf_sha256": "bff4a080012f3fa591743545a1355f266e6f1984dcdc836ab300fe041e86ae38",
+ "pages": 10,
  "editions": [
   {
    "file": "editions/local-nilpotence-0d6916877cbe.pdf",
    "sha256": "0d6916877cbe4167761a4cf8367c34767079f8da97775a6c9ce81018a54e765a"
+  },
+  {
+   "file": "editions/local-nilpotence-bff4a080012f.pdf",
+   "sha256": "bff4a080012f3fa591743545a1355f266e6f1984dcdc836ab300fe041e86ae38"
   }
  ],
  "unit": {
@@ -18,9 +22,32 @@
  },
  "items": [
   {
+   "item": "d:galois",
+   "title": "Def. 2.1",
+   "page": 2,
+   "dest": "theorem.2.1",
+   "declarations": [
+    "G",
+    "QZ",
+    "cycZ"
+   ]
+  },
+  {
+   "item": "d:groups",
+   "title": "Def. 2.2",
+   "page": 2,
+   "dest": "theorem.2.2",
+   "declarations": [
+    "Un",
+    "princ",
+    "levU",
+    "cycU"
+   ]
+  },
+  {
    "item": "t:A",
    "title": "Theorem A",
-   "page": 1,
+   "page": 2,
    "dest": "section*.1",
    "declarations": [
     "dinfNil"
@@ -28,9 +55,9 @@
   },
   {
    "item": "d:char",
-   "title": "Def. 2.1",
-   "page": 2,
-   "dest": "theorem.2.1",
+   "title": "Def. 2.3",
+   "page": 3,
+   "dest": "theorem.2.3",
    "declarations": [
     "XDual",
     "Dinf",
@@ -40,26 +67,29 @@
    ]
   },
   {
-   "item": "s:setting",
-   "title": "§2",
-   "page": 2,
-   "dest": "section.2",
+   "item": "d:conj",
+   "title": "Def. 2.4",
+   "page": 3,
+   "dest": "theorem.2.4",
    "declarations": [
     "funRep",
-    "Un",
-    "G",
-    "QZ",
-    "cycZ",
-    "princ",
-    "levU",
-    "cycU",
     "conjHom"
+   ]
+  },
+  {
+   "item": "d:equiv",
+   "title": "Def. 2.5",
+   "page": 3,
+   "dest": "theorem.2.5",
+   "declarations": [
+    "conjCond",
+    "EqHom"
    ]
   },
   {
    "item": "l:four",
    "title": "Lemma 3.1",
-   "page": 3,
+   "page": 4,
    "dest": "theorem.3.1",
    "declarations": [
     "memPrinc",
@@ -70,25 +100,39 @@
   },
   {
    "item": "p:action",
-   "title": "Prop. 2.2",
-   "page": 3,
-   "dest": "theorem.2.2",
+   "title": "Prop. 2.6",
+   "page": 4,
+   "dest": "theorem.2.6",
    "declarations": [
-    "conjCond",
-    "EqHom",
     "funRepMem",
     "conjDec",
     "conjIne"
    ]
   },
   {
-   "item": "s:use",
-   "title": "§5",
-   "page": 4,
-   "dest": "section.5",
+   "item": "c:unip",
+   "title": "Cor. 5.2",
+   "page": 6,
+   "dest": "theorem.5.2",
    "declarations": [
-    "xUnip",
-    "dualUnip",
+    "xUnip"
+   ]
+  },
+  {
+   "item": "p:dual",
+   "title": "Prop. 5.1",
+   "page": 6,
+   "dest": "theorem.5.1",
+   "declarations": [
+    "dualUnip"
+   ]
+  },
+  {
+   "item": "p:inv",
+   "title": "Prop. 5.3",
+   "page": 7,
+   "dest": "theorem.5.3",
+   "declarations": [
     "shaDGen"
    ]
   }
@@ -301,9 +345,9 @@
    ],
    "in_unit": true,
    "item": "d:char",
-   "where": "Def. 2.1",
-   "page": 2,
-   "dest": "theorem.2.1"
+   "where": "Def. 2.3",
+   "page": 3,
+   "dest": "theorem.2.3"
   },
   {
    "key": "Dinf",
@@ -317,9 +361,9 @@
    ],
    "in_unit": true,
    "item": "d:char",
-   "where": "Def. 2.1",
-   "page": 2,
-   "dest": "theorem.2.1"
+   "where": "Def. 2.3",
+   "page": 3,
+   "dest": "theorem.2.3"
   },
   {
    "key": "Xinf",
@@ -333,9 +377,9 @@
    ],
    "in_unit": true,
    "item": "d:char",
-   "where": "Def. 2.1",
-   "page": 2,
-   "dest": "theorem.2.1"
+   "where": "Def. 2.3",
+   "page": 3,
+   "dest": "theorem.2.3"
   },
   {
    "key": "funRep",
@@ -348,10 +392,10 @@
     124
    ],
    "in_unit": true,
-   "item": "s:setting",
-   "where": "§2, conjugation",
-   "page": 2,
-   "dest": "section.2"
+   "item": "d:conj",
+   "where": "Def. 2.4",
+   "page": 3,
+   "dest": "theorem.2.4"
   },
   {
    "key": "conjCond",
@@ -364,10 +408,10 @@
     107
    ],
    "in_unit": true,
-   "item": "p:action",
-   "where": "Prop. 2.2(c)",
+   "item": "d:equiv",
+   "where": "Def. 2.5",
    "page": 3,
-   "dest": "theorem.2.2"
+   "dest": "theorem.2.5"
   },
   {
    "key": "EqHom",
@@ -380,10 +424,10 @@
     110
    ],
    "in_unit": true,
-   "item": "p:action",
-   "where": "Prop. 2.2(c)",
+   "item": "d:equiv",
+   "where": "Def. 2.5",
    "page": 3,
-   "dest": "theorem.2.2"
+   "dest": "theorem.2.5"
   },
   {
    "key": "Un",
@@ -396,10 +440,10 @@
     186
    ],
    "in_unit": true,
-   "item": "s:setting",
-   "where": "§2, the groups",
+   "item": "d:groups",
+   "where": "Def. 2.2",
    "page": 2,
-   "dest": "section.2"
+   "dest": "theorem.2.2"
   },
   {
    "key": "funRepMem",
@@ -413,9 +457,9 @@
    ],
    "in_unit": true,
    "item": "p:action",
-   "where": "Prop. 2.2",
-   "page": 3,
-   "dest": "theorem.2.2"
+   "where": "Prop. 2.6",
+   "page": 4,
+   "dest": "theorem.2.6"
   },
   {
    "key": "memPrinc",
@@ -430,7 +474,7 @@
    "in_unit": true,
    "item": "l:four",
    "where": "Lemma 3.1(a)",
-   "page": 3,
+   "page": 4,
    "dest": "theorem.3.1"
   },
   {
@@ -446,7 +490,7 @@
    "in_unit": true,
    "item": "l:four",
    "where": "Lemma 3.1(b)",
-   "page": 3,
+   "page": 4,
    "dest": "theorem.3.1"
   },
   {
@@ -462,7 +506,7 @@
    "in_unit": true,
    "item": "l:four",
    "where": "Lemma 3.1(c)",
-   "page": 3,
+   "page": 4,
    "dest": "theorem.3.1"
   },
   {
@@ -478,7 +522,7 @@
    "in_unit": true,
    "item": "l:four",
    "where": "Lemma 3.1(d)",
-   "page": 3,
+   "page": 4,
    "dest": "theorem.3.1"
   },
   {
@@ -494,7 +538,7 @@
    "in_unit": true,
    "item": "t:A",
    "where": "Theorem A",
-   "page": 1,
+   "page": 2,
    "dest": "section*.1"
   },
   {
@@ -508,10 +552,10 @@
     6
    ],
    "in_unit": false,
-   "item": "s:setting",
-   "where": "§2",
+   "item": "d:galois",
+   "where": "Def. 2.1",
    "page": 2,
-   "dest": "section.2"
+   "dest": "theorem.2.1"
   },
   {
    "key": "QZ",
@@ -524,10 +568,10 @@
     15
    ],
    "in_unit": false,
-   "item": "s:setting",
-   "where": "§2",
+   "item": "d:galois",
+   "where": "Def. 2.1",
    "page": 2,
-   "dest": "section.2"
+   "dest": "theorem.2.1"
   },
   {
    "key": "cycZ",
@@ -540,10 +584,10 @@
     92
    ],
    "in_unit": false,
-   "item": "s:setting",
-   "where": "§2",
+   "item": "d:galois",
+   "where": "Def. 2.1",
    "page": 2,
-   "dest": "section.2"
+   "dest": "theorem.2.1"
   },
   {
    "key": "Dec",
@@ -557,9 +601,9 @@
    ],
    "in_unit": false,
    "item": "d:char",
-   "where": "Def. 2.1",
-   "page": 2,
-   "dest": "theorem.2.1"
+   "where": "Def. 2.3",
+   "page": 3,
+   "dest": "theorem.2.3"
   },
   {
    "key": "Ine",
@@ -573,9 +617,9 @@
    ],
    "in_unit": false,
    "item": "d:char",
-   "where": "Def. 2.1",
-   "page": 2,
-   "dest": "theorem.2.1"
+   "where": "Def. 2.3",
+   "page": 3,
+   "dest": "theorem.2.3"
   },
   {
    "key": "princ",
@@ -588,10 +632,10 @@
     16
    ],
    "in_unit": false,
-   "item": "s:setting",
-   "where": "§2, the groups",
+   "item": "d:groups",
+   "where": "Def. 2.2",
    "page": 2,
-   "dest": "section.2"
+   "dest": "theorem.2.2"
   },
   {
    "key": "levU",
@@ -604,10 +648,10 @@
     187
    ],
    "in_unit": false,
-   "item": "s:setting",
-   "where": "§2, the groups",
+   "item": "d:groups",
+   "where": "Def. 2.2",
    "page": 2,
-   "dest": "section.2"
+   "dest": "theorem.2.2"
   },
   {
    "key": "cycU",
@@ -620,10 +664,10 @@
     189
    ],
    "in_unit": false,
-   "item": "s:setting",
-   "where": "§2, the groups",
+   "item": "d:groups",
+   "where": "Def. 2.2",
    "page": 2,
-   "dest": "section.2"
+   "dest": "theorem.2.2"
   },
   {
    "key": "conjHom",
@@ -636,10 +680,10 @@
     118
    ],
    "in_unit": false,
-   "item": "s:setting",
-   "where": "§2, conjugation",
-   "page": 2,
-   "dest": "section.2"
+   "item": "d:conj",
+   "where": "Def. 2.4",
+   "page": 3,
+   "dest": "theorem.2.4"
   },
   {
    "key": "conjDec",
@@ -653,9 +697,9 @@
    ],
    "in_unit": false,
    "item": "p:action",
-   "where": "Prop. 2.2, proof",
-   "page": 3,
-   "dest": "theorem.2.2"
+   "where": "Prop. 2.6, proof",
+   "page": 4,
+   "dest": "theorem.2.6"
   },
   {
    "key": "conjIne",
@@ -669,9 +713,9 @@
    ],
    "in_unit": false,
    "item": "p:action",
-   "where": "Prop. 2.2, proof",
-   "page": 3,
-   "dest": "theorem.2.2"
+   "where": "Prop. 2.6, proof",
+   "page": 4,
+   "dest": "theorem.2.6"
   },
   {
    "key": "xUnip",
@@ -684,10 +728,10 @@
     27
    ],
    "in_unit": false,
-   "item": "s:use",
-   "where": "§5",
-   "page": 4,
-   "dest": "section.5"
+   "item": "c:unip",
+   "where": "Cor. 5.2",
+   "page": 6,
+   "dest": "theorem.5.2"
   },
   {
    "key": "dualUnip",
@@ -700,10 +744,10 @@
     34
    ],
    "in_unit": false,
-   "item": "s:use",
-   "where": "§5",
-   "page": 4,
-   "dest": "section.5"
+   "item": "p:dual",
+   "where": "Prop. 5.1",
+   "page": 6,
+   "dest": "theorem.5.1"
   },
   {
    "key": "shaDGen",
@@ -716,10 +760,10 @@
     59
    ],
    "in_unit": false,
-   "item": "s:use",
-   "where": "§5",
-   "page": 4,
-   "dest": "section.5"
+   "item": "p:inv",
+   "where": "Prop. 5.3",
+   "page": 7,
+   "dest": "theorem.5.3"
   }
  ]
 }

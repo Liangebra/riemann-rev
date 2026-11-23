@@ -1565,9 +1565,8 @@
      "from": "type"
     },
     {
-     "name": "∀ φ",
      "kind": "explicit",
-     "type": "D, ∃ k : ℕ, ((g - 1) ^ k) φ = 0",
+     "type": "(∀ φ : D, ∃ k : ℕ, ((g - 1) ^ k) φ = 0)",
      "from": "type"
     }
    ]

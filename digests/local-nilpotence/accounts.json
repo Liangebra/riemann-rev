@@ -1,0 +1,125 @@
+{
+ "conventions": "c:conventions",
+ "letters": {
+  "l": "\\ell",
+  "F": "F",
+  "k": "F",
+  "Ω": "\\Omega",
+  "N": "N",
+  "R": "R",
+  "M": "M",
+  "φ": "\\varphi"
+ },
+ "words": {
+  "IsClosed": "closed normal subgroup",
+  "U.Normal": "normal subgroup",
+  "Module.Finite": "finitely generated over~$\\Z_\\ell$"
+ },
+ "ambient": {
+  "Fact l.Prime": "prime number",
+  "Field F": "number field",
+  "NumberField F": "number field",
+  "Field Ω": "algebraic closure of~$F$",
+  "Algebra F Ω": "algebraic closure of~$F$",
+  "IsAlgClosure F Ω": "algebraic closure of~$F$",
+  "Field k": "number field",
+  "NumberField k": "number field",
+  "Algebra k Ω": "algebraic closure of~$F$",
+  "IsAlgClosure k Ω": "algebraic closure of~$F$",
+  "CommRing R": "commutative ring",
+  "AddCommGroup M": "module over a commutative ring~$R$",
+  "Module R M": "module over a commutative ring~$R$"
+ },
+ "declarations": {
+  "Dec": {},
+  "Ine": {},
+  "conjCond": {},
+  "conjHom": {
+   "notation": {
+    "none": "written out by its value in every place: the map that sends an element x of the normal subgroup C to g⁻¹xg; the subgroup, the element g and the element x are all written, and the note has no symbol for the map"
+   },
+   "binders": {
+    "G": "\\GalG{F}{\\Omega}",
+    "#5": "Let $C$ be a normal subgroup of~$\\GalG{F}{\\Omega}$",
+    "g": "\\m{g\\in\\GalG{F}{\\Omega}}",
+    "#8": "sends \\m{x\\in C} to~\\m{g^{-1}xg}"
+   }
+  },
+  "funRepMem": {
+   "binders": {
+    "U": "Let $C$ be a normal subgroup of~$\\GalG{F}{\\Omega}$",
+    "N": "let \\m{N\\ge0} be an integer"
+   }
+  },
+  "memPrinc": {
+   "binders": {
+    "m": "Let \\m{m\\ge0} be an integer",
+    "u": "A unit $u$ of~$\\Z_\\ell$"
+   }
+  },
+  "powSucc": {
+   "binders": {
+    "j": "\\m{j\\ge0}",
+    "v": "Let \\m{v\\in\\Z_\\ell}",
+    "h": "If $\\ell^{j+1}$ divides \\m{v-1}"
+   }
+  },
+  "qzTors": {
+   "binders": {
+    "v": "Every element of~$\\QZl{\\ell}$"
+   }
+  },
+  "princNhds": {
+   "binders": {
+    "V": "Every neighbourhood of~$1$ in~$\\Z_\\ell^\\times$",
+    "hV": "neighbourhood of~$1$ in~$\\Z_\\ell^\\times$"
+   }
+  },
+  "dinfNil": {
+   "binders": {
+    "N": "let \\m{N\\ge0} be an integer",
+    "U": "Let $H$ be a closed normal subgroup of~$\\GalG{F}{\\Omega}$",
+    "φ": "let $\\varphi$ be an element of the module $\\Dinf{\\ell}{N}{H}$",
+    "#15": "an element of the module $\\Dinf{\\ell}{N}{H}$"
+   }
+  },
+  "conjDec": {
+   "absorbed": "used inside the proof of Proposition p:action(a) only, in the case where the automorphism of F is the identity and its lift to Ω is an element g of the Galois group: the proof displays the conjugate of the decomposition group. The general statement, for a lift of any automorphism of F, is not stated in this note"
+  },
+  "conjIne": {
+   "absorbed": "used inside the proof of Proposition p:action(a) only, in the case where the automorphism of F is the identity and its lift to Ω is an element g of the Galois group: the proof displays the conjugate of the inertia group. The general statement, for a lift of any automorphism of F, is not stated in this note"
+  },
+  "xUnip": {
+   "binders": {
+    "N": "\\m{N\\ge0} an integer",
+    "U": "Let $H$ be a closed normal subgroup of~$\\GalG{F}{\\Omega}$",
+    "#14": "the module $\\Xinf{\\ell}{N}{H}$ is finitely generated over~$\\Z_\\ell$",
+    "γ": "\\m{\\gamma\\in\\levU{\\ell}{H}{1}}",
+    "#16": "\\m{\\gamma\\in\\levU{\\ell}{H}{1}}"
+   }
+  },
+  "dualUnip": {
+   "binders": {
+    "D": "let $B$ be a module over~$\\Z_\\ell$",
+    "#4": "let $B$ be a module over~$\\Z_\\ell$",
+    "#5": "let $B$ be a module over~$\\Z_\\ell$",
+    "g": "$f$ an endomorphism of~$B$",
+    "t": "Let $t$ be an endomorphism of the $\\Z_\\ell$-module \\m{\\Hom_{\\Z_\\ell}(B,\\QZl{\\ell})}",
+    "#8": "the module \\m{\\Hom_{\\Z_\\ell}(B,\\QZl{\\ell})} is finitely generated over~$\\Z_\\ell$",
+    "#9": "\\m{(t\\xi)(\\beta)=\\xi(f\\beta)} for all \\m{\\xi\\in\\Hom_{\\Z_\\ell}(B,\\QZl{\\ell})} and all \\m{\\beta\\in B}",
+    "#10": "every element of~$B$ is killed by a power of \\m{f-1}"
+   }
+  },
+  "shaDGen": {
+   "binders": {
+    "N": "let \\m{N\\ge0} be an integer",
+    "U": "Let $H$ be a closed normal subgroup of~$\\GalG{F}{\\Omega}$",
+    "V": "Let $V$ be a subgroup of~$\\GalG{F}{\\Omega}$",
+    "e": "$e$ an integer",
+    "γ": "let \\m{\\eta\\in V} be such that",
+    "#17": "contained in~$H$",
+    "#18": "let \\m{\\eta\\in V} be such that every value \\m{\\cyc{F}{\\Omega}{\\ell}{g}}, \\m{g\\in V}, lies in the closure in~$\\Z_\\ell^\\times$ of the set of the powers \\m{\\cyc{F}{\\Omega}{\\ell}{\\eta}^{i}}, \\m{i\\in\\Z}"
+   }
+  }
+ }
+}
