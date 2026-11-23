@@ -45,6 +45,7 @@ def _letters(tex: str) -> tuple[set[str], set[str]]:
     for c in chunks:
         greek |= set(re.findall(r"\\(" + GREEK + r")(?![a-zA-Z])", c))
         c = re.sub(r"\\(?:text|mathrm|operatorname|emph|textbf|leanfont|kw|mbox|quad|qquad|pmod)\s*\{[^{}]*\}", "", c)
+        c = re.sub(r"\\(?:begin|end)\{[A-Za-z*]+\}", "", c)      # the name of an environment is not a formula
         latin |= set(re.findall(r"[A-Za-z]", re.sub(r"\\[a-zA-Z]+", "", c)))
     return greek, latin
 

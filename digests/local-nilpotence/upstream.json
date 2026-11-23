@@ -3,15 +3,15 @@
  "digest": "local-nilpotence",
  "upstream": "leanprover-community/riemann-hypothesis",
  "base": "40e56bab026552e089d7afcfeff08d2defb9c005",
- "checked": "2026-11-22 17:58 UTC",
+ "checked": "2026-11-22 20:05 UTC",
  "cited": {
   "directories": 9,
   "files": 13,
   "declarations": 27
  },
  "main": {
-  "commit": "c7791603122c0328f79e49f6be5d7d4402effc53",
-  "committed": "2026-11-22T17:50:19Z",
+  "commit": "1b894f7511841e6607bc0398cf2657526bbb29d9",
+  "committed": "2026-11-22T18:46:53Z",
   "file_absent": [],
   "statement_changed": [
    "Kum.funRepMem"
@@ -27,7 +27,7 @@
   }
  },
  "open_pull_requests": {
-  "checked": 41,
+  "checked": 40,
   "touching": [
    {
     "number": 4,
@@ -57,7 +57,7 @@
     "number": 62,
     "title": "Shorten machine-dumped terms and reuse repeated proofs in 76 modules",
     "head": "31a38861da6da8f71b16d18e935ac4f6794141d9",
-    "updated": "2026-11-22T17:16:36Z",
+    "updated": "2026-11-22T18:23:53Z",
     "file_absent": [],
     "statement_changed": [
      "Kum.funRepMem"
@@ -79,24 +79,10 @@
     ]
    },
    {
-    "number": 74,
-    "title": "Give four duplicated theorems a single defining module",
-    "head": "f31ab6435355e24214ff0e86e24a59394322892e",
-    "updated": "2026-11-22T17:55:31Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
     "number": 78,
     "title": "Add `docs/references.bib`, docstring citations and a cross-reference tag for five statements",
-    "head": "fd9ef1ba16d58f3748c89b6741a7b4c1f444a877",
-    "updated": "2026-11-22T17:31:40Z",
+    "head": "8fc245e7ae9b6d8b4beea3c46f6fd1cd4abfcb3f",
+    "updated": "2026-11-22T18:50:18Z",
     "file_absent": [],
     "statement_changed": [
      "Kum.funRepMem"
@@ -107,38 +93,10 @@
     ]
    },
    {
-    "number": 79,
-    "title": "Remove heartbeat overrides",
-    "head": "90d23d60feda4ba5c41c6c7f8835c1de67bee799",
-    "updated": "2026-11-22T16:21:28Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 80,
-    "title": "Remove stub-check guards from the 4.36 port (stacked on #66)",
-    "head": "59057b1de27671658ab87022f0899613f91ae3b4",
-    "updated": "2026-11-22T17:55:32Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 81,
-    "title": "Remove debugging output from the 4.36 port (stacked on #66)",
-    "head": "6f3d67880dcd8dde6b76f6ec6d8a0b7fd2114145",
-    "updated": "2026-11-22T17:55:34Z",
+    "number": 83,
+    "title": "Zero-free region: replace the 34-file assembly with a self-contained 2,368-token proof (-89.1% normalized tokens)",
+    "head": "2d687558d1064d8ebecfd41cf2e44bda5bdef16d",
+    "updated": "2026-11-22T20:02:19Z",
     "file_absent": [],
     "statement_changed": [
      "Kum.funRepMem"
@@ -178,9 +136,9 @@
    },
    {
     "number": 88,
-    "title": "Add a formal-conjectures Comparator setup and gather the setups in comparator/",
-    "head": "24e73b1ff2c9c965e39c68c32e50bdaf13a7db7a",
-    "updated": "2026-11-22T17:26:13Z",
+    "title": "Add a second Comparator setup, with formal-conjectures' RH and GRH as the challenge",
+    "head": "dc1a001977db126f225fb04690ac26194beceaa4",
+    "updated": "2026-11-22T19:12:23Z",
     "file_absent": [],
     "statement_changed": [
      "Kum.funRepMem"
@@ -191,10 +149,10 @@
     ]
    },
    {
-    "number": 91,
-    "title": "Combine reviewed proof cleanups on Lean 4.36",
-    "head": "68fc637250dd1538cdda48bdb41dc99b46e939c7",
-    "updated": "2026-11-22T17:55:36Z",
+    "number": 95,
+    "title": "Simplify proofs in GammaFactorNonvanishing and ZeroFreeRegion (−824 lines)",
+    "head": "b5c830f1cd3f529d94602391dc4b5c93829fdf16",
+    "updated": "2026-11-22T17:58:12Z",
     "file_absent": [],
     "statement_changed": [
      "Kum.funRepMem"
@@ -207,8 +165,8 @@
    {
     "number": 97,
     "title": "Run the Lean auto-formatter over `src/` (stacked on #66)",
-    "head": "c97a0fa101f9e2d70e163df2de9c2e3f79edcd79",
-    "updated": "2026-11-22T17:55:38Z",
+    "head": "c9ecafb85243643c0f4d324fabdd3ad12e0185f2",
+    "updated": "2026-11-22T19:00:06Z",
     "file_absent": [],
     "statement_changed": [
      "Kum.XDual",
@@ -230,34 +188,6 @@
      "exists_prime_pow_smul_eq_zero_qz",
      "Tower.shaDGen",
      "PropA.xUnip"
-    ]
-   },
-   {
-    "number": 98,
-    "title": "Minimize and privatize imports (stacked on #79)",
-    "head": "86692ef803d35b2ad0ea1ec0ebddadd3f860b33c",
-    "updated": "2026-11-22T17:19:58Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 104,
-    "title": "Speed up the slowest proofs (stacked on #79)",
-    "head": "2ea000c90de863f15260573296e84ca49b578d1f",
-    "updated": "2026-11-22T16:22:19Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
     ]
    },
    {
@@ -361,8 +291,8 @@
    {
     "number": 120,
     "title": "Collapse 28,169 thin wrappers and consolidate 93,601 modules into 20,258 bundles (−101,512 files, −67.9%)",
-    "head": "3d763952ed4721fce70b4c94a925e4d74865bcab",
-    "updated": "2026-11-22T17:25:34Z",
+    "head": "f94106583626ad6b48ac6e239e0b2e5ffc879555",
+    "updated": "2026-11-22T19:53:15Z",
     "file_absent": [
      "Kum.dinfNil",
      "Kum.funRepMem",
@@ -376,10 +306,167 @@
     "proof_changed": []
    },
    {
-    "number": 121,
-    "title": "README: lead with `lake comparator`, and say which files are unchanged",
-    "head": "803b29a7ecc66af9d00050a452722655e495e1c5",
-    "updated": "2026-11-22T17:51:56Z",
+    "number": 125,
+    "title": "Split Lemmata package into dependent and independent parts",
+    "head": "8098c5a94e26afbabf9fba4911cc9a14ff0d4ed9",
+    "updated": "2026-11-22T18:21:13Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 126,
+    "title": "Remove no-op options (stacked on #120)",
+    "head": "9fb32e14bf4d75cf2d640c33009b10303add6a11",
+    "updated": "2026-11-22T19:09:40Z",
+    "file_absent": [
+     "Kum.dinfNil",
+     "Kum.funRepMem",
+     "mem_princ_iff_pow_dvd_sub_one",
+     "pow_succ_dvd_pow_prime_sub_one",
+     "exists_princ_subset_of_mem_nhds_one",
+     "exists_prime_pow_smul_eq_zero_qz",
+     "Tower.shaDGen"
+    ],
+    "statement_changed": [],
+    "proof_changed": []
+   },
+   {
+    "number": 127,
+    "title": "Reuse 5 existing Main-cone proofs and prune 17 duplicate modules (−1,179 lines)",
+    "head": "030495f7d98b47d0c423a0b54364982d23cb2231",
+    "updated": "2026-11-22T18:36:51Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 128,
+    "title": "Prune 14 unused imports in 3 Development modules",
+    "head": "71b6f7f306b2fb6282fabb78f93919e238d01cc3",
+    "updated": "2026-11-22T18:40:55Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 130,
+    "title": "Prune 2 unused imports in 1 ReciprocityTheory modules",
+    "head": "c632fc36ebe35881464b56c2878c48f343da9726",
+    "updated": "2026-11-22T18:47:37Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 131,
+    "title": "  Simplify FrameLinearAlgebraFirst via coordinate-free frame variance and traceless projection bound",
+    "head": "08276fe2d11ba9f30592146051a01230cc268363",
+    "updated": "2026-11-22T19:09:40Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 132,
+    "title": "Reuse 4 existing Main-cone published proofs and prune 345 duplicate modules (−24,046 lines)",
+    "head": "6572c1958303aa137493fb385a19c37c1acdf0c6",
+    "updated": "2026-11-22T19:32:06Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 134,
+    "title": "Speed up the build: remove heartbeat overrides, minimize imports, speed up slow proofs",
+    "head": "93bbcfdf2777237852623d3c82d236b036da164c",
+    "updated": "2026-11-22T20:00:16Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 135,
+    "title": "refactor: reuse Complex.sq_nonpos_iff for conjugation lemma",
+    "head": "946fff183058348e4871eef2bfbae12a9c164462",
+    "updated": "2026-11-22T20:00:09Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 136,
+    "title": "Reuse nilpotence and linearity in matrix geometric-sum proofs",
+    "head": "58571a81b39a4be4072a8bbd4c1dea47c3f3e40e",
+    "updated": "2026-11-22T19:56:23Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 139,
+    "title": "Share discrete-series proofs between classification and formal degree",
+    "head": "9e1f119a6da4727bdde6ecc00512d2a7c64ecb2d",
+    "updated": "2026-11-22T20:02:11Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 140,
+    "title": "Reuse 5 existing Main-cone proofs and prune 88 duplicate modules (−6,385 lines)",
+    "head": "0456c886924b7aa3a785cb37294e92af20fa9164",
+    "updated": "2026-11-22T20:02:17Z",
     "file_absent": [],
     "statement_changed": [
      "Kum.funRepMem"

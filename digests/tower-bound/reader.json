@@ -3,12 +3,16 @@
  "digest": "tower-bound",
  "archive_commit": "40e56bab026552e089d7afcfeff08d2defb9c005",
  "pdf": "tower-bound.pdf",
- "pdf_sha256": "028187411130d4714790d8f54f9b562518db784b59096fe4e3c565c89bfa345c",
- "pages": 21,
+ "pdf_sha256": "c054c66c84bce37c1bb9c1cdf56a92e06d500b274fa7a28d30f97b802d4e4b87",
+ "pages": 22,
  "editions": [
   {
    "file": "editions/tower-bound-028187411130.pdf",
    "sha256": "028187411130d4714790d8f54f9b562518db784b59096fe4e3c565c89bfa345c"
+  },
+  {
+   "file": "editions/tower-bound-c054c66c84bc.pdf",
+   "sha256": "c054c66c84bce37c1bb9c1cdf56a92e06d500b274fa7a28d30f97b802d4e4b87"
   }
  ],
  "unit": {
@@ -90,7 +94,7 @@
   {
    "item": "t:D",
    "title": "Theorem D",
-   "page": 3,
+   "page": 4,
    "dest": "section*.4",
    "declarations": [
     "IsTower",
@@ -107,23 +111,11 @@
   {
    "item": "l:len",
    "title": "Lemma 3.1",
-   "page": 4,
+   "page": 5,
    "dest": "theorem.3.1",
    "declarations": [
     "range",
     "lenComp"
-   ]
-  },
-  {
-   "item": "l:lte",
-   "title": "Lemma 4.1",
-   "page": 5,
-   "dest": "theorem.4.1",
-   "declarations": [
-    "lte",
-    "lteNorm",
-    "normDvd",
-    "normAddVal"
    ]
   },
   {
@@ -136,30 +128,12 @@
    ]
   },
   {
-   "item": "l:units",
-   "title": "Lemma 4.2",
-   "page": 5,
-   "dest": "theorem.4.2",
-   "declarations": [
-    "units"
-   ]
-  },
-  {
    "item": "p:lift",
    "title": "Prop. 3.3",
    "page": 5,
    "dest": "theorem.3.3",
    "declarations": [
     "lift"
-   ]
-  },
-  {
-   "item": "l:eigen",
-   "title": "Lemma 4.5",
-   "page": 6,
-   "dest": "theorem.4.5",
-   "declarations": [
-    "detFactor"
    ]
   },
   {
@@ -172,24 +146,33 @@
    ]
   },
   {
+   "item": "l:lte",
+   "title": "Lemma 4.1",
+   "page": 6,
+   "dest": "theorem.4.1",
+   "declarations": [
+    "lte",
+    "lteNorm",
+    "normDvd",
+    "normAddVal"
+   ]
+  },
+  {
+   "item": "l:units",
+   "title": "Lemma 4.2",
+   "page": 6,
+   "dest": "theorem.4.2",
+   "declarations": [
+    "units"
+   ]
+  },
+  {
    "item": "p:ball",
    "title": "Prop. 4.4",
    "page": 6,
    "dest": "theorem.4.4",
    "declarations": [
     "ball"
-   ]
-  },
-  {
-   "item": "p:det",
-   "title": "Prop. 4.6",
-   "page": 6,
-   "dest": "theorem.4.6",
-   "declarations": [
-    "normVal",
-    "detBound",
-    "dvdNorm",
-    "vlProd"
    ]
   },
   {
@@ -202,13 +185,12 @@
    ]
   },
   {
-   "item": "l:cong",
-   "title": "Lemma 5.3",
+   "item": "l:eigen",
+   "title": "Lemma 4.5",
    "page": 7,
-   "dest": "theorem.5.3",
+   "dest": "theorem.4.5",
    "declarations": [
-    "frob",
-    "powIn"
+    "detFactor"
    ]
   },
   {
@@ -224,16 +206,6 @@
    ]
   },
   {
-   "item": "l:step",
-   "title": "Lemma 5.4",
-   "page": 7,
-   "dest": "theorem.5.4",
-   "declarations": [
-    "phi",
-    "step"
-   ]
-  },
-  {
    "item": "l:unip",
    "title": "Lemma 5.2",
    "page": 7,
@@ -244,12 +216,35 @@
    ]
   },
   {
-   "item": "l:sep",
-   "title": "Lemma 6.1",
-   "page": 8,
-   "dest": "theorem.6.1",
+   "item": "p:det",
+   "title": "Prop. 4.6",
+   "page": 7,
+   "dest": "theorem.4.6",
    "declarations": [
-    "near1"
+    "normVal",
+    "detBound",
+    "dvdNorm",
+    "vlProd"
+   ]
+  },
+  {
+   "item": "l:cong",
+   "title": "Lemma 5.3",
+   "page": 8,
+   "dest": "theorem.5.3",
+   "declarations": [
+    "frob",
+    "powIn"
+   ]
+  },
+  {
+   "item": "l:step",
+   "title": "Lemma 5.4",
+   "page": 8,
+   "dest": "theorem.5.4",
+   "declarations": [
+    "phi",
+    "step"
    ]
   },
   {
@@ -263,9 +258,18 @@
    ]
   },
   {
+   "item": "l:sep",
+   "title": "Lemma 6.1",
+   "page": 9,
+   "dest": "theorem.6.1",
+   "declarations": [
+    "near1"
+   ]
+  },
+  {
    "item": "s:arith",
    "title": "§7",
-   "page": 8,
+   "page": 9,
    "dest": "section.7",
    "declarations": [
     "XDual",
@@ -273,18 +277,6 @@
     "shaInv",
     "VLen",
     "cZero"
-   ]
-  },
-  {
-   "item": "p:dual",
-   "title": "Prop. 7.1",
-   "page": 9,
-   "dest": "theorem.7.1",
-   "declarations": [
-    "qzInj",
-    "dualDiv",
-    "torsFin",
-    "dualUnip"
    ]
   },
   {
@@ -318,9 +310,21 @@
    ]
   },
   {
+   "item": "p:dual",
+   "title": "Prop. 7.2",
+   "page": 10,
+   "dest": "theorem.7.2",
+   "declarations": [
+    "qzInj",
+    "dualDiv",
+    "torsFin",
+    "dualUnip"
+   ]
+  },
+  {
    "item": "s:use",
    "title": "§7",
-   "page": 10,
+   "page": 11,
    "dest": "section*.7",
    "declarations": [
     "isTowerIff",
@@ -338,7 +342,7 @@
   {
    "item": "l:char",
    "title": "Lemma 8.1",
-   "page": 11,
+   "page": 12,
    "dest": "theorem.8.1",
    "declarations": [
     "qzSep",
@@ -352,7 +356,7 @@
   {
    "item": "s:descent",
    "title": "§8",
-   "page": 11,
+   "page": 12,
    "dest": "section.8",
    "declarations": [
     "layU",
@@ -366,7 +370,7 @@
   {
    "item": "l:cokdual",
    "title": "Lemma 8.2",
-   "page": 12,
+   "page": 13,
    "dest": "theorem.8.2",
    "declarations": [
     "dualKer",
@@ -376,7 +380,7 @@
   {
    "item": "l:princ",
    "title": "Lemma 8.3",
-   "page": 12,
+   "page": 13,
    "dest": "theorem.8.3",
    "declarations": [
     "pgIndex",
@@ -391,7 +395,7 @@
   {
    "item": "l:layers",
    "title": "Lemma 8.4",
-   "page": 13,
+   "page": 14,
    "dest": "theorem.8.4",
    "declarations": [
     "cycRange",
@@ -404,7 +408,7 @@
   {
    "item": "i:2a",
    "title": "Input 2a",
-   "page": 14,
+   "page": 15,
    "dest": "section*.8",
    "declarations": [
     "ShaD",
@@ -415,7 +419,7 @@
   {
    "item": "i:2b",
    "title": "Input 2b",
-   "page": 14,
+   "page": 15,
    "dest": "section*.9",
    "declarations": [
     "shaDGen"
@@ -919,7 +923,7 @@
    "in_unit": true,
    "item": "l:len",
    "where": "Lemma 3.1",
-   "page": 4,
+   "page": 5,
    "dest": "theorem.3.1"
   },
   {
@@ -935,7 +939,7 @@
    "in_unit": false,
    "item": "l:len",
    "where": "Lemma 3.1",
-   "page": 4,
+   "page": 5,
    "dest": "theorem.3.1"
   },
   {
@@ -983,7 +987,7 @@
    "in_unit": false,
    "item": "l:lte",
    "where": "Lemma 4.1",
-   "page": 5,
+   "page": 6,
    "dest": "theorem.4.1"
   },
   {
@@ -999,7 +1003,7 @@
    "in_unit": true,
    "item": "l:lte",
    "where": "Lemma 4.1",
-   "page": 5,
+   "page": 6,
    "dest": "theorem.4.1"
   },
   {
@@ -1015,7 +1019,7 @@
    "in_unit": true,
    "item": "l:units",
    "where": "Lemma 4.2",
-   "page": 5,
+   "page": 6,
    "dest": "theorem.4.2"
   },
   {
@@ -1063,7 +1067,7 @@
    "in_unit": true,
    "item": "l:eigen",
    "where": "Lemma 4.5",
-   "page": 6,
+   "page": 7,
    "dest": "theorem.4.5"
   },
   {
@@ -1079,7 +1083,7 @@
    "in_unit": true,
    "item": "p:det",
    "where": "Prop. 4.6",
-   "page": 6,
+   "page": 7,
    "dest": "theorem.4.6"
   },
   {
@@ -1095,7 +1099,7 @@
    "in_unit": true,
    "item": "p:det",
    "where": "Prop. 4.6",
-   "page": 6,
+   "page": 7,
    "dest": "theorem.4.6"
   },
   {
@@ -1175,7 +1179,7 @@
    "in_unit": true,
    "item": "l:cong",
    "where": "Lemma 5.3",
-   "page": 7,
+   "page": 8,
    "dest": "theorem.5.3"
   },
   {
@@ -1191,7 +1195,7 @@
    "in_unit": true,
    "item": "l:cong",
    "where": "Lemma 5.3",
-   "page": 7,
+   "page": 8,
    "dest": "theorem.5.3"
   },
   {
@@ -1207,7 +1211,7 @@
    "in_unit": true,
    "item": "l:step",
    "where": "Lemma 5.4",
-   "page": 7,
+   "page": 8,
    "dest": "theorem.5.4"
   },
   {
@@ -1223,7 +1227,7 @@
    "in_unit": true,
    "item": "l:step",
    "where": "Lemma 5.4",
-   "page": 7,
+   "page": 8,
    "dest": "theorem.5.4"
   },
   {
@@ -1335,7 +1339,7 @@
    "in_unit": false,
    "item": "l:sep",
    "where": "Lemma 6.1",
-   "page": 8,
+   "page": 9,
    "dest": "theorem.6.1"
   },
   {
@@ -1366,9 +1370,9 @@
    ],
    "in_unit": true,
    "item": "p:dual",
-   "where": "Prop. 7.1",
-   "page": 9,
-   "dest": "theorem.7.1"
+   "where": "Prop. 7.2",
+   "page": 10,
+   "dest": "theorem.7.2"
   },
   {
    "key": "dualDiv",
@@ -1382,9 +1386,9 @@
    ],
    "in_unit": true,
    "item": "p:dual",
-   "where": "Prop. 7.1",
-   "page": 9,
-   "dest": "theorem.7.1"
+   "where": "Prop. 7.2",
+   "page": 10,
+   "dest": "theorem.7.2"
   },
   {
    "key": "torsFin",
@@ -1398,9 +1402,9 @@
    ],
    "in_unit": true,
    "item": "p:dual",
-   "where": "Prop. 7.1",
-   "page": 9,
-   "dest": "theorem.7.1"
+   "where": "Prop. 7.2",
+   "page": 10,
+   "dest": "theorem.7.2"
   },
   {
    "key": "dualUnip",
@@ -1414,9 +1418,9 @@
    ],
    "in_unit": true,
    "item": "p:dual",
-   "where": "Prop. 7.1",
-   "page": 9,
-   "dest": "theorem.7.1"
+   "where": "Prop. 7.2",
+   "page": 10,
+   "dest": "theorem.7.2"
   },
   {
    "key": "XDual",
@@ -1431,7 +1435,7 @@
    "in_unit": false,
    "item": "s:arith",
    "where": "§7, setting",
-   "page": 8,
+   "page": 9,
    "dest": "section.7"
   },
   {
@@ -1447,7 +1451,7 @@
    "in_unit": false,
    "item": "t:D",
    "where": "Theorem D",
-   "page": 3,
+   "page": 4,
    "dest": "section*.4"
   },
   {
@@ -1463,7 +1467,7 @@
    "in_unit": false,
    "item": "s:arith",
    "where": "§7, setting",
-   "page": 8,
+   "page": 9,
    "dest": "section.7"
   },
   {
@@ -1479,7 +1483,7 @@
    "in_unit": false,
    "item": "s:arith",
    "where": "§7, setting",
-   "page": 8,
+   "page": 9,
    "dest": "section.7"
   },
   {
@@ -1495,7 +1499,7 @@
    "in_unit": false,
    "item": "s:arith",
    "where": "§7, setting",
-   "page": 8,
+   "page": 9,
    "dest": "section.7"
   },
   {
@@ -1511,7 +1515,7 @@
    "in_unit": false,
    "item": "t:D",
    "where": "Theorem D",
-   "page": 3,
+   "page": 4,
    "dest": "section*.4"
   },
   {
@@ -1527,7 +1531,7 @@
    "in_unit": false,
    "item": "t:D",
    "where": "Theorem D (ii)",
-   "page": 3,
+   "page": 4,
    "dest": "section*.4"
   },
   {
@@ -1575,7 +1579,7 @@
    "in_unit": true,
    "item": "t:D",
    "where": "Theorem D, proof",
-   "page": 3,
+   "page": 4,
    "dest": "section*.4"
   },
   {
@@ -1607,7 +1611,7 @@
    "in_unit": false,
    "item": "s:use",
    "where": "§7",
-   "page": 10,
+   "page": 11,
    "dest": "section*.7"
   },
   {
@@ -1655,7 +1659,7 @@
    "in_unit": true,
    "item": "l:layers",
    "where": "Lemma 8.4(a)",
-   "page": 13,
+   "page": 14,
    "dest": "theorem.8.4"
   },
   {
@@ -1671,7 +1675,7 @@
    "in_unit": true,
    "item": "t:D",
    "where": "Theorem D, proof",
-   "page": 3,
+   "page": 4,
    "dest": "section*.4"
   },
   {
@@ -1703,7 +1707,7 @@
    "in_unit": true,
    "item": "t:D",
    "where": "Theorem D",
-   "page": 3,
+   "page": 4,
    "dest": "section*.4"
   },
   {
@@ -1719,7 +1723,7 @@
    "in_unit": true,
    "item": "t:D",
    "where": "Theorem D",
-   "page": 3,
+   "page": 4,
    "dest": "section*.4"
   },
   {
@@ -1735,7 +1739,7 @@
    "in_unit": false,
    "item": "s:use",
    "where": "§7",
-   "page": 10,
+   "page": 11,
    "dest": "section*.7"
   },
   {
@@ -1751,7 +1755,7 @@
    "in_unit": false,
    "item": "s:use",
    "where": "§7",
-   "page": 10,
+   "page": 11,
    "dest": "section*.7"
   },
   {
@@ -1767,7 +1771,7 @@
    "in_unit": false,
    "item": "s:use",
    "where": "§7",
-   "page": 10,
+   "page": 11,
    "dest": "section*.7"
   },
   {
@@ -1783,7 +1787,7 @@
    "in_unit": false,
    "item": "s:use",
    "where": "§7",
-   "page": 10,
+   "page": 11,
    "dest": "section*.7"
   },
   {
@@ -1799,7 +1803,7 @@
    "in_unit": false,
    "item": "s:use",
    "where": "§7",
-   "page": 10,
+   "page": 11,
    "dest": "section*.7"
   },
   {
@@ -1815,7 +1819,7 @@
    "in_unit": false,
    "item": "s:use",
    "where": "§7",
-   "page": 10,
+   "page": 11,
    "dest": "section*.7"
   },
   {
@@ -1831,7 +1835,7 @@
    "in_unit": false,
    "item": "s:use",
    "where": "§7",
-   "page": 10,
+   "page": 11,
    "dest": "section*.7"
   },
   {
@@ -1847,7 +1851,7 @@
    "in_unit": false,
    "item": "s:use",
    "where": "§7",
-   "page": 10,
+   "page": 11,
    "dest": "section*.7"
   },
   {
@@ -1863,7 +1867,7 @@
    "in_unit": false,
    "item": "s:use",
    "where": "§7",
-   "page": 10,
+   "page": 11,
    "dest": "section*.7"
   },
   {
@@ -1895,7 +1899,7 @@
    "in_unit": true,
    "item": "l:lte",
    "where": "Lemma 4.1, proof",
-   "page": 5,
+   "page": 6,
    "dest": "theorem.4.1"
   },
   {
@@ -1911,7 +1915,7 @@
    "in_unit": true,
    "item": "l:lte",
    "where": "Lemma 4.1, proof",
-   "page": 5,
+   "page": 6,
    "dest": "theorem.4.1"
   },
   {
@@ -1927,7 +1931,7 @@
    "in_unit": true,
    "item": "p:det",
    "where": "Prop. 4.6, proof",
-   "page": 6,
+   "page": 7,
    "dest": "theorem.4.6"
   },
   {
@@ -1943,7 +1947,7 @@
    "in_unit": true,
    "item": "p:det",
    "where": "Prop. 4.6, proof",
-   "page": 6,
+   "page": 7,
    "dest": "theorem.4.6"
   },
   {
@@ -2007,7 +2011,7 @@
    "in_unit": true,
    "item": "t:D",
    "where": "Theorem D, proof",
-   "page": 3,
+   "page": 4,
    "dest": "section*.4"
   },
   {
@@ -2023,7 +2027,7 @@
    "in_unit": true,
    "item": "t:D",
    "where": "Theorem D, proof",
-   "page": 3,
+   "page": 4,
    "dest": "section*.4"
   },
   {
@@ -2039,7 +2043,7 @@
    "in_unit": true,
    "item": "l:char",
    "where": "Lemma 8.1(a)",
-   "page": 11,
+   "page": 12,
    "dest": "theorem.8.1"
   },
   {
@@ -2055,7 +2059,7 @@
    "in_unit": false,
    "item": "l:char",
    "where": "Lemma 8.1(a), proof",
-   "page": 11,
+   "page": 12,
    "dest": "theorem.8.1"
   },
   {
@@ -2071,7 +2075,7 @@
    "in_unit": true,
    "item": "l:char",
    "where": "Lemma 8.1(b)",
-   "page": 11,
+   "page": 12,
    "dest": "theorem.8.1"
   },
   {
@@ -2087,7 +2091,7 @@
    "in_unit": true,
    "item": "l:char",
    "where": "Lemma 8.1(c), proof",
-   "page": 11,
+   "page": 12,
    "dest": "theorem.8.1"
   },
   {
@@ -2103,7 +2107,7 @@
    "in_unit": true,
    "item": "l:char",
    "where": "Lemma 8.1(c), proof",
-   "page": 11,
+   "page": 12,
    "dest": "theorem.8.1"
   },
   {
@@ -2119,7 +2123,7 @@
    "in_unit": true,
    "item": "l:char",
    "where": "Lemma 8.1(c)",
-   "page": 11,
+   "page": 12,
    "dest": "theorem.8.1"
   },
   {
@@ -2135,7 +2139,7 @@
    "in_unit": true,
    "item": "l:cokdual",
    "where": "Lemma 8.2",
-   "page": 12,
+   "page": 13,
    "dest": "theorem.8.2"
   },
   {
@@ -2151,7 +2155,7 @@
    "in_unit": true,
    "item": "l:cokdual",
    "where": "Lemma 8.2",
-   "page": 12,
+   "page": 13,
    "dest": "theorem.8.2"
   },
   {
@@ -2167,7 +2171,7 @@
    "in_unit": true,
    "item": "l:princ",
    "where": "Lemma 8.3(a)",
-   "page": 12,
+   "page": 13,
    "dest": "theorem.8.3"
   },
   {
@@ -2183,7 +2187,7 @@
    "in_unit": true,
    "item": "l:princ",
    "where": "Lemma 8.3(c), proof",
-   "page": 12,
+   "page": 13,
    "dest": "theorem.8.3"
   },
   {
@@ -2199,7 +2203,7 @@
    "in_unit": true,
    "item": "l:princ",
    "where": "Lemma 8.3(b)",
-   "page": 12,
+   "page": 13,
    "dest": "theorem.8.3"
   },
   {
@@ -2215,7 +2219,7 @@
    "in_unit": true,
    "item": "l:princ",
    "where": "Lemma 8.3",
-   "page": 12,
+   "page": 13,
    "dest": "theorem.8.3"
   },
   {
@@ -2231,7 +2235,7 @@
    "in_unit": false,
    "item": "l:princ",
    "where": "Lemma 8.3(c), proof",
-   "page": 12,
+   "page": 13,
    "dest": "theorem.8.3"
   },
   {
@@ -2247,7 +2251,7 @@
    "in_unit": false,
    "item": "l:princ",
    "where": "Lemma 8.3(b), proof",
-   "page": 12,
+   "page": 13,
    "dest": "theorem.8.3"
   },
   {
@@ -2263,7 +2267,7 @@
    "in_unit": false,
    "item": "l:princ",
    "where": "Lemma 8.3(b), proof",
-   "page": 12,
+   "page": 13,
    "dest": "theorem.8.3"
   },
   {
@@ -2279,7 +2283,7 @@
    "in_unit": false,
    "item": "s:arith",
    "where": "§7, setting",
-   "page": 8,
+   "page": 9,
    "dest": "section.7"
   },
   {
@@ -2295,7 +2299,7 @@
    "in_unit": false,
    "item": "s:descent",
    "where": "§8, layers",
-   "page": 11,
+   "page": 12,
    "dest": "section.8"
   },
   {
@@ -2311,7 +2315,7 @@
    "in_unit": false,
    "item": "s:descent",
    "where": "§8, layers",
-   "page": 11,
+   "page": 12,
    "dest": "section.8"
   },
   {
@@ -2327,7 +2331,7 @@
    "in_unit": false,
    "item": "s:descent",
    "where": "§8, layers",
-   "page": 11,
+   "page": 12,
    "dest": "section.8"
   },
   {
@@ -2343,7 +2347,7 @@
    "in_unit": false,
    "item": "l:layers",
    "where": "Lemma 8.4(a), proof",
-   "page": 13,
+   "page": 14,
    "dest": "theorem.8.4"
   },
   {
@@ -2359,7 +2363,7 @@
    "in_unit": true,
    "item": "l:layers",
    "where": "Lemma 8.4(b)",
-   "page": 13,
+   "page": 14,
    "dest": "theorem.8.4"
   },
   {
@@ -2375,7 +2379,7 @@
    "in_unit": true,
    "item": "l:layers",
    "where": "Lemma 8.4(a), (b)",
-   "page": 13,
+   "page": 14,
    "dest": "theorem.8.4"
   },
   {
@@ -2391,7 +2395,7 @@
    "in_unit": true,
    "item": "l:layers",
    "where": "Lemma 8.4(a), (c)",
-   "page": 13,
+   "page": 14,
    "dest": "theorem.8.4"
   },
   {
@@ -2423,7 +2427,7 @@
    "in_unit": false,
    "item": "s:descent",
    "where": "§8, twists",
-   "page": 11,
+   "page": 12,
    "dest": "section.8"
   },
   {
@@ -2439,7 +2443,7 @@
    "in_unit": false,
    "item": "s:descent",
    "where": "§8, twists",
-   "page": 11,
+   "page": 12,
    "dest": "section.8"
   },
   {
@@ -2455,7 +2459,7 @@
    "in_unit": false,
    "item": "s:descent",
    "where": "§8, twists",
-   "page": 11,
+   "page": 12,
    "dest": "section.8"
   },
   {
@@ -2471,7 +2475,7 @@
    "in_unit": false,
    "item": "i:2a",
    "where": "Input 2a",
-   "page": 14,
+   "page": 15,
    "dest": "section*.8"
   },
   {
@@ -2487,7 +2491,7 @@
    "in_unit": false,
    "item": "i:2a",
    "where": "Input 2a",
-   "page": 14,
+   "page": 15,
    "dest": "section*.8"
   },
   {
@@ -2503,7 +2507,7 @@
    "in_unit": false,
    "item": "i:2a",
    "where": "Input 2a",
-   "page": 14,
+   "page": 15,
    "dest": "section*.8"
   },
   {
@@ -2519,7 +2523,7 @@
    "in_unit": false,
    "item": "i:2b",
    "where": "Input 2b",
-   "page": 14,
+   "page": 15,
    "dest": "section*.9"
   }
  ]

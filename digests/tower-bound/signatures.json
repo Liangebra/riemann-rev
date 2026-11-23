@@ -1,0 +1,5574 @@
+{
+ "note": "tower-bound",
+ "archive_commit": "40e56bab026552e089d7afcfeff08d2defb9c005",
+ "read_from": "the text of the archive (not Lean's elaborator)",
+ "declarations": {
+  "GenBy": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "X",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "signature"
+    }
+   ]
+  },
+  "jZero": {
+   "kind": "abbrev",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    }
+   ]
+  },
+  "IsLevel": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "u",
+     "kind": "explicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "c",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    }
+   ]
+  },
+  "cokLen": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "X",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "f",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "signature"
+    }
+   ]
+  },
+  "InPow": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "X",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "k",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "f",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "signature"
+    }
+   ]
+  },
+  "Unip": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "X",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "γ",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "signature"
+    }
+   ]
+  },
+  "twLen": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "X",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "γ",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "signature"
+    },
+    {
+     "name": "u",
+     "kind": "explicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "e",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "m",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    }
+   ]
+  },
+  "range": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable"
+    },
+    {
+     "name": "X",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "variable"
+    },
+    {
+     "name": "f",
+     "kind": "implicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "signature"
+    },
+    {
+     "name": "g",
+     "kind": "implicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "signature"
+    },
+    {
+     "name": "h",
+     "kind": "explicit",
+     "type": "LinearMap.range g ≤ LinearMap.range f",
+     "from": "signature"
+    }
+   ]
+  },
+  "lenComp": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "name": "N",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "CommRing R",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup N",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module R N",
+     "from": "type"
+    },
+    {
+     "name": "a",
+     "kind": "explicit",
+     "type": "Module.End R N",
+     "from": "type"
+    },
+    {
+     "name": "b",
+     "kind": "explicit",
+     "type": "Module.End R N",
+     "from": "type"
+    }
+   ]
+  },
+  "smith": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "O",
+     "kind": "implicit",
+     "type": "Type*",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "CommRing O",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "IsDomain O",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "IsDiscreteValuationRing O",
+     "from": "variable"
+    },
+    {
+     "name": "n",
+     "kind": "implicit",
+     "type": "Type*",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fintype n",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "DecidableEq n",
+     "from": "variable"
+    },
+    {
+     "name": "Φ",
+     "kind": "explicit",
+     "type": "Matrix n n O",
+     "from": "signature"
+    }
+   ]
+  },
+  "lift": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "X",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "g",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "GenBy l R X",
+     "from": "type"
+    }
+   ]
+  },
+  "lte": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "O",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "CommRing O",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsDomain O",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsDiscreteValuationRing O",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "CharZero O",
+     "from": "type"
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "l.Prime",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "(l : O) ∈ maximalIdeal O",
+     "from": "type"
+    },
+    {
+     "name": "u",
+     "kind": "explicit",
+     "type": "oneUnits O",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "addVal O (l : O) < ((l - 1 : ℕ) : ℕ∞) * addVal O (pt u : O)",
+     "from": "type"
+    }
+   ]
+  },
+  "lteNorm": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "u",
+     "kind": "explicit",
+     "type": "ℤ_[l]",
+     "from": "type"
+    },
+    {
+     "name": "c",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "IsLevel l u c",
+     "from": "type"
+    }
+   ]
+  },
+  "units": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "a",
+     "kind": "explicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "b",
+     "kind": "explicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "ha",
+     "kind": "explicit",
+     "type": "‖a‖ = 1",
+     "from": "signature"
+    },
+    {
+     "name": "hb",
+     "kind": "explicit",
+     "type": "‖b‖ = 1",
+     "from": "signature"
+    },
+    {
+     "name": "z",
+     "kind": "explicit",
+     "type": "PadicAlgCl l",
+     "from": "signature"
+    }
+   ]
+  },
+  "helly": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "x",
+     "kind": "explicit",
+     "type": "ℕ → ℤ_[l]",
+     "from": "type"
+    },
+    {
+     "name": "r",
+     "kind": "explicit",
+     "type": "ℕ → ℝ",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "(∀ a b, ‖x a - x b‖ ≤ max (r a) (r b))",
+     "from": "type"
+    }
+   ]
+  },
+  "ball": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "u",
+     "kind": "explicit",
+     "type": "ℤ_[l]",
+     "from": "type"
+    },
+    {
+     "name": "c",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "IsLevel l u c",
+     "from": "type"
+    },
+    {
+     "name": "j",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "z",
+     "kind": "explicit",
+     "type": "PadicAlgCl l",
+     "from": "type"
+    }
+   ]
+  },
+  "detFactor": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "K",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field K",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosed K",
+     "from": "type"
+    },
+    {
+     "name": "n",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "S",
+     "kind": "explicit",
+     "type": "Matrix (Fin n) (Fin n) K",
+     "from": "type"
+    }
+   ]
+  },
+  "normVal": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "c",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "d",
+     "kind": "explicit",
+     "type": "ℤ_[l]",
+     "from": "type"
+    },
+    {
+     "name": "x",
+     "kind": "explicit",
+     "type": "Fin R → ℤ_[l]",
+     "from": "type"
+    }
+   ]
+  },
+  "detBound": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "u",
+     "kind": "explicit",
+     "type": "ℤ_[l]",
+     "from": "type"
+    },
+    {
+     "name": "c",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "IsLevel l u c",
+     "from": "type"
+    },
+    {
+     "name": "j",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "S",
+     "kind": "explicit",
+     "type": "Matrix (Fin R) (Fin R) ℤ_[l]",
+     "from": "type"
+    }
+   ]
+  },
+  "level": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable"
+    },
+    {
+     "name": "X",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "variable"
+    },
+    {
+     "name": "R",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "c",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "γ",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "signature"
+    },
+    {
+     "name": "u",
+     "kind": "implicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "hX",
+     "kind": "explicit",
+     "type": "GenBy l R X",
+     "from": "signature"
+    },
+    {
+     "name": "hu",
+     "kind": "explicit",
+     "type": "IsLevel l u c",
+     "from": "signature"
+    },
+    {
+     "name": "j",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    }
+   ]
+  },
+  "cokL": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "X",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "GenBy l R X",
+     "from": "type"
+    }
+   ]
+  },
+  "nilLen": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "A",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "name": "M",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "CommRing A",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup M",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module A M",
+     "from": "type"
+    },
+    {
+     "name": "f",
+     "kind": "explicit",
+     "type": "Module.End A M",
+     "from": "type"
+    },
+    {
+     "name": "n",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "IsNilpotent f",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "Module.length A M ≤ n",
+     "from": "type"
+    }
+   ]
+  },
+  "unipPow": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "X",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "g",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "GenBy l R X",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "Unip g",
+     "from": "type"
+    }
+   ]
+  },
+  "frob": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "X",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "name": "g",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "name": "k",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    }
+   ]
+  },
+  "powIn": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "X",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "name": "w",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "type"
+    }
+   ]
+  },
+  "phi": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "X",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module.Finite ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "name": "w",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "InPow 2 (w - 1)",
+     "from": "type"
+    }
+   ]
+  },
+  "step": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "X",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "w",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "GenBy l R X",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "InPow 2 (w - 1)",
+     "from": "type"
+    }
+   ]
+  },
+  "mono": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "X",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "name": "g",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "name": "a",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "b",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "a ∣ b",
+     "from": "type"
+    }
+   ]
+  },
+  "twist": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "X",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "name": "g",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "name": "a",
+     "kind": "explicit",
+     "type": "ℤ_[l]",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "(l : ℤ_[l]) ∣ a - 1",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "Unip g",
+     "from": "type"
+    }
+   ]
+  },
+  "growth": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "X",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "g",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "GenBy l R X",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "Unip g",
+     "from": "type"
+    },
+    {
+     "name": "m",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    }
+   ]
+  },
+  "twgrowth": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable"
+    },
+    {
+     "name": "X",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "variable"
+    },
+    {
+     "name": "R",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "c",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "γ",
+     "kind": "implicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "signature"
+    },
+    {
+     "name": "u",
+     "kind": "implicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "hX",
+     "kind": "explicit",
+     "type": "GenBy l R X",
+     "from": "signature"
+    },
+    {
+     "name": "hγ",
+     "kind": "explicit",
+     "type": "Unip γ",
+     "from": "signature"
+    },
+    {
+     "name": "hu",
+     "kind": "explicit",
+     "type": "IsLevel l u c",
+     "from": "signature"
+    },
+    {
+     "name": "e",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "m",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    }
+   ]
+  },
+  "centres": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable"
+    },
+    {
+     "name": "X",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "variable"
+    },
+    {
+     "name": "R",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "c",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "γ",
+     "kind": "implicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "signature"
+    },
+    {
+     "name": "u",
+     "kind": "implicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "hX",
+     "kind": "explicit",
+     "type": "GenBy l R X",
+     "from": "signature"
+    },
+    {
+     "name": "hγ",
+     "kind": "explicit",
+     "type": "Unip γ",
+     "from": "signature"
+    },
+    {
+     "name": "hu",
+     "kind": "explicit",
+     "type": "IsLevel l u c",
+     "from": "signature"
+    }
+   ]
+  },
+  "centresnorm": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable"
+    },
+    {
+     "name": "X",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup X",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] X",
+     "from": "variable"
+    },
+    {
+     "name": "R",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "c",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "γ",
+     "kind": "implicit",
+     "type": "Module.End ℤ_[l] X",
+     "from": "signature"
+    },
+    {
+     "name": "u",
+     "kind": "implicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "hX",
+     "kind": "explicit",
+     "type": "GenBy l R X",
+     "from": "signature"
+    },
+    {
+     "name": "hγ",
+     "kind": "explicit",
+     "type": "Unip γ",
+     "from": "signature"
+    },
+    {
+     "name": "hu",
+     "kind": "explicit",
+     "type": "IsLevel l u c",
+     "from": "signature"
+    }
+   ]
+  },
+  "near1": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "K",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "NormedField K",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "NormedAlgebra ℚ_[l] K",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsUltrametricDist K",
+     "from": "type"
+    },
+    {
+     "name": "s",
+     "kind": "explicit",
+     "type": "K",
+     "from": "type"
+    },
+    {
+     "name": "Z",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "a",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "b",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "1 ≤ a",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "a ≤ Z",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "1 ≤ b",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "b ≤ Z",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "‖s - (a : K)‖ < (l : ℝ) ^ (-(Nat.log l Z : ℤ))",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "‖s - (b : K)‖ < (l : ℝ) ^ (-(Nat.log l Z : ℤ))",
+     "from": "type"
+    }
+   ]
+  },
+  "exc": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "L₀",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L₀",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "ABound l R L₀",
+     "from": "type"
+    }
+   ]
+  },
+  "qzInj": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    }
+   ]
+  },
+  "dualDiv": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "D",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup D",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] D",
+     "from": "type"
+    },
+    {
+     "name": "x",
+     "kind": "explicit",
+     "type": "D →ₗ[ℤ_[l]] QZ l",
+     "from": "type"
+    },
+    {
+     "name": "∀ φ",
+     "kind": "explicit",
+     "type": "D, (l : ℤ_[l]) • φ = 0 → x φ = 0",
+     "from": "type"
+    }
+   ]
+  },
+  "torsFin": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "D",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup D",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] D",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "Module.Finite ℤ_[l] (D →ₗ[ℤ_[l]] QZ l)",
+     "from": "type"
+    }
+   ]
+  },
+  "dualUnip": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "D",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup D",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] D",
+     "from": "type"
+    },
+    {
+     "name": "g",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] D",
+     "from": "type"
+    },
+    {
+     "name": "t",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] (D →ₗ[ℤ_[l]] QZ l)",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "Module.Finite ℤ_[l] (D →ₗ[ℤ_[l]] QZ l)",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "(∀ x φ, t x φ = x (g φ))",
+     "from": "type"
+    },
+    {
+     "name": "∀ φ",
+     "kind": "explicit",
+     "type": "D, ∃ k : ℕ, ((g - 1) ^ k) φ = 0",
+     "from": "type"
+    }
+   ]
+  },
+  "XDual": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "F",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "name": "Ω",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field F",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField F",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra F Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "N",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "U",
+     "kind": "explicit",
+     "type": "Subgroup (G F Ω)",
+     "from": "signature"
+    },
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "name": "M",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "CommRing R",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup M",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Module R M",
+     "from": "signature"
+    }
+   ]
+  },
+  "IsTower": {
+   "kind": "structure",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "name": "L",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    }
+   ]
+  },
+  "IsLayer": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "j",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "L",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "name": "L'",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L'",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra L L'",
+     "from": "signature"
+    }
+   ]
+  },
+  "shaInv": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "F",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Field F",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField F",
+     "from": "signature"
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "e",
+     "kind": "explicit",
+     "type": "ℤ",
+     "from": "signature"
+    }
+   ]
+  },
+  "VLen": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "F",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "name": "Ω",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field F",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField F",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra F Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure F Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "D",
+     "kind": "explicit",
+     "type": "LData F Ω l",
+     "from": "signature"
+    },
+    {
+     "name": "e",
+     "kind": "explicit",
+     "type": "ℤ",
+     "from": "signature"
+    }
+   ]
+  },
+  "ABound": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "L₀",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L₀",
+     "from": "signature"
+    }
+   ]
+  },
+  "SecondBound": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "L₀",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L₀",
+     "from": "signature"
+    }
+   ]
+  },
+  "FirstBound": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "c",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "L₀",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L₀",
+     "from": "signature"
+    },
+    {
+     "name": "Z",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "Exc",
+     "kind": "explicit",
+     "type": "Finset ℕ",
+     "from": "signature"
+    }
+   ]
+  },
+  "dinfNil": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "F",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "name": "Ω",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field F",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField F",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra F Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure F Ω",
+     "from": "type"
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "N",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "U",
+     "kind": "explicit",
+     "type": "Subgroup (G F Ω)",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "U.Normal",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "IsClosed (U : Set (G F Ω))",
+     "from": "type"
+    },
+    {
+     "name": "φ",
+     "kind": "explicit",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "φ ∈ Dinf l N U",
+     "from": "type"
+    }
+   ]
+  },
+  "xUnip": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "k",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "name": "Ω",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field k",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField k",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra k Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure k Ω",
+     "from": "type"
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "N",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "U",
+     "kind": "explicit",
+     "type": "Subgroup (G k Ω)",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "U.Normal",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "IsClosed (U : Set (G k Ω))",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "Module.Finite ℤ_[l] (Xinf l N U)",
+     "from": "type"
+    },
+    {
+     "name": "γ",
+     "kind": "explicit",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "γ ∈ levU l U 1",
+     "from": "type"
+    }
+   ]
+  },
+  "step0": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable"
+    },
+    {
+     "name": "L₀",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L₀",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L₀",
+     "from": "variable"
+    },
+    {
+     "name": "Ω",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra L₀ Ω",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure L₀ Ω",
+     "from": "variable"
+    },
+    {
+     "name": "hμ",
+     "kind": "explicit",
+     "type": "HasMuQ l L₀",
+     "from": "signature"
+    },
+    {
+     "name": "γ",
+     "kind": "implicit",
+     "type": "G L₀ Ω",
+     "from": "signature"
+    },
+    {
+     "name": "hγ",
+     "kind": "explicit",
+     "type": "IsGen l ⊤ γ",
+     "from": "signature"
+    },
+    {
+     "name": "e",
+     "kind": "implicit",
+     "type": "ℤ",
+     "from": "signature"
+    },
+    {
+     "name": "he",
+     "kind": "explicit",
+     "type": "e ≠ 0",
+     "from": "signature"
+    },
+    {
+     "name": "m",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "L₁",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L₁",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L₁",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra L₀ L₁",
+     "from": "signature"
+    },
+    {
+     "name": "hL",
+     "kind": "explicit",
+     "type": "IsLayer l m L₀ L₁",
+     "from": "signature"
+    }
+   ]
+  },
+  "isTowerIff": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable"
+    },
+    {
+     "name": "L₀",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L₀",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L₀",
+     "from": "variable"
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "from": "variable"
+    },
+    {
+     "name": "L₀",
+     "kind": "explicit",
+     "from": "variable"
+    },
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    }
+   ]
+  },
+  "Descends": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "L₀",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L₀",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L₀",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "γ",
+     "kind": "explicit",
+     "type": "G L₀ (AlgebraicClosure L₀)",
+     "from": "signature"
+    }
+   ]
+  },
+  "descends": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "L₀",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L₀",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L₀",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "HasMuQ l L₀",
+     "from": "type"
+    },
+    {
+     "name": "γ",
+     "kind": "explicit",
+     "type": "G L₀ (AlgebraicClosure L₀)",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "IsGen l ⊤ γ",
+     "from": "type"
+    }
+   ]
+  },
+  "cycRange": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "L",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "name": "Ω",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra L Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure L Ω",
+     "from": "type"
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "HasMuQ l L",
+     "from": "type"
+    }
+   ]
+  },
+  "genLevel": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "L₀",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L₀",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L₀",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "HasMuQ l L₀",
+     "from": "type"
+    }
+   ]
+  },
+  "shaLeV": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "kind": "explicit",
+     "type": "GlobalTheory.Published.PoitouTateDuality",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "LocalFinitenessK",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "LocalTateDualityK",
+     "from": "type"
+    },
+    {
+     "name": "F",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "name": "Ω",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field F",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField F",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra F Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure F Ω",
+     "from": "type"
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "PTCase F l",
+     "from": "type"
+    },
+    {
+     "name": "D",
+     "kind": "explicit",
+     "type": "LData F Ω l",
+     "from": "type"
+    },
+    {
+     "name": "e",
+     "kind": "explicit",
+     "type": "ℤ",
+     "from": "type"
+    }
+   ]
+  },
+  "aDesc": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable"
+    },
+    {
+     "name": "L₀",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L₀",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L₀",
+     "from": "variable"
+    },
+    {
+     "name": "hP",
+     "kind": "explicit",
+     "type": "GlobalTheory.Published.PoitouTateDuality",
+     "from": "signature"
+    },
+    {
+     "name": "hF",
+     "kind": "explicit",
+     "type": "LocalFinitenessK",
+     "from": "signature"
+    },
+    {
+     "name": "hT",
+     "kind": "explicit",
+     "type": "LocalTateDualityK",
+     "from": "signature"
+    },
+    {
+     "name": "R",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "c",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "ht",
+     "kind": "explicit",
+     "type": "IsTower l L₀ R",
+     "from": "signature"
+    },
+    {
+     "name": "γ",
+     "kind": "implicit",
+     "type": "G L₀ (AlgebraicClosure L₀)",
+     "from": "signature"
+    },
+    {
+     "name": "hu",
+     "kind": "explicit",
+     "type": "IsLevel l (cycZ L₀ _ l γ : ℤ_[l]) c",
+     "from": "signature"
+    },
+    {
+     "name": "hc",
+     "kind": "explicit",
+     "type": "∃ ζ : L₀, IsPrimitiveRoot ζ (l ^ c)",
+     "from": "signature"
+    },
+    {
+     "name": "h",
+     "kind": "explicit",
+     "type": "Descends l L₀ γ",
+     "from": "signature"
+    }
+   ]
+  },
+  "aTower": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "hP",
+     "kind": "explicit",
+     "type": "GlobalTheory.Published.PoitouTateDuality",
+     "from": "signature"
+    },
+    {
+     "name": "hF",
+     "kind": "explicit",
+     "type": "LocalFinitenessK",
+     "from": "signature"
+    },
+    {
+     "name": "hT",
+     "kind": "explicit",
+     "type": "LocalTateDualityK",
+     "from": "signature"
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "L₀",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L₀",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L₀",
+     "from": "signature"
+    },
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "ht",
+     "kind": "explicit",
+     "type": "UpperTheory.V.Tower.IsTower l L₀ R",
+     "from": "signature"
+    }
+   ]
+  },
+  "FW": {
+   "kind": "def",
+   "binders": []
+  },
+  "FWthm": {
+   "kind": "theorem",
+   "binders": []
+  },
+  "towerFixed": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "hFW",
+     "kind": "explicit",
+     "type": "Published.FerreroWashington",
+     "from": "signature"
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "hl",
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "h2",
+     "kind": "explicit",
+     "type": "l ≠ 2",
+     "from": "signature"
+    },
+    {
+     "name": "A",
+     "kind": "explicit",
+     "type": "AbF",
+     "from": "signature"
+    },
+    {
+     "name": "hA",
+     "kind": "explicit",
+     "type": "A.HasMu l",
+     "from": "signature"
+    }
+   ]
+  },
+  "fixedIn": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "hFW",
+     "kind": "explicit",
+     "type": "Published.FerreroWashington",
+     "from": "signature"
+    },
+    {
+     "name": "hA",
+     "kind": "explicit",
+     "type": "TowerBound",
+     "from": "signature"
+    }
+   ]
+  },
+  "twoIn": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "hFW",
+     "kind": "explicit",
+     "type": "Published.FerreroWashington",
+     "from": "signature"
+    },
+    {
+     "name": "hA",
+     "kind": "explicit",
+     "type": "TowerBound",
+     "from": "signature"
+    }
+   ]
+  },
+  "LemmaK": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "CK",
+     "kind": "explicit",
+     "type": "ℝ",
+     "from": "signature"
+    }
+   ]
+  },
+  "window": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "R",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "eta",
+     "kind": "explicit",
+     "type": "ℝ",
+     "from": "type"
+    },
+    {
+     "name": "Ct",
+     "kind": "explicit",
+     "type": "ℝ",
+     "from": "type"
+    },
+    {
+     "name": "X",
+     "kind": "explicit",
+     "type": "ℝ",
+     "from": "type"
+    },
+    {
+     "name": "Exc",
+     "kind": "explicit",
+     "type": "Finset ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "0 < eta",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "eta ≤ Ct",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "1 < X",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "Exc.card ≤ R",
+     "from": "type"
+    }
+   ]
+  },
+  "thmBab": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "∃ CK",
+     "kind": "explicit",
+     "type": "ℝ, LemmaK CK",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "FixedIn",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "TwoIn",
+     "from": "type"
+    }
+   ]
+  },
+  "thmBabK": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "hP",
+     "kind": "explicit",
+     "type": "GlobalTheory.Published.PoitouTateDuality",
+     "from": "signature"
+    },
+    {
+     "name": "hF",
+     "kind": "explicit",
+     "type": "LocalFinitenessK",
+     "from": "signature"
+    },
+    {
+     "name": "hT",
+     "kind": "explicit",
+     "type": "LocalTateDualityK",
+     "from": "signature"
+    },
+    {
+     "name": "hFW",
+     "kind": "explicit",
+     "type": "Published.FerreroWashington",
+     "from": "signature"
+    },
+    {
+     "name": "hK",
+     "kind": "explicit",
+     "type": "∃ CK : ℝ, LemmaK CK",
+     "from": "signature"
+    }
+   ]
+  },
+  "vl": {
+   "kind": "abbrev",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "x",
+     "kind": "explicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    }
+   ]
+  },
+  "normDvd": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "x",
+     "kind": "implicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "y",
+     "kind": "implicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "h",
+     "kind": "explicit",
+     "type": "x ∣ y",
+     "from": "signature"
+    }
+   ]
+  },
+  "normAddVal": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "x",
+     "kind": "implicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "y",
+     "kind": "implicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "h",
+     "kind": "explicit",
+     "type": "IsDiscreteValuationRing.addVal ℤ_[l] x = IsDiscreteValuationRing.addVal ℤ_[l] y",
+     "from": "signature"
+    }
+   ]
+  },
+  "dvdNorm": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "d",
+     "kind": "implicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "y",
+     "kind": "implicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "h",
+     "kind": "explicit",
+     "type": "‖y‖ ≤ ‖d‖",
+     "from": "signature"
+    }
+   ]
+  },
+  "vlProd": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "ι",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "name": "s",
+     "kind": "explicit",
+     "type": "Finset ι",
+     "from": "signature"
+    },
+    {
+     "name": "f",
+     "kind": "explicit",
+     "type": "ι → ℤ_[l]",
+     "from": "signature"
+    }
+   ]
+  },
+  "nilSucc": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "A",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "name": "M",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "CommRing A",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup M",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Module A M",
+     "from": "signature"
+    },
+    {
+     "name": "f",
+     "kind": "explicit",
+     "type": "Module.End A M",
+     "from": "signature"
+    },
+    {
+     "name": "k",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    }
+   ]
+  },
+  "nilLt": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "A",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "name": "M",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "CommRing A",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup M",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Module A M",
+     "from": "signature"
+    },
+    {
+     "name": "f",
+     "kind": "explicit",
+     "type": "Module.End A M",
+     "from": "signature"
+    },
+    {
+     "name": "hf",
+     "kind": "explicit",
+     "type": "IsNilpotent f",
+     "from": "signature"
+    },
+    {
+     "name": "k",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "hk",
+     "kind": "explicit",
+     "type": "f ^ k ≠ 0",
+     "from": "signature"
+    }
+   ]
+  },
+  "vlNorm": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable"
+    },
+    {
+     "name": "x",
+     "kind": "implicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "B",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "h",
+     "kind": "explicit",
+     "type": "(l : ℝ) ^ (-(B : ℤ)) ≤ ‖x‖",
+     "from": "signature"
+    }
+   ]
+  },
+  "memLev": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable"
+    },
+    {
+     "name": "k",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "name": "Ω",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Field k",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField k",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra k Ω",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure k Ω",
+     "from": "signature"
+    },
+    {
+     "name": "γ",
+     "kind": "implicit",
+     "type": "G k Ω",
+     "from": "signature"
+    },
+    {
+     "name": "h",
+     "kind": "explicit",
+     "type": "(l : ℤ_[l]) ∣ (cycZ k Ω l γ : ℤ_[l]) - 1",
+     "from": "signature"
+    }
+   ]
+  },
+  "eqTwLen": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable"
+    },
+    {
+     "name": "L₀",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L₀",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L₀",
+     "from": "variable"
+    },
+    {
+     "name": "γ",
+     "kind": "implicit",
+     "type": "G L₀ (AlgebraicClosure L₀)",
+     "from": "signature"
+    },
+    {
+     "name": "h",
+     "kind": "explicit",
+     "type": "Descends l L₀ γ",
+     "from": "signature"
+    },
+    {
+     "name": "e",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "he",
+     "kind": "explicit",
+     "type": "1 ≤ e",
+     "from": "signature"
+    },
+    {
+     "name": "m",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "L₁",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L₁",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L₁",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra L₀ L₁",
+     "from": "signature"
+    },
+    {
+     "name": "hL",
+     "kind": "explicit",
+     "type": "IsLayer l m L₀ L₁",
+     "from": "signature"
+    }
+   ]
+  },
+  "qzSep": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "M",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup M",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] M",
+     "from": "type"
+    },
+    {
+     "name": "m",
+     "kind": "explicit",
+     "type": "M",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "m ≠ 0",
+     "from": "type"
+    }
+   ]
+  },
+  "qzAnn": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "M",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup M",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] M",
+     "from": "signature"
+    },
+    {
+     "name": "m",
+     "kind": "explicit",
+     "type": "M",
+     "from": "signature"
+    },
+    {
+     "name": "hm",
+     "kind": "explicit",
+     "type": "m ≠ 0",
+     "from": "signature"
+    }
+   ]
+  },
+  "exactDual": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "N",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup N",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] N",
+     "from": "signature"
+    },
+    {
+     "name": "p",
+     "kind": "explicit",
+     "type": "Submodule ℤ_[l] N",
+     "from": "signature"
+    }
+   ]
+  },
+  "simpleDual": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "hl",
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "N",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup N",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] N",
+     "from": "signature"
+    },
+    {
+     "name": "hN",
+     "kind": "instance",
+     "type": "IsSimpleModule ℤ_[l] N",
+     "from": "signature"
+    }
+   ]
+  },
+  "leDual": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "N",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup N",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] N",
+     "from": "signature"
+    }
+   ]
+  },
+  "lenDual": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "M",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup M",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] M",
+     "from": "type"
+    }
+   ]
+  },
+  "dualKer": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "M",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup M",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] M",
+     "from": "type"
+    },
+    {
+     "name": "M'",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup M'",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] M'",
+     "from": "type"
+    },
+    {
+     "name": "T",
+     "kind": "explicit",
+     "type": "M →ₗ[ℤ_[l]] M'",
+     "from": "type"
+    }
+   ]
+  },
+  "cokerDual": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "M",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "AddCommGroup M",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Module ℤ_[l] M",
+     "from": "type"
+    },
+    {
+     "name": "g",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] M",
+     "from": "type"
+    },
+    {
+     "name": "t",
+     "kind": "explicit",
+     "type": "Module.End ℤ_[l] (M →ₗ[ℤ_[l]] QZ l)",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "(∀ x φ, t x φ = x (g φ))",
+     "from": "type"
+    }
+   ]
+  },
+  "pgIndex": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "a",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "ha",
+     "kind": "explicit",
+     "type": "0 < a",
+     "from": "signature"
+    }
+   ]
+  },
+  "pgExists": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "c",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "h1",
+     "kind": "explicit",
+     "type": "1 ≤ c",
+     "from": "signature"
+    }
+   ]
+  },
+  "pgEmult": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "c",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "h1",
+     "kind": "explicit",
+     "type": "1 ≤ c",
+     "from": "signature"
+    },
+    {
+     "name": "h2",
+     "kind": "explicit",
+     "type": "l = 2 → 2 ≤ c",
+     "from": "signature"
+    },
+    {
+     "name": "u",
+     "kind": "implicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "hd",
+     "kind": "explicit",
+     "type": "(l : ℤ_[l]) ^ c ∣ u - 1",
+     "from": "signature"
+    },
+    {
+     "name": "n",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    }
+   ]
+  },
+  "princGen": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "c",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "qExp l ≤ c",
+     "from": "type"
+    }
+   ]
+  },
+  "princClosed": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable"
+    },
+    {
+     "name": "a",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "ha",
+     "kind": "explicit",
+     "type": "1 ≤ a",
+     "from": "signature"
+    },
+    {
+     "name": "ha2",
+     "kind": "explicit",
+     "type": "l = 2 → 2 ≤ a",
+     "from": "signature"
+    },
+    {
+     "name": "U",
+     "kind": "implicit",
+     "type": "Subgroup ℤ_[l]ˣ",
+     "from": "signature"
+    },
+    {
+     "name": "hU",
+     "kind": "explicit",
+     "type": "IsClosed (U : Set ℤ_[l]ˣ)",
+     "from": "signature"
+    },
+    {
+     "name": "u",
+     "kind": "implicit",
+     "type": "ℤ_[l]ˣ",
+     "from": "signature"
+    },
+    {
+     "name": "huU",
+     "kind": "explicit",
+     "type": "u ∈ U",
+     "from": "signature"
+    },
+    {
+     "name": "hu",
+     "kind": "explicit",
+     "type": "emultiplicity (l : ℤ_[l]) ((u : ℤ_[l]) - 1) = a",
+     "from": "signature"
+    }
+   ]
+  },
+  "lteOdd": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable"
+    },
+    {
+     "name": "hl",
+     "kind": "explicit",
+     "type": "l ≠ 2",
+     "from": "signature"
+    },
+    {
+     "name": "u",
+     "kind": "implicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "hu",
+     "kind": "explicit",
+     "type": "(l : ℤ_[l]) ∣ u - 1",
+     "from": "signature"
+    },
+    {
+     "name": "n",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    }
+   ]
+  },
+  "lteSq": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable"
+    },
+    {
+     "name": "u",
+     "kind": "implicit",
+     "type": "ℤ_[l]",
+     "from": "signature"
+    },
+    {
+     "name": "hu",
+     "kind": "explicit",
+     "type": "(l : ℤ_[l]) ^ 2 ∣ u - 1",
+     "from": "signature"
+    },
+    {
+     "name": "n",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    }
+   ]
+  },
+  "cZero": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "name": "L",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L",
+     "from": "variable",
+     "maybe": true
+    }
+   ]
+  },
+  "layU": {
+   "kind": "abbrev",
+   "binders": [
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "name": "L",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "Ω",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra L Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure L Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "m",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    }
+   ]
+  },
+  "muQ": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "L",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "name": "Ω",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra L Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure L Ω",
+     "from": "type"
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    }
+   ]
+  },
+  "galOfCyc": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "F",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "name": "Ω",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field F",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField F",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra F Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure F Ω",
+     "from": "type"
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "n",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "E",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "name": "K",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field E",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field K",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra E K",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra E Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra K Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsScalarTower E K Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsCyclotomicExtension {l ^ n} E K",
+     "from": "type"
+    }
+   ]
+  },
+  "galEmbTop": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "k",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "name": "E",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "name": "Ω",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field k",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField k",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field E",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField E",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra k E",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra k Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra E Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsScalarTower k E Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure k Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure E Ω",
+     "from": "type"
+    }
+   ]
+  },
+  "luKey": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "L",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "name": "Ω",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra L Ω",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure L Ω",
+     "from": "signature"
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "signature"
+    },
+    {
+     "name": "hmu",
+     "kind": "explicit",
+     "type": "HasMuQ l L",
+     "from": "signature"
+    },
+    {
+     "name": "n",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "signature"
+    },
+    {
+     "name": "L₁",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L₁",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L₁",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra L L₁",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra L₁ Ω",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "IsScalarTower L L₁ Ω",
+     "from": "signature"
+    },
+    {
+     "kind": "instance",
+     "type": "IsCyclotomicExtension {l ^ n} L L₁",
+     "from": "signature"
+    }
+   ]
+  },
+  "layerUniq": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "L",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "name": "Ω",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra L Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure L Ω",
+     "from": "type"
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "HasMuQ l L",
+     "from": "type"
+    }
+   ]
+  },
+  "layerGen": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "L",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "name": "Ω",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra L Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure L Ω",
+     "from": "type"
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "HasMuQ l L",
+     "from": "type"
+    }
+   ]
+  },
+  "IsGen": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "k",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "name": "Ω",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field k",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField k",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra k Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure k Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "U",
+     "kind": "explicit",
+     "type": "Subgroup (G k Ω)",
+     "from": "variable"
+    },
+    {
+     "name": "γ",
+     "kind": "explicit",
+     "type": "G k Ω",
+     "from": "signature"
+    }
+   ]
+  },
+  "dTw": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "k",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "name": "Ω",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field k",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField k",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra k Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure k Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "N",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "name": "U",
+     "kind": "explicit",
+     "type": "Subgroup (G k Ω)",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "U.Normal",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "e",
+     "kind": "explicit",
+     "type": "ℤ",
+     "from": "signature"
+    }
+   ]
+  },
+  "xTw": {
+   "kind": "def",
+   "binders": [
+    {
+     "name": "k",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "name": "Ω",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field k",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField k",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra k Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure k Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "N",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "name": "U",
+     "kind": "explicit",
+     "type": "Subgroup (G k Ω)",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "U.Normal",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "e",
+     "kind": "explicit",
+     "type": "ℤ",
+     "from": "signature"
+    }
+   ]
+  },
+  "xTwApply": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "k",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "name": "Ω",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field k",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField k",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra k Ω",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure k Ω",
+     "from": "variable"
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable"
+    },
+    {
+     "name": "N",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "name": "U",
+     "kind": "explicit",
+     "type": "Subgroup (G k Ω)",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "U.Normal",
+     "from": "variable"
+    },
+    {
+     "name": "e",
+     "kind": "explicit",
+     "type": "ℤ",
+     "from": "signature"
+    },
+    {
+     "name": "g",
+     "kind": "explicit",
+     "type": "G k Ω",
+     "from": "signature"
+    },
+    {
+     "name": "x",
+     "kind": "explicit",
+     "type": "Xinf l N U",
+     "from": "signature"
+    },
+    {
+     "name": "φ",
+     "kind": "explicit",
+     "type": "Dinf l N U",
+     "from": "signature"
+    }
+   ]
+  },
+  "ShaD": {
+   "kind": "abbrev",
+   "binders": [
+    {
+     "name": "k",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "name": "Ω",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field k",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField k",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra k Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure k Ω",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "N",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "name": "U",
+     "kind": "explicit",
+     "type": "Subgroup (G k Ω)",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "U.Normal",
+     "from": "variable",
+     "maybe": true
+    },
+    {
+     "name": "V",
+     "kind": "explicit",
+     "type": "Subgroup (G k Ω)",
+     "from": "variable"
+    },
+    {
+     "name": "e",
+     "kind": "explicit",
+     "type": "ℤ",
+     "from": "signature"
+    }
+   ]
+  },
+  "desc": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "k",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "name": "L",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "name": "Ω",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field k",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField k",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field L",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField L",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra k L",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra k Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra L Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsScalarTower k L Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure k Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure L Ω",
+     "from": "type"
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "D",
+     "kind": "explicit",
+     "type": "LData L Ω l",
+     "from": "type"
+    },
+    {
+     "name": "e",
+     "kind": "explicit",
+     "type": "ℤ",
+     "from": "type"
+    },
+    {
+     "name": "U",
+     "kind": "explicit",
+     "type": "Subgroup (G k Ω)",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "U.Normal",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "e ≠ 0",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "Procyc L Ω l",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "cycU l U = cycU l (galOf k L Ω)",
+     "from": "type"
+    }
+   ]
+  },
+  "shaLenInv": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "F",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "name": "Ω",
+     "kind": "implicit",
+     "type": "Type",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field F",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField F",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra F Ω",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure F Ω",
+     "from": "variable"
+    },
+    {
+     "name": "l",
+     "kind": "implicit",
+     "type": "ℕ",
+     "from": "variable"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "variable"
+    },
+    {
+     "name": "D",
+     "kind": "explicit",
+     "type": "LData F Ω l",
+     "from": "signature"
+    },
+    {
+     "name": "e",
+     "kind": "explicit",
+     "type": "ℤ",
+     "from": "signature"
+    }
+   ]
+  },
+  "shaDGen": {
+   "kind": "theorem",
+   "binders": [
+    {
+     "name": "k",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "name": "Ω",
+     "kind": "explicit",
+     "type": "Type",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field k",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "NumberField k",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Field Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Algebra k Ω",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "IsAlgClosure k Ω",
+     "from": "type"
+    },
+    {
+     "name": "l",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "Fact l.Prime",
+     "from": "type"
+    },
+    {
+     "name": "N",
+     "kind": "explicit",
+     "type": "ℕ",
+     "from": "type"
+    },
+    {
+     "name": "U",
+     "kind": "explicit",
+     "type": "Subgroup (G k Ω)",
+     "from": "type"
+    },
+    {
+     "name": "V",
+     "kind": "explicit",
+     "type": "Subgroup (G k Ω)",
+     "from": "type"
+    },
+    {
+     "kind": "instance",
+     "type": "U.Normal",
+     "from": "type"
+    },
+    {
+     "name": "e",
+     "kind": "explicit",
+     "type": "ℤ",
+     "from": "type"
+    },
+    {
+     "name": "γ",
+     "kind": "explicit",
+     "type": "G k Ω",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "IsClosed (U : Set (G k Ω))",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "V ≤ U",
+     "from": "type"
+    },
+    {
+     "kind": "explicit",
+     "type": "IsGen l V γ",
+     "from": "type"
+    }
+   ]
+  }
+ }
+}
