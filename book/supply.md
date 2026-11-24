@@ -561,6 +561,195 @@ still requires passage to open subgroups and dévissage.
 | Degree two, both directions | [injective_two, surjective_two](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseFormal.lean#L536-L751) |
 | Assembly over the base field | [BaseDualityHypotheses.of_gs, bijective_gs_compactZmodDualityMap](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BijectiveGsCompactZmodDualityMap.lean#L23-L73) |
 
+### Descent, general coefficients and the nine-term sequence
+
+Return to the original field $F$, which need not contain the roots of unity.
+Write $G=G_S$ and let $M$ be a finite discrete $G$-module killed by $n$.
+Its dual is $M^D=\operatorname{Hom}(M,D)$ with the contragredient action,
+where $D=\mu_n(F_S)$. Write $B_i^M(x,y)=T(y\smile x)$, with the evaluation
+pairing of coefficients understood. The goal is to identify
+
+$
+H^i(G,M)\ \simeq\ \operatorname{Hom}(H_c^{3-i}(M^D),A).
+$
+
+The additional inputs here are the dimension bound $H_c^4(N)=0$ for every
+finite $n$-torsion coefficient module $N$, and the Shapiro, Mackey and
+compact cup-product comparison theorems. These are separate theorems
+in the archive; we use them in the following deductions.
+
+**Open subgroups and the normalization of the trace.** Choose an open
+subgroup $W_0$ of $G$ fixing $D$. Every open subgroup $W\subset W_0$
+corresponds to a finite extension $E/F$ in $F_S$ containing the $n$-th roots
+of unity. The maximal extension of $E$ unramified outside the places over
+$S$ is $F_S$. The assumptions on $S$ and on oddness or imaginary places
+pass to $E$. The preceding cyclic pairing theorem therefore applies there.
+
+The compact corestriction in degree three is onto, even if the index
+$[G:W]$ is divisible by $\ell$. Indeed the coefficient trace
+
+$
+\operatorname{Coind}_W^G(D|_W)\longrightarrow D
+$
+
+is onto: a coinduced function supported on the identity coset with the
+prescribed value there maps to that value. Its kernel is a finite
+$n$-torsion module. Compact degree-four vanishing for this kernel makes
+the degree-three cohomology map of the coefficient trace onto. The
+compact Shapiro–Mackey isomorphism identifies it with corestriction.
+This is why dividing by the extension degree is unnecessary.
+
+Let $T_E$ denote the compact trace isomorphism over $E$. The map given
+by corestriction followed by $T_F$ is onto $A$; after the compact
+comparison it is a surjective homomorphism from $H_c^3(E,D)\simeq A$.
+Consequently it is $uT_E$ for some $u\in A^\times$: an endomorphism of the
+cyclic group $A$ is multiplication by its value at $1$, and is onto
+precisely if that value is a unit.
+The archive transports the perfect pairing over $E$ using this unit
+and the Mackey comparison of cup products. It does not need to prove
+that $u=1$. The weaker statement suffices for perfectness and should
+not be read as a failure of exact trace naturality.
+
+The Shapiro isomorphism for global cohomology and the compact
+Shapiro–Mackey isomorphism, together with their compatibility with
+evaluation and coefficient trace, now give perfectness for the
+$G$-module $\operatorname{Coind}_W^G A$, in every degree.
+Finite direct sums of these modules retain perfectness.
+
+**Embedding a general coefficient module.** Choose $W\subset W_0$
+open and acting trivially on $M$; this is possible because $M$ is finite
+and discrete. For every additive character $f:M\to A$, adjunction
+gives a $G$-map $M\to\operatorname{Coind}_W^G A$, whose evaluation at
+the identity recovers $f$. Taking all these maps gives an injection
+into a finite direct sum $I$ of such coinduced modules: characters
+separate points of any $n$-torsion abelian group by the extension
+argument above. Write the resulting sequence as
+
+$
+0\longrightarrow M\xrightarrow{i} I\xrightarrow{p} Q\longrightarrow0.
+$
+
+Its dual sequence is exact in the opposite direction, since
+$\operatorname{Hom}(-,A)$ is exact on $n$-torsion groups (identify $A$
+with the $n$-torsion of the injective group $\mathbf Q/\mathbf Z$).
+All the modules remain finite and killed by $n$.
+The point of the embedding is that the pairing for $I$ is already
+known in every degree, whereas nothing about the pairing for $Q$
+in the desired degree may be assumed.
+
+**Induction in cohomological degree.** In degree zero, injectivity
+for $M$ follows by naturality from injectivity for $I$ and of the map
+on invariants. For surjectivity, compact degree-four vanishing makes
+$H_c^3(I^D)\to H_c^3(M^D)$ onto. Pull back any functional along that map;
+perfectness for $I$ represents it by a class in $H^0(G,I)$.
+Its image in $H^0(G,Q)$ pairs to zero, because the two consecutive
+maps of the dual sequence compose to zero. Degree-zero injectivity
+for every module, already proved, makes that image zero. The class
+lifts to $H^0(G,M)$ and represents the original functional by
+surjectivity of the compact map.
+
+For the induction step let $r+1+s=3$. Assume perfectness in degree
+$r$ for every finite $n$-torsion module. Write $\delta$ for the global
+connecting map and $\delta_c$ for the compact connecting map of the
+dual exact sequence. The compact product rule supplies the signed
+identity
+
+$
+ B_{r+1}^{M}(\delta q,y)
+   =(-1)^{s+1}B_r^{Q}(q,\delta_c y)
+$
+
+for $q\in H^r(G,Q)$ and $y\in H_c^s(M^D)$.
+All the other squares express naturality of evaluation.
+
+First suppose $x\in H^{r+1}(G,M)$ pairs to zero. Its image in
+$H^{r+1}(G,I)$ is zero by perfectness for $I$, so $x=\delta q$ for
+some $q\in H^r(G,Q)$. The signed identity says that $B_r^Q(q,-)$
+annihilates the image of $\delta_c$, which is the kernel of
+$H_c^{s+1}(Q^D)\to H_c^{s+1}(I^D)$. Extend the resulting functional
+on the image to the whole target. By the induction hypothesis
+for $I$, the extension is represented by a class $v\in H^r(G,I)$.
+Naturality and degree-$r$ injectivity for $Q$ give $p_*v=q$.
+Hence $x=\delta p_*v=0$. This establishes injectivity in degree
+$r+1$ for every module before proceeding to surjectivity.
+
+Given a functional $\lambda:H_c^s(M^D)\to A$, pull it back to
+$H_c^s(I^D)$. Perfectness for $I$ represents it by
+$v\in H^{r+1}(G,I)$. The image of $v$ in $H^{r+1}(G,Q)$ is zero
+by naturality and the just-proved degree-$(r+1)$ injectivity for $Q$.
+Choose a lift $x'\in H^{r+1}(G,M)$. The difference
+$\nu=\lambda-B_{r+1}^M(x',-)$ kills the image of $H_c^s(I^D)$,
+which is the kernel of $\delta_c$. Extend $\nu$ through $\delta_c$
+to a functional on $H_c^{s+1}(Q^D)$; by the induction hypothesis
+it equals $B_r^Q(q,-)$ there. The signed identity shows that
+
+$
+ x'+(-1)^{s+1}\delta q
+$
+
+represents $\lambda$. This completes the induction through degree
+three. In particular, the argument does not assume that the quotient
+$Q$ has fewer elements than $M$; it is an induction on degree with a
+separate, universally quantified injectivity step.
+
+**Beyond prime powers.** For a finite module killed by a positive integer
+$N$, split it into its primary summands. If a summand is killed by
+$q=\ell^k$ dividing $N$, its dual into $\mu_N$ is identified with the
+dual into $\mu_q$ by the inclusion $\mu_q\hookrightarrow\mu_N$.
+The local invariant maps are compatible with this inclusion after
+embedding their targets in $\mathbf Q/\mathbf Z$.
+Surjectivity of the degree-two local-to-compact map then gives the
+same compatibility for the global compact traces. This allows the
+primary pairings to be added, with zero cross-pairings for different
+primes, to obtain the general finite-coefficient compact duality.
+
+**The nine terms and the Sha pairing.** For the rest of this paragraph
+use $D=\mu_N(F_S)$ and let $M^D=\operatorname{Hom}(M,D)$.
+Write $P^j(M)=\prod_{v\in S}H^j(F_v,M)$ and
+$X^*=\operatorname{Hom}(X,\mathbf Q/\mathbf Z)$.
+Compact duality identifies $H_c^{j+1}(M)$ with $H^{2-j}(G,M^D)^*$,
+using the bidual coefficient identification and finiteness.
+Transport the cone localization sequence through these isomorphisms.
+The map from the local product to the dual global group is explicitly
+the sum of the local cup-product invariants, since cup with a
+local-to-compact class is the local cup followed by that map.
+Degree-zero compact vanishing and global degree-three vanishing give
+the two endpoints. The resulting sequence is
+
+$
+\begin{aligned}
+0&\to H^0(G,M)\to P^0(M)\to H^2(G,M^D)^*\\
+ &\to H^1(G,M)\to P^1(M)\to H^1(G,M^D)^*\\
+ &\to H^2(G,M)\to P^2(M)\to H^0(G,M^D)^*\to0 .
+\end{aligned}
+$
+
+Here $\Sha^j(M)=\ker(H^j(G,M)\to P^j(M))$ uses this same finite
+set of places. Compact exactness identifies $\Sha^1(M)$ with
+$H_c^1(M)/\partial P^0(M)$. The annihilator of $\Sha^2(M^D)$
+in $H^2(G,M^D)^*$ is precisely the image of $P^2(M^D)^*$:
+functionals annihilating the kernel factor through the image of
+localization and extend to its target. Local Tate duality identifies
+that image with the image of $\partial P^0(M)$ under compact duality.
+Taking the quotient therefore gives
+$\Sha^1(M)\simeq\Sha^2(M^D)^*$, with the pairing independent of the
+choice of compact lift. This proves the two asserted forms of global
+duality from the compact pairing; it does not use either of them as
+an input to the previous induction.
+
+**Archive concordance for descent and global duality.**
+
+| Step | Declaration or proof in the archive |
+| --- | --- |
+| Degree-three corestriction surjectivity | [surjective_compactCores_three](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseCores.lean#L100-L131) |
+| Trace comparison up to a unit and transport | [exists_isUnit_mul_of_surjective_of_bijective, bijective_of_transport](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseLevel.lean#L19-L58), [bijective_zmodCompactDualityMap_gsOpenSubgroup](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseLevel.lean#L83-L110) |
+| Arithmetic inputs on all sufficiently small open subgroups | [gsBaseBijective_of_le](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BijectiveGsLocalInvRootsOfPlaces.lean#L83-L118), [exists_compactDualityHypotheses_gs](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseMain.lean#L37-L66) |
+| Compact Mackey cup compatibility | [mackeyCompactCohomologyIso_compactCupRes](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/PoincarePairs/MackeyCup.lean#L457-L490) |
+| Connecting sign, coinduced embedding | [compactDualityMap_δ, exists_injective_biproduct_coind_le](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/PoincarePairs/Devissage.lean#L106-L170) |
+| Degree induction | [injective_zero, surjective_zero, injective_succ, surjective_succ, bijective_compactDualityMap](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/PoincarePairs/Devissage.lean#L253-L448) |
+| Primary decomposition and coefficient transport | [bijective_compactDualityMap_of_primePow](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/PoitouTate/Primary.lean#L200-L257), [zmodToQZ_gsCompactInv_gsRootsIncl](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/PoitouTate/ZmodToQZCompactCohomologyResMapOfLocalInv.lean#L170-L188) |
+| Nine terms and Sha | [exact_stage, nineTerm, bijective_ptShaPairing](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/PoitouTate/Abstract.lean#L176-L278), [poitouTate_duality_gs, poitouTate_sha_gs, poitouTate_nineTerm_gs](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/PoitouTate/PoitouTateNineTermGs.lean#L36-L70) |
+
 (comp-primes)=
 ## 12 · Auxiliary primes and Behrend towers
 
