@@ -168,19 +168,17 @@ about individual $K$-groups would require additional theorems.
 
 ### What global duality supplies to the window
 
-The duality theorem is part of the arithmetic supply, not the window estimate itself.
-Its two useful finite-level outputs are the last arrow of the nine-term exact sequence
-and a perfect pairing of locally trivial classes in degrees one and two.
-The actual passage to the lengths used later is through
+Global duality enters the window argument through two finite-level results: the last
+arrow of the nine-term sequence and the perfect pairing of locally trivial classes
+in degrees one and two. They lead to the integral length comparisons in
 [the finite-level and integral comparison](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L517-L541).
 
-For clarity write $\chi$ for the cyclotomic character, $L=\mathbf Z_\ell(e+1)$
+Write $\chi$ for the cyclotomic character, $L=\mathbf Z_\ell(e+1)$
 for the rank-one integral module of character $\chi^{e+1}$, and
 $V=(\mathbf Q_\ell/\mathbf Z_\ell)(-e)$ for its torsion Tate dual (character $\chi^{-e}$).
-Take the restricted-ramification group $G_S$ and its local family from the lattice
-data (in `LData` the set $S$ is exactly the set of places over $\ell$).
-For odd $\ell$, or a totally imaginary
-field, the finite pair is $L_r=L/\ell^r L$ and $V_r=V[\ell^r]$.
+Let $G_S$ be the restricted-ramification group of the number field $F$, where
+$S$ consists of the places above $\ell$ (as in `LData`). Suppose that $\ell$ is
+odd or $F$ is totally imaginary. At level $r\ge1$ the dual pair is $L_r=L/\ell^r L$ and $V_r=V[\ell^r]$.
 The nine-term sequence and Sha duality give
 
 $$
@@ -189,10 +187,9 @@ $$
  \qquad \Sha^2(L_r)\simeq\Sha^1(V_r)^* .
 $$
 
-Here $P^2$ is the product of local groups at $S$ and the star means the finite
-character dual. These are statements about finite coefficients, not yet about
-the length of a $\mathbf Z_\ell$-module. The reduction and saturation arguments
-in the archive compare these finite groups with the integral localization map
+Here $P^i$ denotes the product of the local cohomology groups at $S$, and the star
+denotes the character dual into $\mathbf Q/\mathbf Z$. Reduction and an eventual
+saturation argument relate the finite groups to the integral localization map
 $f:H^2(G_S,L)\to P^2(L)$ and give
 
 $$
@@ -203,13 +200,12 @@ $$
  =\operatorname{length}_{\mathbf Z_\ell}\Sha^1(V).
 $$
 
-There is also the analogous local equality for $H^2(F_v,L)$ and $H^0(F_v,V)$.
-Lengths are extended lengths here: equality does not assert finiteness.
-These are the comparisons assembled in the archive's
+The local equality is $\operatorname{length}H^2(F_v,L)=\operatorname{length}H^0(F_v,V)$.
+All lengths are allowed to be infinite. The three identities are assembled in
 [archimedeanSignatureMatching_of_poitouTate and twist_cohomology_inputs](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L529-L541).
 In the archive's [definitions](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Formalism/GaloisCohomology/Statement.lean#L67-L106),
-the second comparison identifies the length of the integral kernel with shaLen;
-the length of $H^2(G_S,L)$ is VLen. The inclusion of the kernel into this group gives
+the second equality identifies the length of the integral kernel with `shaLen`,
+while `VLen` is the length of $H^2(G_S,L)$. Inclusion of the kernel gives
 
 $$
  s_{\ell,e}(F)=\operatorname{length}\Sha^1(V)
@@ -226,33 +222,25 @@ $$
  \operatorname{length}\Sha^1(V)+\sum_{v\in S}\operatorname{length}H^0(F_v,V).
 $$
 
-All lengths in this identity are extended; no subtraction of infinite quantities
-is used. The inequality is the one employed at the reference layer in
+The additive form avoids subtracting infinite lengths. The inequality is used at the reference layer in
 [aBound_of_descends](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/AdditiveValuationNorms/ABoundOfDescends.lean#L36-L55):
-after identifying the tower cokernel length with shaInv, the argument
-bounds the reference-layer Sha length by VLen and adds the growth allowance.
-The independent determinant and descent estimates then control the exceptional
-twists as described above. The field and twist still enter the arithmetic estimates
-that bound the resulting lengths. Neither global duality nor the length equalities alone give the
-uniform window or the all-prime bound above. In the archive's
+the tower cokernel length is identified with `shaInv`, the reference-layer length
+is bounded by `VLen`, and the growth allowance is added. The determinant and descent
+estimates described above then control the exceptional twists. In the
 [window assembly](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/HVCore.lean#L19-L22), the Poitou–Tate input
-is actually passed to the tower bound, the counting argument and the odd-prime
-reciprocity calculation (through the normalized-duality adapter
-[pt_s](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/HVFinalU.lean#L11-L11)). The raw compact pairing reconstructed below
-is upstream of this adapter; its construction is not a proof of the additional
-normalization and conjugation compatibility. This is a source-level description
-of the calls, not a new verification of the kernel dependency graph.
+is used in the tower bound, the counting argument and the odd-prime reciprocity
+calculation, through the normalized-duality adapter
+[pt_s](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/HVFinalU.lean#L11-L11). The normalization and conjugation compatibility of that interface are separate
+from the construction of the compact pairing below.
 
-The following optional proofs follow this dependency rather than file order.
-They distinguish the arithmetic inputs from what is derived from them. The
-first three reconstruct the finite-coefficient theorem from its providers;
-the last gives the passage from finite levels to integral lengths.
+The first three notes below reconstruct the finite-coefficient theorem from its
+arithmetic inputs; the fourth proves the length comparisons.
 
 :::{dropdown} A closer look: the compact trace in Poitou–Tate duality
-One of the arithmetic inputs just listed is global duality. To see how it is built, consider the
-trace in degree three of compactly supported cohomology. This part can be reconstructed without
-using global Poitou–Tate duality itself. We give the proof from the earlier arithmetic inputs and
-keep the assumptions of the archive's trace theorem explicit.
+
+The construction of global duality begins with the trace on compactly supported
+cohomology in degree three. It follows from local invariants, Brauer reciprocity
+and the Kummer sequence for $S$-units.
 
 Let $F$ be a number field, $\ell$ a prime, $n=\ell^k$ with $k\ge1$, and $S$ a finite set of finite
 places containing all the places above $\ell$. Suppose $n$ is odd or $F$ is totally imaginary.
@@ -260,8 +248,8 @@ Write $F_S$ for the maximal extension unramified at finite places outside $S$,
 $G_S=\operatorname{Gal}(F_S/F)$ and $D=\mu_n(F_S)$, with its natural Galois action.
 All the $n$-th roots of unity lie in $F_S$. Let
 $P^i(D)=\prod_{v\in S}H^i(F_v,D)$, where the local action is obtained by restriction.
-We use the finite-place compact complex, the shifted cone of the localization map $f$:
-its degree-$i$ term is $C^i(G_S,D)\oplus\prod_{v\in S}C^{i-1}(F_v,D)$ and its
+The compact complex is the shifted cone of the finite-place localization map $f$.
+Its degree-$i$ term is $C^i(G_S,D)\oplus\prod_{v\in S}C^{i-1}(F_v,D)$ and its
 differential is $(a,b)\mapsto(da,f(a)-db)$. Fix an embedding of the algebraic
 closure into a local algebraic closure for every place in $S$, so that restriction
 is a specified cochain map. The local-to-compact map sends a local cocycle $b$
@@ -273,19 +261,16 @@ H^2(G_S,D)\xrightarrow{\mathrm{res}}P^2(D)
  \xrightarrow{\partial}H_c^3(D)\longrightarrow H^3(G_S,D).
 $$
 
-Here cohomology is continuous. The usual modified archimedean Tate terms vanish under the
-odd-or-totally-imaginary hypothesis; this does not assert that ordinary archimedean
-$H^0$ vanishes. We use the local Brauer invariant with arithmetic
-Frobenius, identifying $\mathbf Z/n\mathbf Z$ with the $n$-torsion in $\mathbf Q/\mathbf Z$
+All cohomology is continuous. Under the hypothesis on $n$ and $F$ the modified
+archimedean Tate terms vanish. We normalize the local Brauer invariant using
+arithmetic Frobenius and identify $\mathbf Z/n\mathbf Z$ with the $n$-torsion in $\mathbf Q/\mathbf Z$
 by $a\mapsto a/n$. Denote the local invariant on $H^2(F_v,D)$ in this convention by $t_v$.
 
-**Arithmetic inputs.** The trace theorem in the archive assumes $H^3(G_S,D)=0$ and
-bijectivity of each $t_v$. These are separate inputs, not consequences of the argument below.
-The archive supplies local bijectivity even without assuming the roots of unity lie in $F$:
-the presence of the places above $\ell$ ensures that the coefficient map to the local roots
-of unity is an isomorphism. The version over a field containing the roots of unity is the
-one used in the cyclic base pairing below. The following
-$S$-unit comparison is the main additional arithmetic ingredient.
+**Arithmetic inputs.** We use the vanishing $H^3(G_S,D)=0$ and the local invariant
+isomorphisms $t_v$. The coefficient comparison with the local roots of unity is
+an isomorphism since $S$ contains the places above $\ell$; no assumption that
+$F$ itself contains the roots is needed here. The other input is the $S$-unit
+comparison.
 
 Put $U=\mathcal O_{F_S,S}^{\times}$ (the union of the $S$-unit groups in the finite
 subextensions) and let $b:H^2(G_S,U)\to\bigoplus_w\operatorname{Br}(F_w)$ be the
@@ -298,36 +283,33 @@ unramified outside $S$ since $n$ is invertible there. Thus
 $1\to D\to U\xrightarrow{(\cdot)^n}U\to1$ gives a map $H^2(G_S,D)\to H^2(G_S,U)$
 with image $H^2(G_S,U)[n]$.
 
-For orientation, the primary comparison itself factors through the global Brauer group.
+The primary comparison factors through the global Brauer group.
 The Albert–Brauer–Hasse–Noether exact sequence identifies the global Brauer group with
 the kernel of the sum of local invariants. A local family killed by a power of $\ell$ lifts
 to a global Brauer class killed by the same power, by injectivity of localization. If the
 family vanishes at finite places outside $S$, the archive's $S$-unit lifting theorem supplies
 a preimage in $H^2(G_S,U)$. That group is torsion, so one can project a preimage onto its
 $\ell$-primary component without changing its primary Brauer image. Injectivity on the
-primary subgroup is a separate $S$-unit theorem. Together these facts give the comparison.
-In particular, the lifting and injectivity results for $S$-units are genuine arithmetic
-inputs; they do not follow just from exactness of the compact complex.
+primary subgroup is a separate $S$-unit theorem. The lifting and primary injectivity theorems for $S$-units thus supply the two
+directions of the comparison.
 
-**Why the sum descends.** For a class $x\in H^2(G_S,D)$, its image in $H^2(G_S,U)$
+**Construction of the trace.** For a class $x\in H^2(G_S,D)$, its image in $H^2(G_S,U)$
 is killed by $n$. By the primary comparison its local Brauer family vanishes at finite places outside $S$.
 At a complex place the Brauer group is zero; at a real place it is killed by $2$, hence its
 $n$-torsion is zero when $n$ is odd. Global Brauer reciprocity now gives
 $\sum_{v\in S}t_v(\mathrm{res}_v x)=0$.
-In particular the sum $t=\sum_{v\in S}t_v$ kills the image of $\mathrm{res}$. Since
+Thus $t=\sum_{v\in S}t_v$ vanishes on the image of restriction. Since
 $H^3(G_S,D)=0$, the connecting map $\partial$ is onto, and exactness gives a unique
 homomorphism $T:H_c^3(D)\to\mathbf Z/n\mathbf Z$ satisfying $T\partial=t$.
 
-**Why the trace is an isomorphism.** Surjectivity follows by putting a class with any prescribed
-invariant at one place of $S$ and zero at the others. Such a place exists because $S$
-contains the places above $\ell$.
+**Bijectivity.** Since $S$ contains the places above $\ell$, it is nonempty.
+A class supported at one place with prescribed local invariant proves surjectivity.
 
-For injectivity write an element in the kernel as $\partial\xi$, with $\xi\in P^2(D)$.
-Then $t(\xi)=0$. Map $\xi$ to its family of local Brauer classes $\beta$, extended by
-zero outside $S$. This is an $\ell$-primary family killed by $n$ with invariant sum zero.
+For injectivity, take $\xi\in P^2(D)$ with $T(\partial\xi)=t(\xi)=0$.
+Let $\beta$ be its family of local Brauer classes, extended by zero outside $S$. This is an $\ell$-primary family killed by $n$ with invariant sum zero.
 The $S$-unit comparison gives an $\ell$-primary lift $y\in H^2(G_S,U)$ with $b(y)=\beta$.
-It is important that this lift need not initially be known to be killed by $n$.
-But $b(ny)=n\beta=0$, and $ny$ is still primary; injectivity of the comparison gives $ny=0$.
+Although the comparison gives only a primary lift, $b(ny)=n\beta=0$.
+Since $ny$ is primary, injectivity gives $ny=0$.
 Kummer exactness now lifts $y$ to $x\in H^2(G_S,D)$. By compatibility with localization,
 $\mathrm{res}_v x$ and $\xi_v$ have the same local invariant for each $v\in S$.
 Local injectivity gives $\mathrm{res}(x)=\xi$. Exactness gives $\partial\xi=0$,
@@ -337,9 +319,8 @@ $$
 H_c^3(D)\ \xrightarrow[\quad T\quad]{\sim}\ \mathbf Z/n\mathbf Z.
 $$
 
-This proof separates the global arithmetic comparison from the elementary cone argument:
-the nontrivial lifting step is to recover an $n$-torsion global class from a primary Brauer lift.
-In particular, the resulting sequence
+The key lifting step is the passage from a primary Brauer lift to an $n$-torsion
+global class. We have in particular proved that the sequence
 
 $$
 H^2(G_S,D)\xrightarrow{\mathrm{res}}
@@ -347,14 +328,11 @@ H^2(G_S,D)\xrightarrow{\mathrm{res}}
 $$
 
 is exact at the local product and the last term. If a global degree-two class restricts to
-zero at all but one place of $S$, it must restrict to zero there as well. This last
-consequence uses only reciprocity and local injectivity, not the full trace isomorphism
-or perfectness of the other Poitou–Tate pairings. The trace itself supplies the target
-for compact cup-product pairings in the subsequent duality argument; it is not by itself
-the uniform length bound in the cohomological window.
+zero at all but one place of $S$, it must restrict to zero there as well. This consequence needs only reciprocity and local injectivity. The trace isomorphism
+also provides the target of the compact cup-product pairings.
 
-**A use of the last local invariant.** The archive uses this last-place argument in its
-odd-prime reciprocity calculation. Here the coefficients are written additively as
+**Reciprocity at the auxiliary prime.** The odd-prime reciprocity calculation
+uses the last-place consequence. Here the coefficients are written additively as
 $A=\mathbf Z/\ell^r\mathbf Z$ with $r>0$ and cyclotomic action $\chi$, and $\ell$ is odd.
 Consider a continuous two-cocycle $w$ on the absolute Galois group of a number field.
 Suppose it is constant on the cosets of the restricted-ramification kernel in each
@@ -363,9 +341,8 @@ Then $w$ descends to a continuous two-cocycle of $G_S$ for this action: the cocy
 descends because the cyclotomic action also factors through $G_S$.
 If its local restrictions at all $v\ne v_0$ in $S$ are coboundaries, the sum-of-invariants
 arrow forces its restriction at $v_0$ to be a coboundary as well.
-The archive invokes the nine-term Poitou–Tate interface for this assertion, with its
-local invariant isomorphisms; this is not a claim that the compact trace theorem alone
-supplies that entire interface.
+In the archive this implication is taken from the last arrow of the nine-term
+sequence and the local invariant isomorphisms.
 
 The specific cocycle is a cup product. Let $B$ be a commutative discrete $A$-algebra and
 $\lambda:B\to A$ an $A$-linear map. Write $\alpha,\beta$ for the two continuous characters
@@ -398,14 +375,11 @@ $$
 Indeed $\chi(g)b(h)-b(gh)+b(g)=\lambda(z(g)\alpha(g)(\alpha(h)m-m))=w(g,h)$.
 This supplies the coboundaries away from the distinguished auxiliary prime in the
 archive's calculation; at that prime the last-place argument supplies the missing
-coboundary. The subsequent local orthogonality argument, which is a separate input,
-converts it into a constraint on the two one-cocycles. Thus the arithmetic use of
-reciprocity is not merely a reference to a general duality theorem: it transfers a
-specific local vanishing condition to a place where it is needed.
+coboundary. Local orthogonality, applied to the resulting coboundary, then gives a constraint
+on the two one-cocycles. Reciprocity transfers the local vanishing to the
+auxiliary prime.
 
-**Concordance with the archive.** The links below refer to the same original archive
-revision as the rest of this book. The argument above reconstructs the trace theorem
-from its arithmetic inputs, rather than re-proving the preceding comparison or all of global duality.
+**Concordance with the archive.**
 
 | Step | Declaration in the archive |
 | --- | --- |
@@ -423,21 +397,21 @@ from its arithmetic inputs, rather than re-proving the preceding comparison or a
 :::
 
 :::{dropdown} From the compact trace to the duality pairing
-Keep the preceding arithmetic setting, and for this part assume that $F$ contains the $n$-th
-roots of unity. Put $A=\mathbf Z/n\mathbf Z$ with trivial action. We shall prove that
+
+Assume in this note that $F$ contains the $n$-th roots of unity, and put
+$A=\mathbf Z/n\mathbf Z$ with trivial action. The pairing
 
 $$
 H^i(G_S,A)\ \times\ H_c^{3-i}(D)\ \longrightarrow\ A,
 \qquad (x,y)\longmapsto T(y\smile x)
 $$
 
-is perfect for $0\le i\le3$, from the earlier arithmetic results specified below.
-Perfect means that either group is identified with the group of additive homomorphisms
-from the other to $A$. The compact argument of the cup product comes first. In addition
-to the trace isomorphism, the proof uses local Tate duality, the vanishing of the global
-degree-three groups for $A$ and $D$, the finiteness of $H^1(G_S,A)$ and $H_c^2(D)$,
-and the compatibility of compact cup products with the localization sequence.
-The nontrivial arithmetic step is perfectness in degree one.
+is perfect for $0\le i\le3$: either factor identifies with the additive character
+dual of the other into $A$. The compact argument of the cup product comes first.
+Besides the trace isomorphism, we use local Tate duality, global degree-three
+vanishing for $A$ and $D$, finiteness of $H^1(G_S,A)$ and $H_c^2(D)$, and the
+compatibility of compact cup products with localization. The arithmetic heart
+of the proof is the degree-one pairing.
 
 **Compact Kummer theory.** For $U=\mathcal O_{F_S,S}^{\times}$ as above, the notation
 $H_c^i(U)$ now uses local coefficient groups $\overline{F_v}^{\,\times}$, not just the
@@ -453,15 +427,13 @@ and at infinity by the odd-or-totally-imaginary hypothesis. Primary injectivity 
 comparison gives zero global image. Compact exactness now expresses $y$ as the image
 of a tuple of classes in $H^1(F_v,\overline{F_v}^{\,\times})$; all are zero by Hilbert 90.
 Consequently the map $H_c^2(D)\to H_c^2(U)$ is zero, since its source is killed by $n$.
-The compact Kummer sequence then gives the claimed surjectivity. Its kernel in degree one
-is $nH_c^1(U)$.
+Exactness gives surjectivity of $\delta_n$ and identifies its kernel with $nH_c^1(U)$.
 
 **The idelic presentation of compact classes.** Write $C_S$ for the quotient of the idele
 class group in which local units outside $S$ and the archimedean factors are killed.
 It has a presentation by the local multiplicative groups at $v\in S$ and divisors at
 finite places outside $S$, modulo the diagonal principal presentation.
-Here multiplicative groups will also be written additively when they are arguments of
-a cochain or an additive homomorphism.
+In cochains and homomorphisms we write the multiplicative groups additively.
 
 A datum $d=(t,(a_v)_{v\in S})$ consists of $t\in F_S^\times$ whose Galois ratios
 $\sigma(t)/t$ belong to $U$, and elements $a_v\in F_v^\times$.
@@ -469,11 +441,11 @@ The divisor of $t$ away from $S$ descends to a divisor of $F$: the extension is
 unramified there and the valuations of $t$ at primes over a given prime agree.
 Write this divisor as $\operatorname{div}_{\bar S}(t)$.
 The datum gives a compact class $q(d)\in H_c^1(U)$ represented by
-$(dt,(t_v+a_v)_v)$ in additive notation, where $t_v$ is the local image of $t$
-and $dt$ is its Galois coboundary. Its idele class $c(d)\in C_S$ is represented
+$(dt,(\iota_v(t)+a_v)_v)$ in additive notation, where $\iota_v$ is the chosen
+local embedding and $dt$ is the Galois coboundary of $t$. Its idele class $c(d)\in C_S$ is represented
 by $( (a_v)_v,-\operatorname{div}_{\bar S}(t))$.
 
-Three properties are needed, and their strength matters.
+We need three properties of these data.
 
 1. Every compact degree-one class has such a datum. A global one-cocycle with values
    in $U$ is a coboundary in $F_S^\times$ by Hilbert 90; its local null-homotopies
@@ -495,22 +467,22 @@ Three properties are needed, and their strength matters.
    and its outside-$S$ divisor is the pullback of $m$ times the original divisor.
    Its Galois ratios are roots of unity, hence $S$-units. Taking $t=y^{-1}$
    and multiplying the local entries by $m$ gives the required datum.
-   This property is weaker than surjectivity of the datum-to-idele-class map.
+   Thus the image of the datum map contains a prime-to-$\ell$ multiple of
+   every idele class.
 
 Class field theory identifies $H^1(G_S,A)=\operatorname{Hom}_{\rm cont}(G_S,A)$ with
 $\operatorname{Hom}(C_S,A)$. The archive uses *all additive homomorphisms* on the
 idelic side of this isomorphism. Let $\chi_x$ denote the character attached to $x$.
 
-**Why the pairing is evaluation.** The central arithmetic identity is
+**The evaluation formula.** The degree-one pairing is given by
 
 $$
  T(\delta_n q(d)\smile x)=\chi_x(c(d)).
 $$
 
-Here $\delta_n$ includes the comparison between the local root modules and $D$.
-We explain the signs and the global correction in the archive's proof. Use the embedding
-$A\hookrightarrow\mathbf Q/\mathbf Z$, so all invariants in this argument can be
-added in $\mathbf Q/\mathbf Z$. Let $z:G_S\to A$ represent $x$, take integer lifts
+Here $\delta_n$ includes the local comparison of root modules. Compute the
+invariants in $\mathbf Q/\mathbf Z$ via the embedding $A\hookrightarrow\mathbf Q/\mathbf Z$.
+Let $z:G_S\to A$ represent $x$, take integer lifts
 $\tilde z(g)$ between $0$ and $n-1$, and let
 
 $$
@@ -547,7 +519,7 @@ that divisor. On the other hand local reciprocity identifies
 $\operatorname{inv}_v(a_v\smile B_z)$ with $\chi_x$ on the idele supported at $v$
 with entry $a_v$.
 
-For precision, subtract a global $S$-unit correction from $W$ so that its local
+Subtract this global $S$-unit correction from $W$ so that its local
 restrictions inside $S$ equal $\xi^U_v-a_v\smile B_z$ in the Brauer group.
 This does not change the outside-$S$ invariants. The sum of the inside-$S$
 invariants of this corrected global Brauer class is killed by $n$: both
@@ -556,14 +528,11 @@ Global reciprocity expresses this sum as minus the outside-$S$ sum and minus
 the archimedean sum. The outside-$S$ sum is also killed by $n$, by the divisor
 formula. Hence the archimedean sum is killed by $n$, as well as by $2$; it
 vanishes if $n$ is odd, and is zero in the totally imaginary case.
-This argument only needs the *sum* at infinity to vanish, not each individual
-component of the corrected class.
+Only the *sum* of the archimedean contributions is needed.
 
 Adding the local-entry contributions gives the value of the character on
-$((a_v)_v,-\operatorname{div}_{\bar S}(t))$. This proves the evaluation identity,
-including the minus sign in the divisor component. The calculation uses the
-earlier local reciprocity and global $S$-unit vanishing theorems, not the
-Poitou–Tate pairing being constructed.
+$((a_v)_v,-\operatorname{div}_{\bar S}(t))$, as required. The minus sign in the
+divisor term is the sign from global reciprocity.
 
 **Nondegeneracy in both variables.** For a nonzero $x$, choose $a\in C_S$ with
 $\chi_x(a)\ne0$. Property 3 gives $c(d)=ma$ with $(m,\ell)=1$, so
@@ -584,7 +553,7 @@ Both cohomology groups are finite, and their character duals have the same
 cardinalities as the original groups, so the two zero-kernel assertions
 give perfectness in degree one.
 
-**The formal part: degrees zero, two and three.** Let $\partial$ denote each
+**The remaining degrees.** Let $\partial$ denote each
 local-to-compact map and $j$ each compact-to-global map, with coefficients and
 degrees understood. In degrees zero and three, scalar multiplication and the
 trace give the degree-zero pairing, while both groups in the degree-three
@@ -601,8 +570,7 @@ $$
  T(y_c\smile j x_c)=T(x_c\smile j y_c).
 $$
 
-The sign is $(-1)^{1\cdot2}=+1$; the archive proves this identity for its compact
-complex rather than invoking commutativity of an ordinary cup product.
+The compact cup interchange identity has sign $(-1)^{1\cdot2}=+1$.
 Since $D$ is now trivial cyclic, choose an identification $D\simeq A$.
 Perfectness in degree one also gives perfectness of the pairing between
 $H_c^2(A)$ and $H^1(G_S,D)$ under the corresponding coefficient transport.
@@ -636,11 +604,7 @@ The compact cup comparison shows that $x_0+jx_c$ represents the original
 $\lambda$. This completes all four degrees over a field containing the
 roots of unity.
 
-**Archive concordance for the pairing.** The proof follows the arithmetic
-calculation and the subsequent formal completion in the original archive.
-The preceding vanishing, local duality, divisor lifting, and cochain comparison
-theorems are the inputs at this level; the general finite-coefficient theorem
-still requires passage to open subgroups and dévissage.
+**Concordance with the archive.**
 
 | Step | Declaration or proof in the archive |
 | --- | --- |
@@ -658,6 +622,7 @@ still requires passage to open subgroups and dévissage.
 :::
 
 :::{dropdown} Descent, general coefficients and the nine-term sequence
+
 Return to the original field $F$, which need not contain the roots of unity.
 Write $G=G_S$ and let $M$ be a finite discrete $G$-module killed by $n$.
 Its dual is $M^D=\operatorname{Hom}(M,D)$ with the contragredient action,
@@ -692,7 +657,7 @@ prescribed value there maps to that value. Its kernel is a finite
 $n$-torsion module. Compact degree-four vanishing for this kernel makes
 the degree-three cohomology map of the coefficient trace onto. The
 compact Shapiro–Mackey isomorphism identifies it with corestriction.
-This is why dividing by the extension degree is unnecessary.
+In particular, no division by the extension degree is needed.
 
 Let $T_E$ denote the compact trace isomorphism over $E$. The map given
 by corestriction followed by $T_F$ is onto $A$; after the compact
@@ -700,10 +665,8 @@ comparison it is a surjective homomorphism from $H_c^3(E,D)\simeq A$.
 Consequently it is $uT_E$ for some $u\in A^\times$: an endomorphism of the
 cyclic group $A$ is multiplication by its value at $1$, and is onto
 precisely if that value is a unit.
-The archive transports the perfect pairing over $E$ using this unit
-and the Mackey comparison of cup products. It does not need to prove
-that $u=1$. The weaker statement suffices for perfectness and should
-not be read as a failure of exact trace naturality.
+Multiplication by a unit preserves perfectness, so the Mackey cup comparison
+transports the pairing over $E$ without requiring the identity $u=1$.
 
 The Shapiro isomorphism for global cohomology and the compact
 Shapiro–Mackey isomorphism, together with their compatibility with
@@ -728,9 +691,8 @@ Its dual sequence is exact in the opposite direction, since
 $\operatorname{Hom}(-,A)$ is exact on $n$-torsion groups (identify $A$
 with the $n$-torsion of the injective group $\mathbf Q/\mathbf Z$).
 All the modules remain finite and killed by $n$.
-The point of the embedding is that the pairing for $I$ is already
-known in every degree, whereas nothing about the pairing for $Q$
-in the desired degree may be assumed.
+The pairing for $I$ is known in every degree; the quotient $Q$ will enter
+through the induction hypothesis.
 
 **Induction in cohomological degree.** In degree zero, injectivity
 for $M$ follows by naturality from injectivity for $I$ and of the map
@@ -782,10 +744,9 @@ $$
  x'+(-1)^{s+1}\delta q
 $$
 
-represents $\lambda$. This completes the induction through degree
-three. In particular, the argument does not assume that the quotient
-$Q$ has fewer elements than $M$; it is an induction on degree with a
-separate, universally quantified injectivity step.
+represents $\lambda$. This completes the induction through degree three. The induction is on the
+degree, with injectivity established for every coefficient module before
+surjectivity in that degree.
 
 **Beyond prime powers.** For a finite module killed by a positive integer
 $N$, split it into its primary summands. Assume $S$ contains the places above every prime
@@ -800,8 +761,7 @@ same compatibility for the global compact traces. This allows the
 primary pairings to be added, with zero cross-pairings for different
 primes, to obtain the general finite-coefficient compact duality.
 
-**The nine terms and the Sha pairing.** For the rest of this paragraph
-use $D=\mu_N(F_S)$ and let $M^D=\operatorname{Hom}(M,D)$.
+**The nine terms and the Sha pairing.** In this note use $D=\mu_N(F_S)$ and let $M^D=\operatorname{Hom}(M,D)$.
 Write $P^j(M)=\prod_{v\in S}H^j(F_v,M)$ and
 $X^*=\operatorname{Hom}(X,\mathbf Q/\mathbf Z)$.
 Compact duality identifies $H_c^{j+1}(M)$ with $H^{2-j}(G,M^D)^*$,
@@ -831,11 +791,10 @@ localization and extend to its target. Local Tate duality identifies
 that image with the image of $\partial P^0(M)$ under compact duality.
 Taking the quotient therefore gives
 $\Sha^1(M)\simeq\Sha^2(M^D)^*$, with the pairing independent of the
-choice of compact lift. This proves the two asserted forms of global
-duality from the compact pairing; it does not use either of them as
-an input to the previous induction.
+choice of compact lift. The nine-term sequence and the Sha pairing are thus consequences of compact
+duality.
 
-**Archive concordance for descent and global duality.**
+**Concordance with the archive.**
 
 | Step | Declaration or proof in the archive |
 | --- | --- |
@@ -853,13 +812,11 @@ an input to the previous induction.
 
 **Reduction of integral cohomology.** Use the setting in the main text.
 Write $X=H^2(G_S,L)$, $Y=P^2(L)$, $f:X\to Y$, and $f_r$ for finite-level
-localization. The source proves finite generation of $X,Y$ and compatible
+localization. We establish finite generation of $X,Y$ and compatible
 isomorphisms $X/\ell^rX\simeq H^2(G_S,L_r)$ and
-$Y/\ell^rY\simeq P^2(L_r)$ using finite-coefficient finiteness and
-degree-three vanishing, rather than taking these assertions as formal
-properties of inverse limits.
+$Y/\ell^rY\simeq P^2(L_r)$ using finiteness and degree-three vanishing at finite coefficient levels.
 
-Here is the cochain argument. A finite-level two-cocycle lifts to a
+A finite-level two-cocycle lifts to a
 continuous two-cochain at the next level: choose a section between the
 finite discrete coefficient groups. Its differential is a three-cocycle
 in the kernel, identified with $L_1$. The vanishing of $H^3(L_1)$
@@ -872,8 +829,8 @@ divisible pointwise by $\ell^r$; dividing yields a continuous integral
 two-cocycle since the coefficient lattice has no torsion. Thus the
 reduction kernel is exactly $\ell^r H^2(L)$.
 
-Separation is a further step. If an integral two-cocycle is a boundary at
-every finite level, the sets of its finite-level primitives modulo
+To prove separation, suppose an integral two-cocycle is a boundary at
+every finite level. The sets of its finite-level primitives modulo
 one-coboundaries are nonempty torsors under the finite groups $H^1(L_r)$.
 The reduction maps form an inverse system of nonempty finite sets, so
 there is a compatible sequence of primitive classes (no surjectivity of
@@ -887,12 +844,12 @@ Successive approximation expresses each element modulo $\ell^r$ by
 linear combinations of these lifts with compatible coefficients.
 Completeness of $\mathbf Z_\ell$ gives limiting coefficients; separation
 makes the resulting equality exact. This proves finite generation.
-These arguments reconstruct the roles of
+In the archive these are
 [reduction_h2_eq_zero_iff, reduction_h2_surjective, finite_h2_padic_representation](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L75-L135).
 The finite global $H^1,H^2$ used here come from their finite local groups
 and the finite Sha groups (see [global_lim](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L337-L351)).
 
-**Cokernels require no saturation.** Write $C=\operatorname{coker} f$.
+**The cokernel length.** Write $C=\operatorname{coker} f$.
 Right exactness of reduction gives
 
 $$
@@ -904,14 +861,13 @@ $|C/\ell^r C|=|H^0(G_S,V_r)|$ for every $r>0$.
 These are the cardinalities of $H^0(G_S,V)[\ell^r]$, since the coefficient
 embedding $V_r\hookrightarrow V$ is equivariant. As $r$ increases the
 subgroups exhaust $H^0(G_S,V)$; on the other side the reductions of the
-finitely generated module $C$ have log-cardinalities tending to its
-extended length. A free summand gives an unbounded sequence; for a
+finitely generated module $C$ have base-$\ell$ logarithms of their cardinalities tending to its extended length. A free summand gives an unbounded sequence; for a
 torsion module it eventually gives its length. Taking the suprema
 proves the cokernel formula, without a finiteness assumption on either
 length. The same argument with local Tate duality gives the local
 length formula.
 
-**Kernels do require saturation.** Put $K=\ker f$.
+**The kernel length.** Put $K=\ker f$.
 The natural injection $K/(K\cap\ell^r X)\to\ker f_r$ is onto if
 
 $$
@@ -934,7 +890,7 @@ check injectivity at that level. A global cocycle in $V_r$ becoming a
 boundary in $V$ is $g\mapsto ga-a$ for some $a\in V$. If its local
 restrictions are boundaries in $V_r$, there are $b_v\in V_r$ with
 $a-b_v\in V^{G_{F_v}}$. It suffices to find a global primitive in $V_r$.
-This is the second correction condition checked by the archive.
+This is the discrete counterpart of the saturation condition.
 
 For $e\ne0$, at each finite place the cyclotomic character has infinite
 image: away from $\ell$ an arithmetic Frobenius acts by the residue cardinality,
@@ -972,10 +928,7 @@ this follows from finite generation, since the topology on a submodule
 of a finitely generated $\mathbf Z_\ell$-module is its $\ell$-adic
 topology (or directly by the elementary divisor theorem).
 The finite subgroups on the right have supremum of lengths equal to
-the extended length of $\Sha^1(V)$. Taking these suprema proves the
-kernel formula. The argument is exactly why the archive separates
-the cokernel comparison from the eventual kernel and discrete
-correction conditions.
+the extended length of $\Sha^1(V)$. Taking the suprema proves the kernel formula.
 
 | Step | Declaration in the archive |
 | --- | --- |
