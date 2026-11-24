@@ -172,7 +172,7 @@ additional claim that the determinant bound is finite at a centre.
 Suppose $L_0$ contains a primitive $\ell$-th root for odd $\ell$, or a primitive
 fourth root for $\ell=2$. Then the reference layer $L_j$ is totally imaginary and
 inherits the required roots. Let $n=[L_j:\mathbf Q]$ and $D=|\operatorname{disc}L_j|$.
-The archive's Lemma K, with constant $C_K\ge1$ (enlarged if necessary), gives finiteness of the group defining
+The archive's Lemma K, with constant $C_K>0$, gives finiteness of the group defining
 $v(h,j)$ and
 
 $$
@@ -311,6 +311,236 @@ estimates hold throughout the *same* interval.
 | Uniform conductor and discriminant estimates | [rootdeg](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Rootdeg.lean#L8-L27), [layeremb](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Layeremb.lean#L8-L35), [disc](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Imports.lean#L8-L45), [layerdisc](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Layerdisc.lean#L9-L71) |
 | Moving two-adic and fixed odd-prime towers | [partA](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/PartA.lean#L24-L78), [partB](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/PartB.lean#L50-L95) |
 | Choice of ranks, common threshold and common window | [thmBab_of](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/ThmBabOf.lean#L11-L103) |
+
+:::
+
+:::{dropdown} Case I: a common integer for the coefficient primes
+
+The joint bound in Case I is stronger than a collection of local length
+bounds. Its arithmetic content is that the local contributions, grouped by
+character kernel, are controlled by the valuations of an integer constructed
+before the coefficient prime is chosen.
+
+**The trace difference.** Fix an imaginary quadratic field $K$, a level
+$N$, a twist $h\ge1$, and a rational prime $p\nmid30N|\operatorname{disc}K|$.
+Choose a place $w$ above $p$ and let $q_w=|\kappa(w)|=p^f$, where $f\le2$.
+The archive uses inverse arithmetic Frobenius. The reference trace for a
+character $\psi$ is the trace of the reducible representation with diagonal
+characters $\Psi,1,\Psi^{-1}$, where $\Psi=\chi_\ell^h\psi$ and
+$\chi_\ell$ is the cyclotomic character. At inverse Frobenius it becomes
+the complex number
+
+$$
+ E(z)=q_w^{-h}z+1+q_w^hz^{-1},
+ \qquad z=\psi(q_w)^{-1}.
+$$
+
+The admissible representations belong to the rank-three unitary family
+or to the rank-two descent family, realized in dimension three. The
+counting input supplies a finite set $D$ of eigensystem labels, with a
+trace $t_d$ for every $d\in D$. The essential properties of these data
+are as follows:
+
+- $|t_d|\le3$ and $q_w^ht_d$ is an algebraic integer.
+- Complex field automorphisms permute the labels compatibly with their
+  traces.
+- For every odd coefficient prime $\ell\ne p$, the admissible
+  representations can be classified by labels in $D$, with matching
+  inverse Frobenius traces under the chosen field isomorphism to
+  $\mathbf C$. Equality of labels implies isomorphism of representations.
+
+In particular $D$ is a set of labels, not a set of distinct trace values.
+Two nonisomorphic representations may have the same trace at $w$;
+discarding such multiplicities would not give the required bound.
+
+Put $Q_w=q_w^h\ge7$. Since $z$ is a root of unity, the cleared difference
+
+$$
+ A(z,d)=Q_w(t_d-E(z))
+       =Q_wt_d-z-Q_w-Q_w^2z^{-1}
+$$
+
+is an algebraic integer. It is nonzero, because
+$|Q_wt_d-z-Q_w|\le4Q_w+1<Q_w^2$. The same triangle inequality gives
+$|A(z,d)|\le2Q_w^2$, hence
+
+$$
+ \log|A(z,d)|\le2h\log q_w+1.
+$$
+
+This separation uses the complex bound on the normalized trace and the
+strict lower bound on the residue cardinality; it requires no
+nonvanishing conjecture about a particular congruence.
+
+**An integral product.** Let $G=(\mathbf Z/N\mathbf Z)^\times$, and let
+$H'$ be a subgroup occurring as the kernel of a character of $G$.
+Write $\mathcal C_{H'}$ for all complex characters with exactly that
+kernel. If $m=[G:H']$, the quotient is cyclic of order $m$, and
+$|\mathcal C_{H'}|=\varphi(m)$: its faithful characters are obtained by
+sending a generator to each primitive $m$-th root of unity. Form
+
+$$
+ I_{H',p}=
+ \prod_{\psi\in\mathcal C_{H'}}\prod_{d\in D}
+          A(\psi(q_w)^{-1},d).
+$$
+
+All factors are nonzero algebraic integers. Their indexed family is
+permuted by Galois automorphisms, since automorphisms preserve character
+kernels and permute $D$. Thus the product is rational and integral,
+so $I_{H',p}\in\mathbf Z\setminus\{0\}$. Equivalently, work inside a
+finite normal number field containing the factors and extend its
+automorphisms to the algebraic closure (and to $\mathbf C$).
+The empty product is $1$. The archimedean bound gives
+
+$$
+ \log|I_{H',p}|
+ \le\varphi(m)|D|(2h\log q_w+1).
+$$
+
+The rank-three counting theorem and the rank-two descent count supply
+a polynomial bound for this expression. In the actual calling path
+the interface NumberU3U_s packages this conclusion as
+
+$$
+ \log|I_{H',p}|
+ \le c_K\varphi(m)(N(h+1))^{A_K}\log p,
+$$
+
+with $c_K,A_K$ fixed for $K$. The trace calculation above explains
+the integer construction underlying that interface; the existence,
+classification and cardinality bounds for the admissible eigensystems
+are its automorphic inputs.
+
+**From the integral product to a local length.** Fix an odd $\ell\ne p$
+and a coefficient ring as in the character reduction. A nonempty
+character family with kernel $H'$ corresponds bijectively to
+$\mathcal C_{H'}$ under the chosen coefficient embedding into
+$\mathbf C$: all faithful characters of the cyclic quotient are
+powers of any one of them with exponents prime to $m$. In particular
+the ring need not contain roots of unity for unrelated character orders.
+The hypotheses GD on one character imply GD on the whole family.
+Indeed its other members are these coprime powers; the character order,
+parity and quadratic local component are preserved, as is the kernel
+of the character with its local component removed. The remaining
+conditions in GD concern the field, level, prime and twist.
+
+For each such $\psi$, the one-character theorem (OneCharU_s) gives
+finiteness and a set $X_\psi$ of pairwise nonisomorphic admissible
+representations with
+
+$$
+ v_\ell(\psi,h)
+ \le 2\sum_{\rho\in X_\psi}
+             v_\ell(\operatorname{tr}\rho(\operatorname{Frob}_w^{-1})
+                         -E_\psi).
+$$
+
+Here $E_\psi$ is the reference trace transported to the coefficient
+field, and on scalars $v_\ell(\ell)=1$. This theorem is proved by
+bounding the character cohomology length by the cotangent length of
+a graded deformation model (vlen_le), and applying Lemma M to the
+weight-zero trace difference (model_upper). The trace difference
+vanishes at the reducible base point and is nonzero at the relevant
+two-sided points by the trace separation. The rigidity and
+automorphy inputs identify their specializations with the two
+admissible families. The representatives in model_upper are taken
+modulo the grading torus action; the argument in oneChar_unramU
+shows that isomorphic restrictions to $G_K$ come from the same
+representative. This is what permits the use of the classification
+by eigensystem labels, with no uncontrolled multiplicity. The initial
+reduction to unramified coefficients uses the prime-to-$\ell$ order
+of $\psi$ and coefficient independence of normalized length.
+
+To compare the sum with $I_{H',p}$, use the injection of $X_\psi$ into
+the labels $D$ for each $\psi$. Every cleared difference is integral,
+so all of its valuations are nonnegative. Also $Q_w$ is an
+$\ell$-adic unit. It follows that
+
+$$
+ \sum_{\psi}\sum_{\rho\in X_\psi}
+ v_\ell(\operatorname{tr}\rho(\operatorname{Frob}_w^{-1})-E_\psi)
+ \le v_\ell(I_{H',p}).
+$$
+
+No injectivity between the label sets for *different* characters
+is required: the full product is indexed by the character-label
+pairs. Consequently the sum of normalized lengths over the
+kernel family is at most $2v_\ell(I_{H',p})$. This is PropGK.
+
+**Two auxiliary primes.** The preceding argument cannot use the prime
+$p$ as its own coefficient prime. Choose distinct auxiliary primes
+$p,p'$ satisfying the same coprimality requirements. For any finite
+set $S$ of relevant coefficient primes, the one-character finiteness
+statement and the valuation bound at each $\ell$ follow from the
+integer for $p$ if $\ell\ne p$, and from the integer for $p'$ otherwise.
+By unique factorization,
+
+$$
+ \sum_{\ell\in S}v_\ell(I)\log\ell\le\log|I|
+ \qquad(I\in\mathbf Z\setminus\{0\}).
+$$
+
+It follows that, for the primes in which the kernel family contains
+a GD character,
+
+$$
+ \sum_{\ell\in S}\log\ell
+          \sum_{\ker\psi=H'}v_\ell(\psi,h)
+ \le 2c_K\varphi([G:H'])(N(h+1))^{A_K}
+                    (\log p+\log p').
+$$
+
+Thus CorGK is a bound over arbitrary finite sets, even though the
+construction of the individual representations depends on $\ell$.
+
+**Returning to the host.** In Case I the quadratic field is fixed
+as $K=\mathbf Q(\sqrt{-p_K})$ by the original character $\chi$.
+The conditions outside $B_\chi$ ensure $\ell$ is prime to the
+character order and to the discriminant and class number of $K$.
+The field cut out by the residual cyclotomic character together
+with the local-component-removed character is unramified at $p_K$,
+whereas $K$ is ramified there. Thus it cannot contain $K$, giving
+the remaining disjointness condition of GD. The other GD conditions
+are the host parity, the local quadratic-component condition,
+even level and $\ell-1\nmid2h$. These implications are gdOfHost.
+
+Choose the two auxiliary primes larger than $30Qp_K$, with $Q$ the
+original conductor, and require the moving primes $q,d$ to exceed
+both. Since $N=\operatorname{lcm}(2^{e(x)+2},Q)qd$, neither auxiliary
+prime divides $30N|\operatorname{disc}K|$. They may therefore be
+fixed before the host is chosen.
+
+Let $\mathcal H$ be the distinct character kernels occurring among
+the chosen coefficient primes. Each quotient $G/H'$ for
+$H'\in\mathcal H$ is cyclic. The sets of complex characters with
+these kernels are disjoint, and the character group of $G$ has
+order $|G|$. Hence
+
+$$
+ \sum_{H'\in\mathcal H}\varphi([G:H'])
+ \le |G|=\varphi(N)\le N.
+$$
+
+Summing the joint bound over kernels gives at most
+$A_0N(N(h+1))^{A_K}$, where
+$A_0=2c_K(\log p+\log p')$ is fixed. Since $h+1\le t$ and $N\ge16$,
+choose an integer $k\ge0$ with $A_0\le16^k$. The sum is then at most
+$(Nt)^{k+1+A_K}$. This is CountI, with finiteness already established
+for each character. The essential uniformity is supplied by the
+integer product and the partition by kernels, not by a separate
+estimate for every possible coefficient prime.
+
+| Step | Archive reference |
+| --- | --- |
+| Actual counting and one-character interfaces | [NumberU3U_s, OneCharU_s](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/NumberU3US.lean#L27-L59) |
+| Cleared trace difference and the integer product | [eisenstein_trace_difference_log_bound](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/BuildingsResidueChars/EisensteinTraceDifferenceLogBound.lean#L4-L61), [frobenius_trace_norm_nonzero_log_bound](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/BuildingsResidueChars/FrobeniusTraceNormNonzeroLogBound.lean#L7-L58) |
+| Integral Galois-invariant product and the injection of label sets | [exists_int_eq_prod_of_galois_permuted_integral](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/BuildingsResidueChars/ExistsIntEqProdOfGaloisPermutedIntegral.lean#L6-L22), [adicNorm_prod_le_prod_of_injective_classes](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/BuildingsResidueChars/AdicNormProdLeProdOfInjectiveClasses.lean#L5-L20) |
+| Cotangent comparison and one-character reduction | [vlen_le](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/UnitaryThreeGroups/VlenLe.lean#L47-L68), [model_upper](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/UnitaryThreeGroups/ModelUpper.lean#L112-L251), [oneChar_unramU and its coefficient descent](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/FOneCharU.lean#L19-L96) |
+| Transport to the kernel family and the common integer | [propGK_of_numberU3U_of_oneCharU](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/FPropGKU.lean#L110-L173), [gdFacts](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/GdFacts.lean#L29-L102) |
+| Two-prime argument | [corGK](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/UnitaryThreeGroups/CorGSumLog.lean#L8-L74) |
+| Host hypotheses and the sum over kernels | [gdOfHost](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/GdOfHost.lean#L37-L95), [orbSum](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/OrbSum.lean#L44-L59), [countI](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/UnitaryThreeGroups/CountI.lean#L25-L137) |
+| The actual call to these results | [count_i_of_printed_bound_k_kato_automorphy](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/LinkedUnlE.lean#L49-L54) |
 
 :::
 
