@@ -331,6 +331,236 @@ from its arithmetic inputs, rather than re-proving the preceding comparison or a
 | Last-place reciprocity for a descended cocycle | [glob](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PrimitiveFrobeniusFixed/OverIff.lean#L23-L53) |
 | Cup product and the explicit local primitive | [core](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PrimitiveFrobeniusFixed/OverIff.lean#L225-L295) |
 
+### From the compact trace to the duality pairing
+
+Keep the preceding arithmetic setting, and for this part assume that $F$ contains the $n$-th
+roots of unity. Put $A=\mathbf Z/n\mathbf Z$ with trivial action. We shall prove that
+
+$
+H^i(G_S,A)\ \times\ H_c^{3-i}(D)\ \longrightarrow\ A,
+\qquad (x,y)\longmapsto T(y\smile x)
+$
+
+is perfect for $0\le i\le3$, from the earlier arithmetic results specified below.
+Perfect means that either group is identified with the group of additive homomorphisms
+from the other to $A$. The compact argument of the cup product comes first. In addition
+to the trace isomorphism, the proof uses local Tate duality, the vanishing of the global
+degree-three groups for $A$ and $D$, the finiteness of $H^1(G_S,A)$ and $H_c^2(D)$,
+and the compatibility of compact cup products with the localization sequence.
+The nontrivial arithmetic step is perfectness in degree one.
+
+**Compact Kummer theory.** For $U=\mathcal O_{F_S,S}^{\times}$ as above, the notation
+$H_c^i(U)$ now uses local coefficient groups $\overline{F_v}^{\,\times}$, not just the
+restriction of $U$; the localization map includes the natural embeddings into these
+groups. The same cone construction and its long exact sequence apply.
+The global and local Kummer sequences form a compatible pair, giving a connecting map
+$\delta_n:H_c^1(U)\to H_c^2(D)$.
+
+This map is onto. Indeed, the primary subgroup of $H_c^2(U)$ is zero:
+if $y$ is killed by a power of $\ell$, its image in $H^2(G_S,U)$ has zero local Brauer
+components at places in $S$ by compact exactness, outside $S$ by the $S$-unit comparison,
+and at infinity by the odd-or-totally-imaginary hypothesis. Primary injectivity of that
+comparison gives zero global image. Compact exactness now expresses $y$ as the image
+of a tuple of classes in $H^1(F_v,\overline{F_v}^{\,\times})$; all are zero by Hilbert 90.
+Consequently the map $H_c^2(D)\to H_c^2(U)$ is zero, since its source is killed by $n$.
+The compact Kummer sequence then gives the claimed surjectivity. Its kernel in degree one
+is $nH_c^1(U)$.
+
+**The idelic presentation of compact classes.** Write $C_S$ for the quotient of the idele
+class group in which local units outside $S$ and the archimedean factors are killed.
+It has a presentation by the local multiplicative groups at $v\in S$ and divisors at
+finite places outside $S$, modulo the diagonal principal presentation.
+Here multiplicative groups will also be written additively when they are arguments of
+a cochain or an additive homomorphism.
+
+A datum $d=(t,(a_v)_{v\in S})$ consists of $t\in F_S^\times$ whose Galois ratios
+$\sigma(t)/t$ belong to $U$, and elements $a_v\in F_v^\times$.
+The divisor of $t$ away from $S$ descends to a divisor of $F$: the extension is
+unramified there and the valuations of $t$ at primes over a given prime agree.
+Write this divisor as $\operatorname{div}_{\bar S}(t)$.
+The datum gives a compact class $q(d)\in H_c^1(U)$ represented by
+$(dt,(t_v+a_v)_v)$ in additive notation, where $t_v$ is the local image of $t$
+and $dt$ is its Galois coboundary. Its idele class $c(d)\in C_S$ is represented
+by $( (a_v)_v,-\operatorname{div}_{\bar S}(t))$.
+
+Three properties are needed, and their strength matters.
+
+1. Every compact degree-one class has such a datum. A global one-cocycle with values
+   in $U$ is a coboundary in $F_S^\times$ by Hilbert 90; its local null-homotopies
+   then differ from the local images of that cobounding element by local invariants
+   $a_v\in F_v^\times$.
+2. If $c(d)=0$, then $q(d)=0$. In the principal presentation there is $x\in F^\times$
+   with local entries $a_v$ and divisor $-\operatorname{div}_{\bar S}(t)$.
+   Thus $tx$ is an $S$-unit and the cone representative of $q(d)$ is exactly the
+   compact coboundary of $tx$.
+3. For every $a\in C_S$ there is a datum $d$ and a positive integer $m$ prime to
+   $\ell$ with $c(d)=ma$. In the divisor presentation of $a$, the class of the
+   outside-$S$ divisor has finite order $\ell^j m$. The archive's divisor-lifting
+   theorem realizes $m$ times this divisor by a Galois-invariant divisor of an
+   element of $F_S^\times$ (using the principal multiple $\ell^j m$ and that
+   $\ell$ is invertible outside $S$). Taking the inverse of that element for $t$
+   and multiplying the local entries by $m$ gives the datum.
+   This property is weaker than surjectivity of the datum-to-idele-class map.
+
+Class field theory identifies $H^1(G_S,A)=\operatorname{Hom}_{\rm cont}(G_S,A)$ with
+$\operatorname{Hom}(C_S,A)$. The archive uses *all additive homomorphisms* on the
+idelic side of this isomorphism. Let $\chi_x$ denote the character attached to $x$.
+
+**Why the pairing is evaluation.** The central arithmetic identity is
+
+$
+ T(\delta_n q(d)\smile x)=\chi_x(c(d)).
+$
+
+Here $\delta_n$ includes the comparison between the local root modules and $D$.
+We explain the signs and the global correction in the archive's proof. Use the embedding
+$A\hookrightarrow\mathbf Q/\mathbf Z$, so all invariants in this argument can be
+added in $\mathbf Q/\mathbf Z$. Let $z:G_S\to A$ represent $x$, take integer lifts
+$\tilde z(g)$ between $0$ and $n-1$, and let
+
+$
+ B_z(g,h)=\frac{\tilde z(g)+\tilde z(h)-\tilde z(gh)}{n}.
+$
+
+This represents the integral Bockstein of $x$ and its class is killed by $n$.
+The compact Kummer/Bockstein product identity says that the image of
+$\delta_n q(d)\smile x$ in $H_c^3(U)$ is $q(d)\smile[B_z]$.
+The sign is positive: the connecting-map product rule in compact degree one
+gives the difference of these two expressions.
+
+The global part of this latter cup is $dt\smile B_z$. Its cohomology class in
+$H^3(G_S,U)$ is killed by $n$; the archive's separate vanishing theorem for the
+$\ell$-primary part of this group therefore gives a two-cochain $Q$ in $U$ with
+$dQ=dt\smile B_z$. In the larger multiplicative module $F_S^\times$ put
+$W=t\smile B_z-Q$ in additive notation. The cochain $W$ is a cocycle, since
+$d(t\smile B_z)=dt\smile B_z$.
+Subtracting the compact coboundary of $(Q,0)$ from the product leaves global
+component zero and local components $\operatorname{res}_v W+a_v\smile B_z$.
+Thus the two local terms come from the global divisor and the local entries,
+respectively.
+
+Choose a local degree-two tuple $\xi$ representing the original compact
+root-valued cup, using the surjectivity of the local-to-compact map in degree
+two. Let $\xi^U_v$ be its image in the local Brauer group. By cone exactness,
+the two local tuples $(\xi^U_v)_v$ and
+$(\operatorname{res}_v W+a_v\smile B_z)_v$ differ by restrictions of a global
+$S$-unit degree-two class. Its Brauer invariants vanish at finite places outside $S$.
+At a finite place $w$ outside $S$, the valuation of $W$ is
+$\operatorname{ord}_w(t) B_z$ because $Q$ is $S$-unit-valued. The unramified
+local reciprocity formula identifies its invariant with the character on
+that divisor. On the other hand local reciprocity identifies
+$\operatorname{inv}_v(a_v\smile B_z)$ with $\chi_x$ on the idele supported at $v$
+with entry $a_v$.
+
+For precision, subtract a global $S$-unit correction from $W$ so that its local
+restrictions inside $S$ equal $\xi^U_v-a_v\smile B_z$ in the Brauer group.
+This does not change the outside-$S$ invariants. The sum of the inside-$S$
+invariants of this corrected global Brauer class is killed by $n$: both
+the root-valued tuple and the local Bockstein terms have $n$-torsion invariants.
+Global reciprocity expresses this sum as minus the outside-$S$ sum and minus
+the archimedean sum. The outside-$S$ sum is also killed by $n$, by the divisor
+formula. Hence the archimedean sum is killed by $n$, as well as by $2$; it
+vanishes if $n$ is odd, and is zero in the totally imaginary case.
+This argument only needs the *sum* at infinity to vanish, not each individual
+component of the corrected class.
+
+Adding the local-entry contributions gives the value of the character on
+$((a_v)_v,-\operatorname{div}_{\bar S}(t))$. This proves the evaluation identity,
+including the minus sign in the divisor component. The calculation uses the
+earlier local reciprocity and global $S$-unit vanishing theorems, not the
+Poitou–Tate pairing being constructed.
+
+**Nondegeneracy in both variables.** For a nonzero $x$, choose $a\in C_S$ with
+$\chi_x(a)\ne0$. Property 3 gives $c(d)=ma$ with $(m,\ell)=1$, so
+$T(\delta_n q(d)\smile x)=m\chi_x(a)\ne0$.
+
+Conversely, let $y\in H_c^2(D)$ annihilate all of $H^1(G_S,A)$.
+By compact Kummer surjectivity and property 1, write $y=\delta_n q(d)$.
+The evaluation identity says that every homomorphism $C_S\to A$ kills $c(d)$.
+For any abelian group $C$, such homomorphisms separate points of $C/nC$:
+if an element of the quotient is nonzero, map its cyclic subgroup nontrivially
+to $\mathbf Q/\mathbf Z$ and extend using injectivity of $\mathbf Q/\mathbf Z$.
+The image lies in its $n$-torsion, hence in $A$. Therefore $c(d)=na$ for some $a$;
+no finiteness of $C_S/nC_S$ has been assumed.
+Choose $d'$ with $c(d')=ma$, $(m,\ell)=1$. Then $c(md-nd')=0$,
+so property 2 yields $mq(d)=nq(d')$. Applying $\delta_n$ gives $my=0$.
+Since $ny=0$ and $(m,n)=1$, we get $y=0$.
+Both cohomology groups are finite, and their character duals have the same
+cardinalities as the original groups, so the two zero-kernel assertions
+give perfectness in degree one.
+
+**The formal part: degrees zero, two and three.** Let $\partial$ denote each
+local-to-compact map and $j$ each compact-to-global map, with coefficients and
+degrees understood. In degrees zero and three, scalar multiplication and the
+trace give the degree-zero pairing, while both groups in the degree-three
+pairing are zero: $H^3(G_S,A)=0$ and $H_c^0(D)=0$, the latter because $S$ is
+nonempty and localization is injective on invariants.
+
+In degree two use local duality and the compact cup product identities.
+For a local tuple $u$ and a global class $x$ of complementary degree,
+$T(\partial u\smile x)$ is the sum of the local invariants of
+$u\smile\operatorname{res}x$. For $y_c\in H_c^1(D)$ and $x_c\in H_c^2(A)$,
+the signed compact cup comparison gives
+
+$
+ T(y_c\smile j x_c)=T(x_c\smile j y_c).
+$
+
+The sign is $(-1)^{1\cdot2}=+1$; the archive proves this identity for its compact
+complex rather than invoking commutativity of an ordinary cup product.
+Since $D$ is now trivial cyclic, choose an identification $D\simeq A$.
+Perfectness in degree one also gives perfectness of the pairing between
+$H_c^2(A)$ and $H^1(G_S,D)$ under the corresponding coefficient transport.
+
+Suppose $x\in H^2(G_S,A)$ annihilates $H_c^1(D)$. Testing against
+$\partial P^0(D)$ and applying local duality gives $\operatorname{res}x=0$.
+Choose $x_c$ with $jx_c=x$. The functional $z\mapsto T(x_c\smile z)$ on
+$H^1(G_S,D)$ vanishes on the kernel of localization: there $z=jy_c$ and
+the compact cup comparison reduces the value to $T(y_c\smile x)=0$.
+It therefore descends to the image in $P^1(D)$ and extends to that entire
+group, by the same $\mathbf Q/\mathbf Z$ extension argument above.
+By local duality the extension is represented by a tuple $\eta\in P^1(A)$,
+using local products in the order $\eta_v\smile z_v$.
+The class $x_c-\partial\eta$ now annihilates all of $H^1(G_S,D)$,
+so degree-one perfectness makes it zero. Its global image is $x$, proving
+injectivity in degree two.
+
+To prove surjectivity, let $\lambda:H_c^1(D)\to A$ be any functional.
+Its restriction along $\partial:P^0(D)\to H_c^1(D)$ is represented by
+a tuple $\xi\in P^2(A)$ by local duality, with local products in the order
+$u_v\smile\xi_v$. The functional kills the diagonal invariants
+$H^0(G_S,D)$ by exactness. Testing a generator of the trivial cyclic $D$
+shows that the sum of the invariants of $\xi$ after coefficient identification
+$A\simeq D$ is zero. The trace isomorphism and exactness therefore give a lift
+$x_0\in H^2(G_S,A)$ of $\xi$.
+Subtract from $\lambda$ the functional given by $x_0$.
+The difference vanishes on $\partial P^0(D)$ and hence descends to the image
+of $j:H_c^1(D)\to H^1(G_S,D)$. Extend it to all of $H^1(G_S,D)$ and apply
+degree-one perfectness to obtain a representing $x_c\in H_c^2(A)$.
+The compact cup comparison shows that $x_0+jx_c$ represents the original
+$\lambda$. This completes all four degrees over a field containing the
+roots of unity.
+
+**Archive concordance for the pairing.** The proof follows the arithmetic
+calculation and the subsequent formal completion in the original archive.
+The preceding vanishing, local duality, divisor lifting, and cochain comparison
+theorems are the inputs at this level; the general finite-coefficient theorem
+still requires passage to open subgroups and dévissage.
+
+| Step | Declaration or proof in the archive |
+| --- | --- |
+| Compact primary vanishing and Kummer surjectivity | [eq_zero_of_gsUnitsCompact_two](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseKummer.lean#L228-L266), [surjective_gsKummerCompactδ](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseKummerDelta.lean#L38-L64) |
+| Datum representation and prime-to-$\ell$ realization | [exists_gsUnitsDatum, gsUnitsData_surjective](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseClassIdele.lean#L197-L224), [gsUnitsClass, gsUnitsData_eq_zero_of_gsUnitsClass_eq_zero, exists_coprime_gsUnitsClass_eq](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseClassIdele.lean#L260-L332) |
+| All idelic characters | [charEquiv](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/ClassFieldGSFull.lean#L77-L82) |
+| Compact Kummer/Bockstein identity | [gsKummerCompactδ_cup](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseCupKummer.lean#L296-L319) |
+| Global correction cocycle | [exists_gsUnitsData_cup_bock](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseCupGlobal.lean#L219-L277) |
+| Local tuple and divisor correction | [gsRootsToUnitsCompact_cup_eq](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/GsRootsToUnitsCompactComparisonCup.lean#L60-L104), [zmodToQZ_gsCompactInv_gsCupClass](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/ZmodToQZGsCompactInvLocalToCompactEqLocalInvU.lean#L100-L150) |
+| Evaluation and the two kernels | [gsCompactInv_gsCupClass, gsCompactInv_ker_left, exists_nsmul_eq_of_forall_zmod, gsCompactInv_ker_right](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BasePairing.lean#L87-L202) |
+| Compact cup interchange | [compactCupRes_zmodMulPairingRight_swap](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseSwap.lean#L33-L52) |
+| Degree zero, one and three | [bijective_three, bijective_zero, bijective_one](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseFormal.lean#L395-L440) |
+| Degree two, both directions | [injective_two, surjective_two](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseFormal.lean#L536-L751) |
+| Assembly over the base field | [BaseDualityHypotheses.of_gs, bijective_gs_compactZmodDualityMap](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BijectiveGsCompactZmodDualityMap.lean#L23-L73) |
+
 (comp-primes)=
 ## 12 · Auxiliary primes and Behrend towers
 
