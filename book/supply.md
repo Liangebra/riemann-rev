@@ -166,6 +166,107 @@ mathematics: the window bounds *sums of lengths*, for a selected family of field
 of twists. Positive finite lengths are compatible with it, and the announcement's further remarks
 about individual $K$-groups would require additional theorems.
 
+### A closer look: the compact trace in Poitou–Tate duality
+
+One of the arithmetic inputs just listed is global duality. To see how it is built, consider the
+trace in degree three of compactly supported cohomology. This part can be reconstructed without
+using global Poitou–Tate duality itself. We give the proof from the earlier arithmetic inputs and
+keep the assumptions of the archive's trace theorem explicit.
+
+Let $F$ be a number field, $\ell$ a prime, $n=\ell^k$ with $k\ge1$, and $S$ a finite set of finite
+places containing all the places above $\ell$. Suppose $n$ is odd or $F$ is totally imaginary.
+Write $F_S$ for the maximal extension unramified at finite places outside $S$,
+$G_S=\operatorname{Gal}(F_S/F)$ and $D=\mu_n(F_S)$, with its natural Galois action.
+All the $n$-th roots of unity lie in $F_S$. Let
+$P^i(D)=\prod_{v\in S}H^i(F_v,D)$, where the local action is obtained by restriction.
+We use the finite-place compact complex, the shifted cone of the localization map $f$:
+its degree-$i$ term is $C^i(G_S,D)\oplus\prod_{v\in S}C^{i-1}(F_v,D)$ and its
+differential is $(a,b)\mapsto(da,f(a)-db)$. Its exact sequence contains
+
+$
+H^2(G_S,D)\xrightarrow{\mathrm{res}}P^2(D)
+ \xrightarrow{\partial}H_c^3(D)\longrightarrow H^3(G_S,D).
+$
+
+Here cohomology is continuous. We use the local Brauer invariant with arithmetic
+Frobenius, identifying $\mathbf Z/n\mathbf Z$ with the $n$-torsion in $\mathbf Q/\mathbf Z$
+by $a\mapsto a/n$. Denote the local invariant on $H^2(F_v,D)$ in this convention by $t_v$.
+
+**Arithmetic inputs.** The trace theorem in the archive assumes $H^3(G_S,D)=0$ and
+bijectivity of each $t_v$. These are separate inputs, not consequences of the argument below.
+The archive also has a specialization in which all the $n$-th roots of unity already lie in $F$;
+in that case it supplies the local bijectivity by the local duality theorem. The following
+$S$-unit comparison is the main additional arithmetic ingredient.
+
+Put $U=\mathcal O_{F_S,S}^{\times}$ (the union of the $S$-unit groups in the finite
+subextensions) and let $b:H^2(G_S,U)\to\bigoplus_w\operatorname{Br}(F_w)$ be the
+map through the global Brauer group. The archive proves that on the $\ell$-primary
+subgroup this map is an isomorphism onto the group of $\ell$-primary families
+of local Brauer classes which vanish at finite places outside $S$ and whose invariant
+sum is zero. The archimedean places are included in this comparison. The $S$-unit Kummer
+sequence is exact: an $n$-th root of an $S$-unit is again an $S$-unit, and adjoining it is
+unramified outside $S$ since $n$ is invertible there. Thus
+$1\to D\to U\xrightarrow{(\cdot)^n}U\to1$ gives a map $H^2(G_S,D)\to H^2(G_S,U)$
+with image $H^2(G_S,U)[n]$.
+
+**Why the sum descends.** For a class $x\in H^2(G_S,D)$, its image in $H^2(G_S,U)$
+is killed by $n$. Its local Brauer family therefore vanishes at finite places outside $S$.
+At a complex place the Brauer group is zero; at a real place it is killed by $2$, hence its
+$n$-torsion is zero when $n$ is odd. Global Brauer reciprocity now gives
+$\sum_{v\in S}t_v(\mathrm{res}_v x)=0$.
+In particular the sum $t=\sum_{v\in S}t_v$ kills the image of $\mathrm{res}$. Since
+$H^3(G_S,D)=0$, the connecting map $\partial$ is onto, and exactness gives a unique
+homomorphism $T:H_c^3(D)\to\mathbf Z/n\mathbf Z$ satisfying $T\partial=t$.
+
+**Why the trace is an isomorphism.** Surjectivity follows by putting a class with any prescribed
+invariant at one place of $S$ and zero at the others. Such a place exists because $S$
+contains the places above $\ell$.
+
+For injectivity write an element in the kernel as $\partial\xi$, with $\xi\in P^2(D)$.
+Then $t(\xi)=0$. Map $\xi$ to its family of local Brauer classes $\beta$, extended by
+zero outside $S$. This is an $\ell$-primary family killed by $n$ with invariant sum zero.
+The $S$-unit comparison gives an $\ell$-primary lift $y\in H^2(G_S,U)$ with $b(y)=\beta$.
+It is important that this lift need not initially be known to be killed by $n$.
+But $b(ny)=n\beta=0$, and $ny$ is still primary; injectivity of the comparison gives $ny=0$.
+Kummer exactness now lifts $y$ to $x\in H^2(G_S,D)$. By compatibility with localization,
+$\mathrm{res}_v x$ and $\xi_v$ have the same local invariant for each $v\in S$.
+Local injectivity gives $\mathrm{res}(x)=\xi$. Exactness gives $\partial\xi=0$,
+proving the trace isomorphism
+
+$
+H_c^3(D)\ \xrightarrow[\quad T\quad]{\sim}\ \mathbf Z/n\mathbf Z.
+$
+
+This proof separates the global arithmetic comparison from the elementary cone argument:
+the nontrivial lifting step is to recover an $n$-torsion global class from a primary Brauer lift.
+In particular, the resulting sequence
+
+$
+H^2(G_S,D)\xrightarrow{\mathrm{res}}
+\prod_{v\in S}H^2(F_v,D)\xrightarrow{\sum_v t_v}\mathbf Z/n\mathbf Z\longrightarrow0
+$
+
+is exact at the local product and the last term. If a global degree-two class restricts to
+zero at all but one place of $S$, it must restrict to zero there as well. This last
+consequence uses only reciprocity and local injectivity, not the full trace isomorphism
+or perfectness of the other Poitou–Tate pairings. The trace itself supplies the target
+for compact cup-product pairings in the subsequent duality argument; it is not by itself
+the uniform length bound in the cohomological window.
+
+**Concordance with the archive.** The links below refer to the same original archive
+revision as the rest of this book. The argument above reconstructs the trace theorem
+from its arithmetic inputs, rather than re-proving the preceding comparison or all of global duality.
+
+| Step | Declaration in the archive |
+| --- | --- |
+| Primary $S$-unit comparison and its map | [sUnitsH2PrimaryEquiv, coe_sUnitsH2PrimaryEquiv_apply](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/Brauer.lean#L376-L421) |
+| Local invariant comparison and the roots-in-$F$ specialization | [gsLocalInvRoots_eq, bijective_gsLocalInvRoots](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseLocal.lean#L188-L214) |
+| Vanishing of the sum on global classes | [sum_brauerInvZ_gsLocalRes_sUnits, gsSumInvRoots_globalToLocal](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseDefs.lean#L256-L291) |
+| Descending the sum through the cone | [localToCompact_two_surjective, gsCompactInv, gsCompactInv_localToCompact](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseDefs.lean#L293-L321) |
+| Surjectivity of the trace | [surjective_gsCompactInv](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseInv.lean#L97-L108) |
+| Primary lift, Kummer step and bijectivity | [exists_sUnits_of_mem_localPrimaryKernel, injective_gsCompactInv, bijective_gsCompactInv, bijective_gsCompactInv_of_mem](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseInv.lean#L196-L270) |
+| Use of the trace in the pairing | [compactZmodDualityMap](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseFormal.lean#L25-L36) |
+
 (comp-primes)=
 ## 12 · Auxiliary primes and Behrend towers
 
