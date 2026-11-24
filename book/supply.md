@@ -329,12 +329,15 @@ conductor, $t\ge2$ is the twist cutoff and $M=Nt$. The set $B_\chi$ is
 fixed before the moving field is chosen. It consists of $3$ and the odd
 prime factors of $oQp_K h_*p_1$, where $p_K,h_*,p_1$ are the fixed auxiliary
 quantities in the definition of [Bchi](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/StmtFields.lean#L54-L67).
-Write $a_\ell(h)$ for the length of the positive part of the locally
-trivial cohomology of the moving CM field at twist $h$.
+Let $c$ be the action of complex conjugation on the locally trivial
+cohomology of the moving CM field at twist $h$. The positive part is the
+$(-1)^h$-eigenspace of $c$ (not always its $+1$-eigenspace), and the negative
+part is the $(-1)^{h+1}$-eigenspace. Write $a_\ell(h)$ for the positive
+length, with all lengths initially allowed to be infinite.
 
 Let $H$ be the host subgroup of $(\mathbf Z/N\mathbf Z)^\times$.
 At each odd $\ell$ choose a coefficient discrete valuation ring $O$
-containing the requisite character values. Write $X_h$ for the characters
+finite over $\mathbf Z_\ell$ and containing the requisite character values. Write $X_h$ for the characters
 of $(\mathbf Z/N\mathbf Z)^\times$ trivial on $H$ and of parity
 $\psi(-1)=(-1)^h$. Put $v_\ell(\psi,h)$ equal to the character length
 Vlen divided by the ramification index of $O/\mathbf Z_\ell$
@@ -385,13 +388,13 @@ rather than taking them as additional automorphic counting hypotheses.
 
 **Primes outside $B_\chi$.** Let $S$ be any finite set of odd primes
 outside $B_\chi$. For a fixed $1\le h<t$, split $S$ according to whether
-$\ell-1$ divides $2h$. On the first part, CountI bounds the entire weighted
+$\ell-1$ divides $2h$. On the part where $\ell-1\nmid2h$, CountI bounds the entire weighted
 sum by $M^{C_1}$, with $C_1$ independent of $S$ and $h$. The two auxiliary
 primes required by that theorem are chosen depending on $\chi$ before
 the host is chosen. A pointwise estimate growing with $\ell$ could not
 replace this joint bound.
 
-On the other part, $\ell-1\mid2h$ implies $\ell\le 2t$.
+For the remaining primes, $\ell-1\mid2h$ implies $\ell\le 2t$.
 Set $K=\max(C_Z,C_{II},C_{III})$. The corresponding pointwise bounds
 include finiteness and give
 
@@ -399,7 +402,7 @@ $$
  v_\ell(\psi,h)\log\ell\le(\ell Nh)^K\le M^{3K},
 $$
 
-since $2t\le M^2$ and $\ell Nh\le2tM\le M^3$ for $M\ge2$.
+since $\ell Nh\le 2tM\le M^3$ for $t\le M$ and $M\ge2$.
 Each prime contributes at most $NM^{3K}$, and there are at most $2t$
 such primes. Thus
 
@@ -516,7 +519,9 @@ ThmBab, not an intersection of two independently selected intervals.
 | Counting hypotheses and exhaustive case division | [Counts](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/Counts.lean#L53-L73), [cases](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/Cases.lean#L8-L48), [bchiFacts](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/BchiFacts.lean#L8-L101) |
 | Integral character reduction and its loss | [redPrime](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/RedPrime.lean#L11-L57), [redAll](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/RedAll.lean#L6-L21), [lossLe](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/LossLe.lean#L8-L54) |
 | Sum outside the fixed set | [sumOut](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/SumOut.lean#L50-L231) |
+| Normalization and finiteness of character reduction | [nrm, SumLe](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CharacterLevelBounds/ShaFamMono.lean#L71-L78), [sumBack](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CharacterLevelBounds/SumBack.lean#L7-L59) |
 | Character conductor and fixed-layer estimate | [hostOdd](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/HostOdd.lean#L1-L111), [countIV](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/CountIV.lean#L39-L89) |
+| Fields for the two exceptional character estimates | [ivField](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/IvField.lean#L32-L82), [vsOrd](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/PowTotientConductor.lean#L26-L48), [vsField](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/VsField.lean#L24-L126) |
 | Strict reverse threshold at twist one | [countVs](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/CountVs.lean#L86-L171) |
 | Inside-set sum and combined positive part | [sum_split, sumIn](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/FinalLe.lean#L14-L263), [point](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/PointArith.lean#L36-L92) |
 | Host conductor and evaluation on a tower interval | [hostCond](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/HostCond.lean#L256-L323), [thmHV](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/ThmHV.lean#L6-L40), [jointWin_of](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PrimeSetBoundDataOfPrimitiveChar.lean#L145-L158) |
@@ -562,7 +567,11 @@ For sufficiently large $x$ this is at most $2x^{\varepsilon/4}$.
 The choice of threshold is uniform in the auxiliary primes and in $E$.
 In particular $K_bu^4\le K_b\exp(8x^{\varepsilon/4})$.
 
-The odd-prime sign decomposition and the separate two-adic bound now give,
+For odd $\ell$, put $s=(-1)^h$. Since $2$ is invertible, the two projectors
+$(1+sc)/2$ and $(1-sc)/2$ split the locally trivial module into its two
+sign parts. Additivity of extended length gives the sum of their lengths;
+no such splitting is used at $2$. The sign decomposition and the separate
+two-adic bound now give,
 for every finite set of coefficient primes, finiteness and the upper bound
 
 $$
@@ -588,6 +597,7 @@ separate question.
 | Negative bound and its exponential form | [minusBound](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/StmtFields.lean#L69-L71), [minusBound_le_exp_of_log_le](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CMFieldExponentialBounds/minusle.lean#L6-L76) |
 | Conductor budget | [log_conductor_mul_height_le_of_pageN](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CMFieldExponentialBounds/LogConductorMulHeightLeOfPageN.lean#L6-L57) |
 | Final comparison | [error_terms_le_sqrt_exp_rpow](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CMFieldExponentialBounds/ErrorTermsLeSqrtExpRpow.lean#L6-L89) |
+| Sign decomposition and summation over arbitrary finite prime sets | [shaLen_eq_add, vvle_of_parts](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LengthEqAddEigen.lean#L88-L193) |
 | Assembly of the three parts and VWin | [vwinAt_of_joint, vwin_of_joint](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CMFieldExponentialBounds/AdmissibleOfPageN.lean#L41-L134), [vwin_of_counts](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/JointWinOfCounts.lean#L16-L33) |
 
 :::
