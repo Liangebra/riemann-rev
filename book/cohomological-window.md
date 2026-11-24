@@ -1,21 +1,20 @@
 # From tower bounds to the cohomological window
 
-This note expands the arithmetic assembly in {ref}`comp-cohomology`: the reference-layer
-estimates, the simultaneous prime counts, and the final exponential comparison. The tower
-estimates and the automorphic counting theorems enter as inputs. The main algebra behind
-Case I is developed further in {doc}`deformation-length`.
+Starting from the tower estimates of {ref}`comp-cohomology`, we derive a bound for
+the weighted sum of cohomological lengths over an arbitrary finite set of coefficient primes.
+The argument combines exceptional-twist estimates with automorphic counts; the commutative
+algebra used in Case I is treated in {doc}`deformation-length`.
 
-## From the two tower bounds to a uniform twist sum
+## Uniform bounds for the twist sum
 
-The tower estimates have different uses. The first controls almost every twist at once; the
-second controls the exceptional twists by comparison with a reference layer. The latter is
-where Lemma K enters, and the logarithmic window is what makes its cost affordable.
+The first tower estimate controls all but finitely many twists. On the exceptional set,
+we use the second estimate, which reduces the problem to a fixed reference layer where
+Lemma K applies. The window is chosen so that the resulting bound remains small enough.
 
-**A bound at a point.** Write $L_m/L_0$ for a layer of degree $\ell^m$,
-$j=\operatorname{NatLog}_\ell(R)+3$, where $\operatorname{NatLog}_\ell$ is the integer logarithm (zero at $R=0$),
-and $s(h,m)=s_{\ell,h}(L_m)$.
-For every integer $Z\ge1$ the two estimates from the tower give an exceptional set $T_Z\subset\{1,\ldots,Z\}$,
-$|T_Z|\le R$, and
+**Pointwise estimates.** Write $L_m/L_0$ for a layer of degree $\ell^m$,
+$j=\operatorname{NatLog}_\ell(R)+3$ (the integer logarithm is zero at $R=0$),
+and $s(h,m)=s_{\ell,h}(L_m)$. For every integer $Z\ge1$ there is an
+exceptional set $T_Z\subset\{1,\ldots,Z\}$ of cardinality $|T_Z|\le R$ such that
 
 $$
 \begin{aligned}
@@ -28,13 +27,13 @@ $$
 
 Here $v(h,j)=\operatorname{length}_{\mathbf Z_\ell}H^2(G_{L_j,S},\mathbf Z_\ell(h+1))$,
 with $S$ the places over $\ell$, and $(m-j)_+=\max(m-j,0)$.
-The integer $c$ comes from the centres estimate: $L_0$ contains a primitive
-$\ell^c$-th root. These are the contracts of `FirstBound` and `SecondBound`.
+The integer $c$ is supplied by the centres estimate, with a primitive
+$\ell^c$-th root of unity in $L_0$.
 
 Suppose $L_0$ contains a primitive $\ell$-th root for odd $\ell$, or a primitive
 fourth root for $\ell=2$. Then the reference layer $L_j$ is totally imaginary and
 inherits the required roots. Let $n=[L_j:\mathbf Q]$ and $D=|\operatorname{disc}L_j|$.
-The archive's Lemma K, with constant $C_K>0$, gives finiteness of the group defining
+Lemma K, with constant $C_K>0$, gives finiteness of the group defining
 $v(h,j)$ and
 
 $$
@@ -42,12 +41,13 @@ $$
  \le \exp\big((2hn)^{C_K}\log(2D)\big).
 $$
 
-Indeed a finite $\mathbf Z_\ell$-module of length $v$ has order $\ell^v$.
-Since $\log\ell>1/2$, this yields the factor $2$ in the length bound.
+Here we use the fact that a finite $\mathbf Z_\ell$-module of length $v$
+has order $\ell^v$. Since $\log\ell>1/2$, division by $\log\ell$ costs a
+factor of at most $2$.
 
-Fix $0<\varepsilon<1/52$, $X>1$, $C_t\ge1$, $Z=\lfloor X^{C_t}\rfloor$ and
-$\eta=\varepsilon/(2C_K)$. Suppose that $1\le x\le X$, that $x$ satisfies
-the window condition for $T_Z$, and that
+Fix $0<\varepsilon<1/52$, $X>1$ and $C_t\ge1$. Take $Z=\lfloor X^{C_t}\rfloor$
+and $\eta=\varepsilon/(2C_K)$. Suppose $1\le x\le X$ lies in the window
+associated with $T_Z$ and that
 
 $$
  n\le n_0,\qquad
@@ -63,19 +63,16 @@ $$
  \le (2n_0)^{C_K}c_0 x^{3\varepsilon/4}.
 $$
 
-The exponent $3\varepsilon/4$ splits into $\varepsilon/2$ from the twist
-and $\varepsilon/4$ from the discriminant; the degree contributes only a constant. For a nonexceptional twist the
-first tower estimate applies, since $h\le Z$. Combining the two cases,
-every active length is finite, and
+The twist contributes $\varepsilon/2$ to the exponent and the discriminant
+contributes $\varepsilon/4$. For nonexceptional $h\le x^{C_t}$ we have $h\le Z$,
+so the first tower estimate applies. Thus all lengths in the indicated range
+are finite and satisfy
 
 $$
  s(h,m)\le R(m+j+c+\lfloor\log_\ell Z\rfloor)
           +2\exp\big(B_0x^{3\varepsilon/4}\big),
  \qquad B_0=(2n_0)^{C_K}c_0.
 $$
-
-The separate finiteness conclusion is needed before converting extended lengths
-to ordinary integers.
 
 **The sum over twists.** The lower endpoint $X^{1/J}\le x$ gives
 $\log X\le J\log x$. Since $\log\ell>1/2$,
@@ -91,30 +88,25 @@ $$
  s(h,m)+1\le C(1+\log x)+2\exp(Cx^{3\varepsilon/4}).
 $$
 
-The extra unit allows for the two-adic field comparison. For an integer cutoff $t(x)\le x^{C_t}$,
-the sum over $1\le h<t(x)$ is bounded by $x^{C_t}$ times this expression.
-Its logarithm is $O(\log x+x^{3\varepsilon/4})=o(x^{4\varepsilon/5})$
-as $x\to\infty$, with the parameters fixed. Thus, after increasing the
-threshold in $x$,
+The extra unit accounts for the two-adic field comparison. For an integer
+cutoff $t(x)\le x^{C_t}$, multiply the bound by $x^{C_t}$. The logarithm of
+the resulting bound is $O(\log x+x^{3\varepsilon/4})=o(x^{4\varepsilon/5})$.
+With the parameters fixed, we therefore have, for all sufficiently large $x$,
 
 $$
  \sum_{1\le h<t(x)}(s(h,m)+1)\le \exp(x^{4\varepsilon/5}).
 $$
 
-The difference $4\varepsilon/5-3\varepsilon/4=\varepsilon/20>0$ absorbs
-both the constants and the number of twists. No extra factor proportional
-to the number of exceptional twists is needed at this stage: the window
-condition has made the *pointwise* estimate valid for every active twist.
+The margin $4\varepsilon/5-3\varepsilon/4=\varepsilon/20>0$ absorbs the
+constants as well as the number of twists.
 
-**Uniformity in the auxiliary primes.** For a fixed odd coefficient prime
-in the finite auxiliary set, the reference layer of its fixed base field
-has fixed degree and discriminant. For $\ell=2$, the base field depends on
-$q,d$. The hypothesis TwoBase bounds its degree by $8\deg M$ and embeds
-it in $\mathbf Q(\zeta_{4m_Mqd})$, where $m_M$ is the fixed conductor parameter of the
-abelian field $M$. One must bound the degree and discriminant of
-the reference layer independently of those primes.
+**Uniformity in the auxiliary primes.** At each odd prime in the fixed
+auxiliary set the reference field is fixed. At $\ell=2$, however, the base
+field varies with $q,d$: its degree is bounded by $8\deg M$ and it embeds
+in $\mathbf Q(\zeta_{4m_Mqd})$, where $m_M$ is the fixed conductor parameter
+of the abelian field $M$. Uniformity follows from a conductor calculation.
 
-Here is the elementary conductor argument. More generally suppose
+More generally, suppose
 $L_0\subset\mathbf Q(\zeta_{N_0P})$, $[L_0:\mathbf Q]\le n_1$,
 where $P$ varies. The layer $L_j$ is generated over $L_0$ by roots of
 unity of order $\ell^k$ for some $k$. It embeds in
@@ -140,26 +132,24 @@ $$
 
 In the two-adic application $P=qd$, $N_0=4m_M$, and the auxiliary-prime
 hypothesis gives $\log P\le X^{\varepsilon/(4J)}\le x^{\varepsilon/4}$.
-As $x\ge1$, the constant term is absorbed by the same power of $x$.
-Hence the required $c_0$ and $n_0$ depend on the base degree bound and
-the fixed reference-layer index, not on $q,d$. The bound on $c$ follows
-from the same totient inequality in $L_0$: $2^c\le2[L_0:\mathbf Q]\le16\deg M$,
-so in particular $c\le16\deg M$. The moving layer has $m\le e(x)+2$. For $x\ge2$, PageN gives $2^{e(x)}\le 2x^{2+8\varepsilon}\le x^{3+8\varepsilon}$.
-Taking $A_1=3+8\varepsilon$ gives $m\le(2|A_1|+2)(1+\log x)$, using
-$\log 2>1/2$. The comparison in TwoBase transfers the result
-to the actual field, with at most one extra unit of length per twist.
+Since $x\ge1$, the constant term can also be absorbed into $c_0x^{\varepsilon/4}$.
+Both $c_0$ and $n_0$ are independent of $q,d$. The same totient inequality
+in $L_0$ bounds $c$: $2^c\le2[L_0:\mathbf Q]\le16\deg M$,
+so in particular $c\le16\deg M$. The moving layer satisfies $m\le e(x)+2$. For $x\ge2$ the bounds in PageN
+give $2^{e(x)}\le 2x^{2+8\varepsilon}\le x^{3+8\varepsilon}$.
+Taking $A_1=3+8\varepsilon$ gives $m\le(2|A_1|+2)(1+\log x)$, since
+$\log 2>1/2$. The two-adic comparison now transfers the estimate to the
+desired field, at a cost of at most one unit of length per twist.
 
-This is why a bound on each individual tower is not enough. The rank for
-the moving two-adic tower is chosen uniformly in $q,d$, and the rank for
-each fixed odd-prime tower is chosen before the window. Their sum bounds
-the cardinality of the union of exceptional sets. If $R_*$ denotes that total rank, take $J=4(2C_t/\eta)^{R_*}$.
-The finitely many pointwise thresholds may then be enlarged to a common
-$x_1\ge1$ before choosing $X,q,d$. Taking $X\ge\max(2,x_1^J)$ ensures
-that the entire surviving window lies above every threshold. The exceptional sets themselves may depend on
-$X$ and the moving base field; the surviving interval is chosen only after
-these sets have been formed. This order of choices is the content of the
-assembly theorem, and ensures that the two-adic and fixed odd-prime
-estimates hold throughout the *same* interval.
+To obtain a single window, choose a rank bound for the moving two-adic
+tower uniformly in $q,d$, and fix the ranks of the odd-prime towers.
+Their sum $R_*$ bounds the cardinality of the union of the exceptional
+sets; take $J=4(2C_t/\eta)^{R_*}$. Enlarge the finitely many pointwise
+thresholds to a common $x_1\ge1$ before choosing $X,q,d$. If
+$X\ge\max(2,x_1^J)$, the entire window lies above every threshold.
+Although the exceptional sets depend on $X$ and on the moving field,
+the interval is chosen after their union is formed. All the tower
+estimates therefore hold on the same interval.
 
 | Step | Archive reference |
 | --- | --- |
@@ -174,9 +164,8 @@ estimates hold throughout the *same* interval.
 
 ## Case I: a common integer for the coefficient primes
 
-Case I controls the contributions of all coefficient primes through the valuations
-of an integer attached to a character kernel, constructed independently of the
-coefficient prime.
+In Case I the contribution of a character kernel is bounded at every coefficient
+prime by the valuation of a single nonzero integer.
 
 **The trace difference.** Fix an imaginary quadratic field $K$, a level
 $N$, a twist $h\ge1$, and a rational prime $p\nmid30N|\operatorname{disc}K|$.
@@ -192,11 +181,10 @@ $$
  \qquad z=\psi(q_w)^{-1}.
 $$
 
-The admissible representations belong to the rank-three unitary family
-or to the rank-two descent family, realized in dimension three. The
-counting input supplies a finite set $D$ of eigensystem labels, with a
-trace $t_d$ for every $d\in D$. The essential properties of these data
-are as follows:
+The admissible representations arise either from the rank-three unitary family
+or from rank-two descent, realized in dimension three. The automorphic count
+supplies a finite set $D$ of eigensystems, each with a trace $t_d$, satisfying
+three properties:
 
 - $|t_d|\le3$ and $q_w^ht_d$ is an algebraic integer.
 - Complex field automorphisms permute the labels compatibly with their
@@ -206,9 +194,8 @@ are as follows:
   inverse Frobenius traces under the chosen field isomorphism to
   $\mathbf C$. Equality of labels implies isomorphism of representations.
 
-In particular $D$ is a set of labels, not a set of distinct trace values.
-Two nonisomorphic representations may have the same trace at $w$;
-discarding such multiplicities would not give the required bound.
+The indexing by eigensystems is essential: different representations can have
+the same trace at $w$.
 
 Put $Q_w=q_w^h\ge7$. Since $z$ is a root of unity, the cleared difference
 
@@ -225,8 +212,6 @@ $$
  \log|A(z,d)|\le2h\log q_w+1.
 $$
 
-The separation is an archimedean consequence of the normalized trace bound.
-
 **An integral product.** Let $G=(\mathbf Z/N\mathbf Z)^\times$, and let
 $H'$ be a subgroup occurring as the kernel of a character of $G$.
 Write $\mathcal C_{H'}$ for all complex characters with exactly that
@@ -240,13 +225,11 @@ $$
           A(\psi(q_w)^{-1},d).
 $$
 
-All factors are nonzero algebraic integers. Their indexed family is
-permuted by Galois automorphisms, since automorphisms preserve character
-kernels and permute $D$. Thus the product is rational and integral,
-so $I_{H',p}\in\mathbf Z\setminus\{0\}$. Equivalently, work inside a
-finite normal number field containing the factors and extend its
-automorphisms to the algebraic closure (and to $\mathbf C$).
-The empty product is $1$. The archimedean bound gives
+The factors are nonzero algebraic integers, and Galois automorphisms permute
+them, preserving character kernels and the index set $D$. Indeed one may
+work in a finite normal field containing the factors, extending its
+automorphisms to $\mathbf C$. Hence $I_{H',p}\in\mathbf Z\setminus\{0\}$
+(with the empty product equal to $1$), and the archimedean estimate gives
 
 $$
  \log|I_{H',p}|
@@ -264,40 +247,32 @@ $$
  2h\log q_w+1\le 5Y\log p .
 $$
 
-Taking $c_K=5(c_1+c_2\Delta^{A_2})$ and $A_K=A_1+A_2+1$,
-the interface NumberU3U_s packages the resulting bound as
+With $c_K=5(c_1+c_2\Delta^{A_2})$ and $A_K=A_1+A_2+1$, we obtain
 
 $$
  \log|I_{H',p}|
  \le c_K\varphi(m)(N(h+1))^{A_K}\log p,
 $$
 
-with $c_K,A_K$ fixed for $K$. The trace calculation above explains
-the integer construction underlying that interface; the existence,
-classification and cardinality bounds for the admissible eigensystems
-are its automorphic inputs. In the rank-three count, twisting by the
-inverse cyclotomic character shifts the weights from $(h,0,-h)$ to
-$(h-1,-1,-h-1)$; the traces are then transported back to inverse
-Frobenius. The rank-two trace count uses the descent at level $N\Delta$.
-The actual input families are narrowed by the admissibility and level
-conditions of KeepNumU, not all representations of dimensions two and three.
+The constants depend only on $K$. For the rank-three count the inverse
+cyclotomic twist shifts the weights from $(h,0,-h)$ to $(h-1,-1,-h-1)$,
+after which the traces are transported back to inverse Frobenius. The
+rank-two count uses descent at level $N\Delta$. Both counts refer to
+the specified admissibility and level conditions; existence, classification
+and cardinality of the eigensystems are the automorphic inputs.
 
 **From the integral product to a local length.** Fix an odd $\ell\ne p$
-and a coefficient ring as in the character reduction. A nonempty
-character family with kernel $H'$ corresponds bijectively to
-$\mathcal C_{H'}$ under the chosen coefficient embedding into
-$\mathbf C$: all faithful characters of the cyclic quotient are
-powers of any one of them with exponents prime to $m$. In particular
-the ring need not contain roots of unity for unrelated character orders.
-The hypotheses GD on one character imply GD on the whole family.
-Indeed its other members are these coprime powers; the character order,
-parity and quadratic local component are preserved, as is the kernel
-of the character with its local component removed. The remaining
-conditions in GD concern the field, level, prime and twist.
+and a coefficient ring as in the character reduction. Under the chosen
+embedding into $\mathbf C$, a nonempty family of characters with kernel
+$H'$ identifies with $\mathcal C_{H'}$: all faithful characters of the
+cyclic quotient are coprime powers of any one of them. No roots of unity
+of unrelated orders are needed. These powers preserve the order, parity,
+quadratic local component and kernel after removing the local component.
+Thus the character conditions in GD hold for the entire family if they
+hold for one member; the field, level, prime and twist are unchanged.
 
-For each such $\psi$, the one-character theorem (OneCharU_s) gives
-finiteness and a set $X_\psi$ of pairwise nonisomorphic admissible
-representations with
+For each such $\psi$, the one-character estimate gives finiteness and a
+set $X_\psi$ of pairwise nonisomorphic admissible representations such that
 
 $$
  v_\ell(\psi,h)
@@ -306,25 +281,21 @@ $$
                          -E_\psi).
 $$
 
-Here $E_\psi$ is the reference trace transported to the coefficient
-field, and on scalars $v_\ell(\ell)=1$. The proof bounds the character cohomology length by the cotangent length of
-a graded deformation model (`vlen_le`) and applies Lemma M to the weight-zero
-trace difference (`model_upper`); see {doc}`deformation-length`. The trace difference
-vanishes at the reducible base point and is nonzero at the relevant
-two-sided points by the trace separation. The rigidity and
-automorphy inputs identify their specializations with the two
-admissible families. The representatives in model_upper are taken
-modulo the grading torus action; the argument in oneChar_unramU
-shows that isomorphic restrictions to $G_K$ come from the same
-representative. This is what permits the use of the classification
-by eigensystem labels, with no uncontrolled multiplicity. The initial
-reduction to unramified coefficients uses the prime-to-$\ell$ order
-of $\psi$ and coefficient independence of normalized length.
+Here $E_\psi$ is the reference trace in the coefficient field and
+$v_\ell(\ell)=1$. The proof compares the character cohomology with the
+cotangent lattice of a graded deformation model and applies Lemma M
+to the trace difference (see {doc}`deformation-length`). This element has
+weight zero, vanishes at the reducible base point and is nonzero at
+the two-sided points by the trace estimate. Rigidity and automorphy
+identify their specializations with the two admissible families.
+Isomorphic restrictions to $G_K$ lie in the same grading-torus orbit,
+so distinct orbit representatives give distinct representation classes.
+The passage to unramified coefficients uses the prime-to-$\ell$ order
+of $\psi$ and invariance of normalized length under coefficient extension.
 
-To compare the sum with $I_{H',p}$, use the injection of $X_\psi$ into
-the labels $D$ for each $\psi$. Every cleared difference is integral,
-so all of its valuations are nonnegative. Also $Q_w$ is an
-$\ell$-adic unit. It follows that
+For each $\psi$, the set $X_\psi$ injects into $D$. Since $Q_w$ is an
+$\ell$-adic unit, clearing the denominator leaves valuations unchanged;
+all the cleared differences are integral. Consequently
 
 $$
  \sum_{\psi}\sum_{\rho\in X_\psi}
@@ -332,10 +303,9 @@ $$
  \le v_\ell(I_{H',p}).
 $$
 
-No injectivity between the label sets for *different* characters
-is required: the full product is indexed by the character-label
-pairs. Consequently the sum of normalized lengths over the
-kernel family is at most $2v_\ell(I_{H',p})$. This is PropGK.
+The product is indexed by pairs, so an injection for each character suffices.
+The sum of normalized lengths over the kernel family is at most
+$2v_\ell(I_{H',p})$.
 
 **Two auxiliary primes.** The preceding argument cannot use the prime
 $p$ as its own coefficient prime. Choose distinct auxiliary primes
@@ -360,10 +330,9 @@ $$
                     (\log p+\log p').
 $$
 
-Thus CorGK is a bound over arbitrary finite sets, even though the
-construction of the individual representations depends on $\ell$.
+The bound is independent of the finite set $S$.
 
-**Returning to the host.** In Case I the quadratic field is fixed
+**Application to Case I.** In Case I the quadratic field is fixed
 as $K=\mathbf Q(\sqrt{-p_K})$ by the original character $\chi$.
 The conditions outside $B_\chi$ ensure $\ell$ is prime to the
 character order and to the discriminant and class number of $K$.
@@ -372,7 +341,7 @@ with the local-component-removed character is unramified at $p_K$,
 whereas $K$ is ramified there. Thus it cannot contain $K$, giving
 the remaining disjointness condition of GD. The other GD conditions
 are the host parity, the local quadratic-component condition,
-even level and $\ell-1\nmid2h$. These implications are gdOfHost.
+even level and $\ell-1\nmid2h$.
 
 Choose the two auxiliary primes larger than $30Qp_K$, with $Q$ the
 original conductor, and require the moving primes $q,d$ to exceed
@@ -396,9 +365,7 @@ $A_0N(N(h+1))^{A_K}$, where
 $A_0=2c_K(\log p+\log p')$ is fixed. Since $h+1\le t$ and $N\ge16$,
 choose an integer $k\ge0$ with $A_0\le16^k$. The sum is then at most
 $(Nt)^{k+1+A_K}$. This is CountI, with finiteness already established
-for each character. The essential uniformity is supplied by the
-integer product and the partition by kernels, not by a separate
-estimate for every possible coefficient prime.
+for each character.
 
 | Step | Archive reference |
 | --- | --- |
@@ -414,12 +381,9 @@ estimate for every possible coefficient prime.
 
 ## From character counts to the sum over all coefficient primes
 
-The tower window supplies two bounds: one at $2$ on the moving field, and
-one on a fixed reference layer for each odd prime in the finite set
-$B_\chi$. It remains to control the odd-prime part of the cohomology of the
-moving field itself. This is a different summation problem from the
-separation of exceptional twists: the set of coefficient primes over which
-we sum is arbitrary.
+The tower argument controls the prime $2$ on the moving field and the odd
+primes in $B_\chi$ on their reference layers. We now estimate the odd-prime
+contribution on the moving field itself.
 
 **Character reduction and the cases.** Fix the primitive character $\chi$,
 of conductor $Q$ and order $o$. In the following argument $N$ is the host
@@ -428,19 +392,18 @@ and the odd prime factors of $oQp_K h_*p_1$, where $p_K,h_*,p_1$ are the fixed a
 quantities in the definition of [Bchi](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/StmtFields.lean#L54-L67). Assume the host size hypotheses throughout,
 including the lower bounds on $q,d$ relative to $t$ and the fixed auxiliary
 quantities. Let $c$ be the action of complex conjugation on the locally trivial
-cohomology of the moving CM field at twist $h$. The positive part is the
-$(-1)^h$-eigenspace of $c$ (with sign depending on the twist), and the negative
-part is the $(-1)^{h+1}$-eigenspace. Write $a_\ell(h)$ for the positive
-length, with all lengths initially allowed to be infinite.
+cohomology of the moving CM field at twist $h$. The positive and negative parts are respectively the $(-1)^h$- and
+$(-1)^{h+1}$-eigenspaces of $c$. Write $a_\ell(h)$ for the length of the
+positive part, allowing infinite lengths at this stage.
 
 Let $H$ be the host subgroup of $(\mathbf Z/N\mathbf Z)^\times$.
 At each odd $\ell$ choose a coefficient discrete valuation ring $O$
-finite over $\mathbf Z_\ell$ and containing the requisite character values. Write $X_h$ for the characters
-of $(\mathbf Z/N\mathbf Z)^\times$ trivial on $H$ and of parity
-$\psi(-1)=(-1)^h$. Put $v_\ell(\psi,h)$ equal to the character length
-Vlen divided by the ramification index of $O/\mathbf Z_\ell$
-(the archive's normalized length Vn). The character reduction theorems give,
-once the character lengths have been shown finite,
+finite over $\mathbf Z_\ell$ and containing the character values. Let $X_h$
+be the characters of $(\mathbf Z/N\mathbf Z)^\times$ trivial on $H$ with
+$\psi(-1)=(-1)^h$. Write $v_\ell(\psi,h)$ for the character length Vlen
+divided by the ramification index of $O/\mathbf Z_\ell$ (the normalized
+length Vn). The character reduction inequalities, expressed in extended
+lengths, are
 
 $$
  a_\ell(h)\le
@@ -452,16 +415,15 @@ $$
 $$
 
 where $\lambda_\ell(N,h)=\operatorname{lossAll}(\ell,N,[G:H],h)$
-with $G=(\mathbf Z/N\mathbf Z)^\times$. The same inequalities in extended
-lengths imply finiteness of $a_\ell(h)$; they do not presume it.
-The first inequality uses $\ell\nmid[G:H]$, which holds outside $B_\chi$
-under the host's size conditions. The second allows the loss of the
-integral character decomposition when the index is divisible by $\ell$.
-The bound used below is $\lambda_\ell(N,h)\le(Nh)^6$.
-There are at most $N$ characters in $X_h$, and also at most $N$ in
-$X_0\cup X_1$, which contains every $X_h$.
+with $G=(\mathbf Z/N\mathbf Z)^\times$. In particular, finiteness of the
+character lengths implies finiteness of $a_\ell(h)$. The first inequality
+uses $\ell\nmid[G:H]$, a consequence of the host size conditions outside
+$B_\chi$; the second accounts for the loss in integral character decomposition
+when the index is divisible by $\ell$. We use $\lambda_\ell(N,h)\le(Nh)^6$.
+Both $X_h$ and the union $X_0\cup X_1$ of the two parity families contain
+at most $N$ characters.
 
-Here is the case division in the archive. The notation $\chi_\ell'(\psi)$
+The counting estimates divide into the following cases. The notation $\chi_\ell'(\psi)$
 denotes its prime-to-$\ell$, local-component-removed character chiP;
 $R_1$ and $c_2$ are the conductor quantities in Case V.
 
@@ -476,21 +438,17 @@ $R_1$ and $c_2$ are the conductor quantities in Case V.
 | Inside $B_\chi$ | $h=1$, $R_1\le2^{c_2}$ | V |
 | Inside $B_\chi$ | $h=1$, $R_1>2^{c_2}$ | Vs |
 
-Outside $B_\chi$ the character $\chi_\ell'(\psi)$ equals $\psi$ when
-$\ell-1\mid2h$. The two inequalities in the last rows cover equality
-on the V side. The table gives an exhaustive choice of bounds; the underlying predicates
-need not be disjoint.
-In particular Case IV's bound is valid for all twists of a character
-of the specified odd order. The archive supplies IV and Vs separately,
-rather than taking them as additional automorphic counting hypotheses.
+Outside $B_\chi$ we have $\chi_\ell'(\psi)=\psi$ when $\ell-1\mid2h$.
+The table gives a covering by cases, not necessarily a partition of the
+counting predicates. In particular the Case IV estimate sums over all twists
+of a character of the indicated odd order. We derive IV and Vs below
+from the reference-layer and bounded-degree estimates.
 
 **Primes outside $B_\chi$.** Let $S$ be any finite set of odd primes
-outside $B_\chi$. For a fixed $1\le h<t$, split $S$ according to whether
-$\ell-1$ divides $2h$. On the part where $\ell-1\nmid2h$, CountI bounds the entire weighted
-sum by $M^{C_1}$, with $C_1$ independent of $S$ and $h$. The two auxiliary
-primes required by that theorem are chosen depending on $\chi$ before
-the host is chosen. A pointwise estimate growing with $\ell$ could not
-replace this joint bound.
+outside $B_\chi$. Fix $1\le h<t$. On the subset with $\ell-1\nmid2h$,
+Case I bounds the entire weighted sum by $M^{C_1}$, with $C_1$ independent
+of $S$ and $h$. Its two auxiliary primes are fixed in terms of $\chi$
+before the host is chosen.
 
 For the remaining primes, $\ell-1\mid2h$ implies $\ell\le 2t$.
 Set $K=\max(C_Z,C_{II},C_{III})$. The corresponding pointwise bounds
@@ -510,10 +468,8 @@ $$
  \le M^{C_1+3K+4}.
 $$
 
-For the last inequality use $t\le M$, $M\ge2$, and absorb the two terms
-in the indicated power. All lengths are finite by the same case division.
-Neither the maximum prime nor the cardinality of $S$ occurs in the final
-bound.
+The last inequality follows from $t\le M$ and $M\ge2$. The same case
+division gives finiteness, uniformly for arbitrary $S$.
 
 **Primes inside $B_\chi$.** Fix $\ell\in B_\chi$ and suppose that its
 reference-layer twist sum is at most $B\ge0$, including finiteness.
@@ -532,9 +488,8 @@ $$
  \sum_{1\le h<t}v_\ell(\psi,h)\le B+M^{C_4}.
 $$
 
-The coefficient of $B$ is important: summing this bound separately for
-each twist would introduce an unnecessary factor of $t$.
-Using nonnegativity and exchanging the two finite sums gives instead
+To retain a constant coefficient of $B$, sum first over twists and then
+over characters. By nonnegativity,
 
 $$
  \log\ell\sum_{1\le h<t}\sum_{\psi\in X_h}v_\ell(\psi,h)
@@ -552,15 +507,13 @@ $$
  C_\ell=C_4+2K'+9+\ell Q.
 $$
 
-To see the last inequality, bound the coefficient $Q\log\ell$ by
-$\ell Q\le C_\ell$, and bound the remaining terms by
-$M^{C_4+2}$, $M^{2K'+1}$ and $M^8$. Their sum is at most $M^{C_\ell}$
-because $M\ge3$ and each exponent is at most $C_\ell-1$.
-This is the reason for keeping a bound on the number of characters
-independent of the cutoff: the tower budget is multiplied only by
-a constant depending on $\chi$ and $\ell$.
+Indeed $Q\log\ell\le\ell Q\le C_\ell$, and the three other terms
+are bounded by $M^{C_4+2}$, $M^{2K'+1}$ and $M^8$. Their sum is at
+most $M^{C_\ell}$ because $M\ge3$ and each exponent is at most
+$C_\ell-1$. The factor multiplying the tower budget now depends
+only on $\chi$, $\ell$ and the fixed reference layer.
 
-**The two remaining arithmetic estimates.** Case IV uses the fixed field
+**The reference-layer and bounded-degree estimates (IV and Vs).** Case IV uses the fixed field
 $L_j$ above $\mathbf Q(\zeta_{\ell Q})$. It is Galois over $\mathbf Q$,
 contains the field cut out by $\psi$, and has degree at most
 $n_4=\ell Q\ell^j$. Character transport from that field gives
@@ -568,8 +521,7 @@ $v_\ell(\psi,h)\le s_{\ell,h}(L_j)+n_4\nu_\ell(N,h)$, with
 $\nu_\ell(N,h)\le2Nh$. The reference-layer hypothesis bounds the sum
 of the first terms by $B$. The second terms sum to at most
 $2n_4Nt^2\le(Nt)^{n_4+3}$. This gives Case IV with $C_4=n_4+3$,
-including finiteness. The transport inequality is an arithmetic input
-here, not a consequence of the finite-sum rearrangement.
+including finiteness. Here we use the character transport theorem as an arithmetic input.
 
 In Vs, the strict reverse conductor threshold and $h=1$ allow a different
 field $L$, containing the character field and $\ell$-th roots of unity,
@@ -589,9 +541,8 @@ $$
 Here $\ell N\ge2$. Duality and character transport then give a finite
 normalized length at most $2(\ell N)^A+2n_0N$. Multiplication by
 $\log\ell\le\ell$ yields a polynomial bound, for example
-$(\ell N)^{A+n_0+3}$. This is the bound used in Vs. Its uniformity
-comes from the bounded degree and twist one, rather than from excluding
-a further set of exceptional twists.
+$(\ell N)^{A+n_0+3}$. This gives the uniform bound in Vs, since the degree is bounded and
+the twist is one.
 
 **The positive part on the common interval.** Combine the outside bound
 $M^{C_0}$ with the inside bounds. Write $b=|B_\chi|$ and
@@ -607,10 +558,8 @@ Indeed $b+1\le2^b\le M^b$ and $bD\le C$. The exponents and the
 two auxiliary primes from CountI are fixed before the host. In the
 tower window take $B=\exp(x^{4\varepsilon/5})$.
 The host conductor is the conductor of the moving field (hostCond);
-hence $M=(\operatorname{cond}E)t(x)$. The positive-part estimate
-applies to *every* interval satisfying the tower-window hypotheses.
-The assembly jointWin_of uses the interval already selected by
-ThmBab, not an intersection of two independently selected intervals.
+hence $M=(\operatorname{cond}E)t(x)$. The positive-part estimate holds on the interval already selected by
+the tower argument; no further window selection is needed.
 
 | Step | Archive reference |
 | --- | --- |
@@ -629,13 +578,12 @@ ThmBab, not an intersection of two independently selected intervals.
 On the joint interval the prime $2$ contributes at most
 $(\log2)\exp(x^{4\varepsilon/5})$. The odd positive part contributes
 $u^C+C\exp(x^{4\varepsilon/5})$, where $u=(\operatorname{cond}E)t(x)$.
-The negative-part theorem ThmBcFree gives the separate bound minusBound;
-its conversion to an exponential uses the fixed character order, not the
-number of coefficient primes in the test set.
+For the negative part we use the arithmetic estimate of ThmBcFree, whose
+constants depend on the fixed character order.
 
 Write $n=[E:\mathbf Q]$, $N=\operatorname{cond}E$ and $o=\deg M_\chi$,
 where $M_\chi$ is the abelian field cut out by the original character.
-In the notation of minusBound the negative bound is
+The negative-part bound is
 
 $$
  3nt^2\log(Nt)
@@ -660,31 +608,27 @@ $$
 Together with $\log(qd)\le x^{\varepsilon/4}$, these imply
 $\log u\le x^{\varepsilon/4}+(2+8\varepsilon+C_t)\log x+\log(8Q)$.
 For sufficiently large $x$ this is at most $2x^{\varepsilon/4}$.
-The threshold is independent of the auxiliary primes and $E$.
+The threshold is uniform in $q,d$ and $E$.
 In particular $K_bu^4\le K_b\exp(8x^{\varepsilon/4})$.
 
 For odd $\ell$, put $s=(-1)^h$. Since $2$ is invertible, the two projectors
 $(1+sc)/2$ and $(1-sc)/2$ split the locally trivial module into its two
 sign parts. Additivity of extended length gives the sum of their lengths;
-no such splitting is used at $2$. The sign decomposition and the separate
-two-adic bound now give,
-for every finite set of coefficient primes, finiteness and the upper bound
+no such splitting is used at $2$. Combining the sign decomposition at odd primes with the separate
+two-adic estimate proves finiteness and gives, for every finite set
+of coefficient primes, the bound
 
 $$
  (\log2+C)\exp(x^{4\varepsilon/5})
      +K_b\exp(8x^{\varepsilon/4})+u^C .
 $$
 
-All constants are fixed and $\log u\le2x^{\varepsilon/4}$.
-The logarithm of this positive upper bound is $O(x^{4\varepsilon/5})$,
-hence $o(x^\varepsilon)$. It is therefore at most $x^\varepsilon/2$
-eventually, giving the required $\sqrt{\exp(x^\varepsilon)}$ bound.
-The final threshold is chosen before $X$; increasing $X$ ensures that
-every $x$ on the selected interval exceeds it. The finiteness clauses
-come from the three component estimates and the sign decomposition,
-not from the numerical inequality alone.
-
-The negative-part theorem is used here as an arithmetic input.
+Since $\log u\le2x^{\varepsilon/4}$ and all constants are fixed, the logarithm
+of the last expression is $O(x^{4\varepsilon/5})=o(x^\varepsilon)$.
+It is therefore at most $x^\varepsilon/2$ for sufficiently large $x$.
+Choose this final threshold before $X$, so that every point of the
+selected interval lies above it. This proves the required
+$\sqrt{\exp(x^\varepsilon)}$ bound on the common window.
 
 | Step | Archive reference |
 | --- | --- |
