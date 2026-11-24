@@ -209,8 +209,19 @@ unramified outside $S$ since $n$ is invertible there. Thus
 $1\to D\to U\xrightarrow{(\cdot)^n}U\to1$ gives a map $H^2(G_S,D)\to H^2(G_S,U)$
 with image $H^2(G_S,U)[n]$.
 
+For orientation, the primary comparison itself factors through the global Brauer group.
+The Albert–Brauer–Hasse–Noether exact sequence identifies the global Brauer group with
+the kernel of the sum of local invariants. A local family killed by a power of $\ell$ lifts
+to a global Brauer class killed by the same power, by injectivity of localization. If the
+family vanishes at finite places outside $S$, the archive's $S$-unit lifting theorem supplies
+a preimage in $H^2(G_S,U)$. That group is torsion, so one can project a preimage onto its
+$\ell$-primary component without changing its primary Brauer image. Injectivity on the
+primary subgroup is a separate $S$-unit theorem. Together these facts give the comparison.
+In particular, the lifting and injectivity results for $S$-units are genuine arithmetic
+inputs; they do not follow just from exactness of the compact complex.
+
 **Why the sum descends.** For a class $x\in H^2(G_S,D)$, its image in $H^2(G_S,U)$
-is killed by $n$. Its local Brauer family therefore vanishes at finite places outside $S$.
+is killed by $n$. By the primary comparison its local Brauer family vanishes at finite places outside $S$.
 At a complex place the Brauer group is zero; at a real place it is killed by $2$, hence its
 $n$-torsion is zero when $n$ is odd. Global Brauer reciprocity now gives
 $\sum_{v\in S}t_v(\mathrm{res}_v x)=0$.
@@ -253,12 +264,63 @@ or perfectness of the other Poitou–Tate pairings. The trace itself supplies th
 for compact cup-product pairings in the subsequent duality argument; it is not by itself
 the uniform length bound in the cohomological window.
 
+**A use of the last local invariant.** The archive uses this last-place argument in its
+odd-prime reciprocity calculation. Here the coefficients are written additively as
+$A=\mathbf Z/\ell^r\mathbf Z$ with $r>0$ and cyclotomic action $\chi$, and $\ell$ is odd.
+Consider a continuous two-cocycle $w$ on the absolute Galois group of a number field.
+Suppose it is constant on the cosets of the restricted-ramification kernel in each
+variable, and that the finite set $S$ contains the places above $\ell$.
+Then $w$ descends to a continuous two-cocycle of $G_S$ for this action: the cocycle identity
+descends because the cyclotomic action also factors through $G_S$.
+If its local restrictions at all $v\ne v_0$ in $S$ are coboundaries, the sum-of-invariants
+arrow forces its restriction at $v_0$ to be a coboundary as well.
+The archive invokes the nine-term Poitou–Tate interface for this assertion, with its
+local invariant isomorphisms; this is not a claim that the compact trace theorem alone
+supplies that entire interface.
+
+The specific cocycle is a cup product. Let $B$ be a commutative $A$-algebra and
+$\lambda:B\to A$ an $A$-linear map. Write $\alpha,\beta$ for the two characters
+into $B^\times$ whose product is $\chi$ (viewed in $B$), and let $c,z$ be continuous
+one-cocycles with actions $\alpha,\beta$ respectively. In particular,
+
+$
+ c(gh)=c(g)+\alpha(g)c(h),\qquad
+ z(gh)=z(g)+\beta(g)z(h).
+$
+
+Set $w(g,h)=\lambda(z(g)\alpha(g)c(h))$. To check the two-cocycle identity, expand
+
+$
+\begin{aligned}
+(\mathrm dw)(g,h,j)
+={}&\chi(g)w(h,j)-w(gh,j)+w(g,hj)-w(g,h).
+\end{aligned}
+$
+
+The two one-cocycle identities make the terms involving $z(h)c(j)$ cancel,
+using $\alpha(g)\beta(g)=\chi(g)$; the remaining terms involving $z(g)c(h)$
+and $z(g)c(j)$ cancel separately. If on a local decomposition group
+$c(g)=\alpha(g)m-m$ for a fixed $m\in B$, an explicit local primitive is
+
+$
+ b(g)=-\lambda(z(g)\alpha(g)m).
+$
+
+Indeed $\chi(g)b(h)-b(gh)+b(g)=\lambda(z(g)\alpha(g)(\alpha(h)m-m))=w(g,h)$.
+This supplies the coboundaries away from the distinguished auxiliary prime in the
+archive's calculation; at that prime the last-place argument supplies the missing
+coboundary. The subsequent local orthogonality argument, which is a separate input,
+converts it into a constraint on the two one-cocycles. Thus the arithmetic use of
+reciprocity is not merely a reference to a general duality theorem: it transfers a
+specific local vanishing condition to a place where it is needed.
+
 **Concordance with the archive.** The links below refer to the same original archive
 revision as the rest of this book. The argument above reconstructs the trace theorem
 from its arithmetic inputs, rather than re-proving the preceding comparison or all of global duality.
 
 | Step | Declaration in the archive |
 | --- | --- |
+| Primary injectivity, lifting and restriction to the primary part | [eq_zero_of_sUnitsBrauer_eq_zero, exists_sUnitsBrauer_eq_iff, sUnitsBrauerPrimary_bijective](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/Brauer.lean#L282-L365) |
 | Primary $S$-unit comparison and its map | [sUnitsH2PrimaryEquiv, coe_sUnitsH2PrimaryEquiv_apply](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/Brauer.lean#L376-L421) |
 | Local invariant comparison and the roots-in-$F$ specialization | [gsLocalInvRoots_eq, bijective_gsLocalInvRoots](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseLocal.lean#L188-L214) |
 | Vanishing of the sum on global classes | [sum_brauerInvZ_gsLocalRes_sUnits, gsSumInvRoots_globalToLocal](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseDefs.lean#L256-L291) |
@@ -266,6 +328,8 @@ from its arithmetic inputs, rather than re-proving the preceding comparison or a
 | Surjectivity of the trace | [surjective_gsCompactInv](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseInv.lean#L97-L108) |
 | Primary lift, Kummer step and bijectivity | [exists_sUnits_of_mem_localPrimaryKernel, injective_gsCompactInv, bijective_gsCompactInv, bijective_gsCompactInv_of_mem](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseInv.lean#L196-L270) |
 | Use of the trace in the pairing | [compactZmodDualityMap](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseFormal.lean#L25-L36) |
+| Last-place reciprocity for a descended cocycle | [glob](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PrimitiveFrobeniusFixed/OverIff.lean#L23-L53) |
+| Cup product and the explicit local primitive | [core](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PrimitiveFrobeniusFixed/OverIff.lean#L225-L295) |
 
 (comp-primes)=
 ## 12 · Auxiliary primes and Behrend towers
