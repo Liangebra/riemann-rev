@@ -142,6 +142,175 @@ estimate; the choice of $\eta$ keeps that secondary cost at $x^{O(\varepsilon)}$
 the negative part and the prime $2$ are then evaluated on the same field at the same $x$, and an
 elementary comparison absorbs their sum into $\sqrt{\exp(x^\varepsilon)}$.
 
+:::{dropdown} From the two tower bounds to a uniform twist sum
+
+The tower estimates have different uses. The first controls almost every twist at once; the
+second controls the exceptional twists by comparison with a reference layer. The latter is
+where Lemma K enters, and the logarithmic window is what makes its cost affordable.
+
+**A bound at a point.** Write $L_m/L_0$ for a layer of degree $\ell^m$,
+$j=\lfloor\log_\ell R\rfloor+3$ (using the integer logarithm, with value $0$ at $R=0$), and $s(h,m)=s_{\ell,h}(L_m)$.
+The two estimates from the tower give an exceptional set $T_Z\subset\{1,\ldots,Z\}$,
+$|T_Z|\le R$, and
+
+$$
+\begin{aligned}
+ s(h,m)&\le R(\max(m,j)+c+\lfloor\log_\ell Z\rfloor)
+                  &&(h\notin T_Z,\ 1\le h\le Z),\\
+ s(h,m)&\le v(h,j)+R(m-j)_+
+                  &&(h\ge1).
+\end{aligned}
+$$
+
+Here $v(h,j)=\operatorname{length}_{\mathbf Z_\ell}H^2(G_{L_j,S},
+\mathbf Z_\ell(h+1))$, with $S$ the places over $\ell$, and $(m-j)_+=\max(m-j,0)$.
+The integer $c$ comes from the centres estimate: $L_0$ contains a primitive
+$\ell^c$-th root. These are the contracts FirstBound and SecondBound, not an
+additional claim that the determinant bound is finite at a centre.
+
+Suppose $L_0$ contains a primitive $\ell$-th root for odd $\ell$, or a primitive
+fourth root for $\ell=2$. Then the reference layer $L_j$ is totally imaginary and
+inherits the required roots. Let $n=[L_j:\mathbf Q]$ and $D=|\operatorname{disc}L_j|$.
+The archive's Lemma K, with constant $C_K>0$, gives finiteness of the group defining
+$v(h,j)$ and
+
+$$
+ v(h,j)\log\ell
+ \le \exp\big((2hn)^{C_K}\log(2D)\big).
+$$
+
+Indeed a finite $\mathbf Z_\ell$-module of length $v$ has order $\ell^v$.
+Since $\log\ell>1/2$, this yields the factor $2$ in the length bound.
+
+Fix $X>1$, $C_t\ge1$, $Z=\lfloor X^{C_t}\rfloor$ and
+$\eta=\varepsilon/(2C_K)$. Suppose that $1\le x\le X$, that $x$ satisfies
+the window condition for $T_Z$, and that
+
+$$
+ n\le n_0,\qquad
+ \log(2D)\le c_0x^{\varepsilon/4},\qquad
+ m\le a(1+\log x).
+$$
+
+If $1\le h\le x^{C_t}$ is exceptional, the window condition gives
+$h\le x^\eta$. Consequently
+
+$$
+ (2hn)^{C_K}\log(2D)
+ \le (2n_0)^{C_K}c_0 x^{3\varepsilon/4}.
+$$
+
+This is the source of the exponent $3\varepsilon/4$: the twist costs
+$\varepsilon/2$, the discriminant costs $\varepsilon/4$, and the reference-layer
+degree is bounded independently of $x$. For a nonexceptional twist the
+first tower estimate applies, since $h\le Z$. Combining the two cases,
+every active length is finite, and
+
+$$
+ s(h,m)\le R(m+j+c+\lfloor\log_\ell Z\rfloor)
+          +2\exp\big(B_0x^{3\varepsilon/4}\big),
+ \qquad B_0=(2n_0)^{C_K}c_0.
+$$
+
+The separate finiteness conclusion is needed before converting extended lengths
+to ordinary integers.
+
+**The sum over twists.** The lower endpoint $X^{1/J}\le x$ gives
+$\log X\le J\log x$. Since $\log\ell>1/2$,
+
+$$
+ \lfloor\log_\ell Z\rfloor\le 2C_tJ\log x.
+$$
+
+For a uniform bound $c\le c_1$, take
+$C=R(a+j+c_1+2C_tJ)+1+B_0$. The preceding inequality implies
+
+$$
+ s(h,m)+1\le C(1+\log x)+2\exp(Cx^{3\varepsilon/4}).
+$$
+
+The extra unit also accommodates the comparison with the fields in the
+two-adic part of the window. For an integer cutoff $t(x)\le x^{C_t}$,
+the sum over $1\le h<t(x)$ is bounded by $x^{C_t}$ times this expression.
+Its logarithm is $O(\log x+x^{3\varepsilon/4})=o(x^{4\varepsilon/5})$
+as $x\to\infty$, with the parameters fixed. Thus, after increasing the
+threshold in $x$,
+
+$$
+ \sum_{1\le h<t(x)}s(h,m)\le \exp(x^{4\varepsilon/5}).
+$$
+
+The difference $4\varepsilon/5-3\varepsilon/4=\varepsilon/20>0$ absorbs
+both the constants and the number of twists. No extra factor proportional
+to the number of exceptional twists is needed at this stage: the window
+condition has made the *pointwise* estimate valid for every active twist.
+
+**Uniformity in the auxiliary primes.** For a fixed odd coefficient prime
+in the finite auxiliary set, the reference layer of its fixed base field
+has fixed degree and discriminant. For $\ell=2$, the base field depends on
+$q,d$. The hypothesis TwoBase bounds its degree by $8\deg M$ and embeds
+it in $\mathbf Q(\zeta_{4M.mqd})$, with the notation for the abelian field
+$M$ used by the archive. One must bound the degree and discriminant of
+the reference layer independently of those primes.
+
+Here is the elementary conductor argument. More generally suppose
+$L_0\subset\mathbf Q(\zeta_{N_0P})$, $[L_0:\mathbf Q]\le n_1$,
+where $P$ varies. The layer $L_j$ is generated over $L_0$ by roots of
+unity of order $\ell^k$ for some $k$. It embeds in
+$\mathbf Q(\zeta_{\ell^kN_0P})$. Since $\varphi(\ell^k)\ge \ell^k/2$
+and $L_j$ contains these roots,
+
+$$
+ [L_j:\mathbf Q]\le n_1\ell^j,\qquad
+ \ell^k\le 2[L_j:\mathbf Q].
+$$
+
+For any subfield $E$ of $\mathbf Q(\zeta_N)$ the discriminant tower formula
+and the cyclotomic discriminant formula give
+$|\operatorname{disc}E|\le N^{[E:\mathbf Q]}$: the absolute norm of the
+relative different is at least one, and the cyclotomic discriminant has
+absolute value at most $N^{\varphi(N)}$. Taking
+$n_0=(n_1+1)\ell^j$, it follows that
+
+$$
+ \log(2|\operatorname{disc}L_j|)
+ \le \log 2+n_0\log(2n_0N_0)+n_0\log P.
+$$
+
+In the two-adic application $P=qd$, $N_0=4M.m$, and the auxiliary-prime
+hypothesis gives $\log P\le X^{\varepsilon/(4J)}\le x^{\varepsilon/4}$.
+As $x\ge1$, the constant term is absorbed by the same power of $x$.
+Hence the required $c_0$ and $n_0$ depend on the base degree bound and
+the fixed reference-layer index, not on $q,d$. The bound on $c$ follows
+from the same totient inequality in $L_0$. The moving layer has
+$m\le e(x)+2$; the admitted upper bound on $2^{e(x)}$ gives the required
+logarithmic bound on $m$. The comparison in TwoBase transfers the result
+to the actual field, with at most one extra unit of length per twist.
+
+This is why a bound on each individual tower is not enough. The rank for
+the moving two-adic tower is chosen uniformly in $q,d$, and the rank for
+each fixed odd-prime tower is chosen before the window. Their sum bounds
+the cardinality of the union of exceptional sets. With $J$ chosen from
+that total rank, all pointwise thresholds may be enlarged to one threshold
+before $X,q,d$ are chosen. The exceptional sets themselves may depend on
+$X$ and the moving base field; the surviving interval is chosen only after
+these sets have been formed. This order of choices is the content of the
+assembly theorem, and ensures that the two-adic and fixed odd-prime
+estimates hold throughout the *same* interval.
+
+| Step | Archive reference |
+| --- | --- |
+| Two estimates and the prime-dependent base-field contracts | [SecondBound, ABound, FirstBound, TwoBase, TwoIn](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/SecondBound.lean#L14-L44) |
+| Extraction of a finite exceptional set | [exc](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Exc.lean#L8-L41) |
+| Finiteness and conversion of Lemma K to a length bound | [klen](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Klen.lean#L24-L46) |
+| Exponent budget and the two cases | [kexp](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Kexp.lean#L8-L37), [point](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/ImportsAlt.lean#L9-L61) |
+| Fixed constant and the sum over twists | [point2](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Point2.lean#L8-L49), [final](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Final.lean#L8-L68), [vvat](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Vvat.lean#L8-L21) |
+| Uniform conductor and discriminant estimates | [rootdeg](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Rootdeg.lean#L8-L27), [layeremb](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Layeremb.lean#L8-L35), [disc](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Imports.lean#L8-L45), [layerdisc](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Layerdisc.lean#L9-L71) |
+| Moving two-adic and fixed odd-prime towers | [partA](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/PartA.lean#L24-L84), [partB](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/PartB.lean#L52-L100) |
+| Choice of ranks, common threshold and common window | [thmBab_of](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/ThmBabOf.lean#L11-L103) |
+
+:::
+
 ### Where the bound itself comes from
 
 The window is produced through the call `vwin_of_row` from the Galois row of {ref}`comp-galois`.
