@@ -27,6 +27,7 @@ import build_guide  # noqa: E402  (the table of cited Lean declarations is share
 
 REPO = "nasqret/riemann-rev"
 SITE = "https://nasqret.github.io/riemann-rev"      # GitHub Pages, built by .github/workflows/pages.yml
+PROOF_ATLAS = "https://nasqret.github.io/riemann-proof-atlas/"   # the reading project's atlas: declarations on the paper map
 ARCHIVE_URL = "https://alpo.ge/lean.tar.gz.part01"          # footnote 1 of the announcement: parts 01 to 14
 ICON = {"two-kernels": "✅", "checked": "✅", "partial": "🟡", "covered": "🟢", "read": "🔵", "reported": "↗️",
         "motivation": "⚪"}
@@ -305,8 +306,8 @@ def build() -> str:
     ]
     add(" ".join(row1) + "\n")
     add(" ".join(row2) + "\n")
-    add(f"**Read it online:** [site]({SITE}/) · [atlas]({SITE}/atlas/) · [guide]({SITE}/guide/proof-guide.pdf) · "
-        f"[book]({SITE}/book/) · [blueprint]({SITE}/blueprint/atlas-blueprint.pdf)\n")
+    add(f"**Read it online:** [site]({SITE}/) · [atlas]({SITE}/atlas/) · [proof atlas]({PROOF_ATLAS}) · "
+        f"[guide]({SITE}/guide/proof-guide.pdf) · [book]({SITE}/book/) · [blueprint]({SITE}/blueprint/atlas-blueprint.pdf)\n")
     add("[Status](#status-dashboard) · [The theorem](#the-theorem) · [New here?](#new-here-start-here) · "
         "[Route of the proof](#the-route-of-the-proof) · [Contents](#what-is-in-this-repository) · "
         "[Check it yourself](#check-it-yourself) · [Transparency](#transparency) · [FAQ](#questions-and-answers)\n")
@@ -324,6 +325,17 @@ def build() -> str:
         "The human-readable mathematics has not been written up yet, and the argument has not been through the "
         "traditional refereeing of the mathematical community. Nothing here is this repository's own claim that "
         "the theorem is true; it reports the records listed below, with their sources.\n")
+
+    # ------------------------------------------------------------------ the proof atlas
+    add("> [!TIP]\n"
+        f"> **The proof atlas: [nasqret.github.io/riemann-proof-atlas]({PROOF_ATLAS}).** The theorems and lemmas "
+        "of the archive placed on a map of the arXiv literature by subject. Search a Lean name, follow a theorem "
+        "from its mathematical neighbourhood to its Lean code and to the endpoints that depend on it, and read the "
+        "chapters on three levels: statements, structured proofs and Lean, beside the notes. Built by the reading "
+        "project; the paper map is Leland McInnes's map of arXiv.\n")
+    add(f'<p align="center"><a href="{PROOF_ATLAS}"><img src="assets/screens/riemann-proof-atlas.jpg" width="94%" '
+        'alt="The proof atlas: the declarations of the Lean archive as points on a map of arXiv papers coloured by '
+        'subject, with the explorer panel beside it."></a></p>\n')
 
     # ------------------------------------------------------------------ dashboard
     add("## Status dashboard\n")
