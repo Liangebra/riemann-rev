@@ -560,6 +560,298 @@ estimate for every possible coefficient prime.
 
 :::
 
+:::{dropdown} The deformation length behind Case I
+
+The factor $2$ in the one-character estimate comes from a comparison
+of lengths in a graded commutative algebra. The arithmetic construction
+of the deformation model and its rigidity properties supply the inputs
+to this comparison.
+
+**From cocycles to derivations.** Let $O$ be the complete coefficient
+DVR with uniformizer $\varpi$, fraction field $F$ and finite residue
+field. Let $\mathcal S$ be the locally trivial character cohomology
+module of length Vlen. It is torsion: a continuous cocycle from a compact
+group to the discrete torsion coefficient module has finite image,
+hence is killed by a common nonzero scalar. Thus $\mathcal S$ is the
+union of its $\varpi^n$-torsion layers.
+
+The reducible base representation $r_0$ has diagonal characters
+$\Psi,1,\Psi^{-1}$ and a quadratic multiplier. Conjugation by
+$\operatorname{diag}(t,1,t^{-1})$ gives entry $(i,j)$ weight $w_i-w_j$,
+where $(w_1,w_2,w_3)=(1,0,-1)$. Weight $-1$ consists of entries
+$(2,1)$ and $(3,2)$. The normalization theorem sha_inj injects each
+torsion layer additively into matrix cocycles of this weight, subject
+to the prescribed local coboundary and global vanishing conditions.
+
+Over the square-zero extension $O\oplus O/(\varpi^n)$, put
+$r_\gamma(g)=(1+\gamma(g))r_0(g)$, with $\gamma$ taking values in the
+square-zero ideal. Multiplication gives the cocycle equation
+
+$$
+ \gamma(gh)=\gamma(g)+\operatorname{Ad}(r_0(g))\gamma(h),
+$$
+
+with the adjoint action of the semidirect representation when the
+multiplier is nontrivial. The universal property of the normalized
+deformation ring $R$ identifies such a deformation with an algebra
+map $f\mapsto(x_0(f),D(f))$, where $x_0:R\to O$ is the base point and
+
+$$
+ D(fg)=x_0(f)D(g)+x_0(g)D(f).
+$$
+
+On an entry of the universal representation in column $j$, the
+derivation has value $\Psi(g)^{w_j}\gamma(g)_{ij}$. Since these scalars
+are units and the entries determine the deformation, the assignment
+is injective on the normalized cocycles and additive by uniqueness.
+
+The model has a graded algebra $A=\bigoplus_j A_j$, augmentation
+$x:A\to O$ and a surjection $A\to R$ killing its homogeneous equations.
+The construction main_der lifts the local coboundary to characteristic
+zero using the local chart and the model's lifting property.
+Consequently the pullback of each derivation above is the reduction
+of a weight-$-1$ derivation $A\to O$ at $x$. This integral lifting
+assertion is essential for the saturated cotangent comparison.
+
+**The saturated cotangent lattice (Lemma M').** Put $\mathfrak a=\ker x$
+and let
+
+$$
+ \mathfrak a^{[2]}=\{f\in A:\exists\,0\ne b\in O,\ bf\in\mathfrak a^2\}.
+$$
+
+Since $A/\mathfrak a\simeq O$ is torsion-free, this saturation lies in
+$\mathfrak a$, and $\mathfrak a/\mathfrak a^{[2]}$ is torsion-free.
+Let $P$ be the image of $A_{-1}\cap\mathfrak a$ in that quotient and
+$L$ the $O$-span of the images of the weight-$-1$ equations
+$F_0,\ldots,F_r$. Put $C=P/L$; its extended length is cotLen.
+
+An $O$-valued derivation kills $\mathfrak a^2$ by Leibniz, and kills
+$\mathfrak a^{[2]}$ because $O$ is torsion-free. Its reduction kills
+$\mathfrak a^{[2]}$ as well. Vanishing on the equations gives a map
+$C\to O/(\varpi^n)$. A weight-$-1$ derivation is determined by its
+restriction to that weight, so the normalized cocycles give an
+injection
+
+$$
+ \mathcal S[\varpi^n]\longrightarrow
+                    \operatorname{Hom}_O(C,O/(\varpi^n)).
+$$
+
+If $C$ has finite length, write $C\simeq\bigoplus_i O/(\varpi^{b_i})$.
+The target has length $\sum_i\min(n,b_i)\le\sum_i b_i$.
+Only injectivity as a map of sets is needed: a finite-length
+$O$-module of length $b$ has $q_O^b$ elements, where $q_O$ is the
+residue cardinality. Comparing cardinalities bounds the length of
+each torsion layer by the length of $C$. If $C$ has infinite length
+the inequality is automatic. Taking the supremum over $n$ gives
+
+$$
+ \operatorname{length}_O\mathcal S\le\operatorname{length}_O C.
+$$
+
+Indeed each finite strict chain in the torsion module can be tested
+by finitely many elements, all in one torsion layer. This proves the
+length comparison of mprime_holds and the directed-union step of
+vlen_le, given the cocycle injection and derivation lift. Arbitrary
+derivations with torsion coefficients need not kill the saturated
+square; replacing the lift condition by their mere existence would
+not prove the assertion.
+
+**The upper-bound hypotheses.** Lemma M uses a graded algebra
+generated over $A_0$ by finitely many elements of weights $-2,-1,1,2$,
+with $x$ killing nonzero weights. A formal chart over $F$ identifies
+the rational cotangent space by linear coefficients. The dimensions
+in weights $-2,-1,0,1,2$ are respectively $s,r,m,r'+1,s'+1$, where
+$r\ge1$. The homogeneous equation ideal $J_0$ has generators
+$r+1$ equations $F_i$ of weight $-1$, $s$ equations $G_i$ of weight
+$-2$, $r'$ equations $E_i$ of weight $1$, $s'$ equations $E'_i$ of
+weight $2$, and $m$ weight-zero equations $Z_i$ vanishing at $x$.
+The $F_i,G_i,Z_i$ span their rational cotangent spaces (M1).
+
+The image of $A_0$ in $A/J_0$ is finite over $O$ (M2). At a fixed
+point of $A/J_0$ other than $x$, there cannot be both a positive-only
+and a negative-only point with the same weight-zero restriction
+(M3). At a two-sided point (nonzero values in both signs), the
+derivations killing $J_0$ have dimension at most one (M4).
+Finally a separating element $a\in A_0$ vanishes at $x$ but at
+no two-sided point (M5). The deformation model supplies these
+hypotheses through its finiteness, point and rigidity theorems.
+The trace difference is the element $a$; it is constant on
+grading-torus orbits.
+
+**Smith invariants and the comparison.** The spanning condition
+makes $L$ a full-rank sublattice of the free rank-$r$ lattice $P$.
+Smith normal form permits an invertible change of the $r+1$ equations:
+their images are now $\varpi^{b_i}y_i$ for $1\le i\le r$ and zero for
+the last equation $F_*$, where the $y_i$ are a basis of $P$.
+The equation ideal is unchanged, $F_*\in\mathfrak a^{[2]}$, and
+$\operatorname{length}_O C=\sum_i b_i$.
+
+The implicit-function construction eliminates the $m$ weight-zero
+variables using the $Z_i$. The resulting chart $\phi$ satisfies
+$\phi(Z_i)=0$. We can arrange $\phi(a)\ne0$ without changing its
+values on $A/J_0$: if $\phi(a)=0$, add a product of a weight-$1$
+element and one of the $F_i$ having nonzero images under $\phi$.
+Such elements exist by the chart and spanning condition, and their
+product is nonzero in the power-series domain. It lies in $J_0$,
+has weight zero and vanishes at $x$.
+
+The proof uses the multigraded Rees algebra over $A_0$ of the
+submodules
+
+$$
+ N_0=A_{-2},\quad N_1=A_2,\quad
+ N_2=A_0F_*^2+A_{-2}^2A_2 .
+$$
+
+The component of multidegree $d=(d_0,d_1,d_2)$ is
+$N_0^{d_0}N_1^{d_1}N_2^{d_2}$ with formal multigrading tags.
+Quotient by the coefficientwise kernel of $\phi$ to obtain $U$.
+Let $\mathbf f$ be the list of sections consisting of the first
+$r$ squares $F_i^2$ and the $G_i$ in degree $(1,0,0)$,
+the $E_i^2,E'_i$ in degree $(0,1,0)$ and $F_*^2$ in degree $(0,0,1)$.
+Multiplication by $a$ on $U$ is injective since $\phi(a)\ne0$.
+
+Write $\chi_{\mathbf f}(V;d)$ for the graded Koszul Euler
+characteristic of the sections on $V$ in degree $d$. Admissibility
+ensures finiteness of the relevant homology lengths in large
+multidegrees. The comparison theorems low_holds and up_holds
+and the intervening Euler inequality give, for all sufficiently
+large $d$ in the coordinatewise order,
+
+$$
+ \begin{aligned}
+ 2^{r+r'}\sum_i b_i
+ &\le\chi_{\mathbf f}(U/aU;d)\\
+ &\le\chi_{(a)}(U/(\mathbf f)U;d)\\
+ &\le 2^{r+1+r'}\sum_{\xi\in T}v_O(\xi(a)).
+ \end{aligned}
+$$
+
+Here $T$ is a finite cover of the two-sided orbits over an
+algebraically closed valued extension of $F$ (fin_holds).
+The middle inequality uses regularity of $a$, permutation
+invariance of Koszul Euler characteristics, and the upper-bound
+rule for replacing the sections by their quotient. It does not
+require the sections themselves to form a regular sequence.
+The outer multiplicities can be understood as follows.
+
+**The lower multiplicity.** In the leading-term quotient the
+first $r$ squared equations have leading terms
+$\varpi^{2b_i}y_i^2$, by the negative-weight filtration and
+$F_i-\varpi^{b_i}y_i\in\mathfrak a^{[2]}$.
+The Hilbert function of that quotient modulo $\varpi$ counts
+monomials of total negative and positive weights
+
+$$
+ (u,v)=(2d_0+4d_2,\,2d_1+2d_2).
+$$
+
+The corresponding generating series is
+
+$$
+ H(X,Y)=\frac{1}{(1-X)^r(1-X^2)^s
+                       (1-Y)^{r'+1}(1-Y^2)^{s'+1}} .
+$$
+
+A backward difference in the first multigrading direction
+corresponds to multiplication by $1-X^2$; the other directions
+give $1-Y^2$ and $1-X^4Y^2$.
+The finite-difference inequality la_holds, applied to the
+leading-term quotient, gives a lower bound of $\sum_i2b_i$
+times the Hilbert function after $r-1+s$ differences in the
+first direction, $r'+s'$ in the second, and one in the third.
+After cancellation its generating series is
+
+$$
+ \frac{(1+X)^{r-1}(1+Y)^{r'}(1-X^4Y^2)}
+      {(1-X)(1-Y)(1-Y^2)}.
+$$
+
+For $u\ge4$ and $v\ge2$, the coefficient of $X^uY^v$ in the
+fraction without the two factors $(1+X)^{r-1}(1+Y)^{r'}$ is
+
+$$
+ (\lfloor v/2\rfloor+1)-(\lfloor(v-2)/2\rfloor+1)=1.
+$$
+
+For sufficiently large $u,v$, multiplication by the two
+polynomials multiplies this constant by $2^{r-1+r'}$.
+This proves the finite-difference identity num_holds directly
+by generating functions. Hence the lower multiplicity is
+$(\sum_i2b_i)2^{r-1+r'}=2^{r+r'}\sum_i b_i$.
+The leading-term passage and its Hilbert function use lk_holds
+and hf_holds, and the lower inequality uses Euler monotonicity
+for that quotient, rather than equality with the original
+model's Hilbert function.
+
+**The upper multiplicity.** On sufficiently large graded
+pieces the support theorem leaves only the characteristic-zero
+primes given by weight-zero restrictions of two-sided points.
+Rigidity gives localized length at most one for each weight
+piece of $A/J_0$ at these primes.
+Replacing a homogeneous equation $f$ by $f^2$ at most doubles
+a uniform localized length bound: the quotient by $f^2$ has a
+filtration by the image of $f$ and the quotient by that image.
+Both are quotients of the module with relation $f=0$, the first
+with its degree shifted by the degree of $f$. Applying this
+successively to the $r+1$ negative and $r'$ positive equations
+gives the bound $2^{r+1+r'}$. The Rees-piece comparison transfers
+it to the localized pieces of $U/(\mathbf f)U$.
+
+For a large piece $W$, the Euler characteristic of multiplication
+by $a$ is
+
+$$
+ \theta_a(W)=\operatorname{length}_{A_0}(W/aW)
+                   -\operatorname{length}_{A_0}W[a].
+$$
+
+Both lengths are finite. The norm identity th_holds expresses
+this difference as a sum of localized lengths at the
+characteristic-zero points, weighted by $v_O(a)$ evaluated there.
+To see the mechanism, filter the finite module by prime quotients:
+the snake lemma makes the Euler characteristic additive,
+finite-length quotients contribute zero, and on a domain finite
+over $O$ of characteristic zero the determinant of multiplication
+by $a$ is its field norm, the product over embeddings. The
+finite-over-$O$ annihilator quotient justifies the use of the
+prime filtration and the local length formula. The multiplicity
+bound and the fact that $a$ is constant on torus orbits now give
+the upper bound. Repeated weight-zero restrictions in a cover
+can only enlarge the sum, since these evaluations are integral
+and have nonnegative valuation.
+
+Dividing the outer bounds by $2^{r+r'}$ gives
+
+$$
+ \operatorname{length}_O C\le2\sum_{\xi\in T}v_O(\xi(a)).
+$$
+
+The constant $2$ is thus the ratio of the upper multiplicity
+$2^{r+1+r'}$ to the lower multiplicity $2^{r+r'}$. For coefficient
+valuation $v_O=e(O/\mathbf Z_\ell)v_\ell$, division by the
+ramification index gives the normalized one-character bound.
+
+The chart, support, local rigidity and graded Euler comparison
+theorems used here remain inputs to this reconstruction of the
+cotangent and multiplicity arguments.
+
+| Step | Archive reference |
+| --- | --- |
+| Normalized cocycles and torsion layers | [sha_inj](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/UnitaryThreeGroups/ShaInj.lean#L27-L38), [vlen_le](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/UnitaryThreeGroups/VlenLe.lean#L46-L68) |
+| Derivations and integral lifting | [main_der, model_lower](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/UnitaryThreeGroups/ModelLower.lean#L296-L402), [mprime_holds](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/GradedModulesLength/Mprime.lean#L6-L81) |
+| Hypotheses and statement | [M1–M5, LemmaM, LemmaM'](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/OrbitVanishingLocal.lean#L21-L131) |
+| Trace difference | [model_upper](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/UnitaryThreeGroups/ModelUpper.lean#L103-L251), [oneChar_unramU](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/FOneCharU.lean#L19-L74) |
+| Smith normalization and chart | [sm_holds](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/GradedModulesLength/SmHolds.lean#L55-L113), [cut_holds](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/GradedModulesLength/CutHolds.lean#L101-L132), [nz_holds](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/GradedModulesLength/NzCoeffMul.lean#L33-L90), [main_holds](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/GradedModulesLength/MainCotSpan.lean#L32-L71) |
+| Rees algebra and lower bound | [mN, ts, cnt](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/GradedModulesLength/ToDegInjective.lean#L187-L234), [lk_holds](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/GradedModulesLength/LkHolds.lean#L8-L80), [hf_holds](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/GradedModulesLength/ReesGradedPieceSurjection.lean#L199-L271), [la_holds](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/GradedModulesLength/LaDifPerm.lean#L77-L125), [low_holds](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/GradedModulesLength/AdmissibleMonoIdeal.lean#L191-L323) |
+| Numerical finite differences | [num_holds](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/GradedModulesLength/FrobeniusInclusionXEqMulQ.lean#L206-L284) |
+| Local multiplicity and norm | [locLen_quotientWeightPiece_le_one](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/GradedModulesLength/LocLenQuotientWeightPieceLeOne.lean#L70-L149), [locLen_aPiece_ideal2_le_two_pow](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/GradedModulesLength/LocLenAPieceIdeal2LeTwoPow.lean#L69-L116), [th_holds](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/GradedModulesLength/HerbrandFinLen.lean#L189-L260), [up_holds](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/GradedModulesLength/TwoSigned.lean#L17-L96) |
+| Finite orbit cover and comparison | [fin_holds](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/GradedModulesLength/FinHolds.lean#L49-L99), [core_holds](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CommutativeAlgebra/GradedModulesLength/AlgMemCoef.lean#L92-L144) |
+
+:::
+
 :::{dropdown} From character counts to the sum over all coefficient primes
 
 The tower window supplies two bounds: one at $2$ on the moving field, and
