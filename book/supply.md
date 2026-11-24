@@ -149,7 +149,8 @@ second controls the exceptional twists by comparison with a reference layer. The
 where Lemma K enters, and the logarithmic window is what makes its cost affordable.
 
 **A bound at a point.** Write $L_m/L_0$ for a layer of degree $\ell^m$,
-$j=\lfloor\log_\ell R\rfloor+3$ (using the integer logarithm, with value $0$ at $R=0$), and $s(h,m)=s_{\ell,h}(L_m)$.
+$j=\operatorname{NatLog}_\ell(R)+3$, where $\operatorname{NatLog}_\ell$ is the integer logarithm (zero at $R=0$),
+and $s(h,m)=s_{\ell,h}(L_m)$.
 The two estimates from the tower give an exceptional set $T_Z\subset\{1,\ldots,Z\}$,
 $|T_Z|\le R$, and
 
@@ -282,17 +283,19 @@ hypothesis gives $\log P\le X^{\varepsilon/(4J)}\le x^{\varepsilon/4}$.
 As $x\ge1$, the constant term is absorbed by the same power of $x$.
 Hence the required $c_0$ and $n_0$ depend on the base degree bound and
 the fixed reference-layer index, not on $q,d$. The bound on $c$ follows
-from the same totient inequality in $L_0$. The moving layer has
-$m\le e(x)+2$; the admitted upper bound on $2^{e(x)}$ gives the required
-logarithmic bound on $m$. The comparison in TwoBase transfers the result
+from the same totient inequality in $L_0$: $2^c\le2[L_0:\mathbf Q]\le16\deg M$,
+so in particular $c\le16\deg M$. The moving layer has $m\le e(x)+2$. The admitted upper bound
+$2^{e(x)}\le x^{A_1}$ gives $m\le(2|A_1|+2)(1+\log x)$, using
+$\log 2>1/2$. The comparison in TwoBase transfers the result
 to the actual field, with at most one extra unit of length per twist.
 
 This is why a bound on each individual tower is not enough. The rank for
 the moving two-adic tower is chosen uniformly in $q,d$, and the rank for
 each fixed odd-prime tower is chosen before the window. Their sum bounds
-the cardinality of the union of exceptional sets. With $J$ chosen from
-that total rank, all pointwise thresholds may be enlarged to one threshold
-before $X,q,d$ are chosen. The exceptional sets themselves may depend on
+the cardinality of the union of exceptional sets. If $R_*$ denotes that total rank, take $J=4(2C_t/\eta)^{R_*}$.
+The finitely many pointwise thresholds may then be enlarged to a common
+$x_1\ge1$ before choosing $X,q,d$. Taking $X\ge\max(2,x_1^J)$ ensures
+that the entire surviving window lies above every threshold. The exceptional sets themselves may depend on
 $X$ and the moving base field; the surviving interval is chosen only after
 these sets have been formed. This order of choices is the content of the
 assembly theorem, and ensures that the two-adic and fixed odd-prime
@@ -300,13 +303,13 @@ estimates hold throughout the *same* interval.
 
 | Step | Archive reference |
 | --- | --- |
-| Two estimates and the prime-dependent base-field contracts | [SecondBound, ABound, FirstBound, TwoBase, TwoIn](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/SecondBound.lean#L14-L44) |
+| Two estimates and the prime-dependent base-field contracts | [SecondBound, ABound, FirstBound, TwoBase, TwoIn](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/SecondBound.lean#L11-L50) |
 | Extraction of a finite exceptional set | [exc](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Exc.lean#L8-L41) |
 | Finiteness and conversion of Lemma K to a length bound | [klen](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Klen.lean#L24-L46) |
 | Exponent budget and the two cases | [kexp](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Kexp.lean#L8-L37), [point](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/ImportsAlt.lean#L9-L61) |
 | Fixed constant and the sum over twists | [point2](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Point2.lean#L8-L49), [final](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Final.lean#L8-L68), [vvat](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Vvat.lean#L8-L21) |
 | Uniform conductor and discriminant estimates | [rootdeg](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Rootdeg.lean#L8-L27), [layeremb](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Layeremb.lean#L8-L35), [disc](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Imports.lean#L8-L45), [layerdisc](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/Layerdisc.lean#L9-L71) |
-| Moving two-adic and fixed odd-prime towers | [partA](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/PartA.lean#L24-L84), [partB](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/PartB.lean#L52-L100) |
+| Moving two-adic and fixed odd-prime towers | [partA](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/PartA.lean#L24-L78), [partB](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/PartB.lean#L50-L95) |
 | Choice of ranks, common threshold and common window | [thmBab_of](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/LayeredIsomorphisms/ThmBabOf.lean#L11-L103) |
 
 :::
