@@ -70,7 +70,7 @@ Put $C=P/L$; its extended length is the archive's cotLen.
 
 An $O$-valued derivation at $x$ kills $\mathfrak a^2$ by the Leibniz rule
 and hence its saturation, since $O$ is torsion-free. Its reduction also
-kills the saturation. As it vanishes on the equations, it induces a map
+kills the saturation and vanishes on the equations, so the reduced derivation induces a map
 $C\to O/(\varpi^n)$. A derivation of weight $-1$ is determined by its
 restriction to that weight, giving an injection
 

@@ -164,8 +164,9 @@ estimates therefore hold on the same interval.
 
 ## Case I: a common integer for the coefficient primes
 
-In Case I the contribution of a character kernel is bounded at every coefficient
-prime by the valuation of a single nonzero integer.
+In Case I a nonzero integer attached to a character kernel controls its
+contribution at every coefficient prime except the auxiliary prime used in
+the integer's construction. Two auxiliary primes suffice to cover all cases.
 
 **The trace difference.** Fix an imaginary quadratic field $K$, a level
 $N$, a twist $h\ge1$, and a rational prime $p\nmid30N|\operatorname{disc}K|$.
@@ -236,8 +237,7 @@ $$
  \le\varphi(m)|D|(2h\log q_w+1).
 $$
 
-The construction in `KeepNumU` uses the disjoint union of the
-rank-three and rank-two trace data. Write $\Delta=|\operatorname{disc}K|$
+Take the disjoint union of the rank-three and rank-two trace data. Write $\Delta=|\operatorname{disc}K|$
 and $Y=N(h+1)$. The first set has cardinality at most $c_1Y^{A_1}$;
 the second is counted at level $N\Delta$ and has cardinality at most
 $c_2(\Delta Y)^{A_2}$. Thus $|D|\le(c_1+c_2\Delta^{A_2})Y^{A_1+A_2}$.
@@ -364,8 +364,7 @@ Summing the joint bound over kernels gives at most
 $A_0N(N(h+1))^{A_K}$, where
 $A_0=2c_K(\log p+\log p')$ is fixed. Since $h+1\le t$ and $N\ge16$,
 choose an integer $k\ge0$ with $A_0\le16^k$. The sum is then at most
-$(Nt)^{k+1+A_K}$. This is CountI, with finiteness already established
-for each character.
+$(Nt)^{k+1+A_K}$, giving the joint bound of Case I, with all character lengths finite.
 
 | Step | Archive reference |
 | --- | --- |
@@ -387,8 +386,7 @@ contribution on the moving field itself.
 
 **Character reduction and the cases.** Fix the primitive character $\chi$,
 of conductor $Q$ and order $o$. In the following argument $N$ is the host
-conductor, $t\ge2$ is the twist cutoff and $M=Nt$. The fixed set $B_\chi$ consists of $3$
-and the odd prime factors of $oQp_K h_*p_1$, where $p_K,h_*,p_1$ are the fixed auxiliary
+conductor, $t\ge2$ is the twist cutoff and $M=Nt$. The fixed set $B_\chi$ consists of $3$ and the odd prime factors of $oQp_K h_*p_1$, where $p_K,h_*,p_1$ are the fixed auxiliary
 quantities in the definition of [Bchi](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/StmtFields.lean#L54-L67). Assume the host size hypotheses throughout,
 including the lower bounds on $q,d$ relative to $t$ and the fixed auxiliary
 quantities. Let $c$ be the action of complex conjugation on the locally trivial
@@ -477,7 +475,7 @@ Let $K'=\max(C_{II},C_V,C_{Vs})$. Since $\ell\le N$ by the host's size
 conditions, the three pointwise counts give $v_\ell(\psi,h)\log\ell\le M^{2K'}$
 whenever their respective cases apply.
 
-The remaining characters are collected in one set
+Collect the characters of the indicated odd order in the set
 $\mathcal O=\bigcup_{1\le h<t}\{\psi\in X_h:\operatorname{ord}\chi_\ell'(\psi)\text{ is odd}\}$.
 The arithmetic of the host shows that
 these characters have conductor dividing $Q$, so $|\mathcal O|\le Q$,
