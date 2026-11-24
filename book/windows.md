@@ -83,10 +83,12 @@ assert rhlib.avoids(y, starts, B)
 ```
 
 On $[2^{16},2^{32}]$ the condition "$h\le x^{C_t}\Rightarrow h\le x^{\eta}$" holds for both twists at every
-point; it suffices to check it at every $x=2^u$ with $u$ on a fine rational grid of $[16,32]$, since both
-sides are monotone in $u$:
+point. Here $C_t=2$ and $\eta=1$ (the values of the example). The first twist, $2^{16}$, is at most $x=x^{\eta}$ for
+every $x\ge2^{16}$, so the conclusion holds; the second, $2^{180}$, exceeds $x^{C_t}\le(2^{32})^2$, so the premise
+fails. The grid checks this example numerically:
 
 ```{code-cell} ipython3
+assert (Ct, eta) == (2, 1) and twists_log2 == [16, 180] and (y, y2) == (16, 32)   # the values named in the text above
 grid = [y + (y2 - y) * F(j, 1600) for j in range(1601)]
 for u in grid:
     for h in twists_log2:                          # log2 of the twist
@@ -140,14 +142,14 @@ for _ in range(N):
     yq, y2q = rhlib.window1(st, Bq, Uq)
     assert y2q == 2 * yq and 0 < yq and y2q <= Uq and rhlib.avoids(yq, st, Bq)
     ratio = yq / (Uq / (2 ** (R + 2) * Bq ** R))
-    assert ratio >= 1
+    assert ratio >= 2
     if worst_ratio is None or ratio < worst_ratio:
         worst_ratio, worst_R = ratio, R
 print(f"{N:,} random instances: all intervals valid; smallest y / bound = {float(worst_ratio):.3f} (R = {worst_R})")
 ```
 
-The bound is essentially sharp. Placing the starts just above the successive cut-offs
-$U/(2B)^i$ forces a deletion at every level:
+The induction returns $y=U/[2(2B)^d]$ after $d$ deletions. Since $d\le R$, every run gives at least
+twice the stated lower bound. The following starts force all $R$ deletions:
 
 ```{code-cell} ipython3
 for Bq in (F(1), F(2), F(7)):
@@ -168,7 +170,15 @@ bd.glue('worst_ratio', f"{float(worst_ratio):.3f}")
 
 In all {glue:text}`N_random` random instances the interval is valid and the smallest ratio of $y$
 to the archive's bound is {glue:text}`worst_ratio`; in the adversarial instances the ratio is
-exactly $2$, so the archive's bound is sharp up to a factor $2$. After exponentiation, $[Y,Y^2]$ lies in
+exactly $2$. To see what can be guaranteed by *any* choice of window, fix $B>1$ and $R\ge1$.
+For a positive start $a$, the window $[y,2y]$ meets $[a,Ba)$ exactly when $a/2\le y<Ba$.
+Put $L=U/[2(2B)^R]$ and choose starts $a_i=2(1+\delta)L(2B)^i$ for $0\le i<R$ and $\delta>0$.
+Their forbidden ranges for $y$ join end to end and cover
+$[(1+\delta)L,(1+\delta)U/2)$. Since $y\le U/2$, every valid window has $y<(1+\delta)L$.
+Taking $\delta$ arbitrarily small proves that $L$ is the best uniform guarantee for $B>1$.
+When $B=1$, all the forbidden intervals are empty and $y=U/2$ always works, even if the induction deletes starts.
+
+After exponentiation, $[Y,Y^2]$ lies in
 $[X^{1/J},X]$ with $J=2^{R+2}B^R=4(2B)^R$: enormous, but fixed before $X$ and the auxiliary primes
 are chosen, which is all the argument needs.
 

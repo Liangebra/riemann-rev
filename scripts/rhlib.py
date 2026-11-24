@@ -211,8 +211,9 @@ def window1(starts: list[float], B: float, U: float) -> tuple[float, float]:
 
 
 def avoids(y: float, starts: list[float], B: float) -> bool:
-    """[y, 2y] misses every [a, B a): two intervals meet iff a <= 2y and y < B a."""
-    return all(a > 2 * y or B * a <= y for a in starts)
+    """Return whether the closed window [y, 2y] misses every nonempty [a, B*a). A nonempty [a, B*a)
+    meets [y, 2y] exactly when a <= 2y and y < B*a; it is empty when B*a <= a."""
+    return all(B * a <= a or a > 2 * y or B * a <= y for a in starts)
 
 
 def ultrametric_exceptions(ell: int, Z: int, center: int) -> list[int]:
@@ -296,6 +297,9 @@ def _selftest() -> None:
     y, y2 = window1([8.0, 90.0], 2.0, 128.0)
     assert (y, y2) == (16.0, 32.0), (y, y2)
     assert avoids(y, [8.0, 90.0], 2.0)
+    assert avoids(2, [3], 1)       # [3, 3) is empty
+    assert not avoids(2, [4], 2)   # the window includes 4
+    assert avoids(2, [1], 2)       # [1, 2) excludes 2
     # Random stress test of the lemma and of the archive's lower bound U/(2^(R+2) B^R).
     import random
     rng = random.Random(20261120)

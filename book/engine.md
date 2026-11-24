@@ -242,6 +242,26 @@ the analytic engine as correct and moves all of the difficulty of RH into its pr
 computed values of $G$ satisfy this bound with a large margin on the range of
 {doc}`explicit-formula`; that is consistent with, not evidence for, the hypothesis.)
 
+### Related work: a criterion with ordinary primes
+
+*Not checked in this project.* A Lean repository by L. Crossley
+([`prime-window-rh-criterion`, commit `3206456`](https://github.com/leecrossley/prime-window-rh-criterion/blob/3206456c860df1bb565de076457f7d0253000258/PrimeWindow.lean#L195-L198), theorem `ThetaTransfer.rh_of_prime_sign_windows`)
+states a form of the window criterion in which only primes, not prime powers, are counted. For $y>0$ let
+
+$$
+P(y)=\sum_{y<p\le 4y}w\!\left(\frac{y}{p}\right)\log p,\qquad
+w(t)=\begin{cases}2(1-t), & \tfrac12\le t<1,\\ 4t-1, & \tfrac14\le t<\tfrac12,\end{cases}
+$$
+
+the sum over primes $p$. The theorem says: if for some $\delta>0$ there are arbitrarily large $X$ such that
+$P(x/4)\le\tfrac{x}{2}\log 2$ for every $x\in[X,X^{1+\delta}]$, then the Riemann hypothesis holds. The right-hand
+side is the main term that the prime number theorem gives for $P(x/4)$: with $y=x/4$,
+$\int_y^{4y}w(y/t)\,dt=y\big(\int_1^2 2(1-\tfrac1s)\,ds+\int_2^4(\tfrac4s-1)\,ds\big)=2y\log 2$. The proof imports
+the archive's window theorem (the module `…LandauTheorems.WindowHypOfRpow`), compares the sum over primes
+with the sum over prime powers, and ends with the archive's reflection step `Formalism.VW.rh_of_right`, which
+turns a zero-free right half-plane into RH. So it rests on the engine of this chapter. We have not built the
+repository or checked its proof.
+
 (comp-choreography)=
 ## 7 · The order of choices
 
