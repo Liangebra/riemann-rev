@@ -178,7 +178,8 @@ For clarity write $\chi$ for the cyclotomic character, $L=\mathbf Z_\ell(e+1)$
 for the rank-one integral module of character $\chi^{e+1}$, and
 $V=(\mathbf Q_\ell/\mathbf Z_\ell)(-e)$ for its torsion Tate dual (character $\chi^{-e}$).
 Take the restricted-ramification group $G_S$ and its local family from the lattice
-data, with $S$ containing the places over $\ell$. For odd $\ell$, or a totally imaginary
+data (in `LData` the set $S$ is exactly the set of places over $\ell$).
+For odd $\ell$, or a totally imaginary
 field, the finite pair is $L_r=L/\ell^r L$ and $V_r=V[\ell^r]$.
 The nine-term sequence and Sha duality give
 
@@ -206,8 +207,33 @@ There is also the analogous local equality for $H^2(F_v,L)$ and $H^0(F_v,V)$.
 Lengths are extended lengths here: equality does not assert finiteness.
 These are the comparisons assembled in the archive's
 [archimedeanSignatureMatching_of_poitouTate and twist_cohomology_inputs](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L529-L541).
-The field and twist still enter the arithmetic estimates that bound the resulting
-lengths. Neither global duality nor the length equalities alone give the
+In the archive's [definitions](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Formalism/GaloisCohomology/Statement.lean#L67-L106),
+the second comparison identifies the length of the integral kernel with shaLen;
+the length of $H^2(G_S,L)$ is VLen. The inclusion of the kernel into this group gives
+
+$$
+ s_{\ell,e}(F)=\operatorname{length}\Sha^1(V)
+ \le \operatorname{length}H^2(G_S,L).
+$$
+
+This is precisely [shaLeV](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/AdditiveValuationNorms/ShaLeV.lean#L7-L16).
+The two short exact sequences for $f$, together with the local length formula,
+also give the additive balance
+
+$$
+ \operatorname{length}H^2(G_S,L)+\operatorname{length}H^0(G_S,V)
+ =
+ \operatorname{length}\Sha^1(V)+\sum_{v\in S}\operatorname{length}H^0(F_v,V).
+$$
+
+All lengths in this identity are extended; no subtraction of infinite quantities
+is used. The inequality is the one employed at the reference layer in
+[aBound_of_descends](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/AdditiveValuationNorms/ABoundOfDescends.lean#L36-L55):
+after identifying the tower cokernel length with shaInv, the argument
+bounds the reference-layer Sha length by VLen and adds the growth allowance.
+The independent determinant and descent estimates then control the exceptional
+twists as described above. The field and twist still enter the arithmetic estimates
+that bound the resulting lengths. Neither global duality nor the length equalities alone give the
 uniform window or the all-prime bound above. In the archive's
 [window assembly](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/HVCore.lean#L19-L22), the Poitou–Tate input
 is actually passed to the tower bound, the counting argument and the odd-prime
@@ -236,7 +262,11 @@ All the $n$-th roots of unity lie in $F_S$. Let
 $P^i(D)=\prod_{v\in S}H^i(F_v,D)$, where the local action is obtained by restriction.
 We use the finite-place compact complex, the shifted cone of the localization map $f$:
 its degree-$i$ term is $C^i(G_S,D)\oplus\prod_{v\in S}C^{i-1}(F_v,D)$ and its
-differential is $(a,b)\mapsto(da,f(a)-db)$. Its exact sequence contains
+differential is $(a,b)\mapsto(da,f(a)-db)$. Fix an embedding of the algebraic
+closure into a local algebraic closure for every place in $S$, so that restriction
+is a specified cochain map. The local-to-compact map sends a local cocycle $b$
+to $(0,b)$, and the compact-to-global map sends $(a,b)$ to $a$.
+Its exact sequence contains
 
 $$
 H^2(G_S,D)\xrightarrow{\mathrm{res}}P^2(D)
@@ -337,8 +367,8 @@ The archive invokes the nine-term Poitou–Tate interface for this assertion, wi
 local invariant isomorphisms; this is not a claim that the compact trace theorem alone
 supplies that entire interface.
 
-The specific cocycle is a cup product. Let $B$ be a commutative $A$-algebra and
-$\lambda:B\to A$ an $A$-linear map. Write $\alpha,\beta$ for the two characters
+The specific cocycle is a cup product. Let $B$ be a commutative discrete $A$-algebra and
+$\lambda:B\to A$ an $A$-linear map. Write $\alpha,\beta$ for the two continuous characters
 into $B^\times$ whose product is $\chi$ (viewed in $B$), and let $c,z$ be continuous
 one-cocycles with actions $\alpha,\beta$ respectively. In particular,
 
@@ -455,11 +485,16 @@ Three properties are needed, and their strength matters.
    compact coboundary of $tx$.
 3. For every $a\in C_S$ there is a datum $d$ and a positive integer $m$ prime to
    $\ell$ with $c(d)=ma$. In the divisor presentation of $a$, the class of the
-   outside-$S$ divisor has finite order $\ell^j m$. The archive's divisor-lifting
-   theorem realizes $m$ times this divisor by a Galois-invariant divisor of an
-   element of $F_S^\times$ (using the principal multiple $\ell^j m$ and that
-   $\ell$ is invertible outside $S$). Taking the inverse of that element for $t$
-   and multiplying the local entries by $m$ gives the datum.
+   outside-$S$ divisor has finite order $\ell^j m$. The principal multiple $\ell^j m$ of the divisor is
+   the outside-$S$ divisor of some $x\in F^\times$. Take $y$ with $y^{\ell^j}=x$.
+   At every place outside $S$, the valuation of $x$ is divisible by $\ell^j$;
+   after dividing by the corresponding power of a uniformizer, adjoining the
+   root is the same as adjoining a root of a unit of degree prime to the residue
+   characteristic. The unit-root polynomial defines a finite étale algebra over
+   the valuation ring, so the extension is unramified there. Hence $y\in F_S^\times$,
+   and its outside-$S$ divisor is the pullback of $m$ times the original divisor.
+   Its Galois ratios are roots of unity, hence $S$-units. Taking $t=y^{-1}$
+   and multiplying the local entries by $m$ gives the required datum.
    This property is weaker than surjectivity of the datum-to-idele-class map.
 
 Class field theory identifies $H^1(G_S,A)=\operatorname{Hom}_{\rm cont}(G_S,A)$ with
@@ -616,7 +651,7 @@ still requires passage to open subgroups and dévissage.
 | Global correction cocycle | [exists_gsUnitsData_cup_bock](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseCupGlobal.lean#L219-L277) |
 | Local tuple and divisor correction | [gsRootsToUnitsCompact_cup_eq](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/GsRootsToUnitsCompactComparisonCup.lean#L60-L104), [zmodToQZ_gsCompactInv_gsCupClass](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/ZmodToQZGsCompactInvLocalToCompactEqLocalInvU.lean#L100-L150) |
 | Evaluation and the two kernels | [gsCompactInv_gsCupClass, gsCompactInv_ker_left, exists_nsmul_eq_of_forall_zmod, gsCompactInv_ker_right](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BasePairing.lean#L87-L202) |
-| Compact cup interchange | [compactCupRes_zmodMulPairingRight_swap](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseSwap.lean#L33-L52) |
+| Compact cup interchange | [compactCupRes_zmodMulPairingRight_swap](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseSwap.lean#L28-L52) |
 | Degree zero, one and three | [bijective_three, bijective_zero, bijective_one](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseFormal.lean#L395-L440) |
 | Degree two, both directions | [injective_two, surjective_two](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseFormal.lean#L536-L751) |
 | Assembly over the base field | [BaseDualityHypotheses.of_gs, bijective_gs_compactZmodDualityMap](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BijectiveGsCompactZmodDualityMap.lean#L23-L73) |
