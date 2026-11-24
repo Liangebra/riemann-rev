@@ -389,10 +389,10 @@ from its arithmetic inputs, rather than re-proving the preceding comparison or a
 Keep the preceding arithmetic setting, and for this part assume that $F$ contains the $n$-th
 roots of unity. Put $A=\mathbf Z/n\mathbf Z$ with trivial action. We shall prove that
 
-$
+$$
 H^i(G_S,A)\ \times\ H_c^{3-i}(D)\ \longrightarrow\ A,
 \qquad (x,y)\longmapsto T(y\smile x)
-$
+$$
 
 is perfect for $0\le i\le3$, from the earlier arithmetic results specified below.
 Perfect means that either group is identified with the group of additive homomorphisms
@@ -461,9 +461,9 @@ idelic side of this isomorphism. Let $\chi_x$ denote the character attached to $
 
 **Why the pairing is evaluation.** The central arithmetic identity is
 
-$
+$$
  T(\delta_n q(d)\smile x)=\chi_x(c(d)).
-$
+$$
 
 Here $\delta_n$ includes the comparison between the local root modules and $D$.
 We explain the signs and the global correction in the archive's proof. Use the embedding
@@ -471,9 +471,9 @@ $A\hookrightarrow\mathbf Q/\mathbf Z$, so all invariants in this argument can be
 added in $\mathbf Q/\mathbf Z$. Let $z:G_S\to A$ represent $x$, take integer lifts
 $\tilde z(g)$ between $0$ and $n-1$, and let
 
-$
+$$
  B_z(g,h)=\frac{\tilde z(g)+\tilde z(h)-\tilde z(gh)}{n}.
-$
+$$
 
 This represents the integral Bockstein of $x$ and its class is killed by $n$.
 The compact Kummer/Bockstein product identity says that the image of
@@ -555,9 +555,9 @@ $T(\partial u\smile x)$ is the sum of the local invariants of
 $u\smile\operatorname{res}x$. For $y_c\in H_c^1(D)$ and $x_c\in H_c^2(A)$,
 the signed compact cup comparison gives
 
-$
+$$
  T(y_c\smile j x_c)=T(x_c\smile j y_c).
-$
+$$
 
 The sign is $(-1)^{1\cdot2}=+1$; the archive proves this identity for its compact
 complex rather than invoking commutativity of an ordinary cup product.
@@ -622,9 +622,9 @@ Its dual is $M^D=\operatorname{Hom}(M,D)$ with the contragredient action,
 where $D=\mu_n(F_S)$. Write $B_i^M(x,y)=T(y\smile x)$, with the evaluation
 pairing of coefficients understood. The goal is to identify
 
-$
+$$
 H^i(G,M)\ \simeq\ \operatorname{Hom}(H_c^{3-i}(M^D),A).
-$
+$$
 
 The additional inputs here are the dimension bound $H_c^4(N)=0$ for every
 finite $n$-torsion coefficient module $N$, and the Shapiro, Mackey and
@@ -641,9 +641,9 @@ pass to $E$. The preceding cyclic pairing theorem therefore applies there.
 The compact corestriction in degree three is onto, even if the index
 $[G:W]$ is divisible by $\ell$. Indeed the coefficient trace
 
-$
+$$
 \operatorname{Coind}_W^G(D|_W)\longrightarrow D
-$
+$$
 
 is onto: a coinduced function supported on the identity coset with the
 prescribed value there maps to that value. Its kernel is a finite
@@ -678,9 +678,9 @@ into a finite direct sum $I$ of such coinduced modules: characters
 separate points of any $n$-torsion abelian group by the extension
 argument above. Write the resulting sequence as
 
-$
+$$
 0\longrightarrow M\xrightarrow{i} I\xrightarrow{p} Q\longrightarrow0.
-$
+$$
 
 Its dual sequence is exact in the opposite direction, since
 $\operatorname{Hom}(-,A)$ is exact on $n$-torsion groups (identify $A$
@@ -707,10 +707,10 @@ connecting map and $\delta_c$ for the compact connecting map of the
 dual exact sequence. The compact product rule supplies the signed
 identity
 
-$
+$$
  B_{r+1}^{M}(\delta q,y)
    =(-1)^{s+1}B_r^{Q}(q,\delta_c y)
-$
+$$
 
 for $q\in H^r(G,Q)$ and $y\in H_c^s(M^D)$.
 All the other squares express naturality of evaluation.
@@ -736,9 +736,9 @@ which is the kernel of $\delta_c$. Extend $\nu$ through $\delta_c$
 to a functional on $H_c^{s+1}(Q^D)$; by the induction hypothesis
 it equals $B_r^Q(q,-)$ there. The signed identity shows that
 
-$
+$$
  x'+(-1)^{s+1}\delta q
-$
+$$
 
 represents $\lambda$. This completes the induction through degree
 three. In particular, the argument does not assume that the quotient
@@ -772,13 +772,13 @@ local-to-compact class is the local cup followed by that map.
 Degree-zero compact vanishing and global degree-three vanishing give
 the two endpoints. The resulting sequence is
 
-$
+$$
 \begin{aligned}
 0&\to H^0(G,M)\to P^0(M)\to H^2(G,M^D)^*\\
  &\to H^1(G,M)\to P^1(M)\to H^1(G,M^D)^*\\
  &\to H^2(G,M)\to P^2(M)\to H^0(G,M^D)^*\to0 .
 \end{aligned}
-$
+$$
 
 Here $\Sha^j(M)=\ker(H^j(G,M)\to P^j(M))$ uses this same finite
 set of places. Compact exactness identifies $\Sha^1(M)$ with
