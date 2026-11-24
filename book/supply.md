@@ -314,6 +314,284 @@ estimates hold throughout the *same* interval.
 
 :::
 
+:::{dropdown} From character counts to the sum over all coefficient primes
+
+The tower window supplies two bounds: one at $2$ on the moving field, and
+one on a fixed reference layer for each odd prime in the finite set
+$B_\chi$. It remains to control the odd-prime part of the cohomology of the
+moving field itself. This is a different summation problem from the
+separation of exceptional twists: the set of coefficient primes over which
+we sum is arbitrary.
+
+**Character reduction and the cases.** Fix the primitive character $\chi$,
+of conductor $Q$ and order $o$. In the following argument $N$ is the host
+conductor, $t\ge2$ is the twist cutoff and $M=Nt$. The set $B_\chi$ is
+fixed before the moving field is chosen. It consists of $3$ and the odd
+prime factors of $oQp_K h_*p_1$, where $p_K,h_*,p_1$ are the fixed auxiliary
+quantities in the definition of [Bchi](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/StmtFields.lean#L54-L67).
+Write $a_\ell(h)$ for the length of the positive part of the locally
+trivial cohomology of the moving CM field at twist $h$.
+
+Let $H$ be the host subgroup of $(\mathbf Z/N\mathbf Z)^\times$.
+At each odd $\ell$ choose a coefficient discrete valuation ring $O$
+containing the requisite character values. Write $X_h$ for the characters
+of $(\mathbf Z/N\mathbf Z)^\times$ trivial on $H$ and of parity
+$\psi(-1)=(-1)^h$. Put $v_\ell(\psi,h)$ equal to the character length
+Vlen divided by the ramification index of $O/\mathbf Z_\ell$
+(the archive's normalized length Vn). The character reduction theorems give,
+once the character lengths have been shown finite,
+
+$$
+ a_\ell(h)\le
+ \begin{cases}
+ \displaystyle\sum_{\psi\in X_h}v_\ell(\psi,h),&\ell\notin B_\chi,\\[4pt]
+ \displaystyle\sum_{\psi\in X_h}
+       (v_\ell(\psi,h)+\lambda_\ell(N,h)),&\ell\in B_\chi,
+ \end{cases}
+$$
+
+where $\lambda_\ell(N,h)=\operatorname{lossAll}(\ell,N,[G:H],h)$
+with $G=(\mathbf Z/N\mathbf Z)^\times$. The same inequalities in extended
+lengths imply finiteness of $a_\ell(h)$; they do not presume it.
+The first inequality uses $\ell\nmid[G:H]$, which holds outside $B_\chi$
+under the host's size conditions. The second allows the loss of the
+integral character decomposition when the index is divisible by $\ell$.
+The bound used below is $\lambda_\ell(N,h)\le(Nh)^6$.
+There are at most $N$ characters in $X_h$, and also at most $N$ in
+$X_0\cup X_1$, which contains every $X_h$.
+
+Here is the case division in the archive. The notation $\chi_\ell'(\psi)$
+denotes its prime-to-$\ell$, local-component-removed character chiP;
+$R_1$ and $c_2$ are the conductor quantities in Case V.
+
+| Coefficient prime | Twist and character condition | Bound used |
+| --- | --- | --- |
+| Outside $B_\chi$ | $\ell-1\nmid2h$ | I |
+| Outside $B_\chi$ | $\ell-1\mid2h$, $\psi=1$ | Z |
+| Outside $B_\chi$ | $\ell-1\mid2h$, $\psi$ of even order | II |
+| Outside $B_\chi$ | $\ell-1\mid2h$, $\psi\ne1$ of odd order | III |
+| Inside $B_\chi$ | $h\ge2$, $\chi_\ell'(\psi)$ of even order | II |
+| Inside $B_\chi$ | $h\ge2$, $\chi_\ell'(\psi)$ of odd order | IV |
+| Inside $B_\chi$ | $h=1$, $R_1\le2^{c_2}$ | V |
+| Inside $B_\chi$ | $h=1$, $R_1>2^{c_2}$ | Vs |
+
+Outside $B_\chi$ the character $\chi_\ell'(\psi)$ equals $\psi$ when
+$\ell-1\mid2h$. The two inequalities in the last rows cover equality
+on the V side. This table describes sufficient cases for the reduction,
+not a claim that all the underlying counting predicates are disjoint.
+In particular Case IV's bound is valid for all twists of a character
+of the specified odd order. The archive supplies IV and Vs separately,
+rather than taking them as additional automorphic counting hypotheses.
+
+**Primes outside $B_\chi$.** Let $S$ be any finite set of odd primes
+outside $B_\chi$. For a fixed $1\le h<t$, split $S$ according to whether
+$\ell-1$ divides $2h$. On the first part, CountI bounds the entire weighted
+sum by $M^{C_1}$, with $C_1$ independent of $S$ and $h$. The two auxiliary
+primes required by that theorem are chosen depending on $\chi$ before
+the host is chosen. A pointwise estimate growing with $\ell$ could not
+replace this joint bound.
+
+On the other part, $\ell-1\mid2h$ implies $\ell\le 2t$.
+Set $K=\max(C_Z,C_{II},C_{III})$. The corresponding pointwise bounds
+include finiteness and give
+
+$$
+ v_\ell(\psi,h)\log\ell\le(\ell Nh)^K\le M^{3K},
+$$
+
+since $2t\le M^2$ and $\ell Nh\le2tM\le M^3$ for $M\ge2$.
+Each prime contributes at most $NM^{3K}$, and there are at most $2t$
+such primes. Thus
+
+$$
+ \sum_{\ell\in S}\log\ell\sum_{1\le h<t}a_\ell(h)
+ \le t(M^{C_1}+2M^{3K+1})
+ \le M^{C_1+3K+4}.
+$$
+
+For the last inequality use $t\le M$, $M\ge2$, and absorb the two terms
+in the indicated power. All lengths are finite by the same case division.
+Neither the maximum prime nor the cardinality of $S$ occurs in the final
+bound.
+
+**Primes inside $B_\chi$.** Fix $\ell\in B_\chi$ and suppose that its
+reference-layer twist sum is at most $B\ge0$, including finiteness.
+Let $K'=\max(C_{II},C_V,C_{Vs})$. Since $\ell\le N$ by the host's size
+conditions, the three pointwise counts give $v_\ell(\psi,h)\log\ell
+\le M^{2K'}$ whenever their respective cases apply.
+
+The remaining characters are collected in one set
+$\mathcal O=\bigcup_{1\le h<t}\{\psi\in X_h:\operatorname{ord}
+\chi_\ell'(\psi)\text{ is odd}\}$. The arithmetic of the host shows that
+these characters have conductor dividing $Q$, so $|\mathcal O|\le Q$,
+not merely $Nt$. Case IV gives a bound on the whole twist sum for each
+such character:
+
+$$
+ \sum_{1\le h<t}v_\ell(\psi,h)\le B+M^{C_4}.
+$$
+
+The coefficient of $B$ is important: summing this bound separately for
+each twist would introduce an unnecessary factor of $t$.
+Using nonnegativity and exchanging the two finite sums gives instead
+
+$$
+ \log\ell\sum_{1\le h<t}\sum_{\psi\in X_h}v_\ell(\psi,h)
+ \le Q\log\ell(B+M^{C_4})+tN M^{2K'}.
+$$
+
+Indeed the terms in $\mathcal O$ are bounded by their complete twist
+sums, and there are at most $N$ of the other terms at each twist.
+The character-reduction loss adds at most
+$(\log\ell)Nt M^6\le M^8$. Consequently
+
+$$
+ \sum_{1\le h<t}\log\ell\, a_\ell(h)
+ \le M^{C_\ell}+C_\ell B,\qquad
+ C_\ell=C_4+2K'+9+\ell Q.
+$$
+
+To see the last inequality, bound the coefficient $Q\log\ell$ by
+$\ell Q\le C_\ell$, and bound the remaining terms by
+$M^{C_4+2}$, $M^{2K'+1}$ and $M^8$. Their sum is at most $M^{C_\ell}$
+because $M\ge3$ and each exponent is at most $C_\ell-1$.
+This is the reason for keeping a bound on the number of characters
+independent of the cutoff: the tower budget is multiplied only by
+a constant depending on $\chi$ and $\ell$.
+
+**The two remaining arithmetic estimates.** Case IV uses the fixed field
+$L_j$ above $\mathbf Q(\zeta_{\ell Q})$. It is Galois over $\mathbf Q$,
+contains the field cut out by $\psi$, and has degree at most
+$n_4=\ell Q\ell^j$. Character transport from that field gives
+$v_\ell(\psi,h)\le s_{\ell,h}(L_j)+n_4\nu_\ell(N,h)$, with
+$\nu_\ell(N,h)\le2Nh$. The reference-layer hypothesis bounds the sum
+of the first terms by $B$. The second terms sum to at most
+$2n_4Nt^2\le(Nt)^{n_4+3}$. This gives Case IV with $C_4=n_4+3$,
+including finiteness. The transport inequality is an arithmetic input
+here, not a consequence of the finite-sum rearrangement.
+
+In Vs, the strict reverse conductor threshold and $h=1$ allow a different
+field $L$, containing the character field and $\ell$-th roots of unity,
+of degree at most $n_0(\chi)$, embedded in
+$\mathbf Q(\zeta_{\ell N})$. The degree bound uses the character-order
+estimate vsOrd; the field construction is vsField. By the discriminant
+inequality above,
+$\log|\operatorname{disc}L|\le n_0\log(\ell N)$.
+Increase the Lemma K exponent to a nonnegative integer $k$. At twist
+one its exponential expression is bounded by the polynomial
+
+$$
+ \exp((2[L:\mathbf Q])^k\log(2|\operatorname{disc}L|))
+ \le(\ell N)^{A},\qquad A=(2n_0)^k(n_0+1).
+$$
+
+Here $\ell N\ge2$. Duality and character transport then give a finite
+normalized length at most $2(\ell N)^A+2n_0N$. Multiplication by
+$\log\ell\le\ell$ yields a polynomial bound, for example
+$(\ell N)^{A+n_0+3}$. This is the bound used in Vs. Its uniformity
+comes from the bounded degree and twist one, rather than from excluding
+a further set of exceptional twists.
+
+**The positive part on the common interval.** Combine the outside bound
+$M^{C_0}$ with the inside bounds. Write $b=|B_\chi|$ and
+$D=\sum_{\ell\in B_\chi}C_\ell$. For every finite set of odd primes the
+positive-part sum is at most
+
+$$
+ M^{C_0}+bM^D+bDB\le M^C+CB,
+ \qquad C=C_0+D+b+bD.
+$$
+
+Indeed $b+1\le2^b\le M^b$ and $bD\le C$. The exponents and the
+two auxiliary primes from CountI are fixed before the host. In the
+tower window take $B=\exp(x^{4\varepsilon/5})$.
+The host conductor is the conductor of the moving field (hostCond);
+hence $M=(\operatorname{cond}E)t(x)$. The positive-part estimate
+applies to *every* interval satisfying the tower-window hypotheses.
+The assembly jointWin_of uses the interval already selected by
+ThmBab, not an intersection of two independently selected intervals.
+
+| Step | Archive reference |
+| --- | --- |
+| Counting hypotheses and exhaustive case division | [Counts](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/Counts.lean#L53-L73), [cases](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/Cases.lean#L8-L48), [bchiFacts](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/BchiFacts.lean#L8-L101) |
+| Integral character reduction and its loss | [redPrime](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/RedPrime.lean#L11-L57), [redAll](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/RedAll.lean#L6-L21), [lossLe](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/LossLe.lean#L8-L54) |
+| Sum outside the fixed set | [sumOut](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/SumOut.lean#L50-L231) |
+| Character conductor and fixed-layer estimate | [hostOdd](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/HostOdd.lean#L1-L111), [countIV](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/CountIV.lean#L39-L89) |
+| Strict reverse threshold at twist one | [countVs](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/CountVs.lean#L86-L171) |
+| Inside-set sum and combined positive part | [sum_split, sumIn](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/FinalLe.lean#L14-L263), [point](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/PointArith.lean#L36-L92) |
+| Host conductor and evaluation on a tower interval | [hostCond](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/HostCond.lean#L256-L323), [thmHV](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/ThmHV.lean#L6-L40), [jointWin_of](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PrimeSetBoundDataOfPrimitiveChar.lean#L145-L158) |
+
+:::
+
+:::{dropdown} The final exponential comparison
+
+On the joint interval the prime $2$ contributes at most
+$(\log2)\exp(x^{4\varepsilon/5})$. The odd positive part contributes
+$u^C+C\exp(x^{4\varepsilon/5})$, where $u=(\operatorname{cond}E)t(x)$.
+The negative-part theorem ThmBcFree gives the separate bound minusBound;
+its conversion to an exponential uses the fixed character order, not the
+number of coefficient primes in the test set.
+
+Write $n=[E:\mathbf Q]$, $N=\operatorname{cond}E$ and $o=\deg M_\chi$,
+where $M_\chi$ is the abelian field cut out by the original character.
+In the notation of minusBound the negative bound is
+
+$$
+ 3nt^2\log(Nt)
+ +C_b\sum_{\ell\mid o,\ \ell\ne2}\ell n^2t^2\log(\ell Nt)^2 .
+$$
+
+The sum is over distinct odd prime divisors of $o$. Since $n\le N$,
+$t\ge1$ and $\log z\le z$ for $z\ge1$, the first term is at most
+$3u^4$, and each summand before multiplication by $C_b$ is at most
+$\ell^3u^4$. Thus the negative bound is at most $K_bu^4$, with
+$K_b=3+|C_b|\sum_{\ell\mid o,\ell\ne2}\ell^3$.
+
+The conductor bound and PageN give
+
+$$
+ \begin{aligned}
+ N&\le 2^{e(x)+2}Qqd,\\
+ 2^{e(x)}&\le 2x^{2+8\varepsilon},\qquad t(x)\le x^{C_t}.
+ \end{aligned}
+$$
+
+Together with $\log(qd)\le x^{\varepsilon/4}$, these imply
+$\log u\le x^{\varepsilon/4}+(2+8\varepsilon+C_t)\log x+\log(8Q)$.
+For sufficiently large $x$ this is at most $2x^{\varepsilon/4}$.
+The choice of threshold is uniform in the auxiliary primes and in $E$.
+In particular $K_bu^4\le K_b\exp(8x^{\varepsilon/4})$.
+
+The odd-prime sign decomposition and the separate two-adic bound now give,
+for every finite set of coefficient primes, finiteness and the upper bound
+
+$$
+ (\log2+C)\exp(x^{4\varepsilon/5})
+     +K_b\exp(8x^{\varepsilon/4})+u^C .
+$$
+
+All constants are fixed and $\log u\le2x^{\varepsilon/4}$.
+The logarithm of this positive upper bound is $O(x^{4\varepsilon/5})$,
+hence $o(x^\varepsilon)$. It is therefore at most $x^\varepsilon/2$
+eventually, giving the required $\sqrt{\exp(x^\varepsilon)}$ bound.
+The final threshold is chosen before $X$; increasing $X$ ensures that
+every $x$ on the selected interval exceeds it. The finiteness clauses
+come from the three component estimates and the sign decomposition,
+not from the numerical inequality alone.
+
+This last step uses the already established negative-part theorem as an
+input. Its proof of the underlying reciprocity and local estimates is a
+separate question.
+
+| Step | Archive reference |
+| --- | --- |
+| Negative bound and its exponential form | [minusBound](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/StmtFields.lean#L69-L71), [minusBound_le_exp_of_log_le](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CMFieldExponentialBounds/minusle.lean#L6-L76) |
+| Conductor budget | [log_conductor_mul_height_le_of_pageN](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CMFieldExponentialBounds/LogConductorMulHeightLeOfPageN.lean#L6-L57) |
+| Final comparison | [error_terms_le_sqrt_exp_rpow](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CMFieldExponentialBounds/ErrorTermsLeSqrtExpRpow.lean#L6-L89) |
+| Assembly of the three parts and VWin | [vwinAt_of_joint, vwin_of_joint](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/CMFieldExponentialBounds/AdmissibleOfPageN.lean#L41-L134), [vwin_of_counts](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/HeightAndVanishing/JointWinOfCounts.lean#L16-L33) |
+
+:::
+
 ### Where the bound itself comes from
 
 The window is produced through the call `vwin_of_row` from the Galois row of {ref}`comp-galois`.
