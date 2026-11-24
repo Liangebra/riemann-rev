@@ -208,7 +208,14 @@ These are the comparisons assembled in the archive's
 [archimedeanSignatureMatching_of_poitouTate and twist_cohomology_inputs](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L529-L541).
 The field and twist still enter the arithmetic estimates that bound the resulting
 lengths. Neither global duality nor the length equalities alone give the
-uniform window or the all-prime bound above.
+uniform window or the all-prime bound above. In the archive's
+[window assembly](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/HVCore.lean#L19-L22), the Poitou–Tate input
+is actually passed to the tower bound, the counting argument and the odd-prime
+reciprocity calculation (through the normalized-duality adapter
+[pt_s](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/HVFinalU.lean#L11-L11)). The raw compact pairing reconstructed below
+is upstream of this adapter; its construction is not a proof of the additional
+normalization and conjugation compatibility. This is a source-level description
+of the calls, not a new verification of the kernel dependency graph.
 
 The following optional proofs follow this dependency rather than file order.
 They distinguish the arithmetic inputs from what is derived from them. The
@@ -895,14 +902,17 @@ $a-b_v\in V^{G_{F_v}}$. It suffices to find a global primitive in $V_r$.
 This is the second correction condition checked by the archive.
 
 For $e\ne0$, at each finite place the cyclotomic character has infinite
-image, so some element acts on $V$ by a scalar different from $1$.
+image: away from $\ell$ an arithmetic Frobenius acts by the residue cardinality,
+which has infinite order in $\mathbf Z_\ell^\times$, and above $\ell$ the
+local cyclotomic tower has unbounded degree. Thus some element acts on $V$
+by a scalar different from $1$.
 The local invariant group is killed by a fixed power of $\ell$.
 The local length equality makes $Y$ a finitely generated torsion
 $\mathbf Z_\ell$-module, hence killed by a power of $\ell$.
 For all sufficiently large $r$, therefore, $\ell^rY=0$ and the
 saturation condition holds. At the same levels every local invariant
-is in $V_r$; as $S$ is nonempty, any one equality $a-b_v\in
-V^{G_{F_v}}$ shows that $a\in V_r$. This proves the second condition.
+is in $V_r$; as $S$ is nonempty, any one equality
+$a-b_v\in V^{G_{F_v}}$ shows that $a\in V_r$. This proves the second condition.
 
 For $e=0$ the action on $V$ is trivial and the second condition holds
 with global primitive zero. The cokernel cardinality formula gives
