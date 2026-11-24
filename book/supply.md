@@ -166,8 +166,56 @@ mathematics: the window bounds *sums of lengths*, for a selected family of field
 of twists. Positive finite lengths are compatible with it, and the announcement's further remarks
 about individual $K$-groups would require additional theorems.
 
-### A closer look: the compact trace in Poitou–Tate duality
+### What global duality supplies to the window
 
+The duality theorem is part of the arithmetic supply, not the window estimate itself.
+Its two useful finite-level outputs are the last arrow of the nine-term exact sequence
+and a perfect pairing of locally trivial classes in degrees one and two.
+The actual passage to the lengths used later is through
+[the finite-level and integral comparison](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L517-L541).
+
+For clarity write $\chi$ for the cyclotomic character, $L=\mathbf Z_\ell(e+1)$
+for the rank-one integral module of character $\chi^{e+1}$, and
+$V=(\mathbf Q_\ell/\mathbf Z_\ell)(-e)$ for its torsion Tate dual (character $\chi^{-e}$).
+Take the restricted-ramification group $G_S$ and its local family from the lattice
+data, with $S$ containing the places over $\ell$. For odd $\ell$, or a totally imaginary
+field, the finite pair is $L_r=L/\ell^r L$ and $V_r=V[\ell^r]$.
+The nine-term sequence and Sha duality give
+
+$$
+ \operatorname{coker}\big(H^2(G_S,L_r)\to P^2(L_r)\big)
+ \simeq H^0(G_S,V_r)^*,
+ \qquad \Sha^2(L_r)\simeq\Sha^1(V_r)^* .
+$$
+
+Here $P^2$ is the product of local groups at $S$ and the star means the finite
+character dual. These are statements about finite coefficients, not yet about
+the length of a $\mathbf Z_\ell$-module. The reduction and saturation arguments
+in the archive compare these finite groups with the integral localization map
+$f:H^2(G_S,L)\to P^2(L)$ and give
+
+$$
+ \operatorname{length}_{\mathbf Z_\ell}(\operatorname{coker} f)
+ =\operatorname{length}_{\mathbf Z_\ell} H^0(G_S,V),
+ \qquad
+ \operatorname{length}_{\mathbf Z_\ell}(\ker f)
+ =\operatorname{length}_{\mathbf Z_\ell}\Sha^1(V).
+$$
+
+There is also the analogous local equality for $H^2(F_v,L)$ and $H^0(F_v,V)$.
+Lengths are extended lengths here: equality does not assert finiteness.
+These are the comparisons assembled in the archive's
+[archimedeanSignatureMatching_of_poitouTate and twist_cohomology_inputs](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L529-L541).
+The field and twist still enter the arithmetic estimates that bound the resulting
+lengths. Neither global duality nor the length equalities alone give the
+uniform window or the all-prime bound above.
+
+The following optional proofs follow this dependency rather than file order.
+They distinguish the arithmetic inputs from what is derived from them. The
+first three reconstruct the finite-coefficient theorem from its providers;
+the last gives the passage from finite levels to integral lengths.
+
+:::{dropdown} A closer look: the compact trace in Poitou–Tate duality
 One of the arithmetic inputs just listed is global duality. To see how it is built, consider the
 trace in degree three of compactly supported cohomology. This part can be reconstructed without
 using global Poitou–Tate duality itself. We give the proof from the earlier arithmetic inputs and
@@ -188,14 +236,18 @@ H^2(G_S,D)\xrightarrow{\mathrm{res}}P^2(D)
  \xrightarrow{\partial}H_c^3(D)\longrightarrow H^3(G_S,D).
 $$
 
-Here cohomology is continuous. We use the local Brauer invariant with arithmetic
+Here cohomology is continuous. The usual modified archimedean Tate terms vanish under the
+odd-or-totally-imaginary hypothesis; this does not assert that ordinary archimedean
+$H^0$ vanishes. We use the local Brauer invariant with arithmetic
 Frobenius, identifying $\mathbf Z/n\mathbf Z$ with the $n$-torsion in $\mathbf Q/\mathbf Z$
 by $a\mapsto a/n$. Denote the local invariant on $H^2(F_v,D)$ in this convention by $t_v$.
 
 **Arithmetic inputs.** The trace theorem in the archive assumes $H^3(G_S,D)=0$ and
 bijectivity of each $t_v$. These are separate inputs, not consequences of the argument below.
-The archive also has a specialization in which all the $n$-th roots of unity already lie in $F$;
-in that case it supplies the local bijectivity by the local duality theorem. The following
+The archive supplies local bijectivity even without assuming the roots of unity lie in $F$:
+the presence of the places above $\ell$ ensures that the coefficient map to the local roots
+of unity is an isomorphism. The version over a field containing the roots of unity is the
+one used in the cyclic base pairing below. The following
 $S$-unit comparison is the main additional arithmetic ingredient.
 
 Put $U=\mathcal O_{F_S,S}^{\times}$ (the union of the $S$-unit groups in the finite
@@ -322,6 +374,7 @@ from its arithmetic inputs, rather than re-proving the preceding comparison or a
 | --- | --- |
 | Primary injectivity, lifting and restriction to the primary part | [eq_zero_of_sUnitsBrauer_eq_zero, exists_sUnitsBrauer_eq_iff, sUnitsBrauerPrimary_bijective](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/Brauer.lean#L282-L365) |
 | Primary $S$-unit comparison and its map | [sUnitsH2PrimaryEquiv, coe_sUnitsH2PrimaryEquiv_apply](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/Brauer.lean#L376-L421) |
+| Local invariant without the roots-in-$F$ assumption | [bijective_gsRootsLocalMor_of_places, bijective_gsLocalInvRoots_of_places](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BijectiveGsLocalInvRootsOfPlaces.lean#L25-L43) |
 | Local invariant comparison and the roots-in-$F$ specialization | [gsLocalInvRoots_eq, bijective_gsLocalInvRoots](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseLocal.lean#L188-L214) |
 | Vanishing of the sum on global classes | [sum_brauerInvZ_gsLocalRes_sUnits, gsSumInvRoots_globalToLocal](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseDefs.lean#L256-L291) |
 | Descending the sum through the cone | [localToCompact_two_surjective, gsCompactInv, gsCompactInv_localToCompact](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseDefs.lean#L293-L321) |
@@ -330,9 +383,9 @@ from its arithmetic inputs, rather than re-proving the preceding comparison or a
 | Use of the trace in the pairing | [compactZmodDualityMap](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseFormal.lean#L25-L36) |
 | Last-place reciprocity for a descended cocycle | [glob](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PrimitiveFrobeniusFixed/OverIff.lean#L23-L53) |
 | Cup product and the explicit local primitive | [core](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/PrimitiveFrobeniusFixed/OverIff.lean#L225-L295) |
+:::
 
-### From the compact trace to the duality pairing
-
+:::{dropdown} From the compact trace to the duality pairing
 Keep the preceding arithmetic setting, and for this part assume that $F$ contains the $n$-th
 roots of unity. Put $A=\mathbf Z/n\mathbf Z$ with trivial action. We shall prove that
 
@@ -560,9 +613,9 @@ still requires passage to open subgroups and dévissage.
 | Degree zero, one and three | [bijective_three, bijective_zero, bijective_one](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseFormal.lean#L395-L440) |
 | Degree two, both directions | [injective_two, surjective_two](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BaseFormal.lean#L536-L751) |
 | Assembly over the base field | [BaseDualityHypotheses.of_gs, bijective_gs_compactZmodDualityMap](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/RestrictedRamification/BijectiveGsCompactZmodDualityMap.lean#L23-L73) |
+:::
 
-### Descent, general coefficients and the nine-term sequence
-
+:::{dropdown} Descent, general coefficients and the nine-term sequence
 Return to the original field $F$, which need not contain the roots of unity.
 Write $G=G_S$ and let $M$ be a finite discrete $G$-module killed by $n$.
 Its dual is $M^D=\operatorname{Hom}(M,D)$ with the contragredient action,
@@ -693,7 +746,9 @@ $Q$ has fewer elements than $M$; it is an induction on degree with a
 separate, universally quantified injectivity step.
 
 **Beyond prime powers.** For a finite module killed by a positive integer
-$N$, split it into its primary summands. If a summand is killed by
+$N$, split it into its primary summands. Assume $S$ contains the places above every prime
+factor of $N$, and $N$ is odd or $F$ is totally imaginary. The case $N=1$ has only the zero
+module and needs no argument. If a summand is killed by
 $q=\ell^k$ dividing $N$, its dual into $\mu_N$ is identified with the
 dual into $\mu_q$ by the inclusion $\mu_q\hookrightarrow\mu_N$.
 The local invariant maps are compatible with this inclusion after
@@ -708,7 +763,8 @@ use $D=\mu_N(F_S)$ and let $M^D=\operatorname{Hom}(M,D)$.
 Write $P^j(M)=\prod_{v\in S}H^j(F_v,M)$ and
 $X^*=\operatorname{Hom}(X,\mathbf Q/\mathbf Z)$.
 Compact duality identifies $H_c^{j+1}(M)$ with $H^{2-j}(G,M^D)^*$,
-using the bidual coefficient identification and finiteness.
+using the bidual coefficient identification and finiteness (the latter follows
+from the separate global and local finiteness theorems and the cone sequence).
 Transport the cone localization sequence through these isomorphisms.
 The map from the local product to the dual global group is explicitly
 the sum of the local cup-product invariants, since cup with a
@@ -749,6 +805,142 @@ an input to the previous induction.
 | Degree induction | [injective_zero, surjective_zero, injective_succ, surjective_succ, bijective_compactDualityMap](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/PoincarePairs/Devissage.lean#L253-L448) |
 | Primary decomposition and coefficient transport | [bijective_compactDualityMap_of_primePow](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/PoitouTate/Primary.lean#L200-L257), [zmodToQZ_gsCompactInv_gsRootsIncl](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/PoitouTate/ZmodToQZCompactCohomologyResMapOfLocalInv.lean#L170-L188) |
 | Nine terms and Sha | [exact_stage, nineTerm, bijective_ptShaPairing](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/PoitouTate/Abstract.lean#L176-L278), [poitouTate_duality_gs, poitouTate_sha_gs, poitouTate_nineTerm_gs](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/GroundTheory/ProfiniteCohomology/PoitouTate/PoitouTateNineTermGs.lean#L36-L70) |
+:::
+
+:::{dropdown} From finite-level duality to the integral length formulas
+
+**Reduction of integral cohomology.** Use the setting in the main text.
+Write $X=H^2(G_S,L)$, $Y=P^2(L)$, $f:X\to Y$, and $f_r$ for finite-level
+localization. The source proves finite generation of $X,Y$ and compatible
+isomorphisms $X/\ell^rX\simeq H^2(G_S,L_r)$ and
+$Y/\ell^rY\simeq P^2(L_r)$ using finite-coefficient finiteness and
+degree-three vanishing, rather than taking these assertions as formal
+properties of inverse limits.
+
+Here is the cochain argument. A finite-level two-cocycle lifts to a
+continuous two-cochain at the next level: choose a section between the
+finite discrete coefficient groups. Its differential is a three-cocycle
+in the kernel, identified with $L_1$. The vanishing of $H^3(L_1)$
+allows a correction by a two-cochain in that kernel. Iterating gives
+compatible two-cocycles whose inverse limit is a continuous integral
+two-cocycle. Conversely, if an integral two-cocycle reduces to a boundary
+modulo $\ell^r$, lift its finite-level primitive to an integral
+one-cochain. After subtracting its differential the original cocycle is
+divisible pointwise by $\ell^r$; dividing yields a continuous integral
+two-cocycle since the coefficient lattice has no torsion. Thus the
+reduction kernel is exactly $\ell^r H^2(L)$.
+
+Separation is a further step. If an integral two-cocycle is a boundary at
+every finite level, the sets of its finite-level primitives modulo
+one-coboundaries are nonempty torsors under the finite groups $H^1(L_r)$.
+The reduction maps form an inverse system of nonempty finite sets, so
+there is a compatible sequence of primitive classes (no surjectivity of
+the transition maps is needed). Recursively adjust representatives by
+one-coboundaries: a zero-cochain witnessing the difference at level $r$
+lifts to level $r+1$. The resulting compatible actual primitives have
+a continuous integral limit, showing that the original class is zero.
+Hence $\bigcap_r\ell^r X=0$, and similarly for the local groups.
+Finally, choose finitely many lifts of generators modulo $\ell$.
+Successive approximation expresses each element modulo $\ell^r$ by
+linear combinations of these lifts with compatible coefficients.
+Completeness of $\mathbf Z_\ell$ gives limiting coefficients; separation
+makes the resulting equality exact. This proves finite generation.
+These arguments reconstruct the roles of
+[reduction_h2_eq_zero_iff, reduction_h2_surjective, finite_h2_padic_representation](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L75-L135).
+The finite global $H^1,H^2$ used here come from their finite local groups
+and the finite Sha groups (see [global_lim](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L337-L351)).
+
+**Cokernels require no saturation.** Write $C=\operatorname{coker} f$.
+Right exactness of reduction gives
+
+$$
+ C/\ell^r C=Y/(f(X)+\ell^rY)\simeq\operatorname{coker} f_r .
+$$
+
+The last arrow of the nine-term sequence therefore yields
+$|C/\ell^r C|=|H^0(G_S,V_r)|$ for every $r>0$.
+These are the cardinalities of $H^0(G_S,V)[\ell^r]$, since the coefficient
+embedding $V_r\hookrightarrow V$ is equivariant. As $r$ increases the
+subgroups exhaust $H^0(G_S,V)$; on the other side the reductions of the
+finitely generated module $C$ have log-cardinalities tending to its
+extended length. A free summand gives an unbounded sequence; for a
+torsion module it eventually gives its length. Taking the suprema
+proves the cokernel formula, without a finiteness assumption on either
+length. The same argument with local Tate duality gives the local
+length formula.
+
+**Kernels do require saturation.** Put $K=\ker f$.
+The natural injection $K/(K\cap\ell^r X)\to\ker f_r$ is onto if
+
+$$
+ f(X)\cap\ell^rY=\ell^r f(X).
+$$
+
+Indeed, if $f(x)=\ell^r y$ and the equality holds, write
+$f(x)=\ell^r f(x')$ and replace $x$ by $x-\ell^r x'\in K$.
+This condition is not automatic for a map of integral modules; for
+example multiplication by $\ell$ on $\mathbf Z_\ell$ is injective
+but its reduction modulo $\ell$ has nonzero kernel.
+
+On the discrete side put $P_r=\operatorname{im}(\Sha^1(V_r)\to\Sha^1(V))$.
+These subgroups increase and exhaust $\Sha^1(V)$: a continuous
+one-cocycle on the compact global group has finite image in the
+discrete torsion module, and the finitely many local null-homotopies
+can all be chosen in a sufficiently large torsion level.
+To compare the finite-level cardinality with $|P_r|$ one must also
+check injectivity at that level. A global cocycle in $V_r$ becoming a
+boundary in $V$ is $g\mapsto ga-a$ for some $a\in V$. If its local
+restrictions are boundaries in $V_r$, there are $b_v\in V_r$ with
+$a-b_v\in V^{G_{F_v}}$. It suffices to find a global primitive in $V_r$.
+This is the second correction condition checked by the archive.
+
+For $e\ne0$, at each finite place the cyclotomic character has infinite
+image, so some element acts on $V$ by a scalar different from $1$.
+The local invariant group is killed by a fixed power of $\ell$.
+The local length equality makes $Y$ a finitely generated torsion
+$\mathbf Z_\ell$-module, hence killed by a power of $\ell$.
+For all sufficiently large $r$, therefore, $\ell^rY=0$ and the
+saturation condition holds. At the same levels every local invariant
+is in $V_r$; as $S$ is nonempty, any one equality $a-b_v\in
+V^{G_{F_v}}$ shows that $a\in V_r$. This proves the second condition.
+
+For $e=0$ the action on $V$ is trivial and the second condition holds
+with global primitive zero. The cokernel cardinality formula gives
+$|C/\ell^r C|=\ell^r$ at every positive level.
+The structure theorem for finitely generated $\mathbf Z_\ell$-modules
+then gives rank one and no torsion for $C$: for large $r$, the exponent
+of $\ell$ in that cardinality is $r\operatorname{rank} C$ plus the length
+of its torsion submodule. In particular $C$ is torsion-free,
+which gives the saturation condition for every $r$.
+
+For all sufficiently large $r$ in either case, finite Sha duality now
+gives
+
+$$
+ |K/(K\cap\ell^r X)|=|\Sha^2(L_r)|=|\Sha^1(V_r)|=|P_r|.
+$$
+
+The descending filtration on $K$ is separated, and the increasing
+filtration $P_r$ exhausts $\Sha^1(V)$. The lengths of the finite
+quotients of $K$ have supremum equal to its extended length:
+this follows from finite generation, since the topology on a submodule
+of a finitely generated $\mathbf Z_\ell$-module is its $\ell$-adic
+topology (or directly by the elementary divisor theorem).
+The finite subgroups on the right have supremum of lengths equal to
+the extended length of $\Sha^1(V)$. Taking these suprema proves the
+kernel formula. The argument is exactly why the archive separates
+the cokernel comparison from the eventual kernel and discrete
+correction conditions.
+
+| Step | Declaration in the archive |
+| --- | --- |
+| Reduction and finite generation | [reduction_h2_eq_zero_iff, reduction_h2_surjective, finite_h2_padic_representation](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L75-L135) |
+| Local duality at the limit | [local_tate_duality_h2_limit](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L295-L302) |
+| Reduction of localization, last arrow and cokernel length | [cok_ker, card_cok, ptCokerAt](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L358-L397) |
+| Bounded local invariants and local torsion | [exists_kill, exists_kill_pi](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L399-L460) |
+| Kernel and Sha filtration, including the separate zero twist | [ptShaAt](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L462-L513) |
+| The finite input and its integral output | [finite_level, archimedeanSignatureMatching_of_poitouTate, twist_cohomology_inputs](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L517-L541) |
+:::
 
 (comp-primes)=
 ## 12 · Auxiliary primes and Behrend towers
