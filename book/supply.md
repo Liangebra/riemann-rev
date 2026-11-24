@@ -183,10 +183,10 @@ We use the finite-place compact complex, the shifted cone of the localization ma
 its degree-$i$ term is $C^i(G_S,D)\oplus\prod_{v\in S}C^{i-1}(F_v,D)$ and its
 differential is $(a,b)\mapsto(da,f(a)-db)$. Its exact sequence contains
 
-$
+$$
 H^2(G_S,D)\xrightarrow{\mathrm{res}}P^2(D)
  \xrightarrow{\partial}H_c^3(D)\longrightarrow H^3(G_S,D).
-$
+$$
 
 Here cohomology is continuous. We use the local Brauer invariant with arithmetic
 Frobenius, identifying $\mathbf Z/n\mathbf Z$ with the $n$-torsion in $\mathbf Q/\mathbf Z$
@@ -244,18 +244,18 @@ $\mathrm{res}_v x$ and $\xi_v$ have the same local invariant for each $v\in S$.
 Local injectivity gives $\mathrm{res}(x)=\xi$. Exactness gives $\partial\xi=0$,
 proving the trace isomorphism
 
-$
+$$
 H_c^3(D)\ \xrightarrow[\quad T\quad]{\sim}\ \mathbf Z/n\mathbf Z.
-$
+$$
 
 This proof separates the global arithmetic comparison from the elementary cone argument:
 the nontrivial lifting step is to recover an $n$-torsion global class from a primary Brauer lift.
 In particular, the resulting sequence
 
-$
+$$
 H^2(G_S,D)\xrightarrow{\mathrm{res}}
 \prod_{v\in S}H^2(F_v,D)\xrightarrow{\sum_v t_v}\mathbf Z/n\mathbf Z\longrightarrow0
-$
+$$
 
 is exact at the local product and the last term. If a global degree-two class restricts to
 zero at all but one place of $S$, it must restrict to zero there as well. This last
@@ -283,28 +283,28 @@ $\lambda:B\to A$ an $A$-linear map. Write $\alpha,\beta$ for the two characters
 into $B^\times$ whose product is $\chi$ (viewed in $B$), and let $c,z$ be continuous
 one-cocycles with actions $\alpha,\beta$ respectively. In particular,
 
-$
+$$
  c(gh)=c(g)+\alpha(g)c(h),\qquad
  z(gh)=z(g)+\beta(g)z(h).
-$
+$$
 
 Set $w(g,h)=\lambda(z(g)\alpha(g)c(h))$. To check the two-cocycle identity, expand
 
-$
+$$
 \begin{aligned}
 (\mathrm dw)(g,h,j)
 ={}&\chi(g)w(h,j)-w(gh,j)+w(g,hj)-w(g,h).
 \end{aligned}
-$
+$$
 
 The two one-cocycle identities make the terms involving $z(h)c(j)$ cancel,
 using $\alpha(g)\beta(g)=\chi(g)$; the remaining terms involving $z(g)c(h)$
 and $z(g)c(j)$ cancel separately. If on a local decomposition group
 $c(g)=\alpha(g)m-m$ for a fixed $m\in B$, an explicit local primitive is
 
-$
+$$
  b(g)=-\lambda(z(g)\alpha(g)m).
-$
+$$
 
 Indeed $\chi(g)b(h)-b(gh)+b(g)=\lambda(z(g)\alpha(g)(\alpha(h)m-m))=w(g,h)$.
 This supplies the coboundaries away from the distinguished auxiliary prime in the
