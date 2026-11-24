@@ -151,7 +151,7 @@ where Lemma K enters, and the logarithmic window is what makes its cost affordab
 **A bound at a point.** Write $L_m/L_0$ for a layer of degree $\ell^m$,
 $j=\operatorname{NatLog}_\ell(R)+3$, where $\operatorname{NatLog}_\ell$ is the integer logarithm (zero at $R=0$),
 and $s(h,m)=s_{\ell,h}(L_m)$.
-The two estimates from the tower give an exceptional set $T_Z\subset\{1,\ldots,Z\}$,
+For every integer $Z\ge1$ the two estimates from the tower give an exceptional set $T_Z\subset\{1,\ldots,Z\}$,
 $|T_Z|\le R$, and
 
 $$
@@ -163,8 +163,8 @@ $$
 \end{aligned}
 $$
 
-Here $v(h,j)=\operatorname{length}_{\mathbf Z_\ell}H^2(G_{L_j,S},
-\mathbf Z_\ell(h+1))$, with $S$ the places over $\ell$, and $(m-j)_+=\max(m-j,0)$.
+Here $v(h,j)=\operatorname{length}_{\mathbf Z_\ell}H^2(G_{L_j,S},\mathbf Z_\ell(h+1))$,
+with $S$ the places over $\ell$, and $(m-j)_+=\max(m-j,0)$.
 The integer $c$ comes from the centres estimate: $L_0$ contains a primitive
 $\ell^c$-th root. These are the contracts FirstBound and SecondBound, not an
 additional claim that the determinant bound is finite at a centre.
@@ -172,7 +172,7 @@ additional claim that the determinant bound is finite at a centre.
 Suppose $L_0$ contains a primitive $\ell$-th root for odd $\ell$, or a primitive
 fourth root for $\ell=2$. Then the reference layer $L_j$ is totally imaginary and
 inherits the required roots. Let $n=[L_j:\mathbf Q]$ and $D=|\operatorname{disc}L_j|$.
-The archive's Lemma K, with constant $C_K>0$, gives finiteness of the group defining
+The archive's Lemma K, with constant $C_K\ge1$ (enlarged if necessary), gives finiteness of the group defining
 $v(h,j)$ and
 
 $$
@@ -326,7 +326,9 @@ we sum is arbitrary.
 **Character reduction and the cases.** Fix the primitive character $\chi$,
 of conductor $Q$ and order $o$. In the following argument $N$ is the host
 conductor, $t\ge2$ is the twist cutoff and $M=Nt$. The set $B_\chi$ is
-fixed before the moving field is chosen. It consists of $3$ and the odd
+fixed before the moving field is chosen. Assume throughout the host size
+conditions in the counting hypotheses: in particular, the auxiliary primes
+$q,d$ exceed $2t+1$ and the fixed quantities defining $B_\chi$. It consists of $3$ and the odd
 prime factors of $oQp_K h_*p_1$, where $p_K,h_*,p_1$ are the fixed auxiliary
 quantities in the definition of [Bchi](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/StmtFields.lean#L54-L67).
 Let $c$ be the action of complex conjugation on the locally trivial
@@ -420,12 +422,12 @@ bound.
 **Primes inside $B_\chi$.** Fix $\ell\in B_\chi$ and suppose that its
 reference-layer twist sum is at most $B\ge0$, including finiteness.
 Let $K'=\max(C_{II},C_V,C_{Vs})$. Since $\ell\le N$ by the host's size
-conditions, the three pointwise counts give $v_\ell(\psi,h)\log\ell
-\le M^{2K'}$ whenever their respective cases apply.
+conditions, the three pointwise counts give $v_\ell(\psi,h)\log\ell\le M^{2K'}$
+whenever their respective cases apply.
 
 The remaining characters are collected in one set
-$\mathcal O=\bigcup_{1\le h<t}\{\psi\in X_h:\operatorname{ord}
-\chi_\ell'(\psi)\text{ is odd}\}$. The arithmetic of the host shows that
+$\mathcal O=\bigcup_{1\le h<t}\{\psi\in X_h:\operatorname{ord}\chi_\ell'(\psi)\text{ is odd}\}$.
+The arithmetic of the host shows that
 these characters have conductor dividing $Q$, so $|\mathcal O|\le Q$,
 not merely $Nt$. Case IV gives a bound on the whole twist sum for each
 such character:
