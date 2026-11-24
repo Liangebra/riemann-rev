@@ -398,9 +398,19 @@ $$
  \le\varphi(m)|D|(2h\log q_w+1).
 $$
 
-The rank-three counting theorem and the rank-two descent count supply
-a polynomial bound for this expression. In the actual calling path
-the interface NumberU3U_s packages this conclusion as
+The actual construction in KeepNumU uses the disjoint union of the
+rank-three and rank-two trace data. Write $\Delta=|\operatorname{disc}K|$
+and $Y=N(h+1)$. The first set has cardinality at most $c_1Y^{A_1}$;
+the second is counted at level $N\Delta$ and has cardinality at most
+$c_2(\Delta Y)^{A_2}$. Thus $|D|\le(c_1+c_2\Delta^{A_2})Y^{A_1+A_2}$.
+Since $\log q_w\le2\log p$ and $\log p\ge1$,
+
+$$
+ 2h\log q_w+1\le 5Y\log p .
+$$
+
+Taking $c_K=5(c_1+c_2\Delta^{A_2})$ and $A_K=A_1+A_2+1$,
+the interface NumberU3U_s packages the resulting bound as
 
 $$
  \log|I_{H',p}|
@@ -410,7 +420,12 @@ $$
 with $c_K,A_K$ fixed for $K$. The trace calculation above explains
 the integer construction underlying that interface; the existence,
 classification and cardinality bounds for the admissible eigensystems
-are its automorphic inputs.
+are its automorphic inputs. In the rank-three count, twisting by the
+inverse cyclotomic character shifts the weights from $(h,0,-h)$ to
+$(h-1,-1,-h-1)$; the traces are then transported back to inverse
+Frobenius. The rank-two trace count uses the descent at level $N\Delta$.
+The actual input families are narrowed by the admissibility and level
+conditions of KeepNumU, not all representations of dimensions two and three.
 
 **From the integral product to a local length.** Fix an odd $\ell\ne p$
 and a coefficient ring as in the character reduction. A nonempty
@@ -533,6 +548,7 @@ estimate for every possible coefficient prime.
 
 | Step | Archive reference |
 | --- | --- |
+| Construction of the counting data and constants | [numberU3U_of_adm2A_imp_adm2B, numberU3U_of_prints](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/KeepNumU.lean#L25-L80), [rank-two and rank-three trace counts](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/FrobeniusTraceCountBoundOfCmEigensystemCount.lean#L348-L466) |
 | Actual counting and one-character interfaces | [NumberU3U_s, OneCharU_s](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/NumberU3US.lean#L27-L59) |
 | Cleared trace difference and the integer product | [eisenstein_trace_difference_log_bound](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/BuildingsResidueChars/EisensteinTraceDifferenceLogBound.lean#L4-L61), [frobenius_trace_norm_nonzero_log_bound](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/BuildingsResidueChars/FrobeniusTraceNormNonzeroLogBound.lean#L7-L58) |
 | Integral Galois-invariant product and the injection of label sets | [exists_int_eq_prod_of_galois_permuted_integral](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/BuildingsResidueChars/ExistsIntEqProdOfGaloisPermutedIntegral.lean#L6-L22), [adicNorm_prod_le_prod_of_injective_classes](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/BuildingsResidueChars/AdicNormProdLeProdOfInjectiveClasses.lean#L5-L20) |
