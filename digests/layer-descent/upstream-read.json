@@ -1,0 +1,157 @@
+{
+ "what": "changes of cited declarations on the upstream default branch that were read, with the verdict; an entry counts while the upstream file has the recorded hash",
+ "read": [
+  {
+   "declaration": "Kum.dinfNil",
+   "change": "proof changed",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": "e80e969cb8fd2f48a883208ffe535e9276ebafd22b6acb6733298811899e5c17",
+   "verdict": "Four tactic lines inside the proof adapted to a newer library (map_add (f := _), AddMonoidAlgebra.coeff). Statement unchanged.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "Kum.funRepMem",
+   "change": "statement changed",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": "e67f806d7a305c7d333a966d618f03c26c79ddfcfca52140952a92d0bd6d560b",
+   "verdict": "funRep is applied with named arguments (R := R) (M := M), and the statement is set on more lines. The same three statements.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "Kum.resInfOnto",
+   "change": "file absent",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": null,
+   "verdict": "Its file is gone in the reorganisation of upstream modules merged on 23–24 November (#324, #539); the declaration is now in ExistsDescends.lean (NumberFieldTowers), and its whole text there is the pinned text, white space aside.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "LData",
+   "change": "statement changed",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": "c753a87b979d7b6d62043a766d7c02d195571ab513396a51d83f2dbb620d99c1",
+   "verdict": "The field hchi writes the cyclotomic character with named arguments, cycZ (F := F) (Ω := Ω) l, which is the same term. The same structure.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "Tower.IsDesc",
+   "change": "file absent",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": null,
+   "verdict": "Its file is gone in the reorganisation of upstream modules merged on 23–24 November (#324, #539); the declaration is now in ExistsDescends.lean (NumberFieldTowers), and its whole text there is the pinned text, white space aside.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "Tower.dRep",
+   "change": "statement changed",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": "e2aec68525489b988b2320aaa1dca3efbc8fe5503a8fd8ea3b2d2cbaf7cd2e42",
+   "verdict": "The definition no longer cites Kum.funRepMem: the proof that the conjugate of a character satisfies the four conditions is written out inside it, and funRep is applied with named arguments (R := ℤ_[l]) (M := QZ l). The same representation.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "Tower.desc",
+   "change": "file absent",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": null,
+   "verdict": "Its file is gone in the reorganisation of upstream modules merged on 23–24 November (#324, #539); the declaration is now in ExistsDescends.lean (NumberFieldTowers), and its whole text there is the pinned text, white space aside.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "Tower.dinfTors",
+   "change": "file absent",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": null,
+   "verdict": "Its file is gone in the reorganisation of upstream modules merged on 23–24 November (#324, #539); the declaration is now in ExistsDescends.lean (NumberFieldTowers), and its whole text there is the pinned text, white space aside.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "Tower.dinfTransport",
+   "change": "file absent",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": null,
+   "verdict": "Its file is gone in the reorganisation of upstream modules merged on 23–24 November (#324, #539); the declaration is now in ExistsDescends.lean (NumberFieldTowers), and its whole text there is the pinned text, white space aside.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "Tower.existsGen",
+   "change": "file absent",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": null,
+   "verdict": "Its file is gone in the reorganisation of upstream modules merged on 23–24 November (#324, #539); the declaration is now in ExistsDescends.lean (NumberFieldTowers), and its whole text there is the pinned text, white space aside.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "Tower.genGal",
+   "change": "file absent",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": null,
+   "verdict": "Its file is gone in the reorganisation of upstream modules merged on 23–24 November (#324, #539); the declaration is now in ExistsDescends.lean (NumberFieldTowers), and its whole text there is the pinned text, white space aside.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "Tower.shaDGen",
+   "change": "file absent",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": null,
+   "verdict": "Its file is gone in the reorganisation of upstream modules merged on 23–24 November (#324, #539); the declaration is now in ExistsDescends.lean (NumberFieldTowers), and its whole text there is the pinned text, white space aside.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "dt_dec",
+   "change": "file absent",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": null,
+   "verdict": "Its file is gone in the reorganisation of upstream modules merged on 23–24 November (#324, #539); the declaration is now in ExistsDescends.lean (NumberFieldTowers), and its whole text there is the pinned text, white space aside.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "dt_ine",
+   "change": "file absent",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": null,
+   "verdict": "Its file is gone in the reorganisation of upstream modules merged on 23–24 November (#324, #539); the declaration is now in ExistsDescends.lean (NumberFieldTowers), and its whole text there is the pinned text, white space aside.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "dt_mem",
+   "change": "file absent",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": null,
+   "verdict": "Its file is gone in the reorganisation of upstream modules merged on 23–24 November (#324, #539); the declaration is now in ExistsDescends.lean (NumberFieldTowers), and its whole text there is the pinned text, white space aside.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "dt_val_lt_one",
+   "change": "file absent",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": null,
+   "verdict": "Its file is gone in the reorganisation of upstream modules merged on 23–24 November (#324, #539); the declaration is now in ExistsDescends.lean (NumberFieldTowers), and its whole text there is the pinned text, white space aside.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "exists_qz_ne_zero_annihilators_of_ne_zero",
+   "change": "file absent",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": null,
+   "verdict": "Its file is gone in the reorganisation of upstream modules merged on 23–24 November (#324, #539); the declaration is now in ExistsDescends.lean (NumberFieldTowers), and its whole text there is the pinned text, white space aside.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "galTransport",
+   "change": "proof changed",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": "799bc94011dc2df6f9b15fd5641ffd91faea7e3c6f2374549900d1aaf80a72e2",
+   "verdict": "One simp lemma under a new name (AlgEquiv.coe_toRingEquiv) and one blank line. Statement unchanged.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "qzG",
+   "change": "statement changed",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": "7889ddc3d95caf2bc2af431b2e5ef5d7920b34ef009334837f24a7f4fff0a47b",
+   "verdict": "The same definition, set on two lines, with named arguments of cycZ.",
+   "read": "2026-11-24"
+  }
+ ]
+}

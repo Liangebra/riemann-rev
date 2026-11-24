@@ -3,16 +3,20 @@
  "digest": "local-nilpotence",
  "upstream": "leanprover-community/riemann-hypothesis",
  "base": "40e56bab026552e089d7afcfeff08d2defb9c005",
- "checked": "2026-11-22 20:05 UTC",
+ "checked": "2026-11-24 00:45 UTC",
  "cited": {
   "directories": 9,
   "files": 13,
   "declarations": 27
  },
  "main": {
-  "commit": "1b894f7511841e6607bc0398cf2657526bbb29d9",
-  "committed": "2026-11-22T18:46:53Z",
-  "file_absent": [],
+  "commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+  "committed": "2026-11-24T00:14:19Z",
+  "file_absent": [
+   "PropA.dualUnip",
+   "Tower.shaDGen",
+   "PropA.xUnip"
+  ],
   "statement_changed": [
    "Kum.funRepMem"
   ],
@@ -21,19 +25,22 @@
    "exists_prime_pow_smul_eq_zero_qz"
   ],
   "file_sha256": {
-   "Kum.funRepMem": "f2416dd7f8dec772942959f5aeaf24d364b1c8769dd94d4185777df6bbc17a8f",
-   "Kum.dinfNil": "3e7214399a259c97d3352c7547e0712b22163e30609eb73f2dc3b6e8fd3e66fb",
-   "exists_prime_pow_smul_eq_zero_qz": "3e7214399a259c97d3352c7547e0712b22163e30609eb73f2dc3b6e8fd3e66fb"
+   "Kum.funRepMem": "e67f806d7a305c7d333a966d618f03c26c79ddfcfca52140952a92d0bd6d560b",
+   "Kum.dinfNil": "e80e969cb8fd2f48a883208ffe535e9276ebafd22b6acb6733298811899e5c17",
+   "exists_prime_pow_smul_eq_zero_qz": "e80e969cb8fd2f48a883208ffe535e9276ebafd22b6acb6733298811899e5c17",
+   "PropA.dualUnip": null,
+   "Tower.shaDGen": null,
+   "PropA.xUnip": null
   }
  },
  "open_pull_requests": {
-  "checked": 40,
+  "checked": 266,
   "touching": [
    {
     "number": 4,
     "title": "chore: minimize imports",
     "head": "50100c586985687aa29344fc0e792c008036ff8b",
-    "updated": "2026-11-22T00:11:12Z",
+    "updated": "2026-11-24T00:22:18Z",
     "file_absent": [],
     "statement_changed": [],
     "proof_changed": [
@@ -44,7 +51,7 @@
     "number": 44,
     "title": "Simplify the shared five-theorem proof and reduce its Lean source by 1.54 million lines",
     "head": "c9b3e57f0fe987012d32c2523635387bfe56d5a5",
-    "updated": "2026-11-21T22:00:24Z",
+    "updated": "2026-11-23T04:13:20Z",
     "file_absent": [
      "PropA.dualUnip",
      "Tower.shaDGen",
@@ -54,105 +61,10 @@
     "proof_changed": []
    },
    {
-    "number": 62,
-    "title": "Shorten machine-dumped terms and reuse repeated proofs in 76 modules",
-    "head": "31a38861da6da8f71b16d18e935ac4f6794141d9",
-    "updated": "2026-11-22T18:23:53Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 67,
-    "title": "Remove proof syntax that was flagged unused by Lean's linters",
-    "head": "977f1a2fc24f90eef38f4e66e0c225d37735d487",
-    "updated": "2026-11-22T08:50:36Z",
-    "file_absent": [],
-    "statement_changed": [],
-    "proof_changed": [
-     "Kum.dinfNil"
-    ]
-   },
-   {
-    "number": 78,
-    "title": "Add `docs/references.bib`, docstring citations and a cross-reference tag for five statements",
-    "head": "8fc245e7ae9b6d8b4beea3c46f6fd1cd4abfcb3f",
-    "updated": "2026-11-22T18:50:18Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 83,
-    "title": "Zero-free region: replace the 34-file assembly with a self-contained 2,368-token proof (-89.1% normalized tokens)",
-    "head": "2d687558d1064d8ebecfd41cf2e44bda5bdef16d",
-    "updated": "2026-11-22T20:02:19Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
     "number": 86,
     "title": "Report vm.max_map_count at job start, fix the AWS template, clarify doctor output",
     "head": "9422ada52f367cf8b1da05ce8df9ca0b7ff727a0",
-    "updated": "2026-11-22T17:18:39Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 87,
-    "title": "Shorten checked proofs across 816 Lean modules",
-    "head": "dbbf5d8bdf07025202ee4954437d41481ae69847",
-    "updated": "2026-11-22T17:29:34Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 88,
-    "title": "Add a second Comparator setup, with formal-conjectures' RH and GRH as the challenge",
-    "head": "dc1a001977db126f225fb04690ac26194beceaa4",
-    "updated": "2026-11-22T19:12:23Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 95,
-    "title": "Simplify proofs in GammaFactorNonvanishing and ZeroFreeRegion (−824 lines)",
-    "head": "b5c830f1cd3f529d94602391dc4b5c93829fdf16",
-    "updated": "2026-11-22T17:58:12Z",
+    "updated": "2026-11-24T00:20:52Z",
     "file_absent": [],
     "statement_changed": [
      "Kum.funRepMem"
@@ -164,9 +76,9 @@
    },
    {
     "number": 97,
-    "title": "Run the Lean auto-formatter over `src/` (stacked on #66)",
-    "head": "c9ecafb85243643c0f4d324fabdd3ad12e0185f2",
-    "updated": "2026-11-22T19:00:06Z",
+    "title": "Run the Lean auto-formatter over `src/`",
+    "head": "df4ad61caf58bb9061524ca1ed96e6c3b33dd222",
+    "updated": "2026-11-24T00:11:37Z",
     "file_absent": [],
     "statement_changed": [
      "Kum.XDual",
@@ -191,52 +103,10 @@
     ]
    },
    {
-    "number": 109,
-    "title": "Restore #68 shared GL finiteness proof on Lean 4.36 (−180 files, −9,730 lines)",
-    "head": "0d0a55648da91f6d3f19abde039f290a5687d7b0",
-    "updated": "2026-11-22T17:00:11Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 110,
-    "title": "Simplify explicit type dumps in cpR and std_cpR (NonzeroPlacesOverPrimesOfLifts.lean)",
-    "head": "5cdd8a23b713f8d2c0f60b4b414372b08479def0",
-    "updated": "2026-11-22T15:43:11Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
     "number": 113,
     "title": "Add a manually triggered workflow that runs the Lean auto-formatter over `src/`",
     "head": "7455952b33cd81f8c7ab71b97688ad565ea1ce2f",
-    "updated": "2026-11-22T15:52:42Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 114,
-    "title": "docs: add comments to HomAppHomOfRestrictImage.lean‎",
-    "head": "0fb9cbcfa39be82b85e5b7e545522e77985a74c4",
-    "updated": "2026-11-22T16:23:49Z",
+    "updated": "2026-11-23T04:13:06Z",
     "file_absent": [],
     "statement_changed": [
      "Kum.funRepMem"
@@ -250,35 +120,7 @@
     "number": 116,
     "title": "Remove duplicate declarations from ExceptionalGroupG2 (−2,638 lines)",
     "head": "cee3c8c5b86e35f826bc864771ec48fc96cd8030",
-    "updated": "2026-11-22T16:55:08Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 117,
-    "title": "Simplify explicit typeclass dumps in 4 more CapelliIdentities files (Lean 4.36)",
-    "head": "0cbc37ea9bb26dfe63d6c282c064d1d3f988848f",
-    "updated": "2026-11-22T16:44:53Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 119,
-    "title": "Reuse 3 existing Main-cone proofs and prune 80 duplicate modules (−3,777 lines)",
-    "head": "c5bfbbf9e1d83ce7b43b7890dcb9f17858cc68b3",
-    "updated": "2026-11-22T17:22:36Z",
+    "updated": "2026-11-23T23:42:43Z",
     "file_absent": [],
     "statement_changed": [
      "Kum.funRepMem"
@@ -291,8 +133,8 @@
    {
     "number": 120,
     "title": "Collapse 28,169 thin wrappers and consolidate 93,601 modules into 20,258 bundles (−101,512 files, −67.9%)",
-    "head": "f94106583626ad6b48ac6e239e0b2e5ffc879555",
-    "updated": "2026-11-22T19:53:15Z",
+    "head": "65313acf397430bdf4837834dd2d3e532b88274e",
+    "updated": "2026-11-24T00:20:37Z",
     "file_absent": [
      "Kum.dinfNil",
      "Kum.funRepMem",
@@ -302,14 +144,16 @@
      "exists_prime_pow_smul_eq_zero_qz",
      "Tower.shaDGen"
     ],
-    "statement_changed": [],
+    "statement_changed": [
+     "G"
+    ],
     "proof_changed": []
    },
    {
     "number": 125,
     "title": "Split Lemmata package into dependent and independent parts",
-    "head": "8098c5a94e26afbabf9fba4911cc9a14ff0d4ed9",
-    "updated": "2026-11-22T18:21:13Z",
+    "head": "3084c796455b69b37f6b937f45ba2859c8acaae1",
+    "updated": "2026-11-24T00:11:39Z",
     "file_absent": [],
     "statement_changed": [
      "Kum.funRepMem"
@@ -323,7 +167,7 @@
     "number": 126,
     "title": "Remove no-op options (stacked on #120)",
     "head": "9fb32e14bf4d75cf2d640c33009b10303add6a11",
-    "updated": "2026-11-22T19:09:40Z",
+    "updated": "2026-11-23T04:13:00Z",
     "file_absent": [
      "Kum.dinfNil",
      "Kum.funRepMem",
@@ -337,108 +181,10 @@
     "proof_changed": []
    },
    {
-    "number": 127,
-    "title": "Reuse 5 existing Main-cone proofs and prune 17 duplicate modules (−1,179 lines)",
-    "head": "030495f7d98b47d0c423a0b54364982d23cb2231",
-    "updated": "2026-11-22T18:36:51Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 128,
-    "title": "Prune 14 unused imports in 3 Development modules",
-    "head": "71b6f7f306b2fb6282fabb78f93919e238d01cc3",
-    "updated": "2026-11-22T18:40:55Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 130,
-    "title": "Prune 2 unused imports in 1 ReciprocityTheory modules",
-    "head": "c632fc36ebe35881464b56c2878c48f343da9726",
-    "updated": "2026-11-22T18:47:37Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
     "number": 131,
-    "title": "  Simplify FrameLinearAlgebraFirst via coordinate-free frame variance and traceless projection bound",
-    "head": "08276fe2d11ba9f30592146051a01230cc268363",
-    "updated": "2026-11-22T19:09:40Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 132,
-    "title": "Reuse 4 existing Main-cone published proofs and prune 345 duplicate modules (−24,046 lines)",
-    "head": "6572c1958303aa137493fb385a19c37c1acdf0c6",
-    "updated": "2026-11-22T19:32:06Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 134,
-    "title": "Speed up the build: remove heartbeat overrides, minimize imports, speed up slow proofs",
-    "head": "93bbcfdf2777237852623d3c82d236b036da164c",
-    "updated": "2026-11-22T20:00:16Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 135,
-    "title": "refactor: reuse Complex.sq_nonpos_iff for conjugation lemma",
-    "head": "946fff183058348e4871eef2bfbae12a9c164462",
-    "updated": "2026-11-22T20:00:09Z",
-    "file_absent": [],
-    "statement_changed": [
-     "Kum.funRepMem"
-    ],
-    "proof_changed": [
-     "Kum.dinfNil",
-     "exists_prime_pow_smul_eq_zero_qz"
-    ]
-   },
-   {
-    "number": 136,
-    "title": "Reuse nilpotence and linearity in matrix geometric-sum proofs",
-    "head": "58571a81b39a4be4072a8bbd4c1dea47c3f3e40e",
-    "updated": "2026-11-22T19:56:23Z",
+    "title": " refactor: simplify FrameLinearAlgebraFirst via coordinate-free centered     frame variance",
+    "head": "aebbbf836024d32c9a6016ea704ec86eb37bfb8d",
+    "updated": "2026-11-24T00:22:20Z",
     "file_absent": [],
     "statement_changed": [
      "Kum.funRepMem"
@@ -451,8 +197,8 @@
    {
     "number": 139,
     "title": "Share discrete-series proofs between classification and formal degree",
-    "head": "9e1f119a6da4727bdde6ecc00512d2a7c64ecb2d",
-    "updated": "2026-11-22T20:02:11Z",
+    "head": "b3b25fc3066f8ac3e615cc4842dc0413a3c823ad",
+    "updated": "2026-11-24T00:11:42Z",
     "file_absent": [],
     "statement_changed": [
      "Kum.funRepMem"
@@ -463,11 +209,3673 @@
     ]
    },
    {
-    "number": 140,
-    "title": "Reuse 5 existing Main-cone proofs and prune 88 duplicate modules (−6,385 lines)",
-    "head": "0456c886924b7aa3a785cb37294e92af20fa9164",
-    "updated": "2026-11-22T20:02:17Z",
+    "number": 141,
+    "title": "Document Hadamard’s determinant inequality",
+    "head": "024ea02c602e52ac56d5e52c3fbaa804aacfdd25",
+    "updated": "2026-11-23T18:55:02Z",
     "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 162,
+    "title": "Give the chart equivalence lemmas one import-order-independent interface",
+    "head": "53bf0a867403af927ac20fa9da4acd53c2e7ab6d",
+    "updated": "2026-11-24T00:11:43Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 165,
+    "title": "Give 27 duplicated declarations a single home",
+    "head": "4ff43f6a3487cd425fefb72829b7afb3256e9a7a",
+    "updated": "2026-11-24T00:11:45Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 167,
+    "title": "Give 50 more duplicated declarations a single home",
+    "head": "6efa7329e965e043bbf9ddbb489aa2bd45491ee3",
+    "updated": "2026-11-24T00:11:46Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 168,
+    "title": "Use theorem aliases for 25,907 generated abelian-variety statements",
+    "head": "495c07387b87d9fa87841dfcacbc42f6e6fff6d6",
+    "updated": "2026-11-24T00:11:47Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 170,
+    "title": "refactor: simplify proof scaffolding in eight modules",
+    "head": "e24e486abab02413b974398c44597bbad1b37b16",
+    "updated": "2026-11-24T00:11:49Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 173,
+    "title": "Remove declarations unused by the five theorems (S1, Lean 4.36)",
+    "head": "be5843b7e5dbebae7be5eaf4aaf2b0e7db7e95c3",
+    "updated": "2026-11-23T04:28:13Z",
+    "file_absent": [
+     "Kum.funRepMem"
+    ],
+    "statement_changed": [],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 175,
+    "title": "refactor: shorten namespace qualifiers in intersection assembly",
+    "head": "3dada8d5168856846f50f576f9d754e648e1064c",
+    "updated": "2026-11-24T00:23:41Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 188,
+    "title": "Replace 29 local duplicates of Mathlib theorems with the Mathlib versions (−145 lines)",
+    "head": "5d6b489b0613da161c107c0607f276eb63c6ddd0",
+    "updated": "2026-11-24T00:11:52Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 194,
+    "title": "fix: resolve ~10,000 linter and deprecation warnings",
+    "head": "c6d5ea2aa076a8048df884bb4ba2947efaa8f66a",
+    "updated": "2026-11-24T00:11:53Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 200,
+    "title": "Remove duplicate private theorems from DenseThresholdCases (−4,504 lines)",
+    "head": "974e4128708e834a1548b214bd3425195c9517c9",
+    "updated": "2026-11-24T00:11:54Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 206,
+    "title": "fix: use portable ASCII module paths",
+    "head": "e26fc40d6859fc75f3e002a3c36d9b8f897ba7d2",
+    "updated": "2026-11-24T00:11:56Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 213,
+    "title": "Reuse quantitative bounds in the far-amplitude proof",
+    "head": "3b060fb8372bb04575f5be19122476f9984ee854",
+    "updated": "2026-11-24T00:23:43Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 214,
+    "title": "Document the Vandermonde determinant column order",
+    "head": "2fbfa2fc275706b64b9b5f63348ac94de67cc900",
+    "updated": "2026-11-23T18:55:05Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 235,
+    "title": "Keep the historic mirror check independent of live Lean pins",
+    "head": "e751784d047c83ad4f087d59623bfe4dade4fc56",
+    "updated": "2026-11-23T04:11:44Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 237,
+    "title": "Delete 112 FlagMeasures modules that nothing imports (−12,564 lines)",
+    "head": "99f88f3ec5b8e27fb51948313be7f601a71294bb",
+    "updated": "2026-11-24T00:11:58Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 242,
+    "title": "Reuse the segment-representation proof and remove 35 unused modules",
+    "head": "77ed681a7f4db1731d3ca3e7201d038b1b861f81",
+    "updated": "2026-11-23T23:42:44Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 243,
+    "title": "Remove proof syntax that was flagged unused by Lean's linters (Lean 4.37.0-rc1)",
+    "head": "05ea0606190da1aa2298bdf98e74925b5b944983",
+    "updated": "2026-11-24T00:12:00Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 244,
+    "title": "Use the CompanionTheory copies of PlaceSeparation and WhittakerModels (−996 lines)",
+    "head": "58ab0b89eb4bb3e3c068deb63eac5df17c974114",
+    "updated": "2026-11-24T00:12:01Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 246,
+    "title": "Speed up the entC_tr proof in InstBack (−60% module build time)",
+    "head": "0ea0513af2a1ac3b3fc6125c9512f18e53918e37",
+    "updated": "2026-11-24T00:22:22Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 249,
+    "title": "Use the CompanionTheory copies of seven Galois-cohomology modules (−850 lines)",
+    "head": "cc8facb5fca5f5abcde1d8740eb549e14e01cb62",
+    "updated": "2026-11-24T00:12:04Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 251,
+    "title": "Use the CompanionTheory copies of 23 Langlands-exhaustion and Grothendieck-ring modules (−4,114 lines)",
+    "head": "b4cb116a3244428d0bf017302989712f57266728",
+    "updated": "2026-11-24T00:12:06Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 252,
+    "title": "Use Mathlib lemmas instead of 11 local restatements",
+    "head": "1128261506746df9ad1bee12c4ff3c6a6d8adcdc",
+    "updated": "2026-11-23T04:11:30Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 255,
+    "title": "Declare the I195 mixed-coordinate abbreviations once instead of 97 times (−1,597 lines)",
+    "head": "2b136e87937047f2ec2cb4c3ddd324666bcfb506",
+    "updated": "2026-11-23T04:15:03Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 256,
+    "title": "Use the StabilizerVolume copies of seven StabilizerOrbitVolume modules (−539 lines)",
+    "head": "abdcba7deff6ca159429af0200400ff0cad554ce",
+    "updated": "2026-11-23T07:27:04Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 267,
+    "title": "perf: stop scanning Lean modules after import headers",
+    "head": "08c13c5867b18ee552903199c6b63008c0d94d94",
+    "updated": "2026-11-23T21:34:25Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 272,
+    "title": "Cite Milne for PoitouTateDuality and Ferrero–Washington for FerreroWashington",
+    "head": "bb017c3ee4ccbdc9d978c1b18192706c1a95a9c3",
+    "updated": "2026-11-23T18:54:46Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 273,
+    "title": "Replace 8 local proofs with Mathlib lemmas (Lean v4.37.0-rc1, quick-check ready)",
+    "head": "6a71711f954c613afb0cd68669791957e7012023",
+    "updated": "2026-11-24T00:12:08Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 274,
+    "title": "Replace 8 local proofs with Mathlib lemmas (Lean v4.37.0-rc1, quick-check ready)",
+    "head": "7271b217fa430c049f9cd72c80cbe245d1331544",
+    "updated": "2026-11-24T00:12:10Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 275,
+    "title": "Replace 6 local proofs with Mathlib lemmas (Lean v4.37.0-rc1, quick-check ready)",
+    "head": "c15774de59db35295d95eb52541cde1d5bdef508",
+    "updated": "2026-11-24T00:12:11Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 281,
+    "title": "Share the coefficient Fock pairing and row adjoint",
+    "head": "16b6e3d34c147046b839f6544bfe4255d3111f17",
+    "updated": "2026-11-24T00:22:24Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 282,
+    "title": "perf: validate CI cache manifests in one pass",
+    "head": "9b8dd0d8874b9d393f7d51f2f75cb9989fecbcd0",
+    "updated": "2026-11-24T00:20:39Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 283,
+    "title": "Speed up the chainPeriodRelation_read_for_character_avoiding_primes proof in PeriodRelationsTrueColumnsAtTuple (−59% module build time)",
+    "head": "4907888e18244420f2e5c6f7659e0c57b505886a",
+    "updated": "2026-11-24T00:12:14Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 285,
+    "title": "Reuse two existing published-theorem proofs and prune 39 dead modules (−4,649 lines)",
+    "head": "e71cba5a8d0deed3941d492a774573541e244c75",
+    "updated": "2026-11-24T00:12:16Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 293,
+    "title": "Reuse 2 existing Main-cone proofs and prune 3 duplicate modules (−285 lines)",
+    "head": "149c55451c9293d23c2c05c3960a0d6d8514b724",
+    "updated": "2026-11-24T00:12:18Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 295,
+    "title": "Keep one copy of each duplicate theorem and definition (for Lean 4.37.0-rc1)",
+    "head": "1f6e1218c8e8e9a02667862d67a8696a57007ea7",
+    "updated": "2026-11-24T00:22:26Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 299,
+    "title": "refactor: share the DVR quotient proof and remove two helper modules",
+    "head": "9f03203998dd9f93e5e6a46bd7d08216975c7046",
+    "updated": "2026-11-24T00:12:21Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 312,
+    "title": "Add AGENTS.md with existing README guidance",
+    "head": "6c86ec99fb3e77d096f04e2dd96b42f5db9ae619",
+    "updated": "2026-11-24T00:22:28Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 314,
+    "title": "Carry the #10 and #33 proof cleanups onto Lean 4.37 main",
+    "head": "5daafc0226c5a3e1da9c959b18804e450a1c8ece",
+    "updated": "2026-11-23T20:59:13Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 329,
+    "title": "Simplify explicit typeclass dumps in 8 more CapelliIdentities files",
+    "head": "5c49cae7655aafa5c0ccc60722972a23e9a81dc2",
+    "updated": "2026-11-24T00:12:25Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 330,
+    "title": "chore(Lemmata): simplify Cancellation and MultivariateIntegrals",
+    "head": "600e46b97292d7905fbd25abf6115706046fd3f9",
+    "updated": "2026-11-24T00:12:26Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 339,
+    "title": "chore(Lemmata): simplify GeneralBFactSecondBisForm and GeneralBFactRightBisForm",
+    "head": "b43008489211121206914183e8337831d2cdbde2",
+    "updated": "2026-11-24T00:12:28Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 341,
+    "title": "Avoid parsing the cache manifest twice for quick checks",
+    "head": "e24b1effc68515f52c12e780472b71d22f7d86da",
+    "updated": "2026-11-24T00:20:41Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 345,
+    "title": "chore(Lemmata): simplify GeneralBFactSecondExtra and NearbyExistence",
+    "head": "6c263a7b89c398cd3f9185d4bbd63af528469746",
+    "updated": "2026-11-24T00:12:29Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 347,
+    "title": "chore(Lemmata): simplify GeneralBFactSecondVersion and FreeLat",
+    "head": "c820067c7c3a0e3cb20501b33651caed310260c9",
+    "updated": "2026-11-24T00:12:30Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 348,
+    "title": "refactor: replace mutual reflexive PrincipalizationCertificate with Bool-indexed inductive (unblocks con-leche/con-ron)",
+    "head": "46de58a7baa2075a7dbd0ab69e380c9bb0d701bd",
+    "updated": "2026-11-24T00:23:45Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 349,
+    "title": "refactor(PieriRules): deduplicate 33 ThetaBesselIsometries proof files via JetHarmonics",
+    "head": "efe5c6bd53736fcc3512e3bc19710ab90bc6c2f8",
+    "updated": "2026-11-24T00:12:33Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 350,
+    "title": "refactor(LatticeSlopes): simplify Gram determinant, rank, quotient, and slope proofs",
+    "head": "7c349524e337e54bb05052db3bd3651c60e8c51d",
+    "updated": "2026-11-24T00:12:34Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 351,
+    "title": "Add script which get cache for Windows",
+    "head": "bb792edbe4caa96fd7f3a7b1d8cbdf790e44d616",
+    "updated": "2026-11-23T21:34:39Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 352,
+    "title": "Use Mathlib’s multichoose lemmas to count antidiagonal tuples",
+    "head": "fbdeda10f93874fd0c1b95683edcbb0c94750148",
+    "updated": "2026-11-24T00:12:36Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 355,
+    "title": "Stream SHA-256 hashing in the native runtime producer",
+    "head": "014607a87eca2a13017411d584bf6b136347d246",
+    "updated": "2026-11-24T00:20:43Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 356,
+    "title": "Match proof artifact suffixes with a single basename lookup",
+    "head": "cd30fe0f72270ef4566b63b4824deaff97efed3e",
+    "updated": "2026-11-24T00:20:44Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 357,
+    "title": "Reuse module sets when binding worker input manifests",
+    "head": "86e0a8e1f1ebd5848b1dc878326dc436bf71d9a4",
+    "updated": "2026-11-24T00:20:47Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 358,
+    "title": "Sharpen the ramified theta-kernel vanishing bound",
+    "head": "385783ef119a4c1a0056bffcdd178c23a4cbe929",
+    "updated": "2026-11-24T00:12:37Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 359,
+    "title": "Use minimal stock setup in persistent Lean proof workers",
+    "head": "a976a13e6069ef4b8713c31ebf27591b83b7611f",
+    "updated": "2026-11-23T21:34:37Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 360,
+    "title": "Remove the unused `H.linearMapV436` copies from `SerrePAux` and `FormalTower`",
+    "head": "f7ab4877195bb0f5b9fa0521af809ef5a7e50f38",
+    "updated": "2026-11-24T00:12:39Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 361,
+    "title": "Drop unused private Mathlib imports from the root theorems.",
+    "head": "37dda2fb97fb447ebc391a827178fc0d67f27431",
+    "updated": "2026-11-24T00:12:40Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 362,
+    "title": "Speed up the one_left_at proof in IsEigFrameOfFrPt (−23% module build time)",
+    "head": "53727e9eae7fc93213e4a326507b47c34a96133f",
+    "updated": "2026-11-24T00:12:42Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 363,
+    "title": "Speed up the rhoK split in rho_uniq_pf",
+    "head": "5174f6f7a3c237dc186cadcb49fca21381f399f9",
+    "updated": "2026-11-24T00:12:43Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 364,
+    "title": "docs: explain Hazewinkel specialization and height-two integrality",
+    "head": "9e31ec29d0d54bb1dbc15b37ffb1e0a891254be5",
+    "updated": "2026-11-24T00:22:32Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 366,
+    "title": "Use Mathlib polynomial evaluation lemmas at their callers",
+    "head": "5de976dfd04ebedcac15ba640c700116c536e9ca",
+    "updated": "2026-11-24T00:12:46Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 367,
+    "title": "NOTES: current con-leche and con-ron accept the reflexive mutual block",
+    "head": "92de8fdc45ef2050306b4d34fa96e04f837c185c",
+    "updated": "2026-11-24T00:12:48Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 368,
+    "title": "refactor: share the Frobenius unit-ball estimate",
+    "head": "fd097c3176fcb235b4c29b2a6e0a319e082ac309",
+    "updated": "2026-11-24T00:12:49Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 369,
+    "title": "Explain the endpoint term in `high_bucket_bound`",
+    "head": "9ba1d6e99d0ff1567645b858e1e24eda930b2b5c",
+    "updated": "2026-11-24T00:12:50Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 371,
+    "title": "Reuse the exponential growth bound for p-adic power series",
+    "head": "120c51a16100ad71a5cb2d6a90ed689881812f0a",
+    "updated": "2026-11-24T00:12:52Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 372,
+    "title": "perf: prune 2,333 Lean modules unused by the main proofs (259,543 lines)",
+    "head": "367ebf3ac337af6846a8c0af2e8c3b041d800985",
+    "updated": "2026-11-24T00:12:53Z",
+    "file_absent": [
+     "Kum.funRepMem"
+    ],
+    "statement_changed": [],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 373,
+    "title": "Speed up the rhoK split in rho_add_pf",
+    "head": "fc98a61be705e8af3486986c3bac2ec29255d9d4",
+    "updated": "2026-11-24T00:12:54Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 374,
+    "title": "Speed up the rhoK split in rho_smul_pf",
+    "head": "4324bcda2e98d91060758e74ae008f7d3438dde4",
+    "updated": "2026-11-24T00:12:56Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 375,
+    "title": "Speed up the rhoK split in rho_lin'_pf",
+    "head": "94cfa6902bc1baefe5177b2f0291a6bea548f268",
+    "updated": "2026-11-24T00:12:57Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 376,
+    "title": "Speed up the rhoK split in rho_fil_pf",
+    "head": "fd8d08f31a525651b0325b43dbb4e25fa34f8ffa",
+    "updated": "2026-11-24T00:12:58Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 377,
+    "title": "Speed up the rhoK split in rho_firstChern_formula",
+    "head": "d30c2008775bc382fc69ae72a02b3fb9b9487568",
+    "updated": "2026-11-24T00:13:00Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 378,
+    "title": "Cut compile time 11% by narrowing Mathlib imports and deleting unreachable modules (stacked on #221)",
+    "head": "6ef1129a5ff344a6cf63ea3ffcb9d61c18f3e425",
+    "updated": "2026-11-24T00:13:01Z",
+    "file_absent": [
+     "Kum.funRepMem"
+    ],
+    "statement_changed": [],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 379,
+    "title": "Use Mathlib for finite indices, square residues and divisibility",
+    "head": "3880bf45d0877573462fc9bbd26ad6570d340349",
+    "updated": "2026-11-24T00:13:02Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 380,
+    "title": "Batch Git comparisons for cache receipt lookup",
+    "head": "285368888a26c6b2dd0b081e9449efe485c725a1",
+    "updated": "2026-11-24T00:20:48Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 381,
+    "title": "Verify CI snapshot files in one traversal",
+    "head": "ec3952edb96ef111be71de365d97808f88e0f98f",
+    "updated": "2026-11-24T00:20:50Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 382,
+    "title": "Use matrix column lemmas in the block action proofs",
+    "head": "259f717fadc3a8fe75de301e2f0be3a45abac45d",
+    "updated": "2026-11-24T00:13:04Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 384,
+    "title": "Drop unused L2ExtensionLogCanonical field from PublishedHodgeBundleTheorems and HSCore.Quoted",
+    "head": "c445e4b3d1337f1b5a182745c6486645e6184e96",
+    "updated": "2026-11-24T00:13:05Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 385,
+    "title": "Reuse Mathlib lemmas for power-series truncation",
+    "head": "c154d33422c9ea6495c949752916fc1fad86ab27",
+    "updated": "2026-11-24T00:13:06Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 386,
+    "title": "Simplify the curve Krull dimension proofs",
+    "head": "83916b30ccc4cda2d05a960e6cc3dc5602c03d5d",
+    "updated": "2026-11-24T00:13:08Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 388,
+    "title": "Use direct rewrites in the height-one denominator proofs",
+    "head": "175aae3bdf060dbaf4f43f556577cd1126ac128d",
+    "updated": "2026-11-24T00:13:09Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 390,
+    "title": "Reuse the finite-kernel theorem instead of duplicating its proof",
+    "head": "51f03e119d641ca6dc7d79455abf646072bad5ea",
+    "updated": "2026-11-24T00:13:10Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 391,
+    "title": "Shorten the supertrace restriction proof",
+    "head": "fdab8d4dedd3c362421b77f8a7881f5f13787c66",
+    "updated": "2026-11-24T00:13:12Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 392,
+    "title": "Read module traces once when staging CI cache deltas",
+    "head": "828c87f6538e3d88682cd9c9c7006480a0ad6d71",
+    "updated": "2026-11-24T00:20:52Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 393,
+    "title": "Speed up the level-ideal arithmetic proofs",
+    "head": "2509acd1200e9d2d2494afed25d35a2503cdb759",
+    "updated": "2026-11-24T00:13:13Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 395,
+    "title": "Drop unused PushDown.Statement conjunct from ZhangDimensionPushDownGrassmannianHeightBounds",
+    "head": "33a1211f25430203255fdd2b6bd71f14b2f38e1a",
+    "updated": "2026-11-24T00:13:14Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 396,
+    "title": "Use strict order lemmas for distinguished coefficients",
+    "head": "106dfae4f1ac9bd2b56b137433602969e950d4ae",
+    "updated": "2026-11-24T00:13:16Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 398,
+    "title": "Drop 12 unread classical-theorem fields from ThetaLocalInputs",
+    "head": "2aacc7935a4accf41dacc42188fbf243946e6695",
+    "updated": "2026-11-24T00:13:18Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 399,
+    "title": "Reuse the self-dual full-lattice lemma in 14 more modules",
+    "head": "1480d8ea11670f860c4228e2ecee3faae8246988",
+    "updated": "2026-11-23T14:38:52Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 400,
+    "title": "Streamline proofs and prune unused private imports across 8 modules (-2,970 lines)",
+    "head": "3e5b2c1deda8a74ec6daa0657de29f7b6148a503",
+    "updated": "2026-11-24T00:13:19Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 405,
+    "title": "Cite Bloch-Kato for BlochKatoLocal and Messing for GrothendieckMessing",
+    "head": "0d5a7738965f508337a198577ec80b858342d395",
+    "updated": "2026-11-24T00:20:54Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 407,
+    "title": "docs: cite Kawamata-Viehweg and Platonov-Rapinchuk for KawamataViehweg and StrongApproxSU",
+    "head": "300906cdc8a61e7c56273cb1144555f5de0ade13",
+    "updated": "2026-11-24T00:22:34Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 408,
+    "title": "Reuse existing proofs in 27 modules and delete 316 modules only the old proofs used (−41,086 lines)",
+    "head": "c54a123fb29aabccf5bce8e674c417562ea57c02",
+    "updated": "2026-11-24T00:13:22Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 409,
+    "title": "Share the elementary symmetric bound for exceptional generators",
+    "head": "7aeb329b899942da7db3257dc091b09c305eae75",
+    "updated": "2026-11-24T00:13:24Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 411,
+    "title": "docs: add mathematical docstrings to Main, endgame, and windowed Landau spine",
+    "head": "0be2de915af682a07a41c50c59ff7c6b50906576",
+    "updated": "2026-11-24T00:22:36Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 414,
+    "title": "Streamline proofs and prune unused private imports across 5 modules (-1,613 lines)",
+    "head": "77b62f598e9949792fcffa61dbc2608ac22f3f0d",
+    "updated": "2026-11-24T00:13:27Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 415,
+    "title": "Streamline proofs and prune unused private imports across 5 modules (-978 lines)",
+    "head": "437e37ebf610707e0864daa5c2645ed8bab4ba66",
+    "updated": "2026-11-24T00:13:28Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 416,
+    "title": "docs: add mathematical docstrings to Fourier isolation, ChainTied, and RankVal spine",
+    "head": "2e5670c79d380de1b3660a33a52fb31940a5a4e3",
+    "updated": "2026-11-24T00:22:37Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 417,
+    "title": "docs: add mathematical docstrings to divisibility bridge, local g-place energy, and common lattice",
+    "head": "9059a651cf4146810a116e793854162961d2affd",
+    "updated": "2026-11-24T00:22:39Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 418,
+    "title": "Simplify CurveDerivativeDecay via gap-free Casimir-Lipschitz formal-degree bound",
+    "head": "b669b59a041b7df1d648f67401649a3eb6237719",
+    "updated": "2026-11-24T00:13:32Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 419,
+    "title": "Drop unused private Mathlib imports from Claim.HalfPlane.",
+    "head": "87b77aa77bd7bcf07e7debb6501c018f91142b71",
+    "updated": "2026-11-24T00:13:33Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 421,
+    "title": "docs: add mathematical docstrings to LinkS near-orthogonality and VWin Sha-window spine",
+    "head": "2ee8202db7b0c32979fd8b500f7fd950bc441011",
+    "updated": "2026-11-24T00:22:41Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 422,
+    "title": "Share the wave-grid gap estimates between Tied and WEnd",
+    "head": "63cae069944555356501ffeac3600684f65262ca",
+    "updated": "2026-11-24T00:13:36Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 423,
+    "title": "Batch of 37 small PRs",
+    "head": "ecce6f2eb556cadc15a7d16e8d49b73c13ba83bd",
+    "updated": "2026-11-23T16:29:41Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 424,
+    "title": "Consolidate duplicate proofs from Principia ProofGolf (6,958 fewer lines)",
+    "head": "5d0d440adfea1762cca8c0db9ec757a6aabcf39f",
+    "updated": "2026-11-23T15:59:37Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 427,
+    "title": "perf(lean): speed up TwArgs construction",
+    "head": "f8ab849283b4fc66698f01c90e7e36699df07158",
+    "updated": "2026-11-24T00:13:38Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 428,
+    "title": "Rewrite the curry measure-preservation statement in ordinary Lean",
+    "head": "a0e8d23beae9c0dc3f9442948566755503e619cb",
+    "updated": "2026-11-24T00:13:39Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 429,
+    "title": "State the local-ring unit subtraction lemma in ordinary Lean",
+    "head": "833ecf46c4ca06a701195517096c7fe90b43b6d9",
+    "updated": "2026-11-24T00:13:41Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 430,
+    "title": "Simplify Jacobi symbol proofs with jacobiSym.sq_one",
+    "head": "c61f949bf5ea2b9db669467c293d53558c5e6b15",
+    "updated": "2026-11-24T00:13:42Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 431,
+    "title": "Remove two hypothesis fields the proof never reads",
+    "head": "cc10d0dd2cc0d6542f7cd83867125e113612626a",
+    "updated": "2026-11-24T00:13:44Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 432,
+    "title": "Stop the kernel re-identifying sheaf instances in the Čech comparison (about −550 s over 12 modules)",
+    "head": "ab57528e72c502417f9fe214ad27a16804e7f0f7",
+    "updated": "2026-11-24T00:13:45Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 433,
+    "title": "refactor: define the formal group unit ball directly",
+    "head": "b6a131f455ef3ead588d09a4ed80a09ea63c2a29",
+    "updated": "2026-11-24T00:13:46Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 435,
+    "title": "refactor: narrow imports for Witt lattice injectivity",
+    "head": "445a60f5bae6a1a304eba02cdde720a4ac81e428",
+    "updated": "2026-11-24T00:13:48Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 437,
+    "title": "refactor(SigmaSigma): reuse local exists_delta proof and drop unused imports",
+    "head": "c0421541a1be4773d312f835428672d84393c7cb",
+    "updated": "2026-11-24T00:13:49Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 438,
+    "title": "Post-module-consolidation batch",
+    "head": "5b806260f653025e50dab978e2fb87d2cdb5e51e",
+    "updated": "2026-11-24T00:13:51Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Kum.funRepMem",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 439,
+    "title": "Drop unused ArMetric conjunct from GlobalTheory.Published.ArCalc",
+    "head": "f3b0ad318f62a9b4261485e4f9d101d2a40ad82e",
+    "updated": "2026-11-24T00:13:52Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 440,
+    "title": "Mark ratInTw noncomputable to avoid a compiler panic",
+    "head": "4e2d5b9898e0a6809ae16cb73afa131fb62c10c5",
+    "updated": "2026-11-24T00:13:54Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 441,
+    "title": "Use direct ring-map lemmas in the étale and Henselian root proofs",
+    "head": "c8e13ce817a95df09cd85f5ef354935d4fa827c3",
+    "updated": "2026-11-24T00:13:55Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 442,
+    "title": "Dedup levi va lemmas",
+    "head": "4506432701185c444e96a8a9810273daeda7fe30",
+    "updated": "2026-11-24T00:13:56Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 443,
+    "title": "Speed up Henselian composition proofs",
+    "head": "5d406fab5aaef111417686288e81e81e3a2777fe",
+    "updated": "2026-11-24T00:13:58Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 444,
+    "title": "Drop the redundant `Kernel.isDefEq` pre-checks in local elaborators (about −60 CPU-seconds per build)",
+    "head": "35f9bcfa34054b5dc426a1983dd52d675017f87a",
+    "updated": "2026-11-24T00:13:59Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 445,
+    "title": "Reuse the closed-fibre lemmas for divisors of constants",
+    "head": "b20f022156957a4da1c5a543cdf5892eea4889e0",
+    "updated": "2026-11-24T00:14:00Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 446,
+    "title": "Consolidate 10 remaining unclaimed duplicate public theorems (#138)",
+    "head": "7ce32a5021e0b41b76b01cba6a79fe3132231794",
+    "updated": "2026-11-24T00:14:02Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 447,
+    "title": "refactor: reuse the Euler factor nonvanishing lemma for Dirichlet characters",
+    "head": "18262121951b8e542ef5f696a2d6f91666c725d2",
+    "updated": "2026-11-24T00:14:03Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 448,
+    "title": "Share the empty-subset argument for the local lattice quotient",
+    "head": "b403474d019e89a2900fe9fd12c65c677daea3c4",
+    "updated": "2026-11-24T00:14:04Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 449,
+    "title": "Streamline proofs and prune unused private imports across 8 modules (-3,449 lines)",
+    "head": "0686800f5fb772128626c6bc08f815c2c06bd8ac",
+    "updated": "2026-11-24T00:14:06Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 450,
+    "title": "Streamline proofs and prune unused private imports across 7 modules (-2,698 lines)",
+    "head": "1af5c624b3d30bb2120514faabe2bb2dd610f56d",
+    "updated": "2026-11-24T00:14:07Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 451,
+    "title": "Streamline proofs and prune unused private imports across 7 modules (-2,092 lines)",
+    "head": "98888b59d1c0af358df63f6b8d795c8b47ce2182",
+    "updated": "2026-11-24T00:14:09Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 452,
+    "title": "Trim imports for the Vandermonde log-ratio bounds",
+    "head": "b29a3ec522447909e8c959d2fa6a258921ff6ccc",
+    "updated": "2026-11-24T00:14:10Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 453,
+    "title": "refactor: reuse the unit disk bound in three Euler product proofs",
+    "head": "c98244ea2819d33d8e96bc86398b27c77fd4e2e8",
+    "updated": "2026-11-24T00:14:12Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 454,
+    "title": "Prove the Ext comparison in SheafHOver for an abstract exact functor",
+    "head": "a26d2b4d454263431280f8ab30409583bad4e41a",
+    "updated": "2026-11-24T00:22:30Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 455,
+    "title": "Add a script that counts CPU instructions for the modules a PR changes",
+    "head": "c562279410a915dd25a35e44617acf9e593ddbd0",
+    "updated": "2026-11-24T00:20:56Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 456,
+    "title": "Remove unused declarations from ReciprocityTheory/AnalyticForms (−30 files, −8,172 lines)",
+    "head": "21e42bd60698c48e33cb6a79bcac37d14af5a22f",
+    "updated": "2026-11-24T00:14:14Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 458,
+    "title": "Drop unread up/dn/col fields from CuspAlong and CuspAlongSmooth (-90 files, -10,648 lines)",
+    "head": "8aa9c6cec3f599bd7f02e63611035a1c67420825",
+    "updated": "2026-11-24T00:14:15Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 459,
+    "title": "Drop unread jspan/shape/shapeUnr/top fields from T2.Core (-47 files, -5,284 lines)",
+    "head": "a7cdf7e33e5f41672cbfcf8cb3956e06f1f3a482",
+    "updated": "2026-11-24T00:14:17Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 460,
+    "title": "Remove 1.63M lines of dead code from 148K files (imports, open statements, dead sections)",
+    "head": "16282f46750f0da7206c853cf5a4cda43733cb09",
+    "updated": "2026-11-24T00:14:18Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 462,
+    "title": "Define the `BCris` maps through general-field versions (about −357 s over 4 modules)",
+    "head": "f24f2aba1b1ee44f52ad002bc5069fb8040925f1",
+    "updated": "2026-11-24T00:14:19Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 463,
+    "title": "Batch of 11 documentation and citation PRs",
+    "head": "686e92de02555d5e43e4d63724f02e3c3ca4d4e1",
+    "updated": "2026-11-23T22:16:25Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 464,
+    "title": "Avoid D7 and PackSigma proof-term blowups in 16 modules",
+    "head": "be3c11c63d365ed873de3c3c6b30759e1838c452",
+    "updated": "2026-11-24T00:14:21Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 465,
+    "title": "Skip unused code generation for cechHEquiv",
+    "head": "37cbcd0f371413205a8c903ed9b856332827d88b",
+    "updated": "2026-11-24T00:14:22Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 466,
+    "title": "Remove vacuous anyGeometry / GeoP / GeoCl / Prm scaffolding (−160 lines, #96)",
+    "head": "5535b6d7378ec983ed0b6ca54b3aaf3b490942aa",
+    "updated": "2026-11-24T00:14:24Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 467,
+    "title": "Handle Unicode paths and renames in quick-check planning",
+    "head": "f737c737b763099399fa4044684a8a099673130c",
+    "updated": "2026-11-24T00:14:25Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 468,
+    "title": "Simplify unitary diagonalization and phase choice in JTransMA",
+    "head": "c7b4b262970e145d43d049f9e3db3c99f9ffb53b",
+    "updated": "2026-11-24T00:14:26Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 469,
+    "title": "Stop scanning for quick-check imports at the first declaration",
+    "head": "5b52dca056bce0fe5f7c0e360723c6b0132b5818",
+    "updated": "2026-11-24T00:14:28Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 470,
+    "title": "Keep quick-check artifacts separate across run attempts",
+    "head": "4260134944adcfa9ad72bbb562f0257f59d906b7",
+    "updated": "2026-11-24T00:14:29Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 471,
+    "title": "Use targeted rewrites in the Henselian coequalizer proof",
+    "head": "e1f6a5eed6a1ea62947f845b0681b45a9c2b0f4f",
+    "updated": "2026-11-24T00:14:30Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 472,
+    "title": "Keep each prepared CI cache map with its job outputs",
+    "head": "01a05b23a1c7aaf023fbc107773c23cfd3299891",
+    "updated": "2026-11-24T00:14:32Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 473,
+    "title": "Simplify IsFieldAdicCompletionTensorOfInert using Mathlib valuation approximation",
+    "head": "18e1b4a4ed98dd040dd0992aec4e72bf52ff2125",
+    "updated": "2026-11-24T00:14:33Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 474,
+    "title": "Drop unread `kfin` field from `KfinTied` (-36 files, -3,063 lines)",
+    "head": "0b7f958cd5b34c6958c965ba1890b2dccca44069",
+    "updated": "2026-11-24T00:14:34Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 475,
+    "title": "Simplify the Henselian colimit uniqueness proof",
+    "head": "d7c8d4a813d2e71aaaaa1916d9a8258794b69949",
+    "updated": "2026-11-24T00:14:36Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 476,
+    "title": "Speed up CI baseline cache staging",
+    "head": "a15032888ffb61d127215baacafda03d5e3458c9",
+    "updated": "2026-11-24T00:14:37Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 477,
+    "title": "Use explicit ring homomorphisms in the Henselian colimit proof",
+    "head": "d9b219bec29608df74fbffac1b781775521ebc00",
+    "updated": "2026-11-24T00:14:38Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 478,
+    "title": "Drop 29 unread fields from `period_ring_base.Base` (-18 files, -3,203 lines)",
+    "head": "233951c25521839431d6260ac142d47d1fc94203",
+    "updated": "2026-11-24T00:14:40Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 479,
+    "title": "Simplify the valuation of a root of unity",
+    "head": "2a52212c4326b6d227c7a99c2d9f2b2a31eed24d",
+    "updated": "2026-11-24T00:14:41Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 480,
+    "title": "perf(PAdicHodge): add named instances for BCrisPlus and BCris",
+    "head": "089e2d3c126a0102eb0b9e8c8cc5c4c618632339",
+    "updated": "2026-11-24T00:14:42Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 481,
+    "title": "Define `fB` in `PullbackFinRelation` through a general-field map (about −80 s)",
+    "head": "c8576e6efe8c627ba8055f3e608eb40fc1a89893",
+    "updated": "2026-11-24T00:14:44Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 482,
+    "title": "Document targeted local Lean builds",
+    "head": "475b677e2720afa3a98fe0b4e425206a3ec6d502",
+    "updated": "2026-11-24T00:14:45Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 483,
+    "title": "Ignore CDPATH when locating the project cache",
+    "head": "483be721754718e8766b75c99c02e1fc9e502e08",
+    "updated": "2026-11-24T00:14:46Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 484,
+    "title": "Avoid repeated reduction of stalk rings in section-limit proofs",
+    "head": "5a7fc4335c29294e7cbf98ed374ff14080ef2e05",
+    "updated": "2026-11-24T00:14:47Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 485,
+    "title": "Shortcut ring instances on BCrisPlus so the kernel stops unfolding ACris (about −320 CPU-seconds over 6 modules)",
+    "head": "da8a4c269d597e42e5aaea0250adc8d5b09a44a7",
+    "updated": "2026-11-24T00:14:49Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 486,
+    "title": "Speed up the prime-reciprocal certificate in Lean",
+    "head": "ceac34d9a6602fe19283a611ff46811c2b98e7b6",
+    "updated": "2026-11-24T00:14:50Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 488,
+    "title": "Use the imported original instead of 297 repeated theorems (−3,399 lines)",
+    "head": "a5e4eb369a2f73cb0f8cd23f9af223263198d871",
+    "updated": "2026-11-24T00:14:52Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 489,
+    "title": "Drop unread `DivT.loc` and five unread `DivX` fields (-28 files, -3,851 lines)",
+    "head": "3c6c8a780db93a472ad1ae688d8a7cf6b8e59732",
+    "updated": "2026-11-24T00:14:53Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 490,
+    "title": "Drop unread `NTh.{ev_inj, Bsup_def}` and `GeoLaws.{detects, sup, pin}` (-33 files, -3,733 lines)",
+    "head": "f236af25bfa2dca8743b231fa4ade2b7925c4720",
+    "updated": "2026-11-24T00:14:54Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 491,
+    "title": "Keep wrappers with possible transitive users during regeneration",
+    "head": "538271fa29c5faa3469801eea2d6dc8bfa258cc2",
+    "updated": "2026-11-24T00:14:56Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 492,
+    "title": "Simplify proofs and remove dead fallback tactics in FrobeniusOrbitsProofs (-503 lines)",
+    "head": "fdfd7966bdce4025c0318331bf0cf8530bd1a443",
+    "updated": "2026-11-24T00:14:57Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 493,
+    "title": "Write `Iso.refl (Sp k)` in `selfIso` (about −80 s in one module)",
+    "head": "29976314e55f4c9b81dd6fcd443c9fac5868787f",
+    "updated": "2026-11-24T00:14:58Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 494,
+    "title": "Defer quick-check dispatch when quota drops before POST",
+    "head": "c900a34c8a787501afc89801dc129e61b7943ea0",
+    "updated": "2026-11-24T00:15:00Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 495,
+    "title": "Speed up build artifact validation by avoiding repeated module-list scans",
+    "head": "0a3235a8f94107a33c5ff61d72aa10fa1ac58c30",
+    "updated": "2026-11-24T00:15:01Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 496,
+    "title": "Stream the published olean archive manifest",
+    "head": "9e013b15e55c6dd8e3a9896e6e64a3b17b78eaa4",
+    "updated": "2026-11-24T00:15:02Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 497,
+    "title": "Remove the doubly-qualified dualMap alias (and the RootModelFlagHeight workaround it caused)",
+    "head": "2b4acdaa7c613f4901515c5ebbcfdf2caa8f6706",
+    "updated": "2026-11-24T00:15:04Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 498,
+    "title": "perf: avoid rcases goal re-checks in zg_formula_let (ZgFormula ~42 s → ~33 s)",
+    "head": "2bd00e7f7a11d39e6d98c99617111b229bc2545f",
+    "updated": "2026-11-24T00:15:05Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 499,
+    "title": "perf: pass explicit Rl/cG/S args in HeckeCharacterisationTransferMovedReadings (-88% build time, 126x faster elaboration)",
+    "head": "c0402f86ba2474864540f3d3856b5d4e9f9fc816",
+    "updated": "2026-11-24T00:15:06Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 500,
+    "title": "Keep interrupted downloads out of the cache",
+    "head": "75fc30fe2a357a50869fbbc7f6ba74ef8deff621",
+    "updated": "2026-11-24T00:15:08Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 501,
+    "title": "Reuse supplied RecTExists proofs at three callers",
+    "head": "06d7026845337e9f78a2ad257deb89da8320d321",
+    "updated": "2026-11-24T00:15:09Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 503,
+    "title": "Replace all 77 nlinarith calls in MinorCosetSumOfLatticeIndexHypOfTieOK, PZonalHeightReduction, KerDiff, DensAbs, and SumTotalLoss (-49.1% build time)",
+    "head": "3eba17aa577903b9f875c9abdbe0cb2cdfa29f06",
+    "updated": "2026-11-24T00:15:10Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 504,
+    "title": "Replace all 52 nlinarith calls in RayClassLFunctionZeroFreeRegion, ClosureBound, PNTExplPick, and FormalGroupPointsSubgroupHolds (-37.1% build time)",
+    "head": "8d2bdb7eee9a560f4fd06d563c8a61ab66735b52",
+    "updated": "2026-11-24T00:15:12Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 505,
+    "title": "Shrink the prime-reciprocal certificate and reuse the quadratic generator theorem",
+    "head": "8a7d7c6b8b01078484b9593007bd901c1202a572",
+    "updated": "2026-11-24T00:15:13Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 506,
+    "title": "Give `TieSSt` the additive structure of `OmSK` explicitly (about −39 s in one module)",
+    "head": "3e5d2f8e0e9b5447d4adc939c5438fa8aac7f10d",
+    "updated": "2026-11-24T00:15:15Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 507,
+    "title": "perf: bundle per-place structural transfers in ExistsFormFamilyHypothesesChangedSecondNorm (-81% kernel time, -79% build time)",
+    "head": "66772b64d45f52992e9a5129d7459ceda7a7285d",
+    "updated": "2026-11-24T00:15:17Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 508,
+    "title": "Drop the unused `LocalConverseGL` input from the main proof (-83 files, -11,850 lines)",
+    "head": "6a673270d6361b7341233a078af14ddf1b8faf2d",
+    "updated": "2026-11-24T00:15:18Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 509,
+    "title": "Move the place-dependent hypotheses to the changed norm in one lemma (about −75 s in one module)",
+    "head": "1a39498e12ec9c78e9c74e8c8c789bda2a7227f7",
+    "updated": "2026-11-24T00:15:20Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 510,
+    "title": "Replace all 68 nlinarith calls in LatticeUnitNormSqNonneg, WuBLGapPf, WindowsOfExplicitParameters, ExpGainFromZeroFreeRegion, and PolarSqCompare (-61.9% build time)",
+    "head": "21ef31755c082d005b70807ae2efea94e52aca18",
+    "updated": "2026-11-24T00:15:21Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 511,
+    "title": "Delete 94 Formalism/LocalToGlobal modules that Main does not import (−12,884 lines)",
+    "head": "f89de69253b73866a733d07362f7b78bd67960da",
+    "updated": "2026-11-24T00:15:22Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 513,
+    "title": "Reuse Galois-pair and generic-unitary proofs without discarded arguments",
+    "head": "466a793a044ac295a9fdaf72d24ec96024e945b5",
+    "updated": "2026-11-24T00:15:24Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 514,
+    "title": "Batch queue report: list a finding once, and don't comment on unread imports alone",
+    "head": "fd51b6611f3a8db43530a682f44f151172bbdc1d",
+    "updated": "2026-11-24T00:15:25Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 515,
+    "title": "Replace all 63 nlinarith calls in MulPowTwoLeTripleProdOfGe, MumfordGoodGrowthBoundHolomorphicFrameChange, LargeConstantLeParamCube, ShortVectorBoundLeKappa, and CountHypPAtAddQAt (-41.1% build time)",
+    "head": "ffac0cd39cbd0c52177d1daff05f6c0993009563",
+    "updated": "2026-11-24T00:15:27Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 516,
+    "title": "Let the systemd unit test run without XDG_RUNTIME_DIR",
+    "head": "de896ea12e1ab9aead9082d487ada6f1c2a3c5cf",
+    "updated": "2026-11-24T00:15:28Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 517,
+    "title": "Remove two unused copies of radial lemmas in IntegrableOnIoiTruncatedPowerMoment",
+    "head": "acf903b1c43f2bf69483a07d361c651f0554e49c",
+    "updated": "2026-11-24T00:15:30Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 518,
+    "title": "Speed up the logarithmic generator bound proof",
+    "head": "5bf6c6299e53b4c2387739d0ec25fff95c7af517",
+    "updated": "2026-11-24T00:15:31Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 519,
+    "title": "Reuse the Frobenius power-series bounds in SetupA",
+    "head": "56256478a4a3429f2432165c391547a5ca091f00",
+    "updated": "2026-11-24T00:15:32Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 520,
+    "title": "Keep coefficient and site universes independent in the sheaf long exact sequence",
+    "head": "6b40e2ebec406dc3bd1a323dcd128fa28ca41d13",
+    "updated": "2026-11-24T00:15:34Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 521,
+    "title": "Reduce natural-number arithmetic directly in the Chebyshev certificate",
+    "head": "327b119c2128292dcb7fcaa2d01f86d0d68977d7",
+    "updated": "2026-11-24T00:15:35Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 522,
+    "title": "Speed up the class-number volume bounds",
+    "head": "5dc3cf6545f4a793a6493eb1a7629bf831ba3775",
+    "updated": "2026-11-24T00:15:36Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 524,
+    "title": "Reuse package import lookups when planning quick-check builds",
+    "head": "daf5153fafbc316c2254ace7714b0d8e5acea38b",
+    "updated": "2026-11-24T00:15:39Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 525,
+    "title": "Reuse validated module directories when planning cache restores",
+    "head": "e9019f5fa42453737dc68464b605fc8adc0afb6a",
+    "updated": "2026-11-24T00:15:40Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 528,
+    "title": "Replace all 60 nlinarith calls in RowsNDn, TwoSidedBoundOfPointwiseBounds, WeightDiff, WtLeOfNorm, and HyperbolicKappaPropertiesProof (-37.9% build time)",
+    "head": "d75c55be5f208a1a8fe418f470c2fdc03bc6d334",
+    "updated": "2026-11-24T00:15:41Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 529,
+    "title": "Replace all 56 nlinarith calls in ThmEExp, SmallOneOf, SummableAndTsumLeTwoMulDivOfLeDivPow, ExponentLe, and GeometricSideComparison (-42.3% build time)",
+    "head": "d927cf289fac9631b926b8d2117a7bcc4d091dc2",
+    "updated": "2026-11-24T00:15:43Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 530,
+    "title": "Use explicit arithmetic bounds in the binomial rank estimate",
+    "head": "54f6ff85fd87fdc7cfbbe1e80c28ab81e87b8388",
+    "updated": "2026-11-24T00:15:44Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 531,
+    "title": "Replace all 55 nlinarith calls in CriticalLevelLePowAllPlaces, EqZeroOfInPOfNoncompactRankZero, GlobalRankNumberBoundsSizeComparisons, NoncompactLoweringNormSmall, and SqLeOfForallNonneg (-47.8% build time)",
+    "head": "c2dbba232d37c3a617b2576303afa549a1fa4e40",
+    "updated": "2026-11-24T00:15:45Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 532,
+    "title": "Speed up the logarithmic generator bound",
+    "head": "88183bc2bf019a2889c6ba54157d8969d87acd00",
+    "updated": "2026-11-24T00:15:47Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 533,
+    "title": "Decompose sign-symmetric lists by filtering on the second coordinate",
+    "head": "ea2fcb28492ad61acfc5fe41707bc0df956428cf",
+    "updated": "2026-11-24T00:15:48Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 534,
+    "title": "Use a geometric-sum valuation bound for roots of unity",
+    "head": "4a0fe76560793330a476b4f28b7b0303e8287ea1",
+    "updated": "2026-11-24T00:15:50Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 535,
+    "title": "Sum over words by their final letter in the iterated rapid-decay proof",
+    "head": "b84e512765bcae79b1a48d43b7dcd361f0359ba8",
+    "updated": "2026-11-24T00:15:52Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 536,
+    "title": "Use the minimum of a nonempty set in the Linnik equivalence",
+    "head": "7ad7573706a55e814d9f2663eb720af06a1566b0",
+    "updated": "2026-11-24T00:15:53Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 537,
+    "title": "Simplify the word-basis and Lyndon proofs in the Radford shuffle development",
+    "head": "4214115abf8ef7f923a1dc0c3538ad33e1518b03",
+    "updated": "2026-11-24T00:15:55Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 538,
+    "title": "Partition native worker input manifests in one pass",
+    "head": "a1bef725183a29f4261356dda7c9079a85720b60",
+    "updated": "2026-11-23T21:48:28Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 540,
+    "title": "Remove the duplicate PNT in progressions from JacobiCharacterSums (−77 files, −15,157 lines)",
+    "head": "243ba847350b55596c37ec6e86d1b73231ee04eb",
+    "updated": "2026-11-24T00:15:56Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 541,
+    "title": "Replace all 52 nlinarith calls in RootDiscriminantDegreeRatioLeRootDiscriminantSq, FrameZeroStrictMono, ProdMaxInvLeProdMax, BranchVol, and HaarUnitaryLastDiagonalEntryLaw (-33.6% build time)",
+    "head": "151b66a99743250a0ca521be136cad6f59c9e758",
+    "updated": "2026-11-24T00:15:58Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 542,
+    "title": "Fix commented imports and fresh-checkout unclumping",
+    "head": "dbd042ee426fe9b63bb83ee69d9f4c294d997edb",
+    "updated": "2026-11-24T00:15:59Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 543,
+    "title": "Share the model-level bounds for crystalline comparison maps",
+    "head": "8c69f9e9a73f23dd02da939b8a6251b9ccd1d826",
+    "updated": "2026-11-24T00:16:01Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 544,
+    "title": "Replace all 55 nlinarith calls in BaseOfFarModelsFrame, CoarseDegreesLargeOfStd, TrivialClassShortInterval, TranslateCoefficientIntegralBoundsOfUnitaryLaws, and TwoBracketsLePowMulProdEntries (-35.3% build time)",
+    "head": "ce03f60ceadc981f3a282ff67de1d7a64f9099ba",
+    "updated": "2026-11-24T00:16:02Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 546,
+    "title": "Let Lean infer the local group families in six Poitou–Tate comparison proofs (about −24 s per module)",
+    "head": "e1e5d7b3694128bc70f13b6862631b2552f73f87",
+    "updated": "2026-11-23T22:03:18Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 547,
+    "title": "doc: docstrings and references for p-adic Hodge th",
+    "head": "d8e874fa699cff8ae478630a0ee7572d97fc3937",
+    "updated": "2026-11-24T00:16:04Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 548,
+    "title": "Prove units_localization_pow_surj from torsor_trivial (−43 files, −4,235 lines)",
+    "head": "e5d6ce4e9c5815d3f8621926d3fd8d812419336f",
+    "updated": "2026-11-24T00:16:06Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 549,
+    "title": "Close `gsLocalRes_sUnitsToUnits_eq` by rewriting with `hres` (about −29 s in one module)",
+    "head": "b8c7ea9480b882385d4c96043cfae7ab6aa5d4b5",
+    "updated": "2026-11-24T00:16:07Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 551,
+    "title": "Reuse Mathlib for adic precompleteness proofs",
+    "head": "655d487c321658f94795f91a508a0474ee307075",
+    "updated": "2026-11-24T00:16:09Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 552,
+    "title": "Fix spacing in quick-check docs and check for tarfile filters before runner install",
+    "head": "0cfff59a4d354ff559820ecc3da0c39e42d2097d",
+    "updated": "2026-11-24T00:16:10Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 553,
+    "title": "Share the residue representatives in the Siegel theta sum and integral",
+    "head": "23925a5cea3dd0a5c998ab3d8570fd1897f733e3",
+    "updated": "2026-11-24T00:16:11Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 554,
+    "title": "Replace all 75 nlinarith calls in HeightProofs.N0LeNs, EquivIntegral, ExistsGramRepresentativeSizeLeHHSq, DerivedCoefficientIntegrable, and EqZeroOfLePolyExp (-40.6% build time)",
+    "head": "1f113fd63a58eb62991460d1e51faada9b0b2bcd",
+    "updated": "2026-11-24T00:16:13Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 555,
+    "title": "Replace all 55 nlinarith calls in TranslateCoefficientDerivativeIntegralBoundsOfLa, ExistsConjHarmOfSpan, ConcNP, JacConstBHVolLim, and IsotypicMonodromyPolynomialsRaiseDegree (-17.5% build time)",
+    "head": "1860643e19a2e3b25f4869d1cab4ceb6c586b4e5",
+    "updated": "2026-11-24T00:16:14Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 556,
+    "title": "Replace all 50 nlinarith calls in RegularizationGlueBounds, ExistsRankOneCuspDataLogBounds, landauTails, SideBUnrealifyRL, and SeparationNumericalIneqCuspidalGL (-43.1% build time)",
+    "head": "7223b4fc4e187324ca4bd59746066d7f2d1f3069",
+    "updated": "2026-11-24T00:16:16Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 557,
+    "title": "Remove four exact duplicate lemmas in SetCApplyNotMem and VarChange",
+    "head": "523486b8640b2fe91964e12868eb651686f008ae",
+    "updated": "2026-11-24T00:16:17Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 558,
+    "title": "Replace all 51 nlinarith calls in CorankSumsBoundWithExpLoss, HsDistSectionMulBlock, ExistsSolutionOrdGeRadius, SumIndicatorLeZsumR, and ExistsPosZsmulMemRange (-23.2% build time)",
+    "head": "50e3f8568f1789d8b6a9a72205151b4dc64c043a",
+    "updated": "2026-11-24T00:16:19Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 559,
+    "title": "Reuse the imported linear map in CohFinite",
+    "head": "810a1963a24aa54e96edf81c2aaf30720bd70a37",
+    "updated": "2026-11-24T00:16:20Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 560,
+    "title": "Replace all 47 nlinarith calls in WeightedOrderSlopeComparison, ExistsConcaveTwistEtaInequalities, SmallPrimeOneOfPrimesRel, BesselConstantBoundsOfGeTwoNPowFive, and TofFinrankIRLe (-43.7% build time)",
+    "head": "c8204e76fd934015ee7a8001cad69a219318a7ed",
+    "updated": "2026-11-24T00:16:21Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 561,
+    "title": "Allow power-series evaluation over arbitrary complete local rings",
+    "head": "07357aa5a9ce9972e95510713093c65034162982",
+    "updated": "2026-11-24T00:16:23Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 562,
+    "title": "Replace all 45 nlinarith calls in BrunTitchmarshExistsConst, Orbnum, IwasawaSlabSqueezedBetweenBalls, SupBoundsLeGeneratorConstantMulSize, and FrobeniusStrictLowerComparisonNearIdentity (-49.3% build time)",
+    "head": "6fc1a4ad12003baa3cc64681f13d19edeecaa826",
+    "updated": "2026-11-24T00:16:24Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 563,
+    "title": "Reuse the prime reciprocal bound across three modules",
+    "head": "eee73a16d901b7c485d38ab81d35660aadfaa782",
+    "updated": "2026-11-24T00:16:26Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 564,
+    "title": "docs: document Lean issue #15643 and its impact on Comparator",
+    "head": "83287eabe598a98aedac09ea846c3bf4eb94e3b7",
+    "updated": "2026-11-24T00:16:27Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 565,
+    "title": "CI: fail a pull request that adds `sorry`, an axiom or another risky construct under `src/`",
+    "head": "6ec0f6e1e1977079d6df16b62c8cee102d6357f4",
+    "updated": "2026-11-24T00:16:28Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 566,
+    "title": "Use Mathlib to clear denominators in submodule spans",
+    "head": "d600a92ba01e36560cd965fc8e4ae40a0f45c1ec",
+    "updated": "2026-11-23T23:18:53Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 567,
+    "title": "Prove finiteness of Hodge cohomology without the `cohEquiv` definition (about −50 s in one module)",
+    "head": "58633e5897b47a7f0290242374a7cd98fdda975f",
+    "updated": "2026-11-24T00:21:35Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 568,
+    "title": "Reuse standardness transport in moved readings",
+    "head": "be3e2a9cffd05bfda97dfe859e3aaaa21ce3a22a",
+    "updated": "2026-11-24T00:16:31Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 569,
+    "title": "Reuse object-pullback proof without the discarded Lie argument",
+    "head": "4e99b7466f63ee66ae925c8b357ca3b739e6eae4",
+    "updated": "2026-11-24T00:16:33Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 570,
+    "title": "Reuse the supplied CarUAlt proof in galClose_alt",
+    "head": "7cb90c3d35629e71e86ce73dcec4d7027e9c7eb0",
+    "updated": "2026-11-24T00:16:34Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 571,
+    "title": "Reuse Mathlib lemmas in the primitive-character reflection proof",
+    "head": "a6688b8754607f2cfff79da8c565d9b837739a05",
+    "updated": "2026-11-24T00:16:36Z",
+    "file_absent": [],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 572,
+    "title": "Reuse the unramifiedness proof directly in cohAxAr",
+    "head": "a902322e462f6b928e5b9b1a03e81429bf688d93",
+    "updated": "2026-11-24T00:16:37Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 573,
+    "title": "Reuse the separated-set packing bound in four proofs",
+    "head": "2f90905e6510c78c537c41d1fb5a6f894e5c94c4",
+    "updated": "2026-11-24T00:16:38Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 574,
+    "title": "perf: supply explicit instance fields in Frame.setting (HasBlockOfOccurs)",
+    "head": "2b2bdfa8c9bf59a781c93d9eef83bc0b4b24ed12",
+    "updated": "2026-11-24T00:16:40Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 575,
+    "title": "perf: avoid HasExt kernel unfolding in HigherDirectImagesVanishOfIsAffineHom",
+    "head": "fd1ceb42f2e3df4805e282a608f51212b58a3458",
+    "updated": "2026-11-24T00:16:41Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 576,
+    "title": "Fix Unicode identifier boundaries in wrapper collapsing",
+    "head": "1b0f13086a55a43e8aa7264645c64af03592bfd5",
+    "updated": "2026-11-24T00:16:42Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 577,
+    "title": "cache get: don't stop on untracked non-Lean files under src (e.g. .DS_Store)",
+    "head": "7e8724483fbdb220e9b581a442a061bdde61810c",
+    "updated": "2026-11-24T00:16:44Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 578,
+    "title": "Reuse the typed Čech finiteness theorem and remove Kh3",
+    "head": "959af2f02f7c3da9d6eac6419ca6714f67f76ee9",
+    "updated": "2026-11-24T00:16:45Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 581,
+    "title": "Preserve possible string uses when collapsing wrappers",
+    "head": "b10ca6d3d7d11c0774b450febcc1de5d0397d350",
+    "updated": "2026-11-24T00:16:47Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 582,
+    "title": "perf(proofs): eliminate 94 nlinarith calls across 4 low-depth modules",
+    "head": "45226cae3ef064a988754c33bcb322cf0c08dcb2",
+    "updated": "2026-11-24T00:16:48Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 583,
+    "title": "Share the lattice and trace integrality arguments for matrices",
+    "head": "e2e836a9e129a0e5ab4339c04dbfa9a53eccafed",
+    "updated": "2026-11-24T00:16:49Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 584,
+    "title": "Use additive closure to express span elements as list sums",
+    "head": "271672828fc498f7b33e2fdbbc7b98f8febd729c",
+    "updated": "2026-11-24T00:16:51Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 586,
+    "title": "refactor: reuse homogeneous polynomial scaling from Mathlib",
+    "head": "89e1f02dd80963aa00dc59f80dbaa74bcab86100",
+    "updated": "2026-11-24T00:13:20Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 587,
+    "title": "Generalize finite generation modulo powers of an ideal",
+    "head": "6668f8b659b95ead6fdfce506d3e8762c899cc89",
+    "updated": "2026-11-24T00:03:46Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 588,
+    "title": "Prove the addition law for power-series translations",
+    "head": "e459cbee0f3944c18306e49ce7d1495bdd5e5a8b",
+    "updated": "2026-11-24T00:04:07Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 589,
+    "title": "fix: avoid the ExplicitBoxing compiler panic in ReadPackageTwistHeq",
+    "head": "2e420976e459597f4533363deef78ae17c382761",
+    "updated": "2026-11-24T00:05:55Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [
+     "Kum.funRepMem"
+    ],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 591,
+    "title": "chore: batch of 46 small PRs (stacked on #438)",
+    "head": "eae3e27cfa95b422f8ff486d368a808dcdf8f798",
+    "updated": "2026-11-24T00:15:55Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Kum.funRepMem",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
+    "statement_changed": [],
+    "proof_changed": [
+     "Kum.dinfNil",
+     "exists_prime_pow_smul_eq_zero_qz"
+    ]
+   },
+   {
+    "number": 592,
+    "title": "Share the coordinate flag submonoid across five proofs",
+    "head": "5e9149c57bb8817bc01bad6e4320d65f9d18b743",
+    "updated": "2026-11-24T00:16:38Z",
+    "file_absent": [
+     "PropA.dualUnip",
+     "Tower.shaDGen",
+     "PropA.xUnip"
+    ],
     "statement_changed": [
      "Kum.funRepMem"
     ],

@@ -1,0 +1,1675 @@
+{
+ "schema": 1,
+ "digest": "layer-descent",
+ "archive_commit": "40e56bab026552e089d7afcfeff08d2defb9c005",
+ "pdf": "layer-descent.pdf",
+ "pdf_sha256": "7ec0006692cce773e029b18e5a3451a9c251977c1d2613630d1ff3f79c2c57c2",
+ "pages": 16,
+ "editions": [
+  {
+   "file": "editions/layer-descent-7ec0006692cc.pdf",
+   "sha256": "7ec0006692cce773e029b18e5a3451a9c251977c1d2613630d1ff3f79c2c57c2"
+  }
+ ],
+ "unit": {
+  "ledger": 1,
+  "id": 6879,
+  "used_members": 39
+ },
+ "items": [
+  {
+   "item": "t:A",
+   "title": "Theorem A",
+   "page": 2,
+   "dest": "section*.1",
+   "declarations": [
+    "desc"
+   ]
+  },
+  {
+   "item": "t:B",
+   "title": "Theorem B",
+   "page": 2,
+   "dest": "section*.2",
+   "declarations": [
+    "shaDGen",
+    "dinfNil"
+   ]
+  },
+  {
+   "item": "d:G",
+   "title": "Def. 2.2",
+   "page": 3,
+   "dest": "theorem.2.2",
+   "declarations": [
+    "G",
+    "QZ",
+    "cycZ"
+   ]
+  },
+  {
+   "item": "d:char",
+   "title": "Def. 2.6",
+   "page": 3,
+   "dest": "theorem.2.6",
+   "declarations": [
+    "XN",
+    "XX",
+    "XP",
+    "Dinf",
+    "Xinf"
+   ]
+  },
+  {
+   "item": "d:ext",
+   "title": "Def. 2.5",
+   "page": 3,
+   "dest": "theorem.2.5",
+   "declarations": [
+    "galOf",
+    "galEmb"
+   ]
+  },
+  {
+   "item": "d:groups",
+   "title": "Def. 2.3",
+   "page": 3,
+   "dest": "theorem.2.3",
+   "declarations": [
+    "princ",
+    "levU",
+    "cycU",
+    "qExp",
+    "gamU",
+    "Un",
+    "Procyc"
+   ]
+  },
+  {
+   "item": "d:act",
+   "title": "Def. 2.7",
+   "page": 4,
+   "dest": "theorem.2.7",
+   "declarations": [
+    "dRep",
+    "xRep",
+    "xRepApply",
+    "funRep",
+    "funRepMem"
+   ]
+  },
+  {
+   "item": "d:twist",
+   "title": "Def. 2.8",
+   "page": 4,
+   "dest": "theorem.2.8",
+   "declarations": [
+    "twist",
+    "dTw",
+    "xTw",
+    "dTwApply",
+    "xTwApply",
+    "ShaD"
+   ]
+  },
+  {
+   "item": "d:gen",
+   "title": "Def. 2.10",
+   "page": 5,
+   "dest": "theorem.2.10",
+   "declarations": [
+    "IsGen"
+   ]
+  },
+  {
+   "item": "d:layers",
+   "title": "Def. 2.11",
+   "page": 5,
+   "dest": "theorem.2.11",
+   "declarations": [
+    "cZero",
+    "layU",
+    "layF"
+   ]
+  },
+  {
+   "item": "d:tower",
+   "title": "Def. 2.12",
+   "page": 5,
+   "dest": "theorem.2.12",
+   "declarations": [
+    "GenLE",
+    "GenLEfinite",
+    "cokerLen",
+    "xRank",
+    "IsTower",
+    "HasMuQ"
+   ]
+  },
+  {
+   "item": "l:dual",
+   "title": "Lemma 2.9",
+   "page": 5,
+   "dest": "theorem.2.9",
+   "declarations": [
+    "xTwApplyApply"
+   ]
+  },
+  {
+   "item": "l:fix",
+   "title": "Lemma 3.1",
+   "page": 5,
+   "dest": "theorem.3.1",
+   "declarations": [
+    "cycMemPrinc"
+   ]
+  },
+  {
+   "item": "l:deg",
+   "title": "Lemma 3.2",
+   "page": 6,
+   "dest": "theorem.3.2",
+   "declarations": [
+    "leFinrank"
+   ]
+  },
+  {
+   "item": "p:roots",
+   "title": "Prop. 3.3",
+   "page": 6,
+   "dest": "theorem.3.3",
+   "declarations": [
+    "exIff",
+    "allIff",
+    "muQ"
+   ]
+  },
+  {
+   "item": "p:tors",
+   "title": "Prop. 4.1",
+   "page": 6,
+   "dest": "theorem.4.1",
+   "declarations": [
+    "dinfTors"
+   ]
+  },
+  {
+   "item": "i:G",
+   "title": "Input G",
+   "page": 7,
+   "dest": "section*.4",
+   "declarations": [
+    "kumExistsGen"
+   ]
+  },
+  {
+   "item": "p:gen",
+   "title": "Prop. 5.1",
+   "page": 7,
+   "dest": "theorem.5.1",
+   "declarations": [
+    "existsGen"
+   ]
+  },
+  {
+   "item": "p:genE",
+   "title": "Prop. 5.2",
+   "page": 7,
+   "dest": "theorem.5.2",
+   "declarations": [
+    "genGal",
+    "galEmbFam",
+    "galEmbTop"
+   ]
+  },
+  {
+   "item": "l:theta",
+   "title": "Lemma 7.2",
+   "page": 8,
+   "dest": "theorem.7.2",
+   "declarations": [
+    "galTransport"
+   ]
+  },
+  {
+   "item": "l:val",
+   "title": "Lemma 7.3",
+   "page": 9,
+   "dest": "theorem.7.3",
+   "declarations": [
+    "dtVal",
+    "dtDec",
+    "dtIne"
+   ]
+  },
+  {
+   "item": "p:transport",
+   "title": "Prop. 7.4",
+   "page": 9,
+   "dest": "theorem.7.4",
+   "declarations": [
+    "dtMem",
+    "dinfTransport"
+   ]
+  },
+  {
+   "item": "d:classes",
+   "title": "Def. 8.1",
+   "page": 10,
+   "dest": "theorem.8.1",
+   "declarations": [
+    "LData",
+    "qzTw",
+    "Sha",
+    "resInf",
+    "qzG"
+   ]
+  },
+  {
+   "item": "d:eqhom",
+   "title": "Def. 8.2",
+   "page": 10,
+   "dest": "theorem.8.2",
+   "declarations": [
+    "EqHom"
+   ]
+  },
+  {
+   "item": "i:R1",
+   "title": "Input R1",
+   "page": 10,
+   "dest": "section*.5",
+   "declarations": [
+    "resInfInj"
+   ]
+  },
+  {
+   "item": "i:R2",
+   "title": "Input R2",
+   "page": 10,
+   "dest": "section*.6",
+   "declarations": [
+    "resInfOnto"
+   ]
+  },
+  {
+   "item": "d:desc",
+   "title": "Def. 8.3",
+   "page": 11,
+   "dest": "theorem.8.3",
+   "declarations": [
+    "IsDesc"
+   ]
+  },
+  {
+   "item": "l:sep",
+   "title": "Lemma 9.1",
+   "page": 11,
+   "dest": "theorem.9.1",
+   "declarations": [
+    "qzAnn",
+    "zmodToQZ"
+   ]
+  }
+ ],
+ "outline": {
+  "nodes": [
+   {
+    "id": "setting",
+    "title": "Actions and twists",
+    "text": "conjugation on the characters, its dual, twists by the cyclotomic character, invariants",
+    "declarations": [
+     "dRep",
+     "xRep",
+     "xRepApply",
+     "twist",
+     "dTw",
+     "xTw",
+     "dTwApply",
+     "xTwApply",
+     "xTwApplyApply",
+     "ShaD",
+     "IsGen",
+     "cZero",
+     "layU",
+     "layF",
+     "XN",
+     "XX",
+     "XP",
+     "GenLE",
+     "GenLEfinite",
+     "cokerLen",
+     "xRank",
+     "IsTower",
+     "IsDesc"
+    ],
+    "takes_for_granted": [
+     "Dinf",
+     "EqHom",
+     "G",
+     "HasMuQ",
+     "LData",
+     "QZ",
+     "Sha",
+     "Un",
+     "Xinf",
+     "cycU",
+     "cycZ",
+     "funRep",
+     "funRepMem",
+     "galEmb",
+     "galOf",
+     "qzTw",
+     "resInf"
+    ],
+    "other_declarations_used": 18
+   },
+   {
+    "id": "roots",
+    "title": "Roots of unity and levels",
+    "text": "which roots of unity of l-power order a number field contains, read on the cyclotomic character",
+    "declarations": [
+     "cycMemPrinc",
+     "leFinrank",
+     "exIff",
+     "allIff",
+     "muQ"
+    ],
+    "takes_for_granted": [
+     "G",
+     "HasMuQ",
+     "Procyc",
+     "Un",
+     "cycZ",
+     "princ",
+     "qExp"
+    ],
+    "other_declarations_used": 2
+   },
+   {
+    "id": "torsion",
+    "title": "Torsion and trivial action",
+    "text": "characters have l-power order; the kernel of the cyclotomic character acts trivially",
+    "declarations": [
+     "dinfTors"
+    ],
+    "takes_for_granted": [
+     "Dinf",
+     "G",
+     "QZ",
+     "Xinf",
+     "cycU",
+     "cycZ"
+    ],
+    "other_declarations_used": 8
+   },
+   {
+    "id": "generators",
+    "title": "Generators",
+    "text": "a closed subgroup has an element whose cyclotomic value generates its image topologically",
+    "declarations": [
+     "existsGen",
+     "genGal"
+    ],
+    "takes_for_granted": [
+     "G",
+     "Procyc",
+     "QZ",
+     "cycZ",
+     "galEmb",
+     "galEmbFam",
+     "galEmbTop",
+     "galOf",
+     "gamU",
+     "kumExistsGen",
+     "princ",
+     "qExp",
+     "qzG"
+    ],
+    "other_declarations_used": 8
+   },
+   {
+    "id": "invariants",
+    "title": "Theorem B",
+    "text": "the invariants of a subgroup under a twisted action are the fixed points of one generator",
+    "declarations": [
+     "shaDGen"
+    ],
+    "takes_for_granted": [
+     "Dinf",
+     "G",
+     "QZ",
+     "Xinf",
+     "cycU",
+     "cycZ",
+     "dinfNil",
+     "funRep",
+     "levU",
+     "princ"
+    ],
+    "other_declarations_used": 6
+   },
+   {
+    "id": "transport",
+    "title": "Transport of characters",
+    "text": "an isomorphism of algebraic closures carries the module of characters along",
+    "declarations": [
+     "dtVal",
+     "dtDec",
+     "dtIne",
+     "dtMem",
+     "dinfTransport"
+    ],
+    "takes_for_granted": [
+     "Dinf",
+     "G",
+     "QZ",
+     "cycU",
+     "cycZ",
+     "galTransport"
+    ],
+    "other_declarations_used": 8
+   },
+   {
+    "id": "descent",
+    "title": "Theorem A",
+    "text": "restriction identifies the locally trivial classes over a layer with twisted invariants",
+    "declarations": [
+     "desc"
+    ],
+    "takes_for_granted": [
+     "Dinf",
+     "EqHom",
+     "G",
+     "LData",
+     "Procyc",
+     "QZ",
+     "Sha",
+     "cycU",
+     "cycZ",
+     "galEmb",
+     "galEmbFam",
+     "galOf",
+     "qzG",
+     "qzTw",
+     "resInf",
+     "resInfInj",
+     "resInfOnto"
+    ],
+    "other_declarations_used": 20
+   },
+   {
+    "id": "separation",
+    "title": "A separation lemma",
+    "text": "a nonzero element of a module over the l-adic integers is detected by a character",
+    "declarations": [
+     "qzAnn"
+    ],
+    "takes_for_granted": [
+     "QZ",
+     "zmodToQZ"
+    ],
+    "other_declarations_used": 2
+   }
+  ],
+  "edges": [
+   {
+    "from": "setting",
+    "to": "descent",
+    "uses": 3
+   },
+   {
+    "from": "setting",
+    "to": "generators",
+    "uses": 2
+   },
+   {
+    "from": "setting",
+    "to": "invariants",
+    "uses": 8
+   },
+   {
+    "from": "setting",
+    "to": "roots",
+    "uses": 2
+   },
+   {
+    "from": "setting",
+    "to": "torsion",
+    "uses": 5
+   },
+   {
+    "from": "torsion",
+    "to": "invariants",
+    "uses": 1
+   },
+   {
+    "from": "transport",
+    "to": "descent",
+    "uses": 1
+   }
+  ]
+ },
+ "declarations": [
+  {
+   "key": "dRep",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:41:5",
+   "name": "Tower.dRep",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    41,
+    43
+   ],
+   "in_unit": true,
+   "item": "d:act",
+   "where": "Def. 2.7",
+   "page": 4,
+   "dest": "theorem.2.7"
+  },
+  {
+   "key": "xRep",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:45:5",
+   "name": "Tower.xRep",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    45,
+    46
+   ],
+   "in_unit": true,
+   "item": "d:act",
+   "where": "Def. 2.7",
+   "page": 4,
+   "dest": "theorem.2.7"
+  },
+  {
+   "key": "xRepApply",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:48:9",
+   "name": "Tower.xRep_apply",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    48,
+    48
+   ],
+   "in_unit": true,
+   "item": "d:act",
+   "where": "Def. 2.7",
+   "page": 4,
+   "dest": "theorem.2.7"
+  },
+  {
+   "key": "twist",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:50:5",
+   "name": "Tower.twist",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    50,
+    54
+   ],
+   "in_unit": true,
+   "item": "d:twist",
+   "where": "Def. 2.8",
+   "page": 4,
+   "dest": "theorem.2.8"
+  },
+  {
+   "key": "dTw",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:56:5",
+   "name": "Tower.dTw",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    56,
+    56
+   ],
+   "in_unit": true,
+   "item": "d:twist",
+   "where": "Def. 2.8",
+   "page": 4,
+   "dest": "theorem.2.8"
+  },
+  {
+   "key": "xTw",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:58:5",
+   "name": "Tower.xTw",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    58,
+    58
+   ],
+   "in_unit": true,
+   "item": "d:twist",
+   "where": "Def. 2.8",
+   "page": 4,
+   "dest": "theorem.2.8"
+  },
+  {
+   "key": "dTwApply",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:60:9",
+   "name": "Tower.dTw_apply",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    60,
+    61
+   ],
+   "in_unit": true,
+   "item": "d:twist",
+   "where": "Def. 2.8",
+   "page": 4,
+   "dest": "theorem.2.8"
+  },
+  {
+   "key": "xTwApply",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:63:9",
+   "name": "Tower.xTw_apply",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    63,
+    64
+   ],
+   "in_unit": true,
+   "item": "d:twist",
+   "where": "Def. 2.8",
+   "page": 4,
+   "dest": "theorem.2.8"
+  },
+  {
+   "key": "xTwApplyApply",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:66:9",
+   "name": "Tower.xTw_apply_apply",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    66,
+    69
+   ],
+   "in_unit": true,
+   "item": "l:dual",
+   "where": "Lemma 2.9",
+   "page": 5,
+   "dest": "theorem.2.9"
+  },
+  {
+   "key": "ShaD",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:73:8",
+   "name": "Tower.ShaD",
+   "kind": "abbrev",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    73,
+    74
+   ],
+   "in_unit": true,
+   "item": "d:twist",
+   "where": "Def. 2.8",
+   "page": 4,
+   "dest": "theorem.2.8"
+  },
+  {
+   "key": "IsGen",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:36:5",
+   "name": "Tower.IsGen",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    36,
+    37
+   ],
+   "in_unit": true,
+   "item": "d:gen",
+   "where": "Def. 2.10",
+   "page": 5,
+   "dest": "theorem.2.10"
+  },
+  {
+   "key": "cZero",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:104:5",
+   "name": "Tower.cZero",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    104,
+    104
+   ],
+   "in_unit": true,
+   "item": "d:layers",
+   "where": "Def. 2.11",
+   "page": 5,
+   "dest": "theorem.2.11"
+  },
+  {
+   "key": "layU",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:108:8",
+   "name": "Tower.layU",
+   "kind": "abbrev",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    108,
+    108
+   ],
+   "in_unit": true,
+   "item": "d:layers",
+   "where": "Def. 2.11",
+   "page": 5,
+   "dest": "theorem.2.11"
+  },
+  {
+   "key": "layF",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:110:8",
+   "name": "Tower.layF",
+   "kind": "abbrev",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    110,
+    110
+   ],
+   "in_unit": true,
+   "item": "d:layers",
+   "where": "Def. 2.11",
+   "page": 5,
+   "dest": "theorem.2.11"
+  },
+  {
+   "key": "XN",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:112:8",
+   "name": "Tower.XN",
+   "kind": "abbrev",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    112,
+    112
+   ],
+   "in_unit": true,
+   "item": "d:char",
+   "where": "Def. 2.6",
+   "page": 3,
+   "dest": "theorem.2.6"
+  },
+  {
+   "key": "XX",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:114:8",
+   "name": "Tower.XX",
+   "kind": "abbrev",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    114,
+    114
+   ],
+   "in_unit": true,
+   "item": "d:char",
+   "where": "Def. 2.6",
+   "page": 3,
+   "dest": "theorem.2.6"
+  },
+  {
+   "key": "XP",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:116:8",
+   "name": "Tower.XP",
+   "kind": "abbrev",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    116,
+    116
+   ],
+   "in_unit": true,
+   "item": "d:char",
+   "where": "Def. 2.6",
+   "page": 3,
+   "dest": "theorem.2.6"
+  },
+  {
+   "key": "GenLE",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:11:5",
+   "name": "Tower.GenLE",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    11,
+    12
+   ],
+   "in_unit": true,
+   "item": "d:tower",
+   "where": "Def. 2.12",
+   "page": 5,
+   "dest": "theorem.2.12"
+  },
+  {
+   "key": "GenLEfinite",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:14:9",
+   "name": "Tower.GenLE.finite",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    14,
+    17
+   ],
+   "in_unit": true,
+   "item": "d:tower",
+   "where": "Def. 2.12",
+   "page": 5,
+   "dest": "theorem.2.12"
+  },
+  {
+   "key": "cokerLen",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:24:5",
+   "name": "Tower.cokerLen",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    24,
+    25
+   ],
+   "in_unit": true,
+   "item": "d:tower",
+   "where": "Def. 2.12",
+   "page": 5,
+   "dest": "theorem.2.12"
+  },
+  {
+   "key": "xRank",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:34:5",
+   "name": "Tower.xRank",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    34,
+    34
+   ],
+   "in_unit": true,
+   "item": "d:tower",
+   "where": "Def. 2.12",
+   "page": 5,
+   "dest": "theorem.2.12"
+  },
+  {
+   "key": "IsTower",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:120:11",
+   "name": "Tower.IsTower",
+   "kind": "structure",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    120,
+    124
+   ],
+   "in_unit": true,
+   "item": "d:tower",
+   "where": "Def. 2.12",
+   "page": 5,
+   "dest": "theorem.2.12"
+  },
+  {
+   "key": "IsDesc",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.IdealNormClassCongr:99:5",
+   "name": "Tower.IsDesc",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/IdealNormClassCongr.lean",
+   "lines": [
+    99,
+    101
+   ],
+   "in_unit": true,
+   "item": "d:desc",
+   "where": "Def. 8.3",
+   "page": 11,
+   "dest": "theorem.8.3"
+  },
+  {
+   "key": "cycMemPrinc",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.CycMemPrincIff:7:17",
+   "name": "cyc_mem_princ_iff",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/CycMemPrincIff.lean",
+   "lines": [
+    7,
+    34
+   ],
+   "in_unit": true,
+   "item": "l:fix",
+   "where": "Lemma 3.1",
+   "page": 5,
+   "dest": "theorem.3.1"
+  },
+  {
+   "key": "leFinrank",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.CycMemPrincIff:36:17",
+   "name": "le_finrank",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/CycMemPrincIff.lean",
+   "lines": [
+    36,
+    49
+   ],
+   "in_unit": true,
+   "item": "l:deg",
+   "where": "Lemma 3.2",
+   "page": 6,
+   "dest": "theorem.3.2"
+  },
+  {
+   "key": "exIff",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.CycMemPrincIff:51:17",
+   "name": "ex_iff",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/CycMemPrincIff.lean",
+   "lines": [
+    51,
+    59
+   ],
+   "in_unit": true,
+   "item": "p:roots",
+   "where": "Prop. 3.3(a)",
+   "page": 6,
+   "dest": "theorem.3.3"
+  },
+  {
+   "key": "allIff",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.CycMemPrincIff:61:17",
+   "name": "all_iff",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/CycMemPrincIff.lean",
+   "lines": [
+    61,
+    79
+   ],
+   "in_unit": true,
+   "item": "p:roots",
+   "where": "Prop. 3.3(a)",
+   "page": 6,
+   "dest": "theorem.3.3"
+  },
+  {
+   "key": "muQ",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.CycMemPrincIff:81:9",
+   "name": "Tower.muQ",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/CycMemPrincIff.lean",
+   "lines": [
+    81,
+    104
+   ],
+   "in_unit": true,
+   "item": "p:roots",
+   "where": "Prop. 3.3",
+   "page": 6,
+   "dest": "theorem.3.3"
+  },
+  {
+   "key": "dinfTors",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTors:7:9",
+   "name": "Tower.dinfTors",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/DinfTors.lean",
+   "lines": [
+    7,
+    86
+   ],
+   "in_unit": true,
+   "item": "p:tors",
+   "where": "Prop. 4.1",
+   "page": 6,
+   "dest": "theorem.4.1"
+  },
+  {
+   "key": "existsGen",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.ExistsGen:9:9",
+   "name": "Tower.existsGen",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/ExistsGen.lean",
+   "lines": [
+    9,
+    28
+   ],
+   "in_unit": true,
+   "item": "p:gen",
+   "where": "Prop. 5.1",
+   "page": 7,
+   "dest": "theorem.5.1"
+  },
+  {
+   "key": "genGal",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.GenGal:9:9",
+   "name": "Tower.genGal",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/GenGal.lean",
+   "lines": [
+    9,
+    33
+   ],
+   "in_unit": true,
+   "item": "p:genE",
+   "where": "Prop. 5.2",
+   "page": 7,
+   "dest": "theorem.5.2"
+  },
+  {
+   "key": "shaDGen",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.ShaDGen:9:9",
+   "name": "Tower.shaDGen",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/ShaDGen.lean",
+   "lines": [
+    9,
+    59
+   ],
+   "in_unit": true,
+   "item": "t:B",
+   "where": "Theorem B",
+   "page": 2,
+   "dest": "section*.2"
+  },
+  {
+   "key": "dtVal",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTransport:8:17",
+   "name": "dt_val_lt_one",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/DinfTransport.lean",
+   "lines": [
+    8,
+    12
+   ],
+   "in_unit": true,
+   "item": "l:val",
+   "where": "Lemma 7.3(a)",
+   "page": 9,
+   "dest": "theorem.7.3"
+  },
+  {
+   "key": "dtDec",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTransport:14:17",
+   "name": "dt_dec",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/DinfTransport.lean",
+   "lines": [
+    14,
+    25
+   ],
+   "in_unit": true,
+   "item": "l:val",
+   "where": "Lemma 7.3(b)",
+   "page": 9,
+   "dest": "theorem.7.3"
+  },
+  {
+   "key": "dtIne",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTransport:27:17",
+   "name": "dt_ine",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/DinfTransport.lean",
+   "lines": [
+    27,
+    34
+   ],
+   "in_unit": true,
+   "item": "l:val",
+   "where": "Lemma 7.3(b)",
+   "page": 9,
+   "dest": "theorem.7.3"
+  },
+  {
+   "key": "dtMem",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTransport:36:17",
+   "name": "dt_mem",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/DinfTransport.lean",
+   "lines": [
+    36,
+    48
+   ],
+   "in_unit": true,
+   "item": "p:transport",
+   "where": "Prop. 7.4, proof",
+   "page": 9,
+   "dest": "theorem.7.4"
+  },
+  {
+   "key": "dinfTransport",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTransport:50:9",
+   "name": "Tower.dinfTransport",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/DinfTransport.lean",
+   "lines": [
+    50,
+    76
+   ],
+   "in_unit": true,
+   "item": "p:transport",
+   "where": "Prop. 7.4",
+   "page": 9,
+   "dest": "theorem.7.4"
+  },
+  {
+   "key": "desc",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.Imports:10:9",
+   "name": "Tower.desc",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/Imports.lean",
+   "lines": [
+    10,
+    147
+   ],
+   "in_unit": true,
+   "item": "t:A",
+   "where": "Theorem A",
+   "page": 2,
+   "dest": "section*.1"
+  },
+  {
+   "key": "qzAnn",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.QzSep:8:17",
+   "name": "exists_qz_ne_zero_annihilators_of_ne_zero",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/QzSep.lean",
+   "lines": [
+    8,
+    45
+   ],
+   "in_unit": true,
+   "item": "l:sep",
+   "where": "Lemma 9.1",
+   "page": 11,
+   "dest": "theorem.9.1"
+  },
+  {
+   "key": "G",
+   "id": "Formalism.ConjugateSelfDual.Statement:6:8",
+   "name": "G",
+   "kind": "abbrev",
+   "file": "Formalism/ConjugateSelfDual/Statement.lean",
+   "lines": [
+    6,
+    6
+   ],
+   "in_unit": false,
+   "item": "d:G",
+   "where": "Def. 2.2",
+   "page": 3,
+   "dest": "theorem.2.2"
+  },
+  {
+   "key": "QZ",
+   "id": "Formalism.GaloisCohomology.Statement:15:5",
+   "name": "QZ",
+   "kind": "def",
+   "file": "Formalism/GaloisCohomology/Statement.lean",
+   "lines": [
+    15,
+    15
+   ],
+   "in_unit": false,
+   "item": "d:G",
+   "where": "Def. 2.2",
+   "page": 3,
+   "dest": "theorem.2.2"
+  },
+  {
+   "key": "LData",
+   "id": "Formalism.GaloisCohomology.Statement:54:11",
+   "name": "LData",
+   "kind": "structure",
+   "file": "Formalism/GaloisCohomology/Statement.lean",
+   "lines": [
+    54,
+    63
+   ],
+   "in_unit": false,
+   "item": "d:classes",
+   "where": "Def. 8.1",
+   "page": 10,
+   "dest": "theorem.8.1"
+  },
+  {
+   "key": "qzTw",
+   "id": "Formalism.GaloisCohomology.Statement:67:5",
+   "name": "qzTw",
+   "kind": "def",
+   "file": "Formalism/GaloisCohomology/Statement.lean",
+   "lines": [
+    67,
+    69
+   ],
+   "in_unit": false,
+   "item": "d:classes",
+   "where": "Def. 8.1",
+   "page": 10,
+   "dest": "theorem.8.1"
+  },
+  {
+   "key": "Sha",
+   "id": "Formalism.GaloisCohomology.Statement:75:5",
+   "name": "Sha",
+   "kind": "def",
+   "file": "Formalism/GaloisCohomology/Statement.lean",
+   "lines": [
+    75,
+    76
+   ],
+   "in_unit": false,
+   "item": "d:classes",
+   "where": "Def. 8.1",
+   "page": 10,
+   "dest": "theorem.8.1"
+  },
+  {
+   "key": "cycZ",
+   "id": "ReciprocityTheory.GaloisValuations.Global:90:5",
+   "name": "Gal.cycZ",
+   "kind": "def",
+   "file": "ReciprocityTheory/GaloisValuations/Global.lean",
+   "lines": [
+    90,
+    92
+   ],
+   "in_unit": false,
+   "item": "d:G",
+   "where": "Def. 2.2",
+   "page": 3,
+   "dest": "theorem.2.2"
+  },
+  {
+   "key": "princ",
+   "id": "Development.AutomorphicArithmetic.CyclotomicBounds.ClassNumberBounds.TotallyRealRoots.LeNuIffPowMemPrinc:16:19",
+   "name": "princ",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/CyclotomicBounds/ClassNumberBounds/TotallyRealRoots/LeNuIffPowMemPrinc.lean",
+   "lines": [
+    16,
+    16
+   ],
+   "in_unit": false,
+   "item": "d:groups",
+   "where": "Def. 2.3",
+   "page": 3,
+   "dest": "theorem.2.3"
+  },
+  {
+   "key": "levU",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:187:5",
+   "name": "Base.levU",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/SelmerTransport/ConjStableShaFam.lean",
+   "lines": [
+    187,
+    187
+   ],
+   "in_unit": false,
+   "item": "d:groups",
+   "where": "Def. 2.3",
+   "page": 3,
+   "dest": "theorem.2.3"
+  },
+  {
+   "key": "cycU",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:189:5",
+   "name": "Base.cycU",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/SelmerTransport/ConjStableShaFam.lean",
+   "lines": [
+    189,
+    189
+   ],
+   "in_unit": false,
+   "item": "d:groups",
+   "where": "Def. 2.3",
+   "page": 3,
+   "dest": "theorem.2.3"
+  },
+  {
+   "key": "qExp",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:193:5",
+   "name": "Base.qExp",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/SelmerTransport/ConjStableShaFam.lean",
+   "lines": [
+    193,
+    193
+   ],
+   "in_unit": false,
+   "item": "d:groups",
+   "where": "Def. 2.3",
+   "page": 3,
+   "dest": "theorem.2.3"
+  },
+  {
+   "key": "gamU",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:195:8",
+   "name": "Base.gamU",
+   "kind": "abbrev",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/SelmerTransport/ConjStableShaFam.lean",
+   "lines": [
+    195,
+    195
+   ],
+   "in_unit": false,
+   "item": "d:groups",
+   "where": "Def. 2.3",
+   "page": 3,
+   "dest": "theorem.2.3"
+  },
+  {
+   "key": "galOf",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:43:5",
+   "name": "Base.galOf",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/SelmerTransport/ConjStableShaFam.lean",
+   "lines": [
+    43,
+    47
+   ],
+   "in_unit": false,
+   "item": "d:ext",
+   "where": "Def. 2.5",
+   "page": 3,
+   "dest": "theorem.2.5"
+  },
+  {
+   "key": "galEmb",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:65:5",
+   "name": "Base.galEmb",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/SelmerTransport/ConjStableShaFam.lean",
+   "lines": [
+    65,
+    65
+   ],
+   "in_unit": false,
+   "item": "d:ext",
+   "where": "Def. 2.5",
+   "page": 3,
+   "dest": "theorem.2.5"
+  },
+  {
+   "key": "galEmbFam",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.GalEmbFam:5:9",
+   "name": "Base.galEmbFam",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/SelmerTransport/GalEmbFam.lean",
+   "lines": [
+    5,
+    30
+   ],
+   "in_unit": false,
+   "item": "p:genE",
+   "where": "Prop. 5.2, proof",
+   "page": 7,
+   "dest": "theorem.5.2"
+  },
+  {
+   "key": "galEmbTop",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.GalEmbTop:32:9",
+   "name": "Base.galEmbTop",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/SelmerTransport/GalEmbTop.lean",
+   "lines": [
+    32,
+    69
+   ],
+   "in_unit": false,
+   "item": "p:genE",
+   "where": "Prop. 5.2, proof",
+   "page": 7,
+   "dest": "theorem.5.2"
+  },
+  {
+   "key": "Dinf",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:195:8",
+   "name": "Kum.Dinf",
+   "kind": "abbrev",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/KummerTheory/Mk0IdMapCongr.lean",
+   "lines": [
+    195,
+    195
+   ],
+   "in_unit": false,
+   "item": "d:char",
+   "where": "Def. 2.6",
+   "page": 3,
+   "dest": "theorem.2.6"
+  },
+  {
+   "key": "Xinf",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:197:8",
+   "name": "Kum.Xinf",
+   "kind": "abbrev",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/KummerTheory/Mk0IdMapCongr.lean",
+   "lines": [
+    197,
+    197
+   ],
+   "in_unit": false,
+   "item": "d:char",
+   "where": "Def. 2.6",
+   "page": 3,
+   "dest": "theorem.2.6"
+  },
+  {
+   "key": "funRep",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:121:5",
+   "name": "Kum.funRep",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/KummerTheory/Mk0IdMapCongr.lean",
+   "lines": [
+    121,
+    124
+   ],
+   "in_unit": false,
+   "item": "d:act",
+   "where": "Def. 2.7",
+   "page": 4,
+   "dest": "theorem.2.7"
+  },
+  {
+   "key": "EqHom",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:109:5",
+   "name": "Kum.EqHom",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/KummerTheory/Mk0IdMapCongr.lean",
+   "lines": [
+    109,
+    110
+   ],
+   "in_unit": false,
+   "item": "d:eqhom",
+   "where": "Def. 8.2",
+   "page": 10,
+   "dest": "theorem.8.2"
+  },
+  {
+   "key": "Un",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:186:8",
+   "name": "Kum.Un",
+   "kind": "abbrev",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/KummerTheory/Mk0IdMapCongr.lean",
+   "lines": [
+    186,
+    186
+   ],
+   "in_unit": false,
+   "item": "d:groups",
+   "where": "Def. 2.3",
+   "page": 3,
+   "dest": "theorem.2.3"
+  },
+  {
+   "key": "Procyc",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:191:5",
+   "name": "Kum.Procyc",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/KummerTheory/Mk0IdMapCongr.lean",
+   "lines": [
+    191,
+    191
+   ],
+   "in_unit": false,
+   "item": "d:groups",
+   "where": "Def. 2.3",
+   "page": 3,
+   "dest": "theorem.2.3"
+  },
+  {
+   "key": "resInf",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:214:5",
+   "name": "Kum.resInf",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/KummerTheory/Mk0IdMapCongr.lean",
+   "lines": [
+    214,
+    217
+   ],
+   "in_unit": false,
+   "item": "d:classes",
+   "where": "Def. 8.1",
+   "page": 10,
+   "dest": "theorem.8.1"
+  },
+  {
+   "key": "funRepMem",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.FunRepMem:5:9",
+   "name": "Kum.funRepMem",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/KummerTheory/FunRepMem.lean",
+   "lines": [
+    5,
+    46
+   ],
+   "in_unit": false,
+   "item": "d:act",
+   "where": "Def. 2.7",
+   "page": 4,
+   "dest": "theorem.2.7"
+  },
+  {
+   "key": "dinfNil",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.DinfNil:62:9",
+   "name": "Kum.dinfNil",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/KummerTheory/DinfNil.lean",
+   "lines": [
+    62,
+    235
+   ],
+   "in_unit": false,
+   "item": "t:B",
+   "where": "Theorem B, proof",
+   "page": 2,
+   "dest": "section*.2"
+  },
+  {
+   "key": "kumExistsGen",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.ExistsGen:32:9",
+   "name": "Kum.existsGen",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/KummerTheory/ExistsGen.lean",
+   "lines": [
+    32,
+    96
+   ],
+   "in_unit": false,
+   "item": "i:G",
+   "where": "Input G",
+   "page": 7,
+   "dest": "section*.4"
+  },
+  {
+   "key": "resInfInj",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.ResInfInj:58:9",
+   "name": "Kum.resInfInj",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/KummerTheory/ResInfInj.lean",
+   "lines": [
+    58,
+    171
+   ],
+   "in_unit": false,
+   "item": "i:R1",
+   "where": "Input R1",
+   "page": 10,
+   "dest": "section*.5"
+  },
+  {
+   "key": "resInfOnto",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.ResInfOnto:102:9",
+   "name": "Kum.resInfOnto",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/KummerTheory/ResInfOnto.lean",
+   "lines": [
+    102,
+    166
+   ],
+   "in_unit": false,
+   "item": "i:R2",
+   "where": "Input R2",
+   "page": 10,
+   "dest": "section*.6"
+  },
+  {
+   "key": "zmodToQZ",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.ZmodToQZ:5:9",
+   "name": "Kum.zmodToQZ",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/KummerTheory/ZmodToQZ.lean",
+   "lines": [
+    5,
+    78
+   ],
+   "in_unit": false,
+   "item": "l:sep",
+   "where": "Lemma 9.1, proof",
+   "page": 11,
+   "dest": "theorem.9.1"
+  },
+  {
+   "key": "HasMuQ",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GeneratorCountTuples.LemmaK:9:5",
+   "name": "HasMuQ",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GeneratorCountTuples/LemmaK.lean",
+   "lines": [
+    9,
+    9
+   ],
+   "in_unit": false,
+   "item": "d:tower",
+   "where": "Def. 2.12",
+   "page": 5,
+   "dest": "theorem.2.12"
+  },
+  {
+   "key": "qzG",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.GaloisCohomologyLength.LevelInertiaLeLevelDec:22:5",
+   "name": "qzG",
+   "kind": "def",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/GaloisCohomologyLength/LevelInertiaLeLevelDec.lean",
+   "lines": [
+    22,
+    22
+   ],
+   "in_unit": false,
+   "item": "d:classes",
+   "where": "Def. 8.1",
+   "page": 10,
+   "dest": "theorem.8.1"
+  },
+  {
+   "key": "galTransport",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.GaloisCohomologyLength.GalTransport:7:9",
+   "name": "galTransport",
+   "kind": "theorem",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/GaloisLibrary/GaloisCohomologyLength/GalTransport.lean",
+   "lines": [
+    7,
+    71
+   ],
+   "in_unit": false,
+   "item": "l:theta",
+   "where": "Lemma 7.2",
+   "page": 8,
+   "dest": "theorem.7.2"
+  }
+ ]
+}

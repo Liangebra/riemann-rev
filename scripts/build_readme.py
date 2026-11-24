@@ -614,6 +614,7 @@ def build() -> str:
     # ------------------------------------------------------------------ contents
     n_digest = len(load("digests/tower-bound/concordance.json")["declarations"])
     n_second = len(load("digests/local-nilpotence/concordance.json")["declarations"])
+    n_third = len(load("digests/layer-descent/concordance.json")["declarations"])
     add("## What is in this repository\n")
     add(table(["", "What", "Where"], [
         ["📄", "**The guide.** The whole argument in standard mathematical terminology: flow diagram, the theorem, the "
@@ -630,6 +631,12 @@ def build() -> str:
                f"proofs of the Lean text, with a concordance of {n_second} Lean declarations.",
          f"[**read online**]({SITE}/digests/local-nilpotence.pdf) · "
          "[`digests/local-nilpotence/local-nilpotence.pdf`](digests/local-nilpotence/local-nilpotence.pdf)"],
+        ["🔬", f"**Deformalization 3: descent to a layer of the cyclotomic tower.** The two inputs of the first note on "
+               f"the invariants under a generator and on the classes over a layer, from one whole unit of the archive; "
+               f"the cohomological inputs are stated and taken from other units. A concordance of {n_third} Lean "
+               f"declarations.",
+         f"[**read online**]({SITE}/digests/layer-descent.pdf) · "
+         "[`digests/layer-descent/layer-descent.pdf`](digests/layer-descent/layer-descent.pdf)"],
         ["🗺️", f"**The atlas.** An interactive map: the {len(comps)} components, a guided tour, the blueprint graph of "
                f"{n_decl} declarations with their dependencies, illustrated ideas and the verification ledger. One "
                "self-contained HTML file.",

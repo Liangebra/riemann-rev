@@ -1,0 +1,838 @@
+{
+ "what": "the declarations of the unit of the reading project's ledger that this note is the note of",
+ "ledger": 1,
+ "unit": 6879,
+ "archive_commit": "40e56bab026552e089d7afcfeff08d2defb9c005",
+ "structured_proofs": {
+  "proofs": 21,
+  "lines": 484,
+  "leaf_steps": 213,
+  "leaf_steps_quoting_their_lines": 213,
+  "lines_no_step_accounts_for": 0
+ },
+ "members": [
+  {
+   "name": "cyc_mem_princ_iff",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.CycMemPrincIff:7:17",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/CycMemPrincIff.lean",
+   "lines": [
+    7,
+    34
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.CyclotomicBounds.ClassNumberBounds.TotallyRealRoots.LeNuIffPowMemPrinc:10:19",
+    "Development.AutomorphicArithmetic.CyclotomicBounds.ClassNumberBounds.TotallyRealRoots.LeNuIffPowMemPrinc:16:19",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "ReciprocityTheory.GaloisValuations.Global:90:5"
+   ]
+  },
+  {
+   "name": "le_finrank",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.CycMemPrincIff:36:17",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/CycMemPrincIff.lean",
+   "lines": [
+    36,
+    49
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.CycMemPrincIff:36:17"
+   ]
+  },
+  {
+   "name": "ex_iff",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.CycMemPrincIff:51:17",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/CycMemPrincIff.lean",
+   "lines": [
+    51,
+    59
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.CycMemPrincIff:36:17",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:104:5"
+   ]
+  },
+  {
+   "name": "all_iff",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.CycMemPrincIff:61:17",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/CycMemPrincIff.lean",
+   "lines": [
+    61,
+    79
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.CycMemPrincIff:7:17",
+    "Development.AutomorphicArithmetic.CyclotomicBounds.ClassNumberBounds.TotallyRealRoots.LeNuIffPowMemPrinc:16:19",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "ReciprocityTheory.GaloisValuations.Global:90:5"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.muQ",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.CycMemPrincIff:81:9",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/CycMemPrincIff.lean",
+   "lines": [
+    81,
+    104
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:186:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:188:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:191:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:193:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GeneratorCountTuples.LemmaK:9:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.CycMemPrincIff:51:17",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.CycMemPrincIff:61:17",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.CycMemPrincIff:81:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:104:5",
+    "Development.AutomorphicArithmetic.CyclotomicBounds.ClassNumberBounds.TotallyRealRoots.LeNuIffPowMemPrinc:16:19",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "ReciprocityTheory.GaloisValuations.Global:90:5"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.dinfTors",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTors:7:9",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/DinfTors.lean",
+   "lines": [
+    7,
+    86
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:197:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:189:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:198:1",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.RestrictionMemInvariantH1:115:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:34:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:41:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:45:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:56:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:58:5",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "Formalism.GaloisCohomology.Statement:13:8",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1",
+    "ReciprocityTheory.GaloisValuations.Global:101:9",
+    "ReciprocityTheory.GaloisValuations.Global:15:5",
+    "ReciprocityTheory.GaloisValuations.Global:45:5",
+    "ReciprocityTheory.GaloisValuations.Global:90:5"
+   ]
+  },
+  {
+   "name": "dt_val_lt_one",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTransport:8:17",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/DinfTransport.lean",
+   "lines": [
+    8,
+    12
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "ReciprocityTheory.GaloisValuations.Global:27:9"
+   ]
+  },
+  {
+   "name": "dt_dec",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTransport:14:17",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/DinfTransport.lean",
+   "lines": [
+    14,
+    25
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "ReciprocityTheory.GaloisValuations.Global:15:5",
+    "ReciprocityTheory.GaloisValuations.Global:17:9",
+    "ReciprocityTheory.GaloisValuations.Global:20:9"
+   ]
+  },
+  {
+   "name": "dt_ine",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTransport:27:17",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/DinfTransport.lean",
+   "lines": [
+    27,
+    34
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTransport:14:17",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTransport:8:17",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "ReciprocityTheory.GaloisValuations.Global:45:5"
+   ]
+  },
+  {
+   "name": "dt_mem",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTransport:36:17",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/DinfTransport.lean",
+   "lines": [
+    36,
+    48
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:90:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTransport:14:17",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTransport:27:17",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTransport:8:17",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "ReciprocityTheory.GaloisValuations.Global:15:5",
+    "ReciprocityTheory.GaloisValuations.Global:45:5"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.dinfTransport",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTransport:50:9",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/DinfTransport.lean",
+   "lines": [
+    50,
+    76
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.GaloisCohomologyLength.GalTransport:7:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:189:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTransport:36:17",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1",
+    "ReciprocityTheory.GaloisValuations.Global:90:5"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.existsGen",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.ExistsGen:9:9",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/ExistsGen.lean",
+   "lines": [
+    9,
+    28
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.ExistsGen:32:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:193:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.ExistsGen:9:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:36:5",
+    "Development.AutomorphicArithmetic.CyclotomicBounds.ClassNumberBounds.TotallyRealRoots.LeNuIffPowMemPrinc:16:19",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "ReciprocityTheory.GaloisValuations.Global:101:9",
+    "ReciprocityTheory.GaloisValuations.Global:90:5"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.genGal",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.GenGal:9:9",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/GenGal.lean",
+   "lines": [
+    9,
+    33
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.GaloisCohomologyLength.LevelInertiaLeLevelDec:22:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:188:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:191:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:193:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:43:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:65:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:71:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:94:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.GalEmbFam:5:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.GalEmbTop:32:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.ExistsGen:9:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:36:5",
+    "Development.AutomorphicArithmetic.CyclotomicBounds.ClassNumberBounds.TotallyRealRoots.LeNuIffPowMemPrinc:16:19",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1",
+    "ReciprocityTheory.GaloisValuations.Global:15:5",
+    "ReciprocityTheory.GaloisValuations.Global:45:5",
+    "ReciprocityTheory.GaloisValuations.Global:90:5"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.IsDesc",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.IdealNormClassCongr:99:5",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/IdealNormClassCongr.lean",
+   "lines": [
+    99,
+    101
+   ],
+   "kind": "def",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:170:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:214:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:189:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:43:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:65:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.IdealNormClassCongr:63:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.IdealNormClassCongr:85:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.IdealNormClassCongr:99:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:73:8",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1",
+    "Formalism.GaloisCohomology.Statement:19:1",
+    "Formalism.GaloisCohomology.Statement:20:1",
+    "Formalism.GaloisCohomology.Statement:21:1",
+    "Formalism.GaloisCohomology.Statement:54:11",
+    "Formalism.GaloisCohomology.Statement:67:5",
+    "Formalism.GaloisCohomology.Statement:75:5",
+    "ReciprocityTheory.GaloisValuations.Global:128:5",
+    "ReciprocityTheory.GaloisValuations.Global:133:10",
+    "ReciprocityTheory.GaloisValuations.Global:141:8",
+    "ReciprocityTheory.GaloisValuations.SeparatedDvrSecondCohomologyMem:42:5",
+    "ReciprocityTheory.GaloisValuations.SeparatedDvrSecondCohomologyMem:57:5",
+    "ReciprocityTheory.GaloisValuations.SeparatedDvrSecondCohomologyMem:66:8",
+    "ReciprocityTheory.Hypotheses.GalCohDefs:12:1"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.desc",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.Imports:10:9",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/Imports.lean",
+   "lines": [
+    10,
+    147
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.GaloisCohomologyLength.LevelInertiaLeLevelDec:22:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:103:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:109:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:170:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:191:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:214:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:90:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.ResInfInj:58:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.ResInfOnto:102:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:189:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:198:1",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:43:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:65:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:94:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.GalEmbFam:5:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.RestrictionMemInvariantH1:115:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTransport:50:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.IdealNormClassCongr:99:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:56:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:73:8",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1",
+    "Formalism.GaloisCohomology.Statement:19:1",
+    "Formalism.GaloisCohomology.Statement:20:1",
+    "Formalism.GaloisCohomology.Statement:21:1",
+    "Formalism.GaloisCohomology.Statement:54:11",
+    "Formalism.GaloisCohomology.Statement:67:5",
+    "Formalism.GaloisCohomology.Statement:75:5",
+    "ReciprocityTheory.GaloisValuations.Global:128:5",
+    "ReciprocityTheory.GaloisValuations.Global:133:10",
+    "ReciprocityTheory.GaloisValuations.Global:141:8",
+    "ReciprocityTheory.GaloisValuations.Global:15:5",
+    "ReciprocityTheory.GaloisValuations.Global:45:5",
+    "ReciprocityTheory.GaloisValuations.Global:90:5",
+    "ReciprocityTheory.GaloisValuations.SeparatedDvrSecondCohomologyMem:42:5",
+    "ReciprocityTheory.GaloisValuations.SeparatedDvrSecondCohomologyMem:57:5",
+    "ReciprocityTheory.GaloisValuations.SeparatedDvrSecondCohomologyMem:66:8",
+    "ReciprocityTheory.Hypotheses.GalCohDefs:12:1"
+   ]
+  },
+  {
+   "name": "exists_qz_ne_zero_annihilators_of_ne_zero",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.QzSep:8:17",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/QzSep.lean",
+   "lines": [
+    8,
+    45
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.ZmodToQZ:5:9",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.shaDGen",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.ShaDGen:9:9",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/ShaDGen.lean",
+   "lines": [
+    9,
+    59
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.DinfNil:62:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:121:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:197:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:187:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:189:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:198:1",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.DinfTors:7:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.ShaDGen:9:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:34:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:36:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:41:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:45:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:56:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:58:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:60:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:73:8",
+    "Development.AutomorphicArithmetic.CyclotomicBounds.ClassNumberBounds.TotallyRealRoots.LeNuIffPowMemPrinc:16:19",
+    "Development.AutomorphicArithmetic.CyclotomicBounds.ClassNumberBounds.TotallyRealRoots.LeNuIffPowMemPrinc:49:9",
+    "Development.AutomorphicArithmetic.CyclotomicBounds.ClassNumberBounds.TotallyRealRoots.PrincTop:27:9",
+    "Development.AutomorphicArithmetic.CyclotomicBounds.ClassNumberBounds.TotallyRealRoots.UnitsMapSurjOfZmod:18:9",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1",
+    "ReciprocityTheory.GaloisValuations.Global:90:5"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.GenLE",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:11:5",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    11,
+    12
+   ],
+   "kind": "def",
+   "scope": "used",
+   "uses": []
+  },
+  {
+   "name": "UpperTheory.V.Tower.GenLE.finite",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:14:9",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    14,
+    17
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:11:5"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.cokerLen",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:24:5",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    24,
+    25
+   ],
+   "kind": "def",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:24:5"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.xRank",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:34:5",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    34,
+    34
+   ],
+   "kind": "def",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:189:5",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.IsGen",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:36:5",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    36,
+    37
+   ],
+   "kind": "def",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:36:5",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "ReciprocityTheory.GaloisValuations.Global:90:5"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.dRep",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:41:5",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    41,
+    43
+   ],
+   "kind": "def",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.FunRepMem:5:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:109:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:121:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:90:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:189:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:198:1",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:41:5",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.xRep",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:45:5",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    45,
+    46
+   ],
+   "kind": "def",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:197:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:189:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:41:5",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.xRep_apply",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:48:9",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    48,
+    48
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:197:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:189:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:41:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:45:5",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.twist",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:50:5",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    50,
+    54
+   ],
+   "kind": "def",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:50:5"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.dTw",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:56:5",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    56,
+    56
+   ],
+   "kind": "def",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:189:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:41:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:50:5",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1",
+    "ReciprocityTheory.GaloisValuations.Global:90:5"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.xTw",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:58:5",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    58,
+    58
+   ],
+   "kind": "def",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:197:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:189:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:41:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:45:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:50:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:58:5",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1",
+    "ReciprocityTheory.GaloisValuations.Global:90:5"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.dTw_apply",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:60:9",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    60,
+    61
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:189:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:41:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:56:5",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1",
+    "ReciprocityTheory.GaloisValuations.Global:90:5"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.xTw_apply",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:63:9",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    63,
+    64
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:197:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:189:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:45:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:58:5",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1",
+    "ReciprocityTheory.GaloisValuations.Global:90:5"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.xTw_apply_apply",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:66:9",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    66,
+    69
+   ],
+   "kind": "theorem",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:197:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:189:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:41:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:45:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:48:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:56:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:58:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:60:9",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:63:9",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1",
+    "ReciprocityTheory.GaloisValuations.Global:90:5"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.ShaD",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:73:8",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    73,
+    74
+   ],
+   "kind": "abbrev",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:189:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:41:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:56:5",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.cZero",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:104:5",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    104,
+    104
+   ],
+   "kind": "def",
+   "scope": "used",
+   "uses": []
+  },
+  {
+   "name": "UpperTheory.V.Tower.layU",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:108:8",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    108,
+    108
+   ],
+   "kind": "abbrev",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:186:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:104:5",
+    "Formalism.ConjugateSelfDual.Statement:6:8"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.layF",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:110:8",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    110,
+    110
+   ],
+   "kind": "abbrev",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:172:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:104:5"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.XN",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:112:8",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    112,
+    112
+   ],
+   "kind": "abbrev",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:197:8",
+    "Formalism.ConjugateSelfDual.Statement:6:8"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.XX",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:114:8",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    114,
+    114
+   ],
+   "kind": "abbrev",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:112:8"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.XP",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:116:8",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    116,
+    116
+   ],
+   "kind": "abbrev",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:112:8"
+   ]
+  },
+  {
+   "name": "UpperTheory.V.Tower.IsTower",
+   "id": "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:120:11",
+   "file": "Development/AutomorphicArithmetic/AutomorphicVarieties/NumberFieldTowers/XTwApplyApply.lean",
+   "lines": [
+    120,
+    124
+   ],
+   "kind": "structure",
+   "scope": "used",
+   "uses": [
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.KummerTheory.Mk0IdMapCongr:195:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GaloisLibrary.SelmerTransport.ConjStableShaFam:189:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.GeneratorCountTuples.LemmaK:9:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:116:8",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:11:5",
+    "Development.AutomorphicArithmetic.AutomorphicVarieties.NumberFieldTowers.XTwApplyApply:120:11",
+    "Formalism.ConjugateSelfDual.Statement:6:8",
+    "Formalism.GaloisCohomology.Statement:15:5",
+    "Formalism.GaloisCohomology.Statement:17:1",
+    "Formalism.GaloisCohomology.Statement:18:1"
+   ]
+  }
+ ]
+}

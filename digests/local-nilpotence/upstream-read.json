@@ -4,26 +4,50 @@
   {
    "declaration": "Kum.dinfNil",
    "change": "proof changed",
-   "upstream_commit": "c7791603122c0328f79e49f6be5d7d4402effc53",
-   "file_sha256": "3e7214399a259c97d3352c7547e0712b22163e30609eb73f2dc3b6e8fd3e66fb",
-   "verdict": "Four tactic lines inside the proof adapted to a newer library (explicit argument of map_add, the coefficient function of polynomials). Statement unchanged; the steps of section 4 of the note are the same.",
-   "read": "2026-11-22"
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": "e80e969cb8fd2f48a883208ffe535e9276ebafd22b6acb6733298811899e5c17",
+   "verdict": "Four tactic lines inside the proof adapted to a newer library (map_add (f := _), AddMonoidAlgebra.coeff). Statement unchanged.",
+   "read": "2026-11-24"
   },
   {
    "declaration": "Kum.funRepMem",
    "change": "statement changed",
-   "upstream_commit": "c7791603122c0328f79e49f6be5d7d4402effc53",
-   "file_sha256": "f2416dd7f8dec772942959f5aeaf24d364b1c8769dd94d4185777df6bbc17a8f",
-   "verdict": "The arguments R and M of funRep are now implicit, written (R := R) (M := M), and the statement is set on more lines. The same statement.",
-   "read": "2026-11-22"
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": "e67f806d7a305c7d333a966d618f03c26c79ddfcfca52140952a92d0bd6d560b",
+   "verdict": "funRep is applied with named arguments (R := R) (M := M), and the statement is set on more lines. The same three statements.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "PropA.dualUnip",
+   "change": "file absent",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": null,
+   "verdict": "Its file is gone in the reorganisation of upstream modules merged on 23–24 November (#324, #539); the declaration is now in ABoundOfDescends.lean (AdditiveValuationNorms), and its whole text there is the pinned text, white space aside.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "PropA.xUnip",
+   "change": "file absent",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": null,
+   "verdict": "Its file is gone in the reorganisation of upstream modules merged on 23–24 November (#324, #539); the declaration is now in ABoundOfDescends.lean (AdditiveValuationNorms), and its whole text there is the pinned text, white space aside.",
+   "read": "2026-11-24"
+  },
+  {
+   "declaration": "Tower.shaDGen",
+   "change": "file absent",
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": null,
+   "verdict": "Its file is gone in the reorganisation of upstream modules merged on 23–24 November (#324, #539); the declaration is now in ExistsDescends.lean (NumberFieldTowers), and its whole text there is the pinned text, white space aside.",
+   "read": "2026-11-24"
   },
   {
    "declaration": "exists_prime_pow_smul_eq_zero_qz",
    "change": "proof changed",
-   "upstream_commit": "c7791603122c0328f79e49f6be5d7d4402effc53",
-   "file_sha256": "3e7214399a259c97d3352c7547e0712b22163e30609eb73f2dc3b6e8fd3e66fb",
-   "verdict": "One rewriting lemma added to a tactic line (PadicInt.mem_subring_iff). Statement unchanged.",
-   "read": "2026-11-22"
+   "upstream_commit": "0f07f5513b4e19d67730ecf48350135254f3eb73",
+   "file_sha256": "e80e969cb8fd2f48a883208ffe535e9276ebafd22b6acb6733298811899e5c17",
+   "verdict": "One rewrite gains PadicInt.mem_subring_iff in front. Statement unchanged.",
+   "read": "2026-11-24"
   }
  ]
 }
