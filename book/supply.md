@@ -170,16 +170,19 @@ about individual $K$-groups would require additional theorems.
 
 Global duality enters the window argument through two finite-level results: the last
 arrow of the nine-term sequence and the perfect pairing of locally trivial classes
-in degrees one and two. They lead to the integral length comparisons in
-[the finite-level and integral comparison](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L517-L541).
+in degrees one and two. The passage to integral coefficients is carried out in
+[the archive's length comparison](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L517-L541).
 
 Write $\chi$ for the cyclotomic character, $L=\mathbf Z_\ell(e+1)$
 for the rank-one integral module of character $\chi^{e+1}$, and
 $V=(\mathbf Q_\ell/\mathbf Z_\ell)(-e)$ for its torsion Tate dual (character $\chi^{-e}$).
 Let $G_S$ be the restricted-ramification group of the number field $F$, where
 $S$ consists of the places above $\ell$ (as in `LData`). Suppose that $\ell$ is
-odd or $F$ is totally imaginary. At level $r\ge1$ the dual pair is $L_r=L/\ell^r L$ and $V_r=V[\ell^r]$.
-The nine-term sequence and Sha duality give
+odd or $F$ is totally imaginary. At level $r\ge1$ the dual pair is
+$L_r=L/\ell^r L$ and $V_r=V[\ell^r]$. Write $P^i(M)$ for the product of
+local cohomology groups of a coefficient module $M$ at $S$, and $\Sha^i(M)$
+for the kernel of localization in degree $i$. The nine-term sequence and
+Sha duality give
 
 $$
  \operatorname{coker}\big(H^2(G_S,L_r)\to P^2(L_r)\big)
@@ -187,8 +190,7 @@ $$
  \qquad \Sha^2(L_r)\simeq\Sha^1(V_r)^* .
 $$
 
-Here $P^i$ denotes the product of the local cohomology groups at $S$, and the star
-denotes the character dual into $\mathbf Q/\mathbf Z$. Reduction and an eventual
+Here the star denotes the character dual into $\mathbf Q/\mathbf Z$. Reduction and an eventual
 saturation argument relate the finite groups to the integral localization map
 $f:H^2(G_S,L)\to P^2(L)$ and give
 
@@ -212,7 +214,7 @@ $$
  \le \operatorname{length}H^2(G_S,L).
 $$
 
-This is precisely [shaLeV](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/AdditiveValuationNorms/ShaLeV.lean#L7-L16).
+This is the inequality [shaLeV](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/AdditiveValuationNorms/ShaLeV.lean#L7-L16).
 The two short exact sequences for $f$, together with the local length formula,
 also give the additive balance
 
@@ -222,10 +224,10 @@ $$
  \operatorname{length}\Sha^1(V)+\sum_{v\in S}\operatorname{length}H^0(F_v,V).
 $$
 
-The additive form avoids subtracting infinite lengths. The inequality is used at the reference layer in
-[aBound_of_descends](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/AdditiveValuationNorms/ABoundOfDescends.lean#L36-L55):
-the tower cokernel length is identified with `shaInv`, the reference-layer length
-is bounded by `VLen`, and the growth allowance is added. The determinant and descent
+The additive form avoids subtracting infinite lengths. At the reference layer,
+[aBound_of_descends](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/AdditiveValuationNorms/ABoundOfDescends.lean#L36-L55) uses this inequality: it identifies the tower
+cokernel length with `shaInv`, bounds the reference-layer length by `VLen`,
+and adds the growth allowance. The determinant and descent
 estimates described above then control the exceptional twists. In the
 [window assembly](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AutomorphicArithmetic/AutomorphicVarieties/ModularityArgument/ThresholdArguments/DenseThresholdCases/HVCore.lean#L19-L22), the Poitou–Tate input
 is used in the tower bound, the counting argument and the odd-prime reciprocity
@@ -283,15 +285,12 @@ unramified outside $S$ since $n$ is invertible there. Thus
 $1\to D\to U\xrightarrow{(\cdot)^n}U\to1$ gives a map $H^2(G_S,D)\to H^2(G_S,U)$
 with image $H^2(G_S,U)[n]$.
 
-The primary comparison factors through the global Brauer group.
-The Albert–Brauer–Hasse–Noether exact sequence identifies the global Brauer group with
+By the Albert–Brauer–Hasse–Noether exact sequence, localization identifies the global Brauer group with
 the kernel of the sum of local invariants. A local family killed by a power of $\ell$ lifts
 to a global Brauer class killed by the same power, by injectivity of localization. If the
 family vanishes at finite places outside $S$, the archive's $S$-unit lifting theorem supplies
 a preimage in $H^2(G_S,U)$. That group is torsion, so one can project a preimage onto its
-$\ell$-primary component without changing its primary Brauer image. Injectivity on the
-primary subgroup is a separate $S$-unit theorem. The lifting and primary injectivity theorems for $S$-units thus supply the two
-directions of the comparison.
+$\ell$-primary component without changing its primary Brauer image. The separate primary injectivity theorem for $S$-units completes the comparison.
 
 **Construction of the trace.** For a class $x\in H^2(G_S,D)$, its image in $H^2(G_S,U)$
 is killed by $n$. By the primary comparison its local Brauer family vanishes at finite places outside $S$.
@@ -319,8 +318,7 @@ $$
 H_c^3(D)\ \xrightarrow[\quad T\quad]{\sim}\ \mathbf Z/n\mathbf Z.
 $$
 
-The key lifting step is the passage from a primary Brauer lift to an $n$-torsion
-global class. We have in particular proved that the sequence
+In particular, the sequence
 
 $$
 H^2(G_S,D)\xrightarrow{\mathrm{res}}
@@ -331,8 +329,8 @@ is exact at the local product and the last term. If a global degree-two class re
 zero at all but one place of $S$, it must restrict to zero there as well. This consequence needs only reciprocity and local injectivity. The trace isomorphism
 also provides the target of the compact cup-product pairings.
 
-**Reciprocity at the auxiliary prime.** The odd-prime reciprocity calculation
-uses the last-place consequence. Here the coefficients are written additively as
+**Reciprocity at the auxiliary prime.** The odd-prime argument applies this
+consequence to a cup product of two one-cocycles. Here the coefficients are written additively as
 $A=\mathbf Z/\ell^r\mathbf Z$ with $r>0$ and cyclotomic action $\chi$, and $\ell$ is odd.
 Consider a continuous two-cocycle $w$ on the absolute Galois group of a number field.
 Suppose it is constant on the cosets of the restricted-ramification kernel in each
@@ -373,11 +371,9 @@ $$
 $$
 
 Indeed $\chi(g)b(h)-b(gh)+b(g)=\lambda(z(g)\alpha(g)(\alpha(h)m-m))=w(g,h)$.
-This supplies the coboundaries away from the distinguished auxiliary prime in the
-archive's calculation; at that prime the last-place argument supplies the missing
-coboundary. Local orthogonality, applied to the resulting coboundary, then gives a constraint
-on the two one-cocycles. Reciprocity transfers the local vanishing to the
-auxiliary prime.
+In the archive's calculation, these primitives give the local coboundaries
+away from the auxiliary prime. Reciprocity gives the remaining coboundary;
+local orthogonality at that prime then constrains the two one-cocycles.
 
 **Concordance with the archive.**
 
@@ -534,7 +530,7 @@ Adding the local-entry contributions gives the value of the character on
 $((a_v)_v,-\operatorname{div}_{\bar S}(t))$, as required. The minus sign in the
 divisor term is the sign from global reciprocity.
 
-**Nondegeneracy in both variables.** For a nonzero $x$, choose $a\in C_S$ with
+**Nondegeneracy.** For a nonzero $x$, choose $a\in C_S$ with
 $\chi_x(a)\ne0$. Property 3 gives $c(d)=ma$ with $(m,\ell)=1$, so
 $T(\delta_n q(d)\smile x)=m\chi_x(a)\ne0$.
 
@@ -549,9 +545,8 @@ no finiteness of $C_S/nC_S$ has been assumed.
 Choose $d'$ with $c(d')=ma$, $(m,\ell)=1$. Then $c(md-nd')=0$,
 so property 2 yields $mq(d)=nq(d')$. Applying $\delta_n$ gives $my=0$.
 Since $ny=0$ and $(m,n)=1$, we get $y=0$.
-Both cohomology groups are finite, and their character duals have the same
-cardinalities as the original groups, so the two zero-kernel assertions
-give perfectness in degree one.
+Both cohomology groups are finite, and each has the same order as its
+character dual. Nondegeneracy in both variables therefore gives a perfect pairing.
 
 **The remaining degrees.** Let $\partial$ denote each
 local-to-compact map and $j$ each compact-to-global map, with coefficients and
@@ -571,26 +566,25 @@ $$
 $$
 
 The compact cup interchange identity has sign $(-1)^{1\cdot2}=+1$.
-Since $D$ is now trivial cyclic, choose an identification $D\simeq A$.
-Perfectness in degree one also gives perfectness of the pairing between
-$H_c^2(A)$ and $H^1(G_S,D)$ under the corresponding coefficient transport.
+Choose an identification $D\simeq A$ of trivial cyclic modules. Transporting
+the degree-one pairing along it gives a perfect pairing of $H_c^2(A)$ with
+$H^1(G_S,D)$.
 
 Suppose $x\in H^2(G_S,A)$ annihilates $H_c^1(D)$. Testing against
 $\partial P^0(D)$ and applying local duality gives $\operatorname{res}x=0$.
 Choose $x_c$ with $jx_c=x$. The functional $z\mapsto T(x_c\smile z)$ on
 $H^1(G_S,D)$ vanishes on the kernel of localization: there $z=jy_c$ and
 the compact cup comparison reduces the value to $T(y_c\smile x)=0$.
-It therefore descends to the image in $P^1(D)$ and extends to that entire
-group, by the same $\mathbf Q/\mathbf Z$ extension argument above.
+It therefore factors through the image of localization in $P^1(D)$ and
+extends to the entire group by injectivity of $\mathbf Q/\mathbf Z$.
 By local duality the extension is represented by a tuple $\eta\in P^1(A)$,
 using local products in the order $\eta_v\smile z_v$.
 The class $x_c-\partial\eta$ now annihilates all of $H^1(G_S,D)$,
-so degree-one perfectness makes it zero. Its global image is $x$, proving
-injectivity in degree two.
+so it vanishes by degree-one duality. Applying $j$ gives $x=0$.
 
 To prove surjectivity, let $\lambda:H_c^1(D)\to A$ be any functional.
-Its restriction along $\partial:P^0(D)\to H_c^1(D)$ is represented by
-a tuple $\xi\in P^2(A)$ by local duality, with local products in the order
+By local duality its composite with $\partial:P^0(D)\to H_c^1(D)$ is represented by
+a tuple $\xi\in P^2(A)$, with local products in the order
 $u_v\smile\xi_v$. The functional kills the diagonal invariants
 $H^0(G_S,D)$ by exactness. Testing a generator of the trivial cyclic $D$
 shows that the sum of the invariants of $\xi$ after coefficient identification
@@ -633,10 +627,9 @@ $$
 H^i(G,M)\ \simeq\ \operatorname{Hom}(H_c^{3-i}(M^D),A).
 $$
 
-The additional inputs here are the dimension bound $H_c^4(N)=0$ for every
-finite $n$-torsion coefficient module $N$, and the Shapiro, Mackey and
-compact cup-product comparison theorems. These are separate theorems
-in the archive; we use them in the following deductions.
+We use the dimension bound $H_c^4(N)=0$ for every finite $n$-torsion module
+$N$, together with the Shapiro and Mackey isomorphisms and their compatibility
+with compact cup products.
 
 **Open subgroups and the normalization of the trace.** Choose an open
 subgroup $W_0$ of $G$ fixing $D$. Every open subgroup $W\subset W_0$
@@ -659,20 +652,15 @@ the degree-three cohomology map of the coefficient trace onto. The
 compact Shapiro–Mackey isomorphism identifies it with corestriction.
 In particular, no division by the extension degree is needed.
 
-Let $T_E$ denote the compact trace isomorphism over $E$. The map given
-by corestriction followed by $T_F$ is onto $A$; after the compact
-comparison it is a surjective homomorphism from $H_c^3(E,D)\simeq A$.
-Consequently it is $uT_E$ for some $u\in A^\times$: an endomorphism of the
-cyclic group $A$ is multiplication by its value at $1$, and is onto
-precisely if that value is a unit.
+Let $T_E$ and $T_F$ be the trace isomorphisms over $E$ and $F$. The composite
+of compact corestriction with $T_F$ is a surjection from $H_c^3(E,D)\simeq A$
+to $A$. It is therefore $uT_E$ for some $u\in A^\times$.
 Multiplication by a unit preserves perfectness, so the Mackey cup comparison
 transports the pairing over $E$ without requiring the identity $u=1$.
 
-The Shapiro isomorphism for global cohomology and the compact
-Shapiro–Mackey isomorphism, together with their compatibility with
-evaluation and coefficient trace, now give perfectness for the
-$G$-module $\operatorname{Coind}_W^G A$, in every degree.
-Finite direct sums of these modules retain perfectness.
+Via the global and compact Shapiro isomorphisms, compatible with evaluation
+and coefficient trace, we obtain perfect pairings in every degree for
+$\operatorname{Coind}_W^G A$ and its finite direct sums.
 
 **Embedding a general coefficient module.** Choose $W\subset W_0$
 open and acting trivially on $M$; this is possible because $M$ is finite
@@ -697,8 +685,8 @@ through the induction hypothesis.
 **Induction in cohomological degree.** In degree zero, injectivity
 for $M$ follows by naturality from injectivity for $I$ and of the map
 on invariants. For surjectivity, compact degree-four vanishing makes
-$H_c^3(I^D)\to H_c^3(M^D)$ onto. Pull back any functional along that map;
-perfectness for $I$ represents it by a class in $H^0(G,I)$.
+$H_c^3(I^D)\to H_c^3(M^D)$ onto. The pullback of a functional along this map is represented by a class in
+$H^0(G,I)$, by duality for $I$.
 Its image in $H^0(G,Q)$ pairs to zero, because the two consecutive
 maps of the dual sequence compose to zero. Degree-zero injectivity
 for every module, already proved, makes that image zero. The class
@@ -719,7 +707,7 @@ $$
 for $q\in H^r(G,Q)$ and $y\in H_c^s(M^D)$.
 All the other squares express naturality of evaluation.
 
-First suppose $x\in H^{r+1}(G,M)$ pairs to zero. Its image in
+For injectivity, suppose $x\in H^{r+1}(G,M)$ annihilates the compact group. Its image in
 $H^{r+1}(G,I)$ is zero by perfectness for $I$, so $x=\delta q$ for
 some $q\in H^r(G,Q)$. The signed identity says that $B_r^Q(q,-)$
 annihilates the image of $\delta_c$, which is the kernel of
@@ -730,7 +718,7 @@ Naturality and degree-$r$ injectivity for $Q$ give $p_*v=q$.
 Hence $x=\delta p_*v=0$. This establishes injectivity in degree
 $r+1$ for every module before proceeding to surjectivity.
 
-Given a functional $\lambda:H_c^s(M^D)\to A$, pull it back to
+For surjectivity, take a functional $\lambda:H_c^s(M^D)\to A$ and pull it back to
 $H_c^s(I^D)$. Perfectness for $I$ represents it by
 $v\in H^{r+1}(G,I)$. The image of $v$ in $H^{r+1}(G,Q)$ is zero
 by naturality and the just-proved degree-$(r+1)$ injectivity for $Q$.
@@ -738,7 +726,7 @@ Choose a lift $x'\in H^{r+1}(G,M)$. The difference
 $\nu=\lambda-B_{r+1}^M(x',-)$ kills the image of $H_c^s(I^D)$,
 which is the kernel of $\delta_c$. Extend $\nu$ through $\delta_c$
 to a functional on $H_c^{s+1}(Q^D)$; by the induction hypothesis
-it equals $B_r^Q(q,-)$ there. The signed identity shows that
+it has the form $B_r^Q(q,-)$. The signed identity shows that
 
 $$
  x'+(-1)^{s+1}\delta q
@@ -750,8 +738,7 @@ surjectivity in that degree.
 
 **Beyond prime powers.** For a finite module killed by a positive integer
 $N$, split it into its primary summands. Assume $S$ contains the places above every prime
-factor of $N$, and $N$ is odd or $F$ is totally imaginary. The case $N=1$ has only the zero
-module and needs no argument. If a summand is killed by
+factor of $N$, and $N$ is odd or $F$ is totally imaginary. The case $N=1$ is trivial. If a summand is killed by
 $q=\ell^k$ dividing $N$, its dual into $\mu_N$ is identified with the
 dual into $\mu_q$ by the inclusion $\mu_q\hookrightarrow\mu_N$.
 The local invariant maps are compatible with this inclusion after
@@ -791,8 +778,7 @@ localization and extend to its target. Local Tate duality identifies
 that image with the image of $\partial P^0(M)$ under compact duality.
 Taking the quotient therefore gives
 $\Sha^1(M)\simeq\Sha^2(M^D)^*$, with the pairing independent of the
-choice of compact lift. The nine-term sequence and the Sha pairing are thus consequences of compact
-duality.
+choice of compact lift. This gives the Sha pairing.
 
 **Concordance with the archive.**
 
@@ -839,15 +825,14 @@ one-coboundaries: a zero-cochain witnessing the difference at level $r$
 lifts to level $r+1$. The resulting compatible actual primitives have
 a continuous integral limit, showing that the original class is zero.
 Hence $\bigcap_r\ell^r X=0$, and similarly for the local groups.
-Finally, choose finitely many lifts of generators modulo $\ell$.
+To prove finite generation, choose finitely many lifts of generators modulo $\ell$.
 Successive approximation expresses each element modulo $\ell^r$ by
 linear combinations of these lifts with compatible coefficients.
-Completeness of $\mathbf Z_\ell$ gives limiting coefficients; separation
-makes the resulting equality exact. This proves finite generation.
-In the archive these are
+Completeness of $\mathbf Z_\ell$ gives limiting coefficients, and separation
+then gives an equality in the original module. See
 [reduction_h2_eq_zero_iff, reduction_h2_surjective, finite_h2_padic_representation](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L75-L135).
-The finite global $H^1,H^2$ used here come from their finite local groups
-and the finite Sha groups (see [global_lim](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L337-L351)).
+Global finiteness in degrees one and two follows from finiteness of the local
+and Sha groups (see [global_lim](https://github.com/leanprover-community/riemann-hypothesis/blob/40e56bab026552e089d7afcfeff08d2defb9c005/src/Development/AbelianVarietyTheory/Proofs/FoundationProofs/LengthEqLengthInvariantsOfTorsionLevels.lean#L337-L351)).
 
 **The cokernel length.** Write $C=\operatorname{coker} f$.
 Right exactness of reduction gives
@@ -856,12 +841,11 @@ $$
  C/\ell^r C=Y/(f(X)+\ell^rY)\simeq\operatorname{coker} f_r .
 $$
 
-The last arrow of the nine-term sequence therefore yields
-$|C/\ell^r C|=|H^0(G_S,V_r)|$ for every $r>0$.
-These are the cardinalities of $H^0(G_S,V)[\ell^r]$, since the coefficient
-embedding $V_r\hookrightarrow V$ is equivariant. As $r$ increases the
-subgroups exhaust $H^0(G_S,V)$; on the other side the reductions of the
-finitely generated module $C$ have base-$\ell$ logarithms of their cardinalities tending to its extended length. A free summand gives an unbounded sequence; for a
+The last arrow of the nine-term sequence gives
+$|C/\ell^r C|=|H^0(G_S,V)[\ell^r]|$ for every $r>0$, since the coefficient
+embedding $V_r\hookrightarrow V$ is equivariant. The subgroups on the right
+exhaust $H^0(G_S,V)$. On the left, $\log_\ell |C/\ell^r C|$ tends to the
+extended length of the finitely generated module $C$. A free summand gives an unbounded sequence; for a
 torsion module it eventually gives its length. Taking the suprema
 proves the cokernel formula, without a finiteness assumption on either
 length. The same argument with local Tate duality gives the local
@@ -885,8 +869,7 @@ These subgroups increase and exhaust $\Sha^1(V)$: a continuous
 one-cocycle on the compact global group has finite image in the
 discrete torsion module, and the finitely many local null-homotopies
 can all be chosen in a sufficiently large torsion level.
-To compare the finite-level cardinality with $|P_r|$ one must also
-check injectivity at that level. A global cocycle in $V_r$ becoming a
+We still need injectivity of $\Sha^1(V_r)\to P_r$ at sufficiently large levels. A global cocycle in $V_r$ becoming a
 boundary in $V$ is $g\mapsto ga-a$ for some $a\in V$. If its local
 restrictions are boundaries in $V_r$, there are $b_v\in V_r$ with
 $a-b_v\in V^{G_{F_v}}$. It suffices to find a global primitive in $V_r$.
@@ -900,19 +883,18 @@ by a scalar different from $1$.
 The local invariant group is killed by a fixed power of $\ell$.
 The local length equality makes $Y$ a finitely generated torsion
 $\mathbf Z_\ell$-module, hence killed by a power of $\ell$.
-For all sufficiently large $r$, therefore, $\ell^rY=0$ and the
-saturation condition holds. At the same levels every local invariant
-is in $V_r$; as $S$ is nonempty, any one equality
-$a-b_v\in V^{G_{F_v}}$ shows that $a\in V_r$. This proves the second condition.
+For sufficiently large $r$, $\ell^rY=0$, so saturation holds. At the same
+levels the local invariant groups are contained in $V_r$. Since $S$ is
+nonempty, any equality
+$a-b_v\in V^{G_{F_v}}$ shows that $a\in V_r$. Thus the global primitive already lies in $V_r$.
 
 For $e=0$ the action on $V$ is trivial and the second condition holds
 with global primitive zero. The cokernel cardinality formula gives
 $|C/\ell^r C|=\ell^r$ at every positive level.
-The structure theorem for finitely generated $\mathbf Z_\ell$-modules
-then gives rank one and no torsion for $C$: for large $r$, the exponent
-of $\ell$ in that cardinality is $r\operatorname{rank} C$ plus the length
-of its torsion submodule. In particular $C$ is torsion-free,
-which gives the saturation condition for every $r$.
+By the structure theorem, for large $r$ the exponent of $\ell$ in this
+cardinality is $r\operatorname{rank} C$ plus the length of its torsion
+submodule. Thus $C$ is free of rank one, and its torsion-freeness gives
+saturation for every $r$.
 
 For all sufficiently large $r$ in either case, finite Sha duality now
 gives
